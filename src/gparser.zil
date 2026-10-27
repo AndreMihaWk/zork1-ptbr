@@ -155,7 +155,8 @@
 	       <SETG LIT <LIT? ,HERE>>
 	       <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 	       <TELL ">">
-	       <READ-INPUT>)>
+	       <READ-INPUT>
+	       <COND (<NOT <GUARDA-DESFAZER>> <RFALSE>)>)> ;"PT: desfazer"
 	<SETG P-LEN <GETB ,P-LEXV ,P-LEXWORDS>>
 	<COND (<ZERO? ,P-LEN> <TELL "Como é?" CR> <RFALSE>)>
 	<COND (<EQUAL? <SET WRD <GET ,P-LEXV .PTR>> ,W?OOPS>

@@ -10,6 +10,10 @@ examine a chaminé
 pegue a chave de fenda
 abra a caixa de correio
 pegue o folheto
+## desfazer volta a última jogada (o folheto volta para a caixa):
+desfazer
+olhe
+pegue o folheto
 ## Pronome com hífen (leia-o vira leia lo = isso):
 leia-o
 ## Maiúsculas e acento:

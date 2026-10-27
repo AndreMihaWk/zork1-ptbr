@@ -23,6 +23,19 @@ Ao abrir a pequena caixa de correio, você encontra um folheto.
 >pegue o folheto
 Você pegou o folheto.
 
+>desfazer
+Você desfez a última jogada.
+
+>olhe
+Oeste da Casa
+Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas.
+Há uma pequena caixa de correio aqui.
+Dentro da pequena caixa de correio há:
+  Um folheto
+
+>pegue o folheto
+Você pegou o folheto.
+
 >leia-o
 "BEM-VINDO AO ZORK!
 
@@ -182,7 +195,7 @@ Sua espada emite um fraco brilho azulado.
 O alçapão está fechado.
 
 >pontos
-Sua pontuação é 35 (de um total de 350 pontos), em 45 jogadas.
+Sua pontuação é 35 (de um total de 350 pontos), em 46 jogadas.
 Isso lhe dá o título de Aventureiro Amador.
 
 >diagnóstico

@@ -355,6 +355,30 @@ Ver docs/TRADUCAO.md."
 		       <WORD-PRINT <GETB .ANT 2> <GETB .ANT 3>>
 		       <PRINTC 32>)>)>>
 
+"Desfazer (o UNDO da V5)"
+
+<GLOBAL PODE-DESFAZER <>>
+
+;"Antes de rodar cada linha digitada, guarda o estado (ISAVE). Desfazer
+  (V-DESFAZER) volta a ele: a execução retorna aqui, com 2, e a linha que
+  tinha sido digitada é descartada. A linha desfazer não guarda nada, senão
+  apagaria o estado anterior."
+<ROUTINE GUARDA-DESFAZER ("AUX" R)
+	 <COND (<OR <ZERO? <GETB ,P-LEXV ,P-LEXWORDS>>
+		    <EQUAL? <PALAVRA 1> ,W?DESFAZER ,W?DESFACA ,W?DESFAZ>>
+		<RTRUE>)>
+	 <SET R <ISAVE>>
+	 <COND (<EQUAL? .R 2>
+		<TELL "Você desfez a última jogada." CR>
+		<RFALSE>)
+	       (<EQUAL? .R 1>
+		<SETG PODE-DESFAZER T>)>
+	 <RTRUE>>
+
+<ROUTINE V-DESFAZER ()
+	 <COND (,PODE-DESFAZER <IRESTORE>)>
+	 <TELL "Não dá para desfazer agora." CR>>
+
 ;"O verbo digitado é deste (ACT?THROW...)? Serve para separar o que o
   português junta numa preposição só (no = IN e ON)."
 <ROUTINE VERBO-DIGITADO? (ACT)
