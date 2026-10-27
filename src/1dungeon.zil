@@ -133,20 +133,20 @@ parece sorrir para você com um ar bem maldoso.")
 
 <OBJECT LOWERED-BASKET
 	(IN LOWER-SHAFT)
-	(SYNONYM CAGE DUMBWAITER BASKET)
-	(ADJECTIVE LOWERED)
-	(LDESC "From the chain is suspended a basket.")
-	(DESC "basket")
+	(SYNONYM CAGE DUMBWAITER BASKET CESTO CESTA GAIOLA ELEVADOR)
+	(ADJECTIVE LOWERED ABAIXADO)
+	(LDESC "Da corrente pende um cesto.")
+	(DESC "cesto")
 	(FLAGS TRYTAKEBIT)
 	(ACTION BASKET-F)>
 
 <OBJECT RAISED-BASKET
 	(IN SHAFT-ROOM)
-	(SYNONYM CAGE DUMBWAITER BASKET)
-	(DESC "basket")
+	(SYNONYM CAGE DUMBWAITER BASKET CESTO CESTA GAIOLA ELEVADOR)
+	(DESC "cesto")
 	(FLAGS TRANSBIT TRYTAKEBIT CONTBIT OPENBIT)
 	(ACTION BASKET-F)
-	(LDESC "At the end of the chain is a basket.")
+	(LDESC "Na ponta da corrente há um cesto.")
 	(CAPACITY 50)>
 
 <OBJECT LUNCH
@@ -159,9 +159,9 @@ parece sorrir para você com um ar bem maldoso.")
 
 <OBJECT BAT
 	(IN BAT-ROOM)
-	(SYNONYM BAT VAMPIRE)
-	(ADJECTIVE VAMPIRE DERANGED)
-	(DESC "bat")
+	(SYNONYM BAT VAMPIRE MORCEGO VAMPIRO)
+	(ADJECTIVE VAMPIRE DERANGED VAMPIRO LOUCO GRANDE)
+	(DESC "morcego")
 	(FLAGS ACTORBIT TRYTAKEBIT)
 	(DESCFCN BAT-D)
 	(ACTION BAT-F)>
@@ -260,17 +260,17 @@ ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.")
 
 <OBJECT TIMBERS
 	(IN TIMBER-ROOM)
-	(SYNONYM TIMBERS TIMBER PILE)
-	(ADJECTIVE WOODEN BROKEN)
-	(DESC "broken timber")
-	(FLAGS TAKEBIT)
+	(SYNONYM TIMBERS TIMBER PILE MADEIRA MADEIRAS MADEIRAME VIGA VIGAS)
+	(ADJECTIVE WOODEN BROKEN QUEBRADA QUEBRADAS)
+	(DESC "madeira quebrada")
+	(FLAGS TAKEBIT FEMBIT)
 	(SIZE 50)>
 
 <OBJECT	SLIDE
 	(IN LOCAL-GLOBALS)
-	(SYNONYM CHUTE RAMP SLIDE)
-	(ADJECTIVE STEEP METAL TWISTING)
-	(DESC "chute")
+	(SYNONYM CHUTE RAMP SLIDE ESCORREGA RAMPA TOBOGA)
+	(ADJECTIVE STEEP METAL TWISTING INGREME METALICO)
+	(DESC "escorregador")
 	(FLAGS CLIMBBIT)
 	(ACTION SLIDE-FUNCTION)>
 
@@ -496,21 +496,22 @@ ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.")
 	(FLAGS TAKEBIT TOOLBIT FEMBIT)>
 
 <OBJECT DIAMOND
-	(SYNONYM DIAMOND TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE HUGE ENORMOUS)
-	(DESC "huge diamond")
+	(SYNONYM DIAMOND TREASURE TREASURES TESOURO TESOUROS DIAMANTE)
+	(ADJECTIVE HUGE ENORMOUS ENORME)
+	(DESC "diamante enorme")
 	(FLAGS TAKEBIT)
-	(LDESC "There is an enormous diamond (perfectly cut) here.")
+	(LDESC "Há um diamante enorme (lapidado à perfeição) aqui.")
 	(VALUE 10)
 	(TVALUE 10)>
 
 <OBJECT JADE
 	(IN BAT-ROOM)
-	(SYNONYM FIGURINE TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE EXQUISITE JADE)
-	(DESC "jade figurine")
-	(FLAGS TAKEBIT)
-	(LDESC "There is an exquisite jade figurine here.")
+	(SYNONYM FIGURINE TREASURE TREASURES TESOURO TESOUROS ESTATUETA FIGURA
+		 JADE)
+	(ADJECTIVE EXQUISITE JADE PRIMOROSA)
+	(DESC "estatueta de jade")
+	(FLAGS TAKEBIT FEMBIT)
+	(LDESC "Há uma primorosa estatueta de jade aqui.")
 	(SIZE 10)
 	(VALUE 5)
 	(TVALUE 5)>
@@ -597,9 +598,9 @@ viram. Nenhum computador deveria ficar sem ele!\"")
 
 <OBJECT MACHINE
 	(IN MACHINE-ROOM)
-	(SYNONYM MACHINE PDP10 DRYER LID)
-	(DESC "machine")
-	(FLAGS CONTBIT NDESCBIT TRYTAKEBIT)
+	(SYNONYM MACHINE PDP10 DRYER LID MAQUINA SECADORA TAMPA)
+	(DESC "máquina")
+	(FLAGS CONTBIT NDESCBIT TRYTAKEBIT FEMBIT)
 	(ACTION MACHINE-F)
 	(CAPACITY 50)>
 
@@ -697,9 +698,9 @@ fundo há uma pintura de beleza sem igual.")
 	(SIZE 10)>
 
 <OBJECT GUNK
-	(SYNONYM GUNK PIECE SLAG)
-	(ADJECTIVE SMALL VITREOUS)
-	(DESC "small piece of vitreous slag")
+	(SYNONYM GUNK PIECE SLAG PEDACO PEDACINHO ESCORIA)
+	(ADJECTIVE SMALL VITREOUS PEQUENO VITREA ESCORIA)
+	(DESC "pequeno pedaço de escória vítrea")
 	(FLAGS TAKEBIT TRYTAKEBIT)
 	(ACTION GUNK-FUNCTION)
 	(SIZE 10)>
@@ -843,10 +844,11 @@ mortos. Tudo indica que as crenças dos antigos zorkianos eram obscuras." )>
 
 <OBJECT BRACELET
 	(IN GAS-ROOM)
-	(SYNONYM BRACELET JEWEL SAPPHIRE TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE SAPPHIRE)
-	(DESC "sapphire-encrusted bracelet")
-	(FLAGS TAKEBIT)
+	(SYNONYM BRACELET JEWEL SAPPHIRE TREASURE TREASURES TESOURO TESOUROS
+		 PULSEIRA BRACELETE JOIA SAFIRA SAFIRAS)
+	(ADJECTIVE SAPPHIRE CRAVEJADA SAFIRA SAFIRAS)
+	(DESC "pulseira cravejada de safiras")
+	(FLAGS TAKEBIT FEMBIT)
 	(SIZE 10)
 	(VALUE 5)
 	(TVALUE 5)>
@@ -875,18 +877,18 @@ mortos. Tudo indica que as crenças dos antigos zorkianos eram obscuras." )>
 
 <OBJECT COAL
 	(IN DEAD-END-5)
-	(SYNONYM COAL PILE HEAP)
-	(ADJECTIVE SMALL)
-	(DESC "small pile of coal")
+	(SYNONYM COAL PILE HEAP CARVAO MONTINHO MONTE)
+	(ADJECTIVE SMALL CARVAO PEQUENO)
+	(DESC "montinho de carvão")
 	(FLAGS TAKEBIT BURNBIT)
 	(SIZE 20)>
 
 <OBJECT LADDER
 	(IN LOCAL-GLOBALS)
-	(SYNONYM LADDER)
-	(ADJECTIVE WOODEN RICKETY NARROW)
-	(DESC "wooden ladder")
-	(FLAGS NDESCBIT CLIMBBIT)>
+	(SYNONYM LADDER ESCADA ESCADINHA)
+	(ADJECTIVE WOODEN RICKETY NARROW MADEIRA BAMBA ESTREITA MAO)
+	(DESC "escada de madeira")
+	(FLAGS NDESCBIT CLIMBBIT FEMBIT)>
 
 <OBJECT SCARAB
 	(IN SANDY-CAVE)
@@ -920,8 +922,8 @@ mortos. Tudo indica que as crenças dos antigos zorkianos eram obscuras." )>
 
 <OBJECT MACHINE-SWITCH
 	(IN MACHINE-ROOM)
-	(SYNONYM SWITCH)
-	(DESC "switch")
+	(SYNONYM SWITCH INTERRUPT BOTAO)
+	(DESC "interruptor")
 	(FLAGS NDESCBIT TURNBIT)
 	(ACTION MSWITCH-FUNCTION)>
 
@@ -2481,10 +2483,10 @@ the canyon from here.")
       (IN ROOMS)
       (LDESC
 
-"You are standing at the entrance of what might have been a coal mine.
-The shaft enters the west wall, and there is another exit on the south
-end of the room.")
-      (DESC "Mine Entrance")
+"Você está na entrada do que talvez tenha sido uma mina de carvão. A
+galeria da mina entra pela parede oeste, e há outra saída na ponta sul da
+sala.")
+      (DESC "Entrada da Mina")
       (SOUTH TO SLIDE-ROOM)
       (IN TO SQUEEKY-ROOM)
       (WEST TO SQUEEKY-ROOM)
@@ -2493,16 +2495,16 @@ end of the room.")
 <ROOM SQUEEKY-ROOM	;"was SQUEE"
       (IN ROOMS)
       (LDESC
-"You are in a small room. Strange squeaky sounds may be heard coming
-from the passage at the north end. You may also escape to the east.")
-      (DESC "Squeaky Room")
+"Você está em uma sala pequena. Dá para ouvir estranhos guinchos e rangidos
+vindos da passagem na ponta norte. Também dá para fugir para leste.")
+      (DESC "Sala Rangente")
       (NORTH TO BAT-ROOM)
       (EAST TO MINE-ENTRANCE)
       (FLAGS RLANDBIT)>
 
 <ROOM BAT-ROOM	;"was BATS"
       (IN ROOMS)
-      (DESC "Bat Room")
+      (DESC "Sala do Morcego")
       (SOUTH TO SQUEEKY-ROOM)
       (EAST TO SHAFT-ROOM)
       (ACTION BATS-ROOM)
@@ -2511,50 +2513,52 @@ from the passage at the north end. You may also escape to the east.")
 <ROOM SHAFT-ROOM	;"was TSHAF"
       (IN ROOMS)
       (LDESC
-"This is a large room, in the middle of which is a small shaft
-descending through the floor into darkness below. To the west and
-the north are exits from this room. Constructed over the top of the
-shaft is a metal framework to which a heavy iron chain is attached.")
-      (DESC "Shaft Room")
-      (DOWN "You wouldn't fit and would die if you could.")
+"Esta é uma sala grande. No meio dela, um poço estreito atravessa o chão e
+desce para a escuridão. Há saídas a oeste e ao norte. Sobre a boca do poço
+foi montada uma armação de metal, onde está presa uma pesada corrente de
+ferro.")
+      (DESC "Sala do Poço")
+      (DOWN "Você não caberia aí, e morreria se coubesse.")
       (WEST TO BAT-ROOM)
       (NORTH TO SMELLY-ROOM)
       (FLAGS RLANDBIT)
-      (PSEUDO "CHAIN" CHAIN-PSEUDO)>
+      (PSEUDO "CHAIN" CHAIN-PSEUDO "CORRENTE" CHAIN-PSEUDO)>
 
 <ROOM SMELLY-ROOM	;"was SMELL"
       (IN ROOMS)
       (LDESC
-"This is a small nondescript room. However, from the direction
-of a small descending staircase a foul odor can be detected. To the
-south is a narrow tunnel.")
-      (DESC "Smelly Room")
+"Esta é uma sala pequena e sem nada de especial. Mas, vindo de uma pequena
+escada que desce, dá para sentir um cheiro horrível. Ao sul há um túnel
+estreito.")
+      (DESC "Sala Fedorenta")
       (DOWN TO GAS-ROOM)
       (SOUTH TO SHAFT-ROOM)
       (FLAGS RLANDBIT)
       (GLOBAL STAIRS)
-      (PSEUDO "ODOR" GAS-PSEUDO "GAS" GAS-PSEUDO)>
+      (PSEUDO "ODOR" GAS-PSEUDO "GAS" GAS-PSEUDO
+	      "CHEIRO" GAS-PSEUDO "FEDOR" GAS-PSEUDO)>
 
 <ROOM GAS-ROOM	;"was BOOM"
       (IN ROOMS)
       (LDESC
-"This is a small room which smells strongly of coal gas. There is a
-short climb up some stairs and a narrow tunnel leading east.")
-      (DESC "Gas Room")
+"Esta é uma sala pequena com um forte cheiro de gás de carvão. Alguns
+degraus sobem um pouco, e um túnel estreito segue para leste.")
+      (DESC "Sala do Gás")
       (UP TO SMELLY-ROOM)
       (EAST TO MINE-1)
       (ACTION BOOM-ROOM)
       (FLAGS RLANDBIT SACREDBIT)
       (GLOBAL STAIRS)
-      (PSEUDO "GAS" GAS-PSEUDO "ODOR" GAS-PSEUDO)>
+      (PSEUDO "GAS" GAS-PSEUDO "ODOR" GAS-PSEUDO
+	      "CHEIRO" GAS-PSEUDO "FEDOR" GAS-PSEUDO)>
 
 <ROOM LADDER-TOP	;"was TLADD"
       (IN ROOMS)
       (LDESC
-"This is a very small room. In the corner is a rickety wooden
-ladder, leading downward. It might be safe to descend. There is
-also a staircase leading upward.")
-      (DESC "Ladder Top")
+"Esta é uma sala bem pequena. No canto, uma escada de madeira bamba leva
+para baixo. Talvez seja seguro descer. Há também uma escadaria que
+sobe.")
+      (DESC "Topo da Escada")
       (DOWN TO LADDER-BOTTOM)
       (UP TO MINE-4)
       (FLAGS RLANDBIT)
@@ -2563,10 +2567,9 @@ also a staircase leading upward.")
 <ROOM LADDER-BOTTOM	;"was BLADD"
       (IN ROOMS)
       (LDESC
-"This is a rather wide room. On one side is the bottom of a
-narrow wooden ladder. To the west and the south are passages
-leaving the room.")
-      (DESC "Ladder Bottom")
+"Esta é uma sala bem larga. De um lado fica o pé de uma escada de madeira
+estreita. Há passagens que saem da sala para oeste e para sul.")
+      (DESC "Pé da Escada")
       (SOUTH TO DEAD-END-5)
       (WEST TO TIMBER-ROOM)
       (UP TO LADDER-TOP)
@@ -2575,47 +2578,46 @@ leaving the room.")
 
 <ROOM DEAD-END-5	;"was DEAD7"
       (IN ROOMS)
-      (DESC "Dead End")
-      (LDESC "You have come to a dead end in the mine.")
+      (DESC "Beco sem Saída")
+      (LDESC "Você chegou a um beco sem saída na mina.")
       (NORTH TO LADDER-BOTTOM)
       (FLAGS RLANDBIT)>
 
 <ROOM TIMBER-ROOM	;"was TIMBE"
       (IN ROOMS)
       (LDESC
-"This is a long and narrow passage, which is cluttered with broken
-timbers. A wide passage comes from the east and turns at the
-west end of the room into a very narrow passageway. From the west
-comes a strong draft.")
-      (DESC "Timber Room")
+"Este é um corredor longo e estreito, atulhado de madeira quebrada. Uma
+passagem larga vem do leste e, na ponta oeste da sala, vira uma passagem
+estreitíssima. Do oeste vem uma forte corrente de ar.")
+      (DESC "Sala do Madeirame")
       (EAST TO LADDER-BOTTOM)
       (WEST TO LOWER-SHAFT
        IF EMPTY-HANDED
-       ELSE "You cannot fit through this passage with that load.")
+       ELSE "Com essa carga, você não cabe nessa passagem.")
       (ACTION NO-OBJS)
       (FLAGS RLANDBIT SACREDBIT)>
 
 <ROOM LOWER-SHAFT	;"was BSHAF"
       (IN ROOMS)
       (LDESC
-"This is a small drafty room in which is the bottom of a long
-shaft. To the south is a passageway and to the east a very narrow
-passage. In the shaft can be seen a heavy iron chain.")
-      (DESC "Drafty Room")
+"Esta é uma sala pequena, cheia de correntes de ar, onde fica o fundo de um
+poço comprido. Ao sul há uma passagem e, a leste, uma passagem
+estreitíssima. Dentro do poço dá para ver uma pesada corrente de ferro.")
+      (DESC "Sala das Correntes de Ar")
       (SOUTH TO MACHINE-ROOM)
       (OUT TO TIMBER-ROOM
        IF EMPTY-HANDED
-       ELSE "You cannot fit through this passage with that load.")
+       ELSE "Com essa carga, você não cabe nessa passagem.")
       (EAST TO TIMBER-ROOM
        IF EMPTY-HANDED
-       ELSE "You cannot fit through this passage with that load.")
+       ELSE "Com essa carga, você não cabe nessa passagem.")
       (ACTION NO-OBJS)
       (FLAGS RLANDBIT SACREDBIT)
-      (PSEUDO "CHAIN" CHAIN-PSEUDO)>
+      (PSEUDO "CHAIN" CHAIN-PSEUDO "CORRENTE" CHAIN-PSEUDO)>
 
 <ROOM MACHINE-ROOM	;"was MACHI"
       (IN ROOMS)
-      (DESC "Machine Room")
+      (DESC "Sala da Máquina")
       (NORTH TO LOWER-SHAFT)
       (ACTION MACHINE-ROOM-FCN)
       (FLAGS RLANDBIT)>
@@ -2626,8 +2628,8 @@ passage. In the shaft can be seen a heavy iron chain.")
 
 <ROOM MINE-1	;"was MINE1"
       (IN ROOMS)
-      (LDESC "This is a nondescript part of a coal mine.")
-      (DESC "Coal Mine")
+      (LDESC "Este é um trecho qualquer de uma mina de carvão.")
+      (DESC "Mina de Carvão")
       (NORTH TO GAS-ROOM)
       (EAST TO MINE-1)
       (NE TO MINE-2)
@@ -2635,8 +2637,8 @@ passage. In the shaft can be seen a heavy iron chain.")
 
 <ROOM MINE-2	;"was MINE2"
       (IN ROOMS)
-      (LDESC "This is a nondescript part of a coal mine.")
-      (DESC "Coal Mine")
+      (LDESC "Este é um trecho qualquer de uma mina de carvão.")
+      (DESC "Mina de Carvão")
       (NORTH TO MINE-2)
       (SOUTH TO MINE-1)
       (SE TO MINE-3)
@@ -2644,8 +2646,8 @@ passage. In the shaft can be seen a heavy iron chain.")
 
 <ROOM MINE-3	;"was MINE3"
       (IN ROOMS)
-      (LDESC "This is a nondescript part of a coal mine.")
-      (DESC "Coal Mine")
+      (LDESC "Este é um trecho qualquer de uma mina de carvão.")
+      (DESC "Mina de Carvão")
       (SOUTH TO MINE-3)
       (SW TO MINE-4)
       (EAST TO MINE-2)
@@ -2653,8 +2655,8 @@ passage. In the shaft can be seen a heavy iron chain.")
 
 <ROOM MINE-4	;"was MINE4"
       (IN ROOMS)
-      (LDESC "This is a nondescript part of a coal mine.")
-      (DESC "Coal Mine")
+      (LDESC "Este é um trecho qualquer de uma mina de carvão.")
+      (DESC "Mina de Carvão")
       (NORTH TO MINE-3)
       (WEST TO MINE-4)
       (DOWN TO LADDER-TOP)
@@ -2663,12 +2665,11 @@ passage. In the shaft can be seen a heavy iron chain.")
 <ROOM SLIDE-ROOM	;"was SLIDE"
       (IN ROOMS)
       (LDESC
-"This is a small chamber, which appears to have been part of a
-coal mine. On the south wall of the chamber the letters \"Granite
-Wall\" are etched in the rock. To the east is a long passage, and
-there is a steep metal slide twisting downward. To the north is
-a small opening.")
-      (DESC "Slide Room")
+"Esta é uma pequena câmara que parece ter feito parte de uma mina de
+carvão. Na parede sul da câmara, as palavras \"Parede de Granito\" estão
+gravadas na rocha. A leste há uma passagem comprida, e um escorregador de
+metal íngreme desce em curvas. Ao norte há uma pequena abertura.")
+      (DESC "Sala do Escorregador")
       (EAST TO COLD-PASSAGE)
       (NORTH TO MINE-ENTRANCE)
       (DOWN TO CELLAR)
