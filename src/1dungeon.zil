@@ -383,11 +383,11 @@ ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.")
 
 <OBJECT TRIDENT
 	(IN ATLANTIS-ROOM)
-	(SYNONYM TRIDENT FORK TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE POSEIDON OWN CRYSTAL)
-	(DESC "crystal trident")
+	(SYNONYM TRIDENT FORK TREASURE TREASURES TESOURO TESOUROS TRIDENTE GARFO)
+	(ADJECTIVE POSEIDON OWN CRYSTAL CRISTAL)
+	(DESC "tridente de cristal")
 	(FLAGS TAKEBIT)
-	(FDESC "On the shore lies Poseidon's own crystal trident.")
+	(FDESC "Na margem jaz o tridente de cristal do próprio Poseidon.")
 	(SIZE 20)
 	(VALUE 4)
 	(TVALUE 11)>
@@ -411,7 +411,7 @@ ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.")
 
 <OBJECT TRAP-DOOR
 	(IN LIVING-ROOM)
-	(SYNONYM DOOR TRAPDOOR TRAP-DOOR COVER ALCAPAO)
+	(SYNONYM DOOR TRAPDOOR TRAP-DOOR COVER ALCAPAO PORTA)
 	(ADJECTIVE TRAP DUSTY EMPOEIRAD)
 	(DESC "alçapão")
 	(FLAGS DOORBIT NDESCBIT INVISIBLE)
@@ -435,17 +435,17 @@ ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.")
 
 <OBJECT BARROW-DOOR	
 	(IN STONE-BARROW)
-	(SYNONYM DOOR)
-	(ADJECTIVE HUGE STONE)
-	(DESC "stone door")
-	(FLAGS DOORBIT NDESCBIT OPENBIT)
+	(SYNONYM DOOR PORTA)
+	(ADJECTIVE HUGE STONE ENORME PEDRA)
+	(DESC "porta de pedra")
+	(FLAGS DOORBIT NDESCBIT OPENBIT FEMBIT)
 	(ACTION BARROW-DOOR-FCN)>
 
 <OBJECT BARROW
 	(IN STONE-BARROW)
-	(SYNONYM BARROW TOMB)
-	(ADJECTIVE MASSIVE STONE)
-	(DESC "stone barrow")
+	(SYNONYM BARROW TOMB TUMULO TUMBA)
+	(ADJECTIVE MASSIVE STONE MACICO ENORME PEDRA)
+	(DESC "túmulo de pedra")
 	(FLAGS NDESCBIT)
 	(ACTION BARROW-FCN)>
 
@@ -757,11 +757,11 @@ ele.")
 
 <OBJECT POT-OF-GOLD
 	(IN END-OF-RAINBOW)
-	(SYNONYM POT GOLD TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE GOLD)
-	(DESC "pot of gold")
+	(SYNONYM POT GOLD TREASURE TREASURES TESOURO TESOUROS POTE OURO)
+	(ADJECTIVE GOLD OURO)
+	(DESC "pote de ouro")
 	(FLAGS TAKEBIT INVISIBLE)
-	(FDESC "At the end of the rainbow is a pot of gold.")
+	(FDESC "No fim do arco-íris há um pote de ouro.")
 	(SIZE 15)
 	(VALUE 10)
 	(TVALUE 10)>
@@ -787,8 +787,9 @@ mortos. Tudo indica que as crenças dos antigos zorkianos eram obscuras." )>
 
 <OBJECT RAINBOW
 	(IN LOCAL-GLOBALS)
-	(SYNONYM RAINBOW)
-	(DESC "rainbow")
+	(SYNONYM RAINBOW ARCO ARCOIRIS IRIS)
+	(ADJECTIVE IRIS) ;"PT: arco-íris chega como arco iris (ver SEPARA-HIFEN)"
+	(DESC "arco-íris")
 	(FLAGS NDESCBIT CLIMBBIT)
 	(ACTION RAINBOW-FCN)>
 
@@ -955,17 +956,17 @@ antiguidade.")
 
 <OBJECT MAP
 	(IN TROPHY-CASE)
-	(SYNONYM PARCHMENT MAP)
-	(ADJECTIVE ANTIQUE OLD ANCIENT)
-	(DESC "ancient map")
+	(SYNONYM PARCHMENT MAP PERGAMINHO MAPA)
+	(ADJECTIVE ANTIQUE OLD ANCIENT ANTIGO VELHO)
+	(DESC "mapa antigo")
 	(FLAGS INVISIBLE READBIT TAKEBIT)
 	(FDESC
-"In the trophy case is an ancient parchment which appears to be a map.")
+"Na vitrine de troféus há um pergaminho antigo que parece ser um mapa.")
 	(SIZE 2)
 	(TEXT
-"The map shows a forest with three clearings. The largest clearing contains
-a house. Three paths leave the large clearing. One of these paths, leading
-southwest, is marked \"To Stone Barrow\".")>
+"O mapa mostra uma floresta com três clareiras. Na maior delas há uma casa.
+Três trilhas saem da clareira grande. Uma delas, que segue para sudoeste,
+está marcada \"Para o Túmulo de Pedra\".")>
 
 <OBJECT BOAT-LABEL
 	(IN INFLATED-BOAT)
@@ -1151,9 +1152,9 @@ sem problemas.")>
 
 <OBJECT CLIMBABLE-CLIFF
 	(IN LOCAL-GLOBALS)
-	(SYNONYM WALL CLIFF WALLS LEDGE)
-	(ADJECTIVE ROCKY SHEER)
-	(DESC "cliff")
+	(SYNONYM WALL CLIFF WALLS LEDGE PENHASCO PAREDE PAREDES SALIENCIA ESCARPA)
+	(ADJECTIVE ROCKY SHEER ROCHOSO INGREME)
+	(DESC "penhasco")
 	(ACTION CLIFF-OBJECT)
 	(FLAGS NDESCBIT CLIMBBIT)>
 
@@ -1294,9 +1295,9 @@ nele, porque a mola principal parece ter se soltado.")>
 <ROOM STONE-BARROW
       (IN ROOMS)
       (LDESC
-"You are standing in front of a massive barrow of stone. In the east face
-is a huge stone door which is open. You cannot see into the dark of the tomb.")
-      (DESC "Stone Barrow")
+"Você está diante de um enorme túmulo de pedra. Na face leste há uma porta
+de pedra imensa, que está aberta. Não dá para ver nada na escuridão do túmulo.")
+      (DESC "Túmulo de Pedra")
       (NE TO WEST-OF-HOUSE)
       (ACTION STONE-BARROW-FCN)
       (FLAGS RLANDBIT ONBIT SACREDBIT)>
@@ -1987,9 +1988,9 @@ norte.")
 <ROOM ATLANTIS-ROOM
       (IN ROOMS)
       (LDESC
-"This is an ancient room, long under water. There is an exit to
-the south and a staircase leading up.")
-      (DESC "Atlantis Room")
+"Esta é uma sala antiga, que passou muito tempo debaixo d'água. Há uma
+saída ao sul e uma escada que sobe.")
+      (DESC "Sala de Atlântida")
       (UP TO SMALL-CAVE)
       (SOUTH TO RESERVOIR-NORTH)
       (FLAGS RLANDBIT)
@@ -2382,9 +2383,9 @@ passagem parcialmente soterrada pela areia.")
 
 <ROOM ARAGAIN-FALLS	;"was FALLS"
       (IN ROOMS)
-      (DESC "Aragain Falls")
+      (DESC "Cataratas de Aragain")
       (WEST TO ON-RAINBOW IF RAINBOW-FLAG)
-      (DOWN "It's a long way...")
+      (DOWN "É uma queda e tanto...")
       (NORTH TO SHORE)
       (UP TO ON-RAINBOW IF RAINBOW-FLAG)
       (ACTION FALLS-ROOM)
@@ -2394,10 +2395,10 @@ passagem parcialmente soterrada pela areia.")
 <ROOM ON-RAINBOW	;"was RAINB"
       (IN ROOMS)
       (LDESC
-"You are on top of a rainbow (I bet you never thought you would walk
-on a rainbow), with a magnificent view of the Falls. The rainbow
-travels east-west here.")
-      (DESC "On the Rainbow")
+"Você está em cima de um arco-íris (aposto que você nunca imaginou que
+andaria sobre um arco-íris), com uma vista magnífica das Cataratas. Aqui o
+arco-íris segue de leste a oeste.")
+      (DESC "Sobre o Arco-Íris")
       (WEST TO END-OF-RAINBOW)
       (EAST TO ARAGAIN-FALLS)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
@@ -2406,12 +2407,11 @@ travels east-west here.")
 <ROOM END-OF-RAINBOW	;"was POG"
       (IN ROOMS)
       (LDESC
-"You are on a small, rocky beach on the continuation of the Frigid
-River past the Falls. The beach is narrow due to the presence of the
-White Cliffs. The river canyon opens here and sunlight shines in
-from above. A rainbow crosses over the falls to the east and a narrow
-path continues to the southwest.")
-      (DESC "End of Rainbow")
+"Você está numa pequena praia rochosa, na continuação do Rio Frígido depois
+das Cataratas. A praia é estreita por causa dos Penhascos Brancos. Aqui o
+cânion do rio se abre, e a luz do sol entra lá de cima. Um arco-íris passa
+sobre as cataratas, a leste, e uma trilha estreita continua para sudoeste.")
+      (DESC "Fim do Arco-Íris")
       (UP TO ON-RAINBOW IF RAINBOW-FLAG)
       (NE TO ON-RAINBOW IF RAINBOW-FLAG)
       (EAST TO ON-RAINBOW IF RAINBOW-FLAG)
@@ -2422,10 +2422,10 @@ path continues to the southwest.")
 <ROOM CANYON-BOTTOM	;"was CLBOT"
       (IN ROOMS)
       (LDESC
-"You are beneath the walls of the river canyon which may be climbable
-here. The lesser part of the runoff of Aragain Falls flows by below.
-To the north is a narrow path.")
-      (DESC "Canyon Bottom")
+"Você está ao pé das paredes do cânion do rio, que aqui talvez dê para
+escalar. A parte menor das águas das Cataratas de Aragain corre lá embaixo.
+Ao norte há uma trilha estreita.")
+      (DESC "Fundo do Cânion")
       (UP TO CLIFF-MIDDLE)
       (NORTH TO END-OF-RAINBOW)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
@@ -2434,12 +2434,12 @@ To the north is a narrow path.")
 <ROOM CLIFF-MIDDLE	;"was CLMID"
       (IN ROOMS)
       (LDESC
-"You are on a ledge about halfway up the wall of the river canyon.
-You can see from here that the main flow from Aragain Falls twists
-along a passage which it is impossible for you to enter. Below you is the
-canyon bottom. Above you is more cliff, which appears
-climbable.")
-      (DESC "Rocky Ledge")
+"Você está numa saliência, mais ou menos na metade da parede do cânion do
+rio. Daqui dá para ver que a maior parte das águas das Cataratas de Aragain
+serpenteia por uma passagem onde você não tem como entrar. Abaixo de você
+fica o fundo do cânion. Acima, há mais penhasco, que parece dar para
+escalar.")
+      (DESC "Saliência Rochosa")
       (UP TO CANYON-VIEW)
       (DOWN TO CANYON-BOTTOM)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
@@ -2448,21 +2448,20 @@ climbable.")
 <ROOM CANYON-VIEW	;"was CLTOP"
       (IN ROOMS)
       (LDESC
-"You are at the top of the Great Canyon on its west wall. From here
-there is a marvelous view of the canyon and parts of the Frigid River
-upstream. Across the canyon, the walls of the White Cliffs join the
-mighty ramparts of the Flathead Mountains to the east. Following the
-Canyon upstream to the north, Aragain Falls may be seen, complete with
-rainbow. The mighty Frigid River flows out from a great dark cavern. To
-the west and south can be seen an immense forest, stretching for miles
-around. A path leads northwest. It is possible to climb down into
-the canyon from here.")
-      (DESC "Canyon View")
+"Você está no alto do Grande Cânion, na parede oeste. Daqui se tem uma
+vista maravilhosa do cânion e de trechos do Rio Frígido, rio acima. Do outro
+lado do cânion, as paredes dos Penhascos Brancos se juntam às imponentes
+muralhas das Montanhas Flathead, a leste. Seguindo o cânion rio acima, para
+o norte, dá para ver as Cataratas de Aragain, com direito a arco-íris. O
+poderoso Rio Frígido sai de uma grande caverna escura. A oeste e ao sul se
+vê uma floresta imensa, que se estende por quilômetros. Uma trilha leva para
+noroeste. Daqui é possível descer escalando até o fundo do cânion.")
+      (DESC "Mirante do Cânion")
       (EAST TO CLIFF-MIDDLE)
       (DOWN TO CLIFF-MIDDLE)
       (NW TO CLEARING)
       (WEST TO FOREST-3)
-      (SOUTH "Storm-tossed trees block your way.")
+      (SOUTH "Árvores derrubadas pela tempestade bloqueiam o caminho.")
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (GLOBAL CLIMBABLE-CLIFF RIVER RAINBOW)
       (ACTION CANYON-VIEW-F)>
@@ -2471,7 +2470,7 @@ the canyon from here.")
 	 <COND (<AND <==? .RARG ,M-BEG>
 		     <VERB? LEAP>
 		     <NOT ,PRSO>>
-		<JIGS-UP "Nice view, lousy place to jump.">
+		<JIGS-UP "Bela vista, péssimo lugar para pular.">
 		<RTRUE>)>>
 	       
 
