@@ -182,9 +182,9 @@ It appears to be grinning at you rather nastily.")
 
 <OBJECT AXE
 	(IN TROLL)
-	(SYNONYM AXE AX)
-	(ADJECTIVE BLOODY)
-	(DESC "bloody axe")
+	(SYNONYM AXE AX MACHADO)
+	(ADJECTIVE BLOODY ENSANGUEN)
+	(DESC "machado ensanguentado")
 	(FLAGS WEAPONBIT TRYTAKEBIT TAKEBIT NDESCBIT)
 	(ACTION AXE-F)
 	(SIZE 25)>
@@ -456,10 +456,10 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT CRACK
 	(IN LOCAL-GLOBALS)
-	(SYNONYM CRACK)
-	(ADJECTIVE NARROW)
-	(DESC "crack")
-	(FLAGS NDESCBIT)
+	(SYNONYM CRACK FENDA RACHADURA)
+	(ADJECTIVE NARROW ESTREITA)
+	(DESC "fenda")
+	(FLAGS NDESCBIT FEMBIT)
 	(ACTION CRACK-FCN)>
 
 <OBJECT COFFIN
@@ -658,15 +658,16 @@ you earn your degree from GUE Tech, your future will be brighter." )>
 
 <OBJECT PAINTING
 	(IN GALLERY)
-	(SYNONYM PAINTING ART CANVAS TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE BEAUTIFUL)
-	(DESC "painting")
-	(FLAGS TAKEBIT BURNBIT)
+	(SYNONYM PAINTING ART CANVAS TREASURE TREASURES TESOURO TESOUROS PINTURA
+		 QUADRO TELA ARTE OBRA)
+	(ADJECTIVE BEAUTIFUL BELA LINDA)
+	(DESC "pintura")
+	(FLAGS TAKEBIT BURNBIT FEMBIT)
 	(ACTION PAINTING-FCN)
 	(FDESC
-"Fortunately, there is still one chance for you to be a vandal, for on
-the far wall is a painting of unparalleled beauty.")
-	(LDESC "A painting by a neglected genius is here.")
+"Por sorte, ainda resta uma chance de você bancar o vândalo: na parede do
+fundo há uma pintura de beleza sem igual.")
+	(LDESC "Há uma pintura de um gênio incompreendido aqui.")
 	(SIZE 15)
 	(VALUE 4)
 	(TVALUE 6)>
@@ -729,11 +730,11 @@ attached.")
 
 <OBJECT BAR
 	(IN LOUD-ROOM)
-	(SYNONYM BAR PLATINUM TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE PLATINUM LARGE)
-	(DESC "platinum bar")
-	(FLAGS TAKEBIT SACREDBIT)
-	(LDESC "On the ground is a large platinum bar.")
+	(SYNONYM BAR PLATINUM TREASURE TREASURES TESOURO TESOUROS BARRA PLATINA)
+	(ADJECTIVE PLATINUM LARGE PLATINA GRANDE)
+	(DESC "barra de platina")
+	(FLAGS TAKEBIT SACREDBIT FEMBIT)
+	(LDESC "Há uma grande barra de platina no chão.")
 	(SIZE 20)
 	(VALUE 10)
 	(TVALUE 5)>
@@ -1045,13 +1046,13 @@ on your right that...." )>
 <OBJECT TROLL
 	(IN TROLL-ROOM)
 	(SYNONYM TROLL)
-	(ADJECTIVE NASTY)
+	(ADJECTIVE NASTY MALVADO HORRENDO)
 	(DESC "troll")
 	(FLAGS ACTORBIT OPENBIT TRYTAKEBIT)
 	(ACTION TROLL-FCN)
 	(LDESC
-"A nasty-looking troll, brandishing a bloody axe, blocks all passages
-out of the room.")
+"Um troll de aspecto ameaçador, brandindo um machado ensanguentado,
+bloqueia todas as saídas da sala.")
 	(STRENGTH 2)>
 
 <OBJECT TRUNK
@@ -1108,18 +1109,19 @@ excised them.")>
 
 <OBJECT OWNERS-MANUAL
 	(IN STUDIO)
-	(SYNONYM MANUAL PIECE PAPER)
-	(ADJECTIVE ZORK OWNERS SMALL)
-	(DESC "ZORK owner's manual")
+	(SYNONYM MANUAL PIECE PAPER PEDACO PAPEL)
+	(ADJECTIVE ZORK OWNERS SMALL PROPRIETA DONO PEQUENO PAPEL)
+	(DESC "manual do proprietário do ZORK")
 	(FLAGS READBIT TAKEBIT)
-	(FDESC "Loosely attached to a wall is a small piece of paper.")
+	(FDESC "Preso de qualquer jeito a uma parede, há um pequeno pedaço de papel.")
 	(TEXT
-"Congratulations!|
+"Parabéns!|
 |
-You are the privileged owner of ZORK I: The Great Underground Empire,
-a self-contained and self-maintaining universe. If used and maintained
-in accordance with normal operating practices for small universes, ZORK
-will provide many months of trouble-free operation.")>
+Você é o privilegiado proprietário do ZORK I: O Grande Império
+Subterrâneo, um universo autossuficiente que faz a própria manutenção. Se
+usado e mantido de acordo com as práticas normais de operação de
+universos pequenos, o ZORK vai proporcionar muitos meses de funcionamento
+sem problemas.")>
 
 <OBJECT CLIMBABLE-CLIFF
 	(IN LOCAL-GLOBALS)
@@ -1479,12 +1481,12 @@ que se estende para leste e para oeste.")
 
 <ROOM CELLAR
       (IN ROOMS)
-      (DESC "Cellar")
+      (DESC "Porão")
       (NORTH TO TROLL-ROOM)
       (SOUTH TO EAST-OF-CHASM)
       (UP TO LIVING-ROOM IF TRAP-DOOR IS OPEN)
       (WEST
-"You try to ascend the ramp, but it is impossible, and you slide back down.")
+"Você tenta subir a rampa, mas é impossível, e acaba escorregando de volta.")
       (ACTION CELLAR-FCN)
       (FLAGS RLANDBIT)
       (VALUE 25)
@@ -1493,38 +1495,38 @@ que se estende para leste e para oeste.")
 <ROOM TROLL-ROOM
       (IN ROOMS)
       (LDESC
-"This is a small room with passages to the east and south and a
-forbidding hole leading west. Bloodstains and deep scratches
-(perhaps made by an axe) mar the walls.")
-      (DESC "The Troll Room")
+"Esta é uma sala pequena, com passagens a leste e ao sul e um buraco
+ameaçador que leva para oeste. Manchas de sangue e arranhões profundos
+(talvez feitos por um machado) marcam as paredes.")
+      (DESC "Sala do Troll")
       (SOUTH TO CELLAR)
       (EAST TO EW-PASSAGE
-       IF TROLL-FLAG ELSE "The troll fends you off with a menacing gesture.")
+       IF TROLL-FLAG ELSE "O troll afasta você com um gesto ameaçador.")
       (WEST TO MAZE-1
-       IF TROLL-FLAG ELSE "The troll fends you off with a menacing gesture.")
+       IF TROLL-FLAG ELSE "O troll afasta você com um gesto ameaçador.")
       (FLAGS RLANDBIT)
       (ACTION TROLL-ROOM-F)>
 
 <ROOM EAST-OF-CHASM
       (IN ROOMS)
       (LDESC
-"You are on the east edge of a chasm, the bottom of which cannot be
-seen. A narrow passage goes north, and the path you are on continues
-to the east.")
-      (DESC "East of Chasm")
+"Você está na borda leste de um abismo cujo fundo não se consegue ver.
+Uma passagem estreita segue para o norte, e o caminho em que você está
+continua para leste.")
+      (DESC "Leste do Abismo")
       (NORTH TO CELLAR)
       (EAST TO GALLERY)
-      (DOWN "The chasm probably leads straight to the infernal regions.")
+      (DOWN "O abismo provavelmente leva direto às profundezas do inferno.")
       (FLAGS RLANDBIT)
-      (PSEUDO "CHASM" CHASM-PSEUDO)>
+      (PSEUDO "CHASM" CHASM-PSEUDO "ABISMO" CHASM-PSEUDO)>
 
 <ROOM GALLERY
       (IN ROOMS)
       (LDESC
-"This is an art gallery. Most of the paintings have been stolen by
-vandals with exceptional taste. The vandals left through either the
-north or west exits.")
-      (DESC "Gallery")
+"Esta é uma galeria de arte. A maioria dos quadros foi roubada por
+vândalos de gosto excepcional. Os vândalos saíram pela saída norte ou
+pela saída oeste.")
+      (DESC "Galeria")
       (WEST TO EAST-OF-CHASM)
       (NORTH TO STUDIO)
       (FLAGS RLANDBIT ONBIT)>
@@ -1532,18 +1534,19 @@ north or west exits.")
 <ROOM STUDIO
       (IN ROOMS)
       (LDESC
-"This appears to have been an artist's studio. The walls and floors are
-splattered with paints of 69 different colors. Strangely enough, nothing
-of value is hanging here. At the south end of the room is an open door
-(also covered with paint). A dark and narrow chimney leads up from a
-fireplace; although you might be able to get up it, it seems unlikely
-you could get back down.")
-      (DESC "Studio")
+"Isto parece ter sido o ateliê de um artista. As paredes e o chão estão
+respingados de tinta de 69 cores diferentes. Curiosamente, não há nada de
+valor pendurado aqui. Na extremidade sul da sala há uma porta aberta
+(também coberta de tinta). Uma chaminé escura e estreita sobe a partir de
+uma lareira; talvez você consiga subir por ela, mas parece improvável que
+consiga descer de volta.")
+      (DESC "Ateliê")
       (SOUTH TO GALLERY)
       (UP PER UP-CHIMNEY-FUNCTION)
       (FLAGS RLANDBIT)
       (GLOBAL CHIMNEY)
-      (PSEUDO "DOOR" DOOR-PSEUDO "PAINT" PAINT-PSEUDO)>
+      (PSEUDO "DOOR" DOOR-PSEUDO "PAINT" PAINT-PSEUDO
+	      "PORTA" DOOR-PSEUDO "TINTA" PAINT-PSEUDO "TINTAS" PAINT-PSEUDO)>
 
 \
 
@@ -1952,9 +1955,9 @@ the south and a staircase leading up.")
 <ROOM EW-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a narrow east-west passageway. There is a narrow stairway
-leading down at the north end of the room.")
-      (DESC "East-West Passage")
+"Esta é uma passagem estreita de leste a oeste. Na extremidade norte da
+sala, uma escada estreita desce.")
+      (DESC "Passagem Leste-Oeste")
       (EAST TO ROUND-ROOM)
       (WEST TO TROLL-ROOM)
       (DOWN TO CHASM-ROOM)
@@ -1966,9 +1969,9 @@ leading down at the north end of the room.")
 <ROOM ROUND-ROOM
       (IN ROOMS)
       (LDESC
-"This is a circular stone room with passages in all directions. Several
-of them have unfortunately been blocked by cave-ins.")
-      (DESC "Round Room")
+"Esta é uma sala circular de pedra, com passagens em todas as direções.
+Infelizmente, várias delas foram bloqueadas por desmoronamentos.")
+      (DESC "Sala Redonda")
       (EAST TO LOUD-ROOM)
       (WEST TO EW-PASSAGE)
       (NORTH TO NS-PASSAGE)
@@ -1978,7 +1981,7 @@ of them have unfortunately been blocked by cave-ins.")
 
 <ROOM DEEP-CANYON
       (IN ROOMS)
-      (DESC "Deep Canyon")
+      (DESC "Cânion Profundo")
       (NW TO RESERVOIR-SOUTH) ;COFFIN-CURE
       (EAST TO DAM-ROOM)
       (SW TO NS-PASSAGE)
@@ -1990,18 +1993,18 @@ of them have unfortunately been blocked by cave-ins.")
 <ROOM DAMP-CAVE
       (IN ROOMS)
       (LDESC
-"This cave has exits to the west and east, and narrows to a crack toward
-the south. The earth is particularly damp here.")
-      (DESC "Damp Cave")
+"Esta caverna tem saídas a oeste e a leste e, para o sul, se estreita até
+virar uma fenda. Aqui a terra é especialmente úmida.")
+      (DESC "Caverna Úmida")
       (WEST TO LOUD-ROOM)
       (EAST TO WHITE-CLIFFS-NORTH)
-      (SOUTH "It is too narrow for most insects.")
+      (SOUTH "A fenda é estreita demais até para a maioria dos insetos.")
       (FLAGS RLANDBIT)
       (GLOBAL CRACK)>
 
 <ROOM LOUD-ROOM
       (IN ROOMS)
-      (DESC "Loud Room")
+      (DESC "Sala Barulhenta")
       (EAST TO DAMP-CAVE)
       (WEST TO ROUND-ROOM)
       (UP TO DEEP-CANYON)
@@ -2012,8 +2015,8 @@ the south. The earth is particularly damp here.")
 <ROOM NS-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a high north-south passage, which forks to the northeast.")
-      (DESC "North-South Passage")
+"Esta é uma passagem alta de norte a sul, que se bifurca para nordeste.")
+      (DESC "Passagem Norte-Sul")
       (NORTH TO CHASM-ROOM)
       (NE TO DEEP-CANYON)
       (SOUTH TO ROUND-ROOM)
@@ -2022,17 +2025,17 @@ the south. The earth is particularly damp here.")
 <ROOM CHASM-ROOM
       (IN ROOMS)
       (LDESC
-"A chasm runs southwest to northeast and the path follows it. You are
-on the south side of the chasm, where a crack opens into a passage.")
-      (DESC "Chasm")
+"Um abismo corre de sudoeste a nordeste, e o caminho o acompanha. Você
+está no lado sul do abismo, onde uma fenda se abre para uma passagem.")
+      (DESC "Abismo")
       (NE TO RESERVOIR-SOUTH)
       (SW TO EW-PASSAGE)
       (UP TO EW-PASSAGE)
       (SOUTH TO NS-PASSAGE)
-      (DOWN "Are you out of your mind?")
+      (DOWN "Você perdeu o juízo?")
       (FLAGS RLANDBIT)
       (GLOBAL CRACK STAIRS)
-      (PSEUDO "CHASM" CHASM-PSEUDO)>
+      (PSEUDO "CHASM" CHASM-PSEUDO "ABISMO" CHASM-PSEUDO)>
 
 \
 
