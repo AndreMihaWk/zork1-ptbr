@@ -103,7 +103,7 @@ O alçapão se abre a contragosto e revela uma escada bamba que desce para a esc
 
 >desça
 Você entrou num lugar escuro.
-The trap door crashes shut, and you hear someone barring it.
+O alçapão se fecha com estrondo, e você ouve alguém passar a tranca.
 
 Está um breu total. É provável que você seja devorado por um grue.
 Sua espada emite um fraco brilho azulado.
@@ -111,25 +111,25 @@ Sua espada emite um fraco brilho azulado.
 >ligue a lanterna
 A lanterna de latão agora está acesa.
 
-Cellar
-You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+Porão
+Você está num porão escuro e úmido, com uma passagem estreita que leva para o norte e, ao sul, um túnel baixo por onde só se passa rastejando. A oeste fica o pé de uma rampa de metal íngreme, impossível de escalar.
 
->n
-The Troll Room
-This is a small room with passages to the east and south and a forbidding hole leading west. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
-A nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.
+>norte
+Sala do Troll
+Esta é uma sala pequena, com passagens a leste e ao sul e um buraco ameaçador que leva para oeste. Manchas de sangue e arranhões profundos (talvez feitos por um machado) marcam as paredes.
+Um troll de aspecto ameaçador, brandindo um machado ensanguentado, bloqueia todas as saídas da sala.
 Sua espada começou a brilhar intensamente.
 
->hit troll with sword
-It's curtains for the troll as your espada removes his head.
-Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared.
+>ataque o troll com a espada
+É o fim da linha para o troll: sua espada arranca a cabeça dele.
+Quase no mesmo instante em que o troll dá o último suspiro, uma nuvem de névoa negra e sinistra o envolve e, quando a névoa se dissipa, a carcaça já desapareceu.
 Sua espada parou de brilhar.
 
->diagnose
-You are in perfect health.
-You can be killed by a serious wound.
+>diagnóstico
+Você está em perfeita saúde.
+Você pode morrer com um ferimento grave.
 
->w
+>o
 Maze
 This is part of a maze of twisty little passages, all alike.
 
@@ -198,7 +198,7 @@ There is a suspicious-looking individual, holding a large bag, leaning against o
 There is a silver chalice, intricately engraved, here.
 Sua espada começou a brilhar intensamente.
 A long, theatrical slash. You catch it on your faca afiada, but the thief twists his knife, and the faca afiada goes flying.
-Fortunately, you still have a espada.
+Por sorte, você ainda tem uma espada.
 
 >restore
 Ok.
@@ -320,8 +320,8 @@ Cyclops Room
 Sua espada parou de brilhar.
 
 >diagnose
-You are in perfect health.
-You can survive one serious wound.
+Você está em perfeita saúde.
+Você aguenta um ferimento grave.
 
 >nw
 Maze
@@ -371,21 +371,21 @@ Você quer dizer a porta de madeira ou o alçapão?
 O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
 >d
-Cellar
+Porão
 
 >n
-The Troll Room
-Há um bloody axe aqui.
+Sala do Troll
+Há um machado ensanguentado aqui.
 
->e
-East-West Passage
-This is a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.
+>leste
+Passagem Leste-Oeste
+Esta é uma passagem estreita de leste a oeste. Na extremidade norte da sala, uma escada estreita desce.
 
->n
-Chasm
-A chasm runs southwest to northeast and the path follows it. You are on the south side of the chasm, where a crack opens into a passage.
+>norte
+Abismo
+Um abismo corre de sudoeste a nordeste, e o caminho o acompanha. Você está no lado sul do abismo, onde uma fenda se abre para uma passagem.
 
->ne
+>nordeste
 Reservoir South
 You are in a long room on the south shore of a large lake, far too deep and wide for crossing.
 There is a path along the stream to the east or west, a steep pathway climbing southwest along the edge of a chasm, and a path leading into a canyon to the southeast.
@@ -409,19 +409,19 @@ Você pegou o matchbook.
 Dam
 
 >s
-Deep Canyon
-You are on the south edge of a deep canyon. Passages lead off to the east, northwest and southwest. A stairway leads down. You can hear the sound of flowing water from below.
+Cânion Profundo
+Você está na borda sul de um cânion profundo. Há passagens para leste, noroeste e sudoeste. Uma escada desce. Lá de baixo vem o som de água corrente.
 
->d
-Loud Room
-This is a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is deafeningly loud with an undetermined rushing sound. The sound seems to reverberate from all of the walls, making it difficult even to think.
-On the ground is a large platinum bar.
+>desça
+Sala Barulhenta
+Esta é uma sala grande, com um teto tão alto que não se consegue enxergá-lo do chão. Há uma passagem estreita de leste a oeste e uma escada de pedra que sobe. A sala é tomada por um barulho ensurdecedor, um som de correnteza que não se sabe de onde vem. O som parece reverberar em todas as paredes, e fica difícil até pensar.
+Há uma grande barra de platina no chão.
 
->w
-Round Room
-This is a circular stone room with passages in all directions. Several of them have unfortunately been blocked by cave-ins.
+>oeste
+Sala Redonda
+Esta é uma sala circular de pedra, com passagens em todas as direções. Infelizmente, várias delas foram bloqueadas por desmoronamentos.
 
->se
+>sudeste
 Engravings Cave
 You have entered a low cave with passages leading northwest and east.
 There are old engravings on the walls here.
@@ -536,40 +536,40 @@ Narrow Passage
 This is a long and narrow corridor where a long north-south passageway briefly narrows even further.
 
 >n
-Round Room
+Sala Redonda
 
->w
-East-West Passage
+>o
+Passagem Leste-Oeste
 
->w
-The Troll Room
+>oeste
+Sala do Troll
+
+>sul
+Porão
 
 >s
-Cellar
+Leste do Abismo
+Você está na borda leste de um abismo cujo fundo não se consegue ver. Uma passagem estreita segue para o norte, e o caminho em que você está continua para leste.
 
->s
-East of Chasm
-You are on the east edge of a chasm, the bottom of which cannot be seen. A narrow passage goes north, and the path you are on continues to the east.
-
->e
-Gallery
-This is an art gallery. Most of the paintings have been stolen by vandals with exceptional taste. The vandals left through either the north or west exits.
-Fortunately, there is still one chance for you to be a vandal, for on the far wall is a painting of unparalleled beauty.
+>l
+Galeria
+Esta é uma galeria de arte. A maioria dos quadros foi roubada por vândalos de gosto excepcional. Os vândalos saíram pela saída norte ou pela saída oeste.
+Por sorte, ainda resta uma chance de você bancar o vândalo: na parede do fundo há uma pintura de beleza sem igual.
 
 >drop bell, book
 brass bell: Você largou o brass bell.
 black book: Você largou o black book.
 
->take painting
-Você pegou o painting.
+>pegue a pintura
+Você pegou a pintura.
 
->w
-East of Chasm
+>oeste
+Leste do Abismo
 
->n
-Cellar
+>norte
+Porão
 
->u
+>suba
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um leather bag of coins
@@ -578,7 +578,7 @@ Sua coleção de tesouros consiste em:
 Sua carga está pesada demais.
 
 >put painting in case
-Você colocou o painting na vitrine de troféus.
+Você colocou a pintura na vitrine de troféus.
 
 >take coins
 Você pegou o leather bag of coins.
@@ -629,22 +629,22 @@ Sua espada começou a brilhar intensamente.
 You parry a lightning thrust, and the thief salutes you with a grim nod.
 
 >kill thief with knife
-The thief is struck on the arm; blood begins to trickle down.
+Um golpe acerta o braço do thief; o sangue começa a escorrer.
 The thief strikes like a snake! The resulting wound is serious.
 
 >give coins to thief
 The thief is taken aback by your unexpected generosity, but accepts the leather bag of coins and stops to admire its beauty.
 
 >kill thief with knife
-You charge, but the thief jumps nimbly aside.
+Você avança, mas o thief salta agilmente para o lado.
 The thief stabs nonchalantly with his stiletto and misses.
 
 >g
-Your faca afiada crashes down, knocking the thief into dreamland.
+Sua faca afiada desce com tudo e manda o thief para o mundo dos sonhos.
 
 >g
-The unconscious thief cannot defend himself: He dies.
-Almost as soon as the thief breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared.
+O thief inconsciente não consegue se defender: ele morre.
+Quase no mesmo instante em que o thief dá o último suspiro, uma nuvem de névoa negra e sinistra o envolve e, quando a névoa se dissipa, a carcaça já desapareceu.
 As the thief dies, the power of his magic decreases, and his treasures reappear:
   A leather bag of coins
   A stiletto
@@ -664,14 +664,14 @@ Strange Passage
 >e
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um painting
+  Uma pintura
 
 >desligue a lanterna
 A lanterna de latão agora está apagada.
 
 >diagnose
-You have a serious wound, which will be cured after 54 moves.
-You can be killed by one more light wound.
+Você tem um ferimento grave, que vai sarar daqui a 54 jogadas.
+Você pode morrer com mais um ferimento leve.
 
 >z. z. z. z. z
 O tempo passa...
@@ -716,8 +716,8 @@ O tempo passa...
 O tempo passa...
 
 >diagnose
-You are in perfect health.
-You can survive one serious wound.
+Você está em perfeita saúde.
+Você aguenta um ferimento grave.
 
 >coloque todos os tesouros na vitrine
 crystal skull: Você colocou o crystal skull na vitrine de troféus.
@@ -782,7 +782,7 @@ Strange Passage
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >save
 Ok.
@@ -834,7 +834,7 @@ Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >coloque todos os tesouros na vitrine
 lindo berloque de latão: Você colocou o lindo berloque de latão na vitrine de troféus.
@@ -853,17 +853,17 @@ Está um breu total. É provável que você seja devorado por um grue.
 >ligue a lanterna
 A lanterna de latão agora está acesa.
 
-Cellar
-You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+Porão
+Você está num porão escuro e úmido, com uma passagem estreita que leva para o norte e, ao sul, um túnel baixo por onde só se passa rastejando. A oeste fica o pé de uma rampa de metal íngreme, impossível de escalar.
 
 >n
-The Troll Room
+Sala do Troll
 
->e
-East-West Passage
+>l
+Passagem Leste-Oeste
 
->n
-Chasm
+>norte
+Abismo
 
 >ne
 Reservoir South
@@ -990,18 +990,18 @@ Você pegou o trunk of jewels.
 Reservoir South
 
 >sw
-Chasm
+Abismo
 
->sw
-East-West Passage
+>sudoeste
+Passagem Leste-Oeste
 
->w
-The Troll Room
+>o
+Sala do Troll
 
->s
-Cellar
+>sul
+Porão
 
->u
+>c
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um leather bag of coins
@@ -1010,7 +1010,7 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >ponha todos os tesouros na vitrine
 trunk of jewels: Você colocou o trunk of jewels na vitrine de troféus.
@@ -1043,7 +1043,7 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >d
 Você entrou num lugar escuro.
@@ -1052,19 +1052,19 @@ Está um breu total. É provável que você seja devorado por um grue.
 >acenda a lanterna
 A lanterna de latão agora está acesa.
 
-Cellar
-You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+Porão
+Você está num porão escuro e úmido, com uma passagem estreita que leva para o norte e, ao sul, um túnel baixo por onde só se passa rastejando. A oeste fica o pé de uma rampa de metal íngreme, impossível de escalar.
+
+>norte
+Sala do Troll
+
+>leste
+Passagem Leste-Oeste
 
 >n
-The Troll Room
+Abismo
 
->e
-East-West Passage
-
->n
-Chasm
-
->ne
+>nordeste
 Reservoir South
 
 >n
@@ -1163,7 +1163,7 @@ This is a nondescript part of a coal mine.
 >ne
 Coal Mine
 This is a nondescript part of a coal mine.
-Há um bloody axe aqui.
+Há um machado ensanguentado aqui.
 
 >se
 Coal Mine
@@ -1218,7 +1218,7 @@ Coal Mine
 
 >e
 Coal Mine
-Há um bloody axe aqui.
+Há um machado ensanguentado aqui.
 
 >s
 Coal Mine
@@ -1266,7 +1266,7 @@ Coal Mine
 
 >ne
 Coal Mine
-Há um bloody axe aqui.
+Há um machado ensanguentado aqui.
 
 >se
 Coal Mine
@@ -1382,7 +1382,7 @@ Coal Mine
 
 >e
 Coal Mine
-Há um bloody axe aqui.
+Há um machado ensanguentado aqui.
 
 >s
 Coal Mine
@@ -1418,9 +1418,9 @@ Mine Entrance
 Slide Room
 
 >d
-Cellar
+Porão
 
->u
+>cima
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal trident
@@ -1431,7 +1431,7 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >coloque todos os tesouros na vitrine
 huge diamond: Você colocou o huge diamond na vitrine de troféus.
@@ -1442,48 +1442,48 @@ jade figurine: Você colocou o jade figurine na vitrine de troféus.
 Ok.
 
 >d
-Cellar
+Porão
 
 >n
-The Troll Room
+Sala do Troll
 
->e
-East-West Passage
+>l
+Passagem Leste-Oeste
 
->e
-Round Room
+>leste
+Sala Redonda
 
->n
-North-South Passage
-This is a high north-south passage, which forks to the northeast.
+>norte
+Passagem Norte-Sul
+Esta é uma passagem alta de norte a sul, que se bifurca para nordeste.
 
 >apague a lanterna
 A lanterna de latão agora está apagada.
 
 >ne
-Deep Canyon
-You are on the south edge of a deep canyon. Passages lead off to the east, northwest and southwest. A stairway leads down. You can hear the sound of flowing water from below.
+Cânion Profundo
+Você está na borda sul de um cânion profundo. Há passagens para leste, noroeste e sudoeste. Uma escada desce. Lá de baixo vem o som de água corrente.
 The candles are becoming quite short.
 
->e
+>l
 Dam
 
 >turn bolt with wrench
 The sluice gates close and water starts to collect behind the dam.
 
 >s
-Deep Canyon
+Cânion Profundo
 
->d
-Loud Room
-This is a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is eerie in its quietness.
-On the ground is a large platinum bar.
+>b
+Sala Barulhenta
+Esta é uma sala grande, com um teto tão alto que não se consegue enxergá-lo do chão. Há uma passagem estreita de leste a oeste e uma escada de pedra que sobe. A sala é de um silêncio sinistro.
+Há uma grande barra de platina no chão.
 
->take bar
-Você pegou o platinum bar.
+>pegue a barra de platina
+Você pegou a barra de platina.
 
->w
-Round Room
+>o
+Sala Redonda
 
 >se
 Engravings Cave
@@ -1535,18 +1535,18 @@ Mirror Room
 Narrow Passage
 
 >n
-Round Room
+Sala Redonda
 
->w
-East-West Passage
+>oeste
+Passagem Leste-Oeste
 
->w
-The Troll Room
+>o
+Sala do Troll
 
->s
-Cellar
+>sul
+Porão
 
->u
+>suba
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um jade figurine
@@ -1560,10 +1560,10 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >put all treasure but sceptre, torch in case
-platinum bar: Você colocou o platinum bar na vitrine de troféus.
+barra de platina: Você colocou a barra de platina na vitrine de troféus.
 
 >save
 Ok.
@@ -1685,7 +1685,7 @@ Em cima da mesa da cozinha há:
 >w
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um platinum bar
+  Uma barra de platina
   Um jade figurine
   Um sapphire-encrusted bracelet
   Um huge diamond
@@ -1697,7 +1697,7 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >put all treasure but torch in case
 beautiful jeweled scarab: Você colocou o beautiful jeweled scarab na vitrine de troféus.
@@ -1708,26 +1708,26 @@ sceptre: Você colocou o sceptre na vitrine de troféus.
 Ok.
 
 >d
-Cellar
+Porão
 
->n
-The Troll Room
+>norte
+Sala do Troll
 
->e
-East-West Passage
+>leste
+Passagem Leste-Oeste
 
->e
-Round Room
+>l
+Sala Redonda
 
->e
-Loud Room
-This is a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is deafeningly loud with an undetermined rushing sound. The sound seems to reverberate from all of the walls, making it difficult even to think.
+>leste
+Sala Barulhenta
+Esta é uma sala grande, com um teto tão alto que não se consegue enxergá-lo do chão. Há uma passagem estreita de leste a oeste e uma escada de pedra que sobe. A sala é tomada por um barulho ensurdecedor, um som de correnteza que não se sabe de onde vem. O som parece reverberar em todas as paredes, e fica difícil até pensar.
 
->u
-Deep Canyon
-You are on the south edge of a deep canyon. Passages lead off to the east, northwest and southwest. A stairway leads down. You can hear the sound of flowing water from below.
+>c
+Cânion Profundo
+Você está na borda sul de um cânion profundo. Há passagens para leste, noroeste e sudoeste. Uma escada desce. Lá de baixo vem o som de água corrente.
 
->nw
+>noroeste
 Reservoir South
 You are in a long room on the south shore of a large lake, far too deep and wide for crossing.
 There is a path along the stream to the east or west, a steep pathway climbing southwest along the edge of a chasm, and a path leading into a canyon to the southeast.
@@ -1790,18 +1790,18 @@ Você pegou o pile of plastic.
 Dam
 
 >s
-Deep Canyon
-You are on the south edge of a deep canyon. Passages lead off to the east, northwest and southwest. A stairway leads down. You can hear the sound of flowing water from below.
+Cânion Profundo
+Você está na borda sul de um cânion profundo. Há passagens para leste, noroeste e sudoeste. Uma escada desce. Lá de baixo vem o som de água corrente.
 
->d
-Loud Room
-This is a large room with a ceiling which cannot be detected from the ground. There is a narrow passage from east to west and a stone stairway leading upward. The room is deafeningly loud with an undetermined rushing sound. The sound seems to reverberate from all of the walls, making it difficult even to think.
+>desça
+Sala Barulhenta
+Esta é uma sala grande, com um teto tão alto que não se consegue enxergá-lo do chão. Há uma passagem estreita de leste a oeste e uma escada de pedra que sobe. A sala é tomada por um barulho ensurdecedor, um som de correnteza que não se sabe de onde vem. O som parece reverberar em todas as paredes, e fica difícil até pensar.
 
->e
-Damp Cave
-This cave has exits to the west and east, and narrows to a crack toward the south. The earth is particularly damp here.
+>l
+Caverna Úmida
+Esta caverna tem saídas a oeste e a leste e, para o sul, se estreita até virar uma fenda. Aqui a terra é especialmente úmida.
 
->e
+>leste
 White Cliffs Beach
 You are on a narrow strip of beach which runs along the base of the White Cliffs. There is a narrow path heading south along the Cliffs and a tight passage leading west into the cliffs themselves.
 
@@ -1929,7 +1929,7 @@ Sua coleção de tesouros consiste em:
   Um sceptre
   Um pot of gold
   Um beautiful jeweled scarab
-  Um platinum bar
+  Uma barra de platina
   Um jade figurine
   Um sapphire-encrusted bracelet
   Um huge diamond
@@ -1941,30 +1941,30 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >put emerald in case
 Você colocou o large emerald na vitrine de troféus.
 
 >d
-Cellar
+Porão
 
 >n
-The Troll Room
+Sala do Troll
 
->e
-East-West Passage
+>l
+Passagem Leste-Oeste
 
->e
-Round Room
+>leste
+Sala Redonda
 
->e
-Loud Room
+>l
+Sala Barulhenta
 
->e
-Damp Cave
+>leste
+Caverna Úmida
 
->e
+>l
 White Cliffs Beach
 Há um tan label aqui.
 There is a matchbook whose cover says "Visit Beautiful FCD#3" here.
@@ -1982,15 +1982,15 @@ shovel: Você pegou o shovel.
 Ok.
 
 >w
-Damp Cave
+Caverna Úmida
 
->w
-Loud Room
+>oeste
+Sala Barulhenta
 
->w
-Round Room
+>o
+Sala Redonda
 
->se
+>sudeste
 Engravings Cave
 There are old engravings on the walls here.
 
@@ -2056,7 +2056,7 @@ Sua coleção de tesouros consiste em:
   Um sceptre
   Um pot of gold
   Um beautiful jeweled scarab
-  Um platinum bar
+  Uma barra de platina
   Um jade figurine
   Um sapphire-encrusted bracelet
   Um huge diamond
@@ -2068,7 +2068,7 @@ Sua coleção de tesouros consiste em:
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
-  Um painting
+  Uma pintura
 
 >guarde todos os tesouros na vitrine
 gold coffin: Você colocou o gold coffin na vitrine de troféus.

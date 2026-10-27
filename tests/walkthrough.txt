@@ -26,10 +26,10 @@ mova o tapete
 abra o alçapão
 desça
 ligue a lanterna
-n
-hit troll with sword
-diagnose
-w
+norte
+ataque o troll com a espada
+diagnóstico
+o
 s
 e
 u
@@ -78,17 +78,17 @@ open door
 trap
 d
 n
-e
-n
-ne
+leste
+norte
+nordeste
 e
 n
 take matchbook
 s
 s
-d
-w
-se
+desça
+oeste
+sudeste
 e
 tie rope to railing
 d
@@ -116,16 +116,16 @@ u
 n
 n
 n
-w
-w
+o
+oeste
+sul
 s
-s
-e
+l
 drop bell, book
-take painting
-w
-n
-u
+pegue a pintura
+oeste
+norte
+suba
 take coins
 put painting in case
 take coins
@@ -189,8 +189,8 @@ save
 d
 ligue a lanterna
 n
-e
-n
+l
+norte
 ne
 e
 n
@@ -220,10 +220,10 @@ s
 take trunk
 s
 sw
-sw
-w
-s
-u
+sudoeste
+o
+sul
+c
 ponha todos os tesouros na vitrine
 apague a lanterna
 save
@@ -233,10 +233,10 @@ pegue o dente de alho
 w
 d
 acenda a lanterna
+norte
+leste
 n
-e
-n
-ne
+nordeste
 n
 get all
 n
@@ -325,22 +325,22 @@ s
 e
 s
 d
-u
+cima
 coloque todos os tesouros na vitrine
 save
 d
 n
-e
-e
-n
+l
+leste
+norte
 apague a lanterna
 ne
-e
+l
 turn bolt with wrench
 s
-d
-take bar
-w
+b
+pegue a barra de platina
+o
 se
 e
 down
@@ -356,10 +356,10 @@ d
 n
 n
 n
-w
-w
-s
-u
+oeste
+o
+sul
+suba
 put all treasure but sceptre, torch in case
 save
 e
@@ -397,12 +397,12 @@ w
 put all treasure but torch in case
 save
 d
-n
-e
-e
-e
-u
-nw
+norte
+leste
+l
+leste
+c
+noroeste
 n
 e
 turn bolt wiht wrench
@@ -421,9 +421,9 @@ d
 take plastic
 u
 s
-d
-e
-e
+desça
+l
+leste
 drop all but pump, torch
 inflate plastic
 pump
@@ -455,17 +455,17 @@ w
 put emerald in case
 d
 n
-e
-e
-e
-e
-e
+l
+leste
+l
+leste
+l
 take all but label
 save
 w
-w
-w
-se
+oeste
+o
+sudeste
 e
 d
 s
