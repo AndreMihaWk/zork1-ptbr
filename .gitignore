@@ -12,3 +12,6 @@ node_modules/
 # saídas do .NET
 bin/
 obj/
+
+# área local do Claude Code (cópias de trabalho de agentes)
+.claude/

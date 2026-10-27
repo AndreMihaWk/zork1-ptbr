@@ -32,7 +32,7 @@ dotnet tools/zrunner/bin/Release/net9.0/zrunner.dll "$historia" "$roteiro" \
   | sed -E 's/([Ss]erial number|[Nn]úmero de série) [0-9]{6}/\1 000000/' > "$saida"
 
 if [[ "$roteiro" == tests/walkthrough.txt ]] &&
-   ! grep -qE "(Your score is|Sua pontuação é de) 350 " "$saida"; then
+   ! grep -qE "(Your score is|Sua pontuação é) 350 " "$saida"; then
   echo "ERRO: o roteiro completo não chegou aos 350 pontos. Final da transcrição:" >&2
   tail -n 25 "$saida" >&2
   exit 1

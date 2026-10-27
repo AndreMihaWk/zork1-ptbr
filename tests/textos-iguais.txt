@@ -1,0 +1,17 @@
+zorkmid
+s
+** PERFORM: PRSA =
+| PRSO =
+| PRSI =
+Not Here
+Actor
+Room (M-BEG)
+Preaction
+Container
+Default ->
+Not handled
+Handled
+Fatal
+a
+Ok.
+Aaaarrrrgggghhhh!

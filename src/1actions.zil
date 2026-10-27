@@ -4025,21 +4025,21 @@ valueless." CR>
 
 <ROUTINE V-SCORE ("OPTIONAL" (ASK? T))
 	 #DECL ((ASK?) <OR ATOM FALSE>)
-	 <TELL "Your score is ">
+	 <TELL "Sua pontuação é ">
 	 <TELL N ,SCORE>
-	 <TELL " (total of 350 points), in ">
+	 <TELL " (de um total de 350 pontos), em ">
 	 <TELL N ,MOVES>
-	 <COND (<1? ,MOVES> <TELL " move.">) (ELSE <TELL " moves.">)>
+	 <COND (<1? ,MOVES> <TELL " jogada.">) (ELSE <TELL " jogadas.">)>
 	 <CRLF>
-	 <TELL "This gives you the rank of ">
-	 <COND (<EQUAL? ,SCORE 350> <TELL "Master Adventurer">)
-	       (<G? ,SCORE 330> <TELL "Wizard">)
-	       (<G? ,SCORE 300> <TELL "Master">)
-	       (<G? ,SCORE 200> <TELL "Adventurer">)
-	       (<G? ,SCORE 100> <TELL "Junior Adventurer">)
-	       (<G? ,SCORE 50> <TELL "Novice Adventurer">)
-	       (<G? ,SCORE 25> <TELL "Amateur Adventurer">)
-	       (T <TELL "Beginner">)>
+	 <TELL "Isso lhe dá o título de ">
+	 <COND (<EQUAL? ,SCORE 350> <TELL "Mestre Aventureiro">)
+	       (<G? ,SCORE 330> <TELL "Mago">)
+	       (<G? ,SCORE 300> <TELL "Mestre">)
+	       (<G? ,SCORE 200> <TELL "Aventureiro">)
+	       (<G? ,SCORE 100> <TELL "Aventureiro Júnior">)
+	       (<G? ,SCORE 50> <TELL "Aventureiro Novato">)
+	       (<G? ,SCORE 25> <TELL "Aventureiro Amador">)
+	       (T <TELL "Iniciante">)>
 	 <TELL "." CR>
 	 ,SCORE>
 
@@ -4047,17 +4047,17 @@ valueless." CR>
  	 <SETG WINNER ,ADVENTURER>
 	 <COND (,DEAD
 		<TELL "|
-It takes a talented person to be killed while already dead. YOU are such
-a talent. Unfortunately, it takes a talented person to deal with it.
-I am not such a talent. Sorry." CR>
+É preciso muito talento para morrer quando já se está morto. VOCÊ tem esse
+talento. Infelizmente, é preciso muito talento para dar um jeito nisso. E eu
+não tenho esse talento. Desculpe." CR>
 		<FINISH>)>
 	 <TELL .DESC CR>
 	 <COND (<NOT ,LUCKY>
-		<TELL "Bad luck, huh?" CR>)>
+		<TELL "Que azar, hein?" CR>)>
 	 <PROG ()
 	       <SCORE-UPD -10>
 	       <TELL "
-|    ****  You have died  ****
+|    ****  Você morreu  ****
 |
 |">
 	       <COND (<FSET? <LOC ,WINNER> ,VEHBIT>
@@ -4065,21 +4065,20 @@ I am not such a talent. Sorry." CR>
 	       <COND
 		(<NOT <L? ,DEATHS 2>>
 		 <TELL
-"You clearly are a suicidal maniac.  We don't allow psychotics in the
-cave, since they may harm other adventurers.  Your remains will be
-installed in the Land of the Living Dead, where your fellow
-adventurers may gloat over them." CR>
+"Está claro que você tem uma mania suicida. Não permitimos psicóticos na
+caverna, porque eles podem fazer mal a outros aventureiros. Os seus restos
+serão instalados na Terra dos Mortos-Vivos, onde os seus colegas aventureiros
+poderão se divertir à custa deles." CR>
 		 <FINISH>)
 		(T
 		 <SETG DEATHS <+ ,DEATHS 1>>
 		 <MOVE ,WINNER ,HERE>
 		 <COND (<FSET? ,SOUTH-TEMPLE ,TOUCHBIT>
 			<TELL
-"As you take your last breath, you feel relieved of your burdens. The
-feeling passes as you find yourself before the gates of Hell, where
-the spirits jeer at you and deny you entry.  Your senses are
-disturbed.  The objects in the dungeon appear indistinct, bleached of
-color, even unreal." CR CR>
+"Ao dar o último suspiro, você se sente livre dos seus fardos. A sensação
+passa quando você se vê diante dos portões do Inferno, onde os espíritos
+zombam de você e lhe negam a entrada. Os seus sentidos estão perturbados.
+Os objetos da masmorra parecem indistintos, desbotados, até irreais." CR CR>
 			<SETG DEAD T>
 			<SETG TROLL-FLAG T>
 			;<SETG GWIM-DISABLE T>
@@ -4088,9 +4087,9 @@ color, even unreal." CR CR>
 			<GOTO ,ENTRANCE-TO-HADES>)
 		       (T
 			<TELL
-"Now, let's take a look here...
-Well, you probably deserve another chance.  I can't quite fix you
-up completely, but you can't have everything." CR CR>
+"Bem, vamos dar uma olhada aqui...
+É, você provavelmente merece outra chance. Não consigo consertar você por
+completo, mas não dá para ter tudo." CR CR>
 			<GOTO ,FOREST-1>)>
 		 <FCLEAR ,TRAP-DOOR ,TOUCHBIT>
 		 <SETG P-CONT <>>

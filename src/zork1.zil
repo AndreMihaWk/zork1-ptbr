@@ -13,7 +13,7 @@
 <OR <GASSIGNED? ZILCH>
     <SETG WBREAKS <STRING !\" !,WBREAKS>>>
 
-<PRINC "Renovated ZORK I: The Great Underground Empire
+<PRINC "ZORK I renovado: O Grande Império Subterrâneo
 ">
 
 <FREQUENT-WORDS?>

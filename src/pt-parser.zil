@@ -201,20 +201,8 @@ artigo SEMARTIGOBIT. Ver docs/TRADUCAO.md."
   <TELL T-CO ,PRSO \" está fechad\" T-G ,PRSO \".\" CR>   A caixa está fechada.
   <TELL \"Você deu \" T-O ,PRSO \" \" T-AO ,PRSI \".\" CR> Você deu o lanche ao ciclope."
 
-<ADD-TELL-TOKENS
-	T-O *		<PRINT-ARTIGO .X <>>
-	T-CO *		<PRINT-ARTIGO .X T>
-	T-UM *		<PRINT-INDEFINIDO .X <>>
-	T-CUM *		<PRINT-INDEFINIDO .X T>
-	T-DO *		<PRINT-CONTRACAO .X "d" "de">
-	T-NO *		<PRINT-CONTRACAO .X "n" "em">
-	T-PELO *	<PRINT-CONTRACAO .X "pel" "por">
-	T-AO *		<PRINT-AO .X>
-	T-G *		<PRINT-TERMINACAO .X>
-	T-ELE *		<PRINT-PRONOME .X <>>
-	T-CELE *	<PRINT-PRONOME .X T>
-	T-ESTA *	<PRINT-PLURAL .X "está" "estão">
-	T-SER *		<PRINT-PLURAL .X "é" "são">>
+;"Os marcadores T-O, T-CO, T-UM... são tratados pelo macro TELL do Zork
+  (gmacros.zil), que chama as rotinas abaixo."
 
 ;"o, a, os, as"
 <ROUTINE PRINT-TERMINACAO (OBJ)
@@ -268,3 +256,130 @@ artigo SEMARTIGOBIT. Ver docs/TRADUCAO.md."
 <ROUTINE PRINT-PLURAL (OBJ SINGULAR PLURAL)
 	 <COND (<FSET? .OBJ ,PLURALBIT> <TELL .PLURAL>)
 	       (T <TELL .SINGULAR>)>>
+
+"Perguntas e avisos do parser"
+
+;"Começo da pergunta quando falta um objeto (ver SYNTAX-CHECK):
+  O que você quer pegar? / Com o que você quer atacar o troll?"
+<ROUTINE PERGUNTA-PREP (PREP)
+	 <COND (<EQUAL? .PREP ,PR?WITH> <TELL "Com o que">)
+	       (<EQUAL? .PREP ,PR?IN> <TELL "Em que">)
+	       (<EQUAL? .PREP ,PR?ON> <TELL "Sobre o que">)
+	       (<EQUAL? .PREP ,PR?TO> <TELL "Para quem">)
+	       (<EQUAL? .PREP ,PR?FROM ,PR?OUT ,PR?OFF> <TELL "De onde">)
+	       (<EQUAL? .PREP ,PR?UNDER> <TELL "Debaixo de que">)
+	       (<EQUAL? .PREP ,PR?BEHIND> <TELL "Atrás de que">)
+	       (<EQUAL? .PREP ,PR?AT> <TELL "Em quem">)
+	       (T <TELL "O que">)>>
+
+;"Objeto escolhido pelo próprio jogo (GWIM): (com a faca), (no barco)"
+<ROUTINE PRINT-PREP-OBJ (PREP OBJ)
+	 <COND (<EQUAL? .PREP ,PR?WITH> <TELL "com " T-O .OBJ>)
+	       (<EQUAL? .PREP ,PR?IN ,PR?AT> <TELL T-NO .OBJ>)
+	       (<EQUAL? .PREP ,PR?ON> <TELL "sobre " T-O .OBJ>)
+	       (<EQUAL? .PREP ,PR?TO> <TELL "para " T-O .OBJ>)
+	       (<EQUAL? .PREP ,PR?FROM ,PR?OUT ,PR?OFF> <TELL T-DO .OBJ>)
+	       (<EQUAL? .PREP ,PR?UNDER> <TELL "debaixo " T-DO .OBJ>)
+	       (<EQUAL? .PREP ,PR?BEHIND> <TELL "atrás " T-DO .OBJ>)
+	       (T <TELL T-O .OBJ>)>>
+
+;"Quando o jogo repete o que o jogador digitou (Você não vê a lanterna
+  aqui!), ainda não sabe de qual objeto se trata nem o gênero dele. Por isso
+  repete também o artigo digitado, se houver. BEG aponta para a palavra em
+  P-LEXV logo depois do artigo (CLAUSE pula o artigo)."
+<ROUTINE ARTIGO-DIGITADO (BEG "AUX" ANT)
+	 <COND (<AND <NOT <OR ,P-OFLAG ,P-MERGED>>
+		     <NOT <EQUAL? .BEG <REST ,P-LEXV 2>>>>
+		<SET ANT <BACK .BEG 4>>
+		<COND (<EQUAL? <GET .ANT 0> ,W?THE ,W?A>
+		       <WORD-PRINT <GETB .ANT 2> <GETB .ANT 3>>
+		       <PRINTC 32>)>)>>
+
+;"Verbo no infinitivo, pelo número do verbo (ACT?)"
+<ROUTINE PRINT-INFINITIVO (V)
+	 <TELL
+	  <COND (<EQUAL? .V ,ACT?TAKE> "pegar")
+		(<EQUAL? .V ,ACT?DROP ,ACT?LEAVE> "largar")
+		(<EQUAL? .V ,ACT?PUT ,ACT?APPLY> "colocar")
+		(<EQUAL? .V ,ACT?GIVE> "dar")
+		(<EQUAL? .V ,ACT?OPEN> "abrir")
+		(<EQUAL? .V ,ACT?CLOSE> "fechar")
+		(<EQUAL? .V ,ACT?EXAMINE> "examinar")
+		(<EQUAL? .V ,ACT?LOOK> "olhar")
+		(<EQUAL? .V ,ACT?READ> "ler")
+		(<EQUAL? .V ,ACT?ATTACK ,ACT?STAB ,ACT?STRIKE> "atacar")
+		(<EQUAL? .V ,ACT?KILL> "matar")
+		(<EQUAL? .V ,ACT?THROW> "jogar")
+		(<EQUAL? .V ,ACT?MOVE ,ACT?ROLL ,ACT?SLIDE> "mover")
+		(<EQUAL? .V ,ACT?PUSH> "empurrar")
+		(<EQUAL? .V ,ACT?PULL> "puxar")
+		(<EQUAL? .V ,ACT?TURN ,ACT?SPIN> "girar")
+		(<EQUAL? .V ,ACT?ACTIVATE> "ligar")
+		(<EQUAL? .V ,ACT?EXTINGUISH ,ACT?BLOW> "apagar")
+		(<EQUAL? .V ,ACT?LIGHT> "acender")
+		(<EQUAL? .V ,ACT?BURN> "queimar")
+		(<EQUAL? .V ,ACT?EAT> "comer")
+		(<EQUAL? .V ,ACT?DRINK> "beber")
+		(<EQUAL? .V ,ACT?FILL> "encher")
+		(<EQUAL? .V ,ACT?POUR> "despejar")
+		(<EQUAL? .V ,ACT?CLIMB> "escalar")
+		(<EQUAL? .V ,ACT?SUBIR> "subir")
+		(<EQUAL? .V ,ACT?DESCER> "descer")
+		(<EQUAL? .V ,ACT?ENTER> "entrar")
+		(<EQUAL? .V ,ACT?EXIT> "sair")
+		(<EQUAL? .V ,ACT?BOARD> "embarcar")
+		(<EQUAL? .V ,ACT?DISEMBARK> "desembarcar")
+		(<EQUAL? .V ,ACT?WALK> "ir")
+		(<EQUAL? .V ,ACT?FOLLOW> "seguir")
+		(<EQUAL? .V ,ACT?FIND ,ACT?SEARCH> "procurar")
+		(<EQUAL? .V ,ACT?TIE> "amarrar")
+		(<EQUAL? .V ,ACT?UNTIE> "desamarrar")
+		(<EQUAL? .V ,ACT?LOCK> "trancar")
+		(<EQUAL? .V ,ACT?UNLOCK> "destrancar")
+		(<EQUAL? .V ,ACT?CUT> "cortar")
+		(<EQUAL? .V ,ACT?DIG> "cavar")
+		(<EQUAL? .V ,ACT?DESTROY ,ACT?POKE ,ACT?PUNCTURE> "quebrar")
+		(<EQUAL? .V ,ACT?INFLATE ,ACT?PUMP> "inflar")
+		(<EQUAL? .V ,ACT?DEFLATE> "esvaziar")
+		(<EQUAL? .V ,ACT?PLUG> "consertar")
+		(<EQUAL? .V ,ACT?LUBRICATE> "lubrificar")
+		(<EQUAL? .V ,ACT?WAVE ,ACT?SWING> "agitar")
+		(<EQUAL? .V ,ACT?RING> "tocar")
+		(<EQUAL? .V ,ACT?RUB> "esfregar")
+		(<EQUAL? .V ,ACT?WIND> "dar corda em")
+		(<EQUAL? .V ,ACT?WEAR> "vestir")
+		(<EQUAL? .V ,ACT?RAISE> "levantar")
+		(<EQUAL? .V ,ACT?LOWER> "abaixar")
+		(<EQUAL? .V ,ACT?SHAKE> "sacudir")
+		(<EQUAL? .V ,ACT?SQUEEZE> "espremer")
+		(<EQUAL? .V ,ACT?SMELL> "cheirar")
+		(<EQUAL? .V ,ACT?LISTEN> "ouvir")
+		(<EQUAL? .V ,ACT?KICK> "chutar")
+		(<EQUAL? .V ,ACT?KISS> "beijar")
+		(<EQUAL? .V ,ACT?KNOCK> "bater")
+		(<EQUAL? .V ,ACT?BRUSH> "escovar")
+		(<EQUAL? .V ,ACT?COUNT> "contar")
+		(<EQUAL? .V ,ACT?CROSS> "atravessar")
+		(<EQUAL? .V ,ACT?JUMP> "pular")
+		(<EQUAL? .V ,ACT?SWIM> "nadar")
+		(<EQUAL? .V ,ACT?LAUNCH> "lançar")
+		(<EQUAL? .V ,ACT?MELT> "derreter")
+		(<EQUAL? .V ,ACT?WAKE> "acordar")
+		(<EQUAL? .V ,ACT?TELL ,ACT?TALK ,ACT?ANSWER> "falar com")
+		(<EQUAL? .V ,ACT?SAY> "dizer")
+		(<EQUAL? .V ,ACT?EXORCISE> "exorcizar")
+		(<EQUAL? .V ,ACT?ENCHANT> "encantar")
+		(<EQUAL? .V ,ACT?DISENCHANT> "desencantar")
+		(<EQUAL? .V ,ACT?PLAY> "tocar")
+		(<EQUAL? .V ,ACT?PICK> "forçar")
+		(<EQUAL? .V ,ACT?SPRAY> "borrifar")
+		(<EQUAL? .V ,ACT?HATCH> "chocar")
+		(<EQUAL? .V ,ACT?MAKE> "fazer")
+		(<EQUAL? .V ,ACT?SEND> "mandar buscar")
+		(<EQUAL? .V ,ACT?LEAN> "apoiar")
+		(<EQUAL? .V ,ACT?COMMAND> "comandar")
+		(<EQUAL? .V ,ACT?HELLO> "cumprimentar")
+		(<EQUAL? .V ,ACT?CURSE> "xingar")
+		(<EQUAL? .V ,ACT?RAPE> "molestar")
+		(<EQUAL? .V ,ACT?STAND> "levantar")
+		(T "fazer")>>>
