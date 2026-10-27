@@ -115,11 +115,10 @@ await passo('um botão com "…" só começa o comando', async () => {
   await campo.fill('')
 })
 
-await passo('o botão Desfazer envia o comando', async () => {
-  const antes = (await textoDoJogo()).length
+await passo('o botão Desfazer desfaz a última jogada', async () => {
   await pagina.locator('#atalhos button[data-comando="desfazer"]').tap()
   await esperarTexto(`>${comandos.desfazer}`)
-  await esperarResposta(antes)
+  await esperarTexto('Você desfez a última jogada.')
 })
 
 // No teclado ABNT2, "^" e "~" são teclas mortas: a tecla morta abre uma
