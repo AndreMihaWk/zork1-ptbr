@@ -81,10 +81,10 @@ n
 leste
 norte
 nordeste
-e
-n
-take matchbook
-s
+l
+norte
+pegue a caixa de fósforos
+sul
 s
 desça
 oeste
@@ -98,9 +98,9 @@ s
 take candles and book
 d
 d
-open matchbook
+abra a caixa de fósforos
 ring bell
-light match
+acenda o fósforo
 light candles with match
 wave candles
 read book
@@ -192,34 +192,34 @@ n
 l
 norte
 ne
-e
+leste
 n
-n
-push red button
+norte
+aperte o botão vermelho
 apague a lanterna
-take wrench, screwdriver
-push yellow button
+pegue a chave inglesa e a chave de fenda
+empurre o botão amarelo
 s
-s
-turn bolt with wrench
+sul
+gire o parafuso com a chave inglesa
 z
 z
 look
 z
 z
 look
-w
+o
 acenda a lanterna
 n
 largue tudo exceto a lanterna
-n
+norte
 n
 take trident
 s
 s
-take trunk
-s
-sw
+pegue o baú
+sul
+sudoeste
 sudoeste
 o
 sul
@@ -238,9 +238,9 @@ leste
 n
 nordeste
 n
-get all
-n
-u
+pegue tudo
+norte
+suba
 n
 n
 look
@@ -279,7 +279,7 @@ n
 u
 s
 take candles, matchbook
-light match
+risque o fósforo
 light candle with match
 put candle, coal in basket
 lower basket
@@ -336,7 +336,7 @@ norte
 apague a lanterna
 ne
 l
-turn bolt with wrench
+vire o parafuso com a chave inglesa
 s
 b
 pegue a barra de platina
@@ -375,15 +375,15 @@ e
 e
 n
 n
-get shovel
-ne
-dig in sand with shovel
+pegue a pá
+nordeste
+cave na areia com a pá
 g
 g
 g
-get scarab
-sw
-s
+pegue o escaravelho
+so
+sul
 s
 w
 w
@@ -403,46 +403,46 @@ l
 leste
 c
 noroeste
-n
-e
-turn bolt wiht wrench
-turn bolt with wrench
-w
+norte
+l
+gire o parafuso cmo a chave inglesa
+gire o parafuso com a chave inglesa
+oeste
 z
 n
 z
+norte
 n
-n
-take pump
+pegue a bomba
 s
-s
-e
-d
-take plastic
-u
+sul
+leste
+desça
+pegue o plástico
+c
 s
 desça
 l
 leste
-drop all but pump, torch
-inflate plastic
-pump
-inflate plastic with pump
-read label
-drop label
-get in boat
-launch boat
+largue tudo menos a bomba e torch
+infle o plástico
+a bomba
+infle o plástico com a bomba
+leia a etiqueta
+largue a etiqueta
+entre no barco
+lance o barco
 z
-get buoy
-land
-east
-open buoy
-get emerald
-drop buoy
-get out of boat
-deflate boat
-take plastic
-s
+pegue a boia
+atraque
+leste
+abra a boia
+pegue a esmeralda
+largue a boia
+saia do barco
+esvazie o barco
+pegue o monte de plástico
+sul
 w
 w
 sw
@@ -452,7 +452,7 @@ nw
 w
 w
 w
-put emerald in case
+coloque a esmeralda na vitrine
 d
 n
 l
@@ -460,9 +460,9 @@ leste
 l
 leste
 l
-take all but label
+pegue tudo menos a etiqueta
 save
-w
+o
 oeste
 o
 sudeste
