@@ -1,0 +1,10 @@
+# ferramentas baixadas localmente (ZILF, dfrotz, Parchment)
+.tools/
+
+# saídas de compilação e do site
+build/
+_site/
+*.zap
+*.dbg
+
+node_modules/
