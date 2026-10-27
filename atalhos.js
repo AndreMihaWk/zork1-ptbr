@@ -1,21 +1,19 @@
 // Barra de atalhos para o celular e ajustes no campo de entrada do Parchment.
 
-// Comando que cada botão envia ao jogo. Enquanto o jogo ainda está em inglês,
-// são os comandos ingleses; quando o parser em português entrar, basta trocar
-// os valores aqui.
+// Comando que cada botão envia ao jogo.
 const COMANDOS = {
-  norte: 'north',
-  sul: 'south',
-  leste: 'east',
-  oeste: 'west',
-  subir: 'up',
-  descer: 'down',
-  olhar: 'look',
-  inventario: 'inventory',
-  pegar: 'take ',
-  abrir: 'open ',
-  salvar: 'save',
-  carregar: 'restore',
+  norte: 'norte',
+  sul: 'sul',
+  leste: 'leste',
+  oeste: 'oeste',
+  subir: 'suba',
+  descer: 'desça',
+  olhar: 'olhe',
+  inventario: 'inventário',
+  pegar: 'pegue ',
+  abrir: 'abra ',
+  salvar: 'salvar',
+  carregar: 'carregar',
 }
 
 const barra = document.getElementById('atalhos')
