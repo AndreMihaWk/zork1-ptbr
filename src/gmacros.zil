@@ -63,6 +63,10 @@
 					       <MAPRET <FORM PRINT-PRONOME .O <>>>)
 					      (<=? .P "T-CELE">
 					       <MAPRET <FORM PRINT-PRONOME .O T>>)
+					      (<=? .P "T-SEU">
+					       <MAPRET <FORM PRINT-POSSESSIVO .O <>>>)
+					      (<=? .P "T-CSEU">
+					       <MAPRET <FORM PRINT-POSSESSIVO .O T>>)
 					      (<=? .P "T-ESTA">
 					       <MAPRET <FORM PRINT-PLURAL .O "está" "estão">>)
 					      (<=? .P "T-SER">

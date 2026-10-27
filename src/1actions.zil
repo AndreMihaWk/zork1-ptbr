@@ -3365,6 +3365,16 @@ teeth ache to touch it." CR>)>>
 		 <SET STR <GET .REMARK .CNT>>
 		 <COND (<EQUAL? .STR ,F-WEP> <PRINTD .W>)
 		       (<EQUAL? .STR ,F-DEF> <PRINTD .D>)
+		       (<EQUAL? .STR ,F-O-WEP> <TELL T-O .W>)
+		       (<EQUAL? .STR ,F-CO-WEP> <TELL T-CO .W>)
+		       (<EQUAL? .STR ,F-DO-WEP> <TELL T-DO .W>)
+		       (<EQUAL? .STR ,F-SEU-WEP> <TELL T-SEU .W>)
+		       (<EQUAL? .STR ,F-CSEU-WEP> <TELL T-CSEU .W>)
+		       (<EQUAL? .STR ,F-O-DEF> <TELL T-O .D>)
+		       (<EQUAL? .STR ,F-CO-DEF> <TELL T-CO .D>)
+		       (<EQUAL? .STR ,F-DO-DEF> <TELL T-DO .D>)
+		       (<EQUAL? .STR ,F-NO-DEF> <TELL T-NO .D>)
+		       (<EQUAL? .STR ,F-AO-DEF> <TELL T-AO .D>)
 		       (T <PRINT .STR>)>>
 	 <CRLF>>
 
@@ -3606,6 +3616,20 @@ carcass has disappeared." CR>
 
 <CONSTANT F-WEP 0>	;"means print weapon name"
 <CONSTANT F-DEF 1>	;"means print defender name (villain, e.g.)"
+
+;"PT: a arma e o defensor com artigo, contração ou possessivo, para a
+  concordância (ver REMARK): F-SEU-WEP escreve sua espada ou seu estilete,
+  F-DO-DEF escreve do troll."
+<CONSTANT F-O-WEP 2>	;"a espada"
+<CONSTANT F-CO-WEP 3>	;"A espada"
+<CONSTANT F-DO-WEP 4>	;"da espada"
+<CONSTANT F-SEU-WEP 5>	;"sua espada"
+<CONSTANT F-CSEU-WEP 6>	;"Sua espada"
+<CONSTANT F-O-DEF 7>	;"o troll"
+<CONSTANT F-CO-DEF 8>	;"O troll"
+<CONSTANT F-DO-DEF 9>	;"do troll"
+<CONSTANT F-NO-DEF 10>	;"no troll"
+<CONSTANT F-AO-DEF 11>	;"ao troll"
 
 <GLOBAL HERO-MELEE
  <TABLE (PURE)
