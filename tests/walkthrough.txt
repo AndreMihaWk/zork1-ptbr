@@ -204,10 +204,10 @@ s
 turn bolt with wrench
 z
 z
-l
+look
 z
 z
-l
+look
 w
 turn on lantern
 n
@@ -243,7 +243,7 @@ n
 u
 n
 n
-l
+look
 u
 n
 n
@@ -291,7 +291,7 @@ se
 sw
 d
 w
-l
+look
 d
 w
 drop all

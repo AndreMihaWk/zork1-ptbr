@@ -1,0 +1,53 @@
+## Teste do parser em português. Cada comando exercita uma regra de
+## pt-parser.zil ou do vocabulário em gsyntax.zil (veja o comentário acima
+## dele). Enquanto as mensagens não forem traduzidas, as respostas saem em
+## inglês: o que importa aqui é o jogo entender o comando.
+## Artigos, nome composto com "de" (de + adjetivo some) e acentos:
+abra a caixa de correio
+pegue o folheto
+## Pronome com hífen (leia-o vira leia lo = isso):
+leia-o
+## Maiúsculas e acento:
+LEIA O FOLHETO
+largue-o
+pegue-o
+## Preposições contraídas (na = em; da = de):
+coloque o folheto na caixa
+tire o folheto da caixa
+## Adjetivo antes e depois do substantivo:
+examine a pequena caixa
+x caixa pequena
+feche a caixa de correio
+inventário
+## Direções: palavra inteira, abreviação e frase com "para":
+vá para o norte
+l
+olhe para cima
+olhe em volta
+abra a janela
+entre
+## Objetos com "de" + substantivo (FROM) e com "de" + adjetivo (nome):
+abra o saco
+pegue o alho do saco
+coma o alho
+pegue a garrafa de vidro
+beba a água
+## o sozinho é oeste:
+o
+pegue a lanterna e a espada
+ligue a lanterna
+apague-a
+acenda a lanterna
+## Tudo, exceto, dê e conjunção e:
+largue tudo exceto a lanterna
+pegue tudo
+dê a espada para mim
+mova o tapete
+abra o alçapão
+## suba e desça sozinhos viram cima e baixo:
+desça
+suba
+## Comandos do jogo:
+pontos
+diagnóstico
+de novo

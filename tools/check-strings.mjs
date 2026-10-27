@@ -76,11 +76,23 @@ const permitidos = new Set(
     : [],
 )
 
+// Fora do ASCII, só os caracteres da tabela Unicode padrão da Z-machine. Outro
+// caractere faria o ZILF criar uma tabela própria e mudaria os códigos dos
+// acentos que NORMALIZA-ENTRADA (src/pt-parser.zil) conhece.
+const PERMITIDOS = new Set('äöüÄÖÜß»«ëïÿËÏáéíóúýÁÉÍÓÚÝàèìòùÀÈÌÒÙâêîôûÂÊÎÔÛåÅøØãñõÃÑÕæÆçÇþðÞÐ£œŒ¡¿')
+const caracteresProibidos = []
+
 let total = 0
 let semTraducao = 0
 const linhas = []
 for (const arquivo of readdirSync('src').filter(a => a.endsWith('.zil')).sort()) {
-  const doArquivo = textos(readFileSync(`src/${arquivo}`, 'utf8')).map(normalizar)
+  const brutos = textos(readFileSync(`src/${arquivo}`, 'utf8'))
+  for (const texto of brutos) {
+    for (const c of texto) {
+      if (c > '\x7e' && !PERMITIDOS.has(c)) caracteresProibidos.push(`${arquivo}: "${c}" em ${texto.slice(0, 60)}`)
+    }
+  }
+  const doArquivo = brutos.map(normalizar)
   const pendentes = doArquivo.filter(t => originais.has(t) && !permitidos.has(t))
   total += doArquivo.length
   semTraducao += pendentes.length
@@ -101,6 +113,12 @@ const relatorio = [
 
 console.log(relatorio)
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, relatorio)
+
+if (caracteresProibidos.length) {
+  console.error('ERRO: caracteres fora da tabela padrão da Z-machine (ver docs/TRADUCAO.md):')
+  for (const linha of caracteresProibidos) console.error(`  ${linha}`)
+  process.exit(1)
+}
 
 if (estrito && semTraducao > 0) {
   console.error(`ERRO: ${semTraducao} textos ainda iguais ao original (rode com --listar para ver)`)
