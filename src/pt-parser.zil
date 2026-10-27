@@ -31,7 +31,17 @@ Ver docs/TRADUCAO.md."
 	 0 0 !\c !\c				;"211: æ Æ ç Ç"
 	 0 0 0 0 0 0 0 0 0>>			;"215: þ ð Þ Ð £ œ Œ ¡ ¿"
 
+;"Primeiro separa os hífens (isso muda as posições), depois guarda o texto
+  como foi digitado em P-INBUF-DIGITADO, e só então tira acentos e
+  maiúsculas. Assim os avisos do parser repetem as palavras com acento
+  (ver WORD-PRINT)."
 <ROUTINE NORMALIZA-ENTRADA ("AUX" (I 2) C N)
+	 <REPEAT ()
+		 <COND (<G? .I <+ <GETB ,P-INBUF 1> 1>> <RETURN>)
+		       (<EQUAL? <GETB ,P-INBUF .I> !\-> <SEPARA-HIFEN .I>)>
+		 <SET I <+ .I 1>>>
+	 <COPYT ,P-INBUF ,P-INBUF-DIGITADO <+ <GETB ,P-INBUF 1> 2>>
+	 <SET I 2>
 	 <REPEAT ()
 		 <COND (<G? .I <+ <GETB ,P-INBUF 1> 1>> <RETURN>)>
 		 <SET C <GETB ,P-INBUF .I>>
@@ -39,10 +49,13 @@ Ver docs/TRADUCAO.md."
 			<COND (<NOT <ZERO? <SET N <GETB ,SEM-ACENTO <- .C 155>>>>>
 			       <PUTB ,P-INBUF .I .N>)>)
 		       (<AND <G? .C 64> <L? .C 91>>
-			<PUTB ,P-INBUF .I <+ .C 32>>)
-		       (<EQUAL? .C !\->
-			<SEPARA-HIFEN .I>)>
+			<PUTB ,P-INBUF .I <+ .C 32>>)>
 		 <SET I <+ .I 1>>>>
+
+;"A cópia com acento de cada buffer de entrada (P-INBUF ou OOPS-INBUF)"
+<ROUTINE DIGITADO (BUF)
+	 <COND (<EQUAL? .BUF ,P-INBUF> ,P-INBUF-DIGITADO)
+	       (T ,OOPS-DIGITADO)>>
 
 ;"Troca o hífen por espaço. O pronome sem l (pegue-o, abra-a, pegue-os)
   ganha um l, para não ser lido como artigo: lo, la, los e las querem dizer
@@ -129,9 +142,43 @@ Ver docs/TRADUCAO.md."
 	     <WT? .W ,PS?BUZZ-WORD>
 	     <EQUAL? .W ,W?DIRECAO ,W?RUMO>>>
 
+;"Palavras inglesas que o jogo ainda usa por dentro: os verbos e as
+  preposições das SYNTAX, as direções por extenso e as palavras que o parser
+  compara por endereço (W?ALL, W?IT...). Digitadas, valem como palavra
+  desconhecida. Ficam valendo as abreviações de direção do original
+  (n s e w u d ne nw se sw) e as de jogo (i g z q x)."
+<GLOBAL INGLESAS
+	<PLTABLE W?ABOUT W?ACROSS W?ACTIVATE W?AGAIN W?ALL W?AN W?AND W?ANSWER
+		 W?APPLY W?AROUND W?AT W?ATTACK W?AWAY W?BACK W?BEHIND W?BLAST
+		 W?BLOW W?BOARD W?BRIEF W?BRUSH W?BUG W?BURN W?BUT W?CHOMP W?CLIMB
+		 W?CLOSE W?COMMAND W?COUNT W?CROSS W?CURSE W?CUT W?DEFLATE
+		 W?DESTROY W?DIG W?DISEMBARK W?DISENCHANT W?DOWN W?DRINK W?DROP
+		 W?EAST W?EAT W?ECHO W?ENCHANT W?ENTER W?EXCEPT W?EXIT
+		 W?EXORCISE W?EXTINGUISH W?FILL W?FIND W?FOLLOW W?FOR W?FROM W?GIVE
+		 W?HAND W?HATCH W?HELLO W?IN W?INCANT W?INVENTORY W?IT W?JUMP W?KICK
+		 W?KILL W?KISS W?KNOCK W?LAND W?LAUNCH W?LEAN W?LEAVE W?LIGHT
+		 W?LISTEN W?LOCK W?LOOK W?LOWER W?LUBRICATE W?MAKE W?MELT
+		 W?MUMBLE W?NORTH W?ODYSSEUS W?OF W?OFF W?ON W?ONE W?OOPS W?OPEN
+		 W?OUT W?OVER W?PICK W?PLAY W?PLUG W?POKE W?POUR W?PRAY W?PULL
+		 W?PUMP W?PUNCTURE W?PUSH W?PUT W?QUIT W?RAISE W?RAPE W?READ
+		 W?REPENT W?RESTART W?RESTORE W?RING W?ROLL W?RUB W?SAVE W?SAY
+		 W?SCORE W?SCRIPT W?SEARCH W?SEND W?SHAKE W?SKIP W?SLIDE W?SMELL
+		 W?SOUTH W?SPIN W?SPRAY W?SQUEEZE W?STAB W?STAND W?STAY W?STRIKE
+		 W?SWIM W?SWING W?TAKE W?TALK W?TELL W?THE W?THEN W?THROW W?TIE W?TO
+		 W?TREASURE W?TURN W?UNDER W?UNLOCK W?UNSCRIPT W?UNTIE W?UP W?VERBOSE
+		 W?VERSION W?WAIT W?WAKE W?WALK W?WAVE W?WEAR W?WEST W?WIN W?WIND
+		 W?WISH W?WITH W?Y W?YELL W?YES>>
+
 <ROUTINE AJUSTA-LEXV ("AUX" N W V (I 1))
 	 <SET N <GETB ,P-LEXV ,P-LEXWORDS>>
 	 <COND (<ZERO? .N> <RTRUE>)>
+	 ;"Inglês digitado vira palavra desconhecida (0)"
+	 <REPEAT ()
+		 <COND (<G? .I .N> <RETURN>)
+		       (<INTBL? <PALAVRA .I> <REST ,INGLESAS 2> <GET ,INGLESAS 0>>
+			<TROCA-PALAVRA .I 0>)>
+		 <SET I <+ .I 1>>>
+	 <SET I 1>
 	 <SET W <PALAVRA 1>>
 	 ;"de novo = again (antes da regra do dê)"
 	 <COND (<AND <EQUAL? .W ,W?DE> <EQUAL? <PALAVRA 2> ,W?NOVO>>
@@ -307,6 +354,11 @@ Ver docs/TRADUCAO.md."
 		<COND (<EQUAL? <GET .ANT 0> ,W?THE ,W?A>
 		       <WORD-PRINT <GETB .ANT 2> <GETB .ANT 3>>
 		       <PRINTC 32>)>)>>
+
+;"O verbo digitado é deste (ACT?THROW...)? Serve para separar o que o
+  português junta numa preposição só (no = IN e ON)."
+<ROUTINE VERBO-DIGITADO? (ACT)
+	 <EQUAL? <WT? <GET ,P-VTBL 0> ,PS?VERB ,P1?VERB> .ACT>>
 
 ;"Verbo no infinitivo, pelo número do verbo (ACT?)"
 <ROUTINE PRINT-INFINITIVO (V)

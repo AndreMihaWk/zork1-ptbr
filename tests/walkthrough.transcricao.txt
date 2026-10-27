@@ -185,7 +185,7 @@ Você largou o saco de couro com moedas.
 >se
 Sala do Ciclope
 
->save
+>salve
 Ok.
 
 >suba
@@ -200,7 +200,7 @@ Sua espada começou a brilhar intensamente.
 Um golpe longo e teatral. Você o apara com sua faca afiada, mas o ladrão torce a lâmina, e a faca afiada sai voando.
 Por sorte, você ainda tem uma espada.
 
->restore
+>carregue
 Ok.
 
 >c
@@ -214,7 +214,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 Uma estocada rápida arranha o seu braço esquerdo, e o sangue começa a escorrer.
 
->restore
+>carregue
 Ok.
 
 >cima
@@ -228,7 +228,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O ladrão acerta o seu pulso, e de repente a sua mão fica escorregadia de sangue.
 
->restore
+>carregue
 Ok.
 
 >vá para cima
@@ -242,7 +242,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 Uma estocada rápida arranha o seu braço esquerdo, e o sangue começa a escorrer.
 
->restore
+>carregue
 Ok.
 
 >suba a escada
@@ -256,7 +256,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O ladrão tira sangue, riscando o seu braço com o estilete.
 
->restore
+>carregue
 Ok.
 
 >suba
@@ -270,7 +270,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O estilete reluz mais rápido do que os seus olhos conseguem acompanhar, e o sangue brota da sua perna.
 
->restore
+>carregue
 Ok.
 
 >c
@@ -284,7 +284,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O estilete reluz mais rápido do que os seus olhos conseguem acompanhar, e o sangue brota da sua perna.
 
->restore
+>carregue
 Ok.
 
 >cima
@@ -298,7 +298,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O ladrão tira sangue, riscando o seu braço com o estilete.
 
->restore
+>carregue
 Ok.
 
 >suba
@@ -319,7 +319,7 @@ O ladrão fica surpreso com a sua generosidade inesperada, mas aceita o ovo crav
 Sala do Ciclope
 Sua espada parou de brilhar.
 
->diagnose
+>diagnóstico
 Você está em perfeita saúde.
 Você aguenta um ferimento grave.
 
@@ -358,7 +358,7 @@ A vitrine de troféus já está aberta.
 >coloque o tesouro na vitrine
 Você colocou o saco de couro com moedas na vitrine de troféus.
 
->save
+>salve
 Ok.
 
 >desça
@@ -496,7 +496,7 @@ As chamas tremulam loucamente e parecem dançar. A terra treme sob os seus pés,
 Cada palavra da oração ecoa pelo salão numa confusão ensurdecedora. Quando a última palavra se extingue, uma voz alta e imperiosa ordena: "Fora daqui, demônios!" Um grito de gelar o sangue enche a caverna, e os espíritos, sentindo um poder maior, fogem através das paredes.
 Sua espada parou de brilhar.
 
->save
+>salve
 Ok.
 
 >despeje a água sobre o sino
@@ -589,7 +589,7 @@ Passagem Estranha
 >oeste
 Sala do Ciclope
 
->save
+>salve
 Ok.
 
 >suba
@@ -602,7 +602,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O estilete reluz mais rápido do que os seus olhos conseguem acompanhar, e o sangue brota da sua perna.
 
->restore
+>carregue
 Ok.
 
 >c
@@ -615,7 +615,7 @@ Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
 O ladrão tira sangue, riscando o seu braço com o estilete.
 
->restore
+>carregue
 Ok.
 
 >cima
@@ -652,7 +652,7 @@ Quando o ladrão morre, o poder da magia dele se enfraquece, e os tesouros dele 
 Agora já dá para pegar o cálice sem perigo.
 Sua espada parou de brilhar.
 
->save
+>salve
 Ok.
 
 >b
@@ -669,7 +669,7 @@ Sua coleção de tesouros consiste em:
 >desligue a lanterna
 A lanterna de latão agora está apagada.
 
->diagnose
+>diagnóstico
 Você tem um ferimento grave, que vai sarar daqui a 54 jogadas.
 Você pode morrer com mais um ferimento leve.
 
@@ -715,7 +715,7 @@ O tempo passa...
 >z
 O tempo passa...
 
->diagnose
+>diagnóstico
 Você está em perfeita saúde.
 Você aguenta um ferimento grave.
 
@@ -784,7 +784,7 @@ Sua coleção de tesouros consiste em:
   Uma caveira de cristal
   Uma pintura
 
->save
+>salve
 Ok.
 
 >apague a lanterna
@@ -843,7 +843,7 @@ cálice: Você colocou o cálice na vitrine de troféus.
 ovo cravejado de joias: Você colocou o ovo cravejado de joias na vitrine de troféus.
 saco de couro com moedas: Você colocou o saco de couro com moedas na vitrine de troféus.
 
->save
+>salve
 Ok.
 
 >desça
@@ -915,7 +915,7 @@ O tempo passa...
 >z
 O tempo passa...
 
->look
+>olhe
 Barragem
 Você está no alto da Barragem de Controle de Enchentes #3, que foi uma grande atração turística em tempos muito distantes. Há trilhas para o norte, o sul e o oeste, e uma descida acidentada.
 As comportas estão abertas, e a água jorra pela barragem. O nível da água atrás da barragem ainda está alto.
@@ -927,7 +927,7 @@ O tempo passa...
 >z
 O tempo passa...
 
->look
+>olhe
 Barragem
 Você está no alto da Barragem de Controle de Enchentes #3, que foi uma grande atração turística em tempos muito distantes. Há trilhas para o norte, o sul e o oeste, e uma descida acidentada.
 O nível da água atrás da barragem está baixo: as comportas foram abertas. A água jorra pela barragem e segue rio abaixo.
@@ -1019,7 +1019,7 @@ tridente de cristal: Você colocou o tridente de cristal na vitrine de troféus.
 >apague a lanterna
 A lanterna de latão agora está apagada.
 
->save
+>salve
 Ok.
 
 >leste
@@ -1095,7 +1095,7 @@ Sala de Atlântida
 >n
 Você não pode ir por aí.
 
->look
+>olhe
 Sala de Atlântida
 Esta é uma sala antiga, que passou muito tempo debaixo d'água. Há uma saída ao sul e uma escada que sobe.
 
@@ -1280,7 +1280,7 @@ Topo da Escada
 >oeste
 Você não pode ir por aí.
 
->look
+>olhe
 Topo da Escada
 Esta é uma sala bem pequena. No canto, uma escada de madeira bamba leva para baixo. Talvez seja seguro descer. Há também uma escadaria que sobe.
 
@@ -1438,7 +1438,7 @@ diamante enorme: Você colocou o diamante enorme na vitrine de troféus.
 pulseira cravejada de safiras: Você colocou a pulseira cravejada de safiras na vitrine de troféus.
 estatueta de jade: Você colocou a estatueta de jade na vitrine de troféus.
 
->save
+>salve
 Ok.
 
 >b
@@ -1565,7 +1565,7 @@ Sua coleção de tesouros consiste em:
 >coloque todos os tesouros exceto o cetro e a tocha na vitrine
 barra de platina: Você colocou a barra de platina na vitrine de troféus.
 
->save
+>salve
 Ok.
 
 >l
@@ -1704,7 +1704,7 @@ lindo escaravelho cravejado de joias: Você colocou o lindo escaravelho cravejad
 pote de ouro: Você colocou o pote de ouro na vitrine de troféus.
 cetro: Você colocou o cetro na vitrine de troféus.
 
->save
+>salve
 Ok.
 
 >desça
@@ -1813,14 +1813,14 @@ dente de alho: Você largou o dente de alho.
 caixa de fósforos: Você largou a caixa de fósforos.
 
 >infle o plástico
-Com o que você quer inflar o plastico?
+Com o que você quer inflar o plástico?
 
 >a bomba
 O barco se enche e parece pronto para navegar.
 Há uma etiqueta bege dentro do barco.
 
 >infle o plástico com a bomba
-Você não vê o plastico aqui!
+Você não vê o plástico aqui!
 
 >leia a etiqueta
 (pegando a etiqueta bege antes)
@@ -1978,7 +1978,7 @@ dente de alho: Você pegou o dente de alho.
 chave inglesa: Você pegou a chave inglesa.
 pá: Você pegou a pá.
 
->save
+>salve
 Ok.
 
 >o
@@ -2112,4 +2112,4 @@ Isso lhe dá o título de Mestre Aventureiro.
 
 Você gostaria de recomeçar o jogo do início, carregar uma posição salva ou encerrar esta sessão de jogo?
 (Digite REINICIAR, CARREGAR ou DESISTIR):
->quit
+>desista

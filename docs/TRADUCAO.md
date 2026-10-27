@@ -61,6 +61,12 @@ objetos e personagens) estão no [GLOSSARIO.md](../GLOSSARIO.md).
 - Verbos novos entram como `SYNONYM` do verbo original em `src/gsyntax.zil`.
   Só crie `SYNTAX` nova quando o português precisa de uma construção que o
   inglês não tem.
+- **Nada de palavras inglesas** no vocabulário. As que o código ainda usa
+  por dentro (os verbos e as preposições das `SYNTAX`, as direções por
+  extenso, `W?ALL`, `W?IT`...) estão na tabela `INGLESAS` de
+  `src/pt-parser.zil` e valem como palavra desconhecida quando digitadas. Se
+  uma palavra da tabela também for português (como `examine`, `move` e
+  `come`), ela não pode estar lá.
 - Palavras que o parser compara por endereço (`W?ALL`, `W?IT`, `W?THEN`...)
   não funcionam como `SYNONYM`. Elas entram na tabela `EQUIVALENTES` de
   `src/pt-parser.zil`.

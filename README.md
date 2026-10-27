@@ -6,11 +6,11 @@ liberou sob licença MIT em novembro de 2025. Dá para jogar no navegador do
 celular ou do computador, e o jogo pode ser instalado como aplicativo (PWA)
 para funcionar offline.
 
-> **Status:** em andamento. O jogo já entende comandos em português
-> (`pegue a lanterna`, `abra a caixa de correio`, `vá para o norte`), mas os
-> textos ainda estão em inglês. A tradução entra aos poucos, um Pull Request
-> por vez. Veja o [glossário](GLOSSARIO.md) e o
-> [guia de tradução](docs/TRADUCAO.md).
+> **Status:** o jogo está todo em português, nos textos e nos comandos
+> (`pegue a lanterna`, `abra a caixa de correio`, `vá para o norte`). Os
+> comandos em inglês não valem mais; ficam só as abreviações de direção do
+> original (`e`, `w`, `u`, `d`, `nw`, `sw`) e as de jogo (`i`, `g`, `z`, `x`,
+> `q`). Veja o [glossário](GLOSSARIO.md) e o [guia de tradução](docs/TRADUCAO.md).
 
 ## Como jogar
 
@@ -59,8 +59,8 @@ Chromium: `NAVEGADOR_CANAL=msedge node tools/testar-site.mjs`.
   `bash tools/run-walkthrough.sh --atualizar` e confira o diff da transcrição
   no Pull Request: ele mostra exatamente o que mudou na tela do jogador.
 - **Detector de texto em inglês:** `tools/check-strings.mjs` compara os textos
-  de `src/` com os de `original/` e mostra o progresso da tradução no resumo
-  de cada execução do CI.
+  de `src/` com os de `original/` e falha se algum texto do jogo ficar igual
+  ao original (modo `--estrito`), a não ser os de `tests/textos-iguais.txt`.
 - **Site:** `tools/testar-site.mjs` abre o site num navegador simulando um
   celular e confere o jogo, a barra de atalhos, o teclado virtual e o modo
   offline.

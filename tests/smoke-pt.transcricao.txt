@@ -8,6 +8,15 @@ Oeste da Casa
 Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas.
 Há uma pequena caixa de correio aqui.
 
+>take leaflet
+Não conheço a palavra "take".
+
+>examine a chaminé
+Você não vê a chaminé aqui!
+
+>pegue a chave de fenda
+Você não vê a chave de fenda aqui!
+
 >abra a caixa de correio
 Ao abrir a pequena caixa de correio, você encontra um folheto.
 
@@ -161,26 +170,21 @@ O alçapão se fecha com estrondo, e você ouve alguém passar a tranca.
 
 Porão
 Você está num porão escuro e úmido, com uma passagem estreita que leva para o norte e, ao sul, um túnel baixo por onde só se passa rastejando. A oeste fica o pé de uma rampa de metal íngreme, impossível de escalar.
-Alguém carregando um saco grande está encostado, bem à vontade, numa das paredes daqui. Ele não diz nada, mas pela cara dele fica claro que o saco só sai dali por cima do cadáver dele.
-Sua espada começou a brilhar intensamente.
-O ladrão nocauteia você.
+Sua espada emite um fraco brilho azulado.
 
 >suba
 O alçapão está fechado.
-O cabo do estilete acerta o seu crânio em cheio, e você cambaleia para trás.
 
 >pontos
-Sua pontuação é 35 (de um total de 350 pontos), em 42 jogadas.
+Sua pontuação é 35 (de um total de 350 pontos), em 44 jogadas.
 Isso lhe dá o título de Aventureiro Amador.
 
 >diagnóstico
 Você está em perfeita saúde.
 Você pode morrer com um ferimento grave.
-O cabo do estilete acerta o seu crânio em cheio, e você cambaleia para trás.
 
 >de novo
 Você está em perfeita saúde.
 Você pode morrer com um ferimento grave.
-O ladrão acabou de sair, ainda carregando o saco grande. Talvez você não tenha notado que, antes disso, ele depenou você.
 
 >

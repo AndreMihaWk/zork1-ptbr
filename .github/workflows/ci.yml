@@ -38,7 +38,7 @@ jobs:
         run: bash tools/build.sh
 
       - name: Detector de texto em inglês
-        run: node tools/check-strings.mjs
+        run: node tools/check-strings.mjs --estrito
 
       - name: Roteiro completo (350 pontos)
         run: bash tools/run-walkthrough.sh
