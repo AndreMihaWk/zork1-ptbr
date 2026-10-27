@@ -1,10 +1,10 @@
- 			"Generic VERBS file for
-			    The ZORK Trilogy
-		       started on 7/25/83 by SEM"
+ 			"Arquivo genérico de VERBOS da
+			    Trilogia ZORK,
+		       iniciado em 25/7/83 por SEM"
 
 ^L
 
-"Verb Functions for Game Commands"
+"Funções de verbos para os comandos do jogo"
 
 <GLOBAL VERBOSE <>>
 <GLOBAL SUPER-BRIEF <>>
@@ -13,106 +13,106 @@
 <ROUTINE V-VERBOSE ()
 	 <SETG VERBOSE T>
 	 <SETG SUPER-BRIEF <>>
-	 <TELL "Maximum verbosity." CR>>
+	 <TELL "Descrições completas." CR>>
 
 <ROUTINE V-BRIEF ()
 	 <SETG VERBOSE <>>
 	 <SETG SUPER-BRIEF <>>
-	 <TELL "Brief descriptions." CR>>
+	 <TELL "Descrições breves." CR>>
 
 <ROUTINE V-SUPER-BRIEF ()
 	 <SETG SUPER-BRIEF T>
-	 <TELL "Superbrief descriptions." CR>>
+	 <TELL "Descrições superbreves." CR>>
 
 ;"V-DIAGNOSE is in ACTIONS.ZIL"
 
 <ROUTINE V-INVENTORY ()
 	 <COND (<FIRST? ,WINNER> <PRINT-CONT ,WINNER>)
-	       (T <TELL "You are empty-handed." CR>)>>
+	       (T <TELL "Você está de mãos vazias." CR>)>>
 
 <ROUTINE FINISH ("AUX" WRD)
 	 <V-SCORE>
 	 <REPEAT ()
 		 <CRLF>
 		 <TELL
-"Would you like to restart the game from the beginning, restore a saved
-game position, or end this session of the game?|
-(Type RESTART, RESTORE, or QUIT):|
+"Você gostaria de recomeçar o jogo do início, carregar uma posição
+salva ou encerrar esta sessão de jogo?|
+(Digite REINICIAR, CARREGAR ou DESISTIR):|
 >">
 		 <READ-INPUT>
 		 <SET WRD <GET ,P-LEXV 1>>
 		 <COND (<EQUAL? .WRD ,W?RESTART>
 			<RESTART>
-			<TELL "Failed." CR>)
+			<TELL "Falhou." CR>)
 		       (<EQUAL? .WRD ,W?RESTORE>
 			<COND (<RESTORE>
 			       <TELL "Ok." CR>)
 			      (T
-			       <TELL "Failed." CR>)>)
+			       <TELL "Falhou." CR>)>)
 		       (<EQUAL? .WRD ,W?QUIT ,W?Q>
 			<QUIT>)>>>
 
 <ROUTINE V-QUIT ("AUX" SCOR)
 	 <V-SCORE>
 	 <TELL 
-"Do you wish to leave the game? (Y is affirmative): ">
+"Você deseja sair do jogo? (S para sim): ">
 	 <COND (<YES?>
 		<QUIT>)
 	       (ELSE <TELL "Ok." CR>)>>
 
 <ROUTINE V-RESTART ()
 	 <V-SCORE T>
-	 <TELL "Do you wish to restart? (Y is affirmative): ">
+	 <TELL "Você deseja recomeçar? (S para sim): ">
 	 <COND (<YES?>
-		<TELL "Restarting." CR>
+		<TELL "Recomeçando." CR>
 		<RESTART>
-		<TELL "Failed." CR>)>>
+		<TELL "Falhou." CR>)>>
 
 <ROUTINE V-RESTORE ()
 	 <COND (<RESTORE>
 		<TELL "Ok." CR>
 		<V-FIRST-LOOK>)
 	       (T
-		<TELL "Failed." CR>)>>
+		<TELL "Falhou." CR>)>>
 
 <ROUTINE V-SAVE ()
 	 <COND (<SAVE>
 	        <TELL "Ok." CR>)
 	       (T
-		<TELL "Failed." CR>)>>
+		<TELL "Falhou." CR>)>>
 
 ;"V-SCORE is in ACTIONS.ZIL"
 
 <ROUTINE V-SCRIPT ()
 	<PUT 0 8 <BOR <GET 0 8> 1>>
-	<TELL "Here begins a transcript of interaction with" CR>
+	<TELL "Aqui começa uma transcrição da interação com" CR>
 	<V-VERSION>
 	<RTRUE>>
 
 <ROUTINE V-UNSCRIPT ()
-	<TELL "Here ends a transcript of interaction with" CR>
+	<TELL "Aqui termina a transcrição da interação com" CR>
 	<V-VERSION>
 	<PUT 0 8 <BAND <GET 0 8> -2>>
 	<RTRUE>>
 
 <ROUTINE V-VERSION ("AUX" (CNT 17))
 	%<COND (<==? ,ZORK-NUMBER 1>
-		'<TELL "ZORK I: The Great Underground Empire|
-Infocom interactive fiction - a fantasy story|
+		'<TELL "ZORK I: O Grande Império Subterrâneo|
+Ficção interativa da Infocom - uma história de fantasia|
 Copyright (c) 1981, 1982, 1983, 1984, 1985, 1986">)
 	       (<==? ,ZORK-NUMBER 2>
-		'<TELL "ZORK II: The Wizard of Frobozz|
-Infocom interactive fiction - a fantasy story|
+		'<TELL "ZORK II: O Mago de Frobozz|
+Ficção interativa da Infocom - uma história de fantasia|
 Copyright (c) 1981, 1982, 1983, 1986">)
 	       (<==? ,ZORK-NUMBER 3>
-		'<TELL "ZORK III: The Dungeon Master|
-Infocom interactive fiction - a fantasy story|
+		'<TELL "ZORK III: O Dungeon Master|
+Ficção interativa da Infocom - uma história de fantasia|
 Copyright 1982, 1983, 1984, 1986">)>
-	<TELL " Infocom, Inc. All rights reserved." CR>
-	<TELL "ZORK is a registered trademark of Infocom, Inc.|
-Release ">
+	<TELL " Infocom, Inc. Todos os direitos reservados." CR>
+	<TELL "ZORK é uma marca registrada da Infocom, Inc.|
+Versão ">
 	<PRINTN <BAND <GET 0 1> *3777*>>
-	<TELL " / Serial number ">
+	<TELL " / Número de série ">
 	<REPEAT ()
 		<COND (<G? <SET CNT <+ .CNT 1>> 23>
 		       <RETURN>)
@@ -121,11 +121,11 @@ Release ">
 	<CRLF>>
 
 <ROUTINE V-VERIFY ()
-	 <TELL "Verifying disk..." CR>
+	 <TELL "Verificando o disco..." CR>
 	 <COND (<VERIFY>
-		<TELL "The disk is correct." CR>)
+		<TELL "O disco está correto." CR>)
 	       (T
-		<TELL CR "** Disk Failure **" CR>)>>
+		<TELL CR "** Falha no disco **" CR>)>>
 
 <ROUTINE V-COMMAND-FILE ()
 	 <DIRIN 1>
@@ -133,7 +133,7 @@ Release ">
 
 <ROUTINE V-RANDOM ()
 	 <COND (<NOT <EQUAL? ,PRSO ,INTNUM>>
-		<TELL "Illegal call to #RND." CR>)
+		<TELL "Chamada ilegal a #RND." CR>)
 	       (T
 		<RANDOM <- 0 ,P-NUMBER>>
 		<RTRUE>)>>
@@ -148,27 +148,27 @@ Release ">
 
 ^L
 
-"Real Verb Functions"
+"Funções dos verbos de verdade"
 
 <ROUTINE V-ADVENT ()
-	 <TELL "A hollow voice says \"Fool.\"" CR>>
+	 <TELL "Uma voz cavernosa diz: \"Tolo.\"" CR>>
 
 <ROUTINE V-ALARM ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
 		<COND %<COND (<==? ,ZORK-NUMBER 1>
 			      '(<L? <GETP ,PRSO ,P?STRENGTH> 0>
-		                <TELL "The " D ,PRSO " is rudely awakened." CR>
+		                <TELL T-CO ,PRSO " " T-SER ,PRSO " acordad" T-G ,PRSO " bruscamente." CR>
 		                <AWAKEN ,PRSO>))
 			     (T
 			      '(<NULL-F> <RTRUE>))>
 		      (T
 		       <TELL
-"He's wide awake, or haven't you noticed..." CR>)>)
+T-CELE ,PRSO " já " T-ESTA ,PRSO " bem acordad" T-G ,PRSO ", ou você não reparou..." CR>)>)
 	       (T
-		<TELL "The " D ,PRSO " isn't sleeping." CR>)>>
+		<TELL T-CO ,PRSO " não " T-ESTA ,PRSO " dormindo." CR>)>>
 
 <ROUTINE V-ANSWER ()
-	 <TELL "Nobody seems to be awaiting your answer." CR>
+	 <TELL "Ninguém parece estar esperando sua resposta." CR>
 	 <SETG P-CONT <>>
 	 <SETG QUOTE-FLAG <>>
 	 <RTRUE>>
@@ -176,27 +176,27 @@ Release ">
 <ROUTINE V-ATTACK ()
 	 <COND (<NOT <FSET? ,PRSO ,ACTORBIT>>
 		<TELL
-"I've known strange people, but fighting a " D ,PRSO "?" CR>)
+"Já conheci gente estranha, mas lutar contra " T-UM ,PRSO "?" CR>)
 	       (<OR <NOT ,PRSI>
 		    <EQUAL? ,PRSI ,HANDS>>
 		<TELL
-"Trying to attack a " D ,PRSO " with your bare hands is suicidal." CR>)
+"Atacar " T-O ,PRSO " de mãos vazias é suicídio." CR>)
 	       (<NOT <IN? ,PRSI ,WINNER>>
-		<TELL "You aren't even holding the " D ,PRSI "." CR>)
+		<TELL "Você nem está segurando " T-O ,PRSI "." CR>)
 	       (<NOT <FSET? ,PRSI ,WEAPONBIT>>
 		<TELL
-"Trying to attack the " D ,PRSO " with a " D ,PRSI " is suicidal." CR>)
+"Atacar " T-O ,PRSO " com " T-UM ,PRSI " é suicídio." CR>)
 	       (T
 	        %<COND (<==? ,ZORK-NUMBER 1>
 			'<HERO-BLOW>)
 		       (T
-			'<TELL "You can't." CR>)>)>>
+			'<TELL "Você não pode." CR>)>)>>
 
 <ROUTINE V-BACK ()
-	 <TELL "Sorry, my memory is poor. Please give a direction." CR>>
+	 <TELL "Desculpe, minha memória é fraca. Diga uma direção, por favor." CR>>
 
 <ROUTINE V-BLAST ()
-	 <TELL "You can't blast anything by using words." CR>>
+	 <TELL "Você não vai explodir nada só com palavras." CR>>
 
 <ROUTINE PRE-BOARD ("AUX" AV)
 	 <SET AV <LOC ,WINNER>>
@@ -208,9 +208,9 @@ Release ">
 	       (<FSET? ,PRSO ,VEHBIT>
 		<COND (<NOT <IN? ,PRSO ,HERE>>
 		       <TELL
-"The " D ,PRSO " must be on the ground to be boarded." CR>)
+"Ponha " T-O ,PRSO " no chão antes de embarcar." CR>)
 		      (<FSET? .AV ,VEHBIT>
-		       <TELL "You are already in the " D .AV "!" CR>)
+		       <TELL "Você já está " T-NO .AV "!" CR>)
 		      (T
 		       <RFALSE>)>)
 	       (<EQUAL? ,PRSO ,WATER ,GLOBAL-WATER>
@@ -218,11 +218,11 @@ Release ">
 		<RTRUE>)
 	       (T
 		<TELL
-"You have a theory on how to board a " D ,PRSO ", perhaps?" CR>)>
+"Você tem alguma teoria sobre como embarcar em " T-UM ,PRSO ", por acaso?" CR>)>
 	 <RFATAL>>
 
 <ROUTINE V-BOARD ("AUX" AV)
-	 <TELL "You are now in the " D ,PRSO "." CR>
+	 <TELL "Agora você está " T-NO ,PRSO "." CR>
 	 <MOVE ,WINNER ,PRSO>
 	 <APPLY <GETP ,PRSO ,P?ACTION> ,M-ENTER>
 	 <RTRUE>>
@@ -231,14 +231,14 @@ Release ">
 	 <PERFORM ,V?INFLATE ,PRSO ,LUNGS>>
 
 <ROUTINE V-BRUSH ()
-	 <TELL "If you wish, but heaven only knows why." CR>>
+	 <TELL "Se você quiser, mas só Deus sabe por quê." CR>>
 
 <ROUTINE V-BUG ()
 	 <TELL
-"Bug? Not in a flawless program like this! (Cough, cough)." CR>>
+"Bug? Num programa perfeito como este? Jamais! (Cof, cof)." CR>>
 
 <ROUTINE TELL-NO-PRSI ()
-	 <TELL "You didn't say with what!" CR>>
+	 <TELL "Você não disse com o quê!" CR>>
 
 <ROUTINE PRE-BURN ()
 	 <COND (<NOT ,PRSI>
@@ -246,7 +246,7 @@ Release ">
 	       (<FLAMING? ,PRSI>
 	        <RFALSE>)
 	       (T
-	        <TELL "With a " D ,PRSI "??!?" CR>)>>
+	        <TELL "Com " T-UM ,PRSI "??!?" CR>)>>
 
 <ROUTINE V-BURN ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 2>
@@ -259,22 +259,22 @@ Release ">
 		<COND (<OR <IN? ,PRSO ,WINNER>
 			   <IN? ,WINNER ,PRSO>>
 		       <REMOVE-CAREFULLY ,PRSO>
-		       <TELL "The " D ,PRSO>
+		       <TELL "O fogo toma conta " T-DO ,PRSO>
 		       <TELL
-" catches fire. Unfortunately, you were ">
+". Infelizmente, você estava ">
 		       <COND (<IN? ,WINNER ,PRSO>
-			      <TELL "in">)
-			     (T <TELL "holding">)>
-		       <JIGS-UP " it at the time.">)
+			      <TELL "dentro d" T-ELE ,PRSO>)
+			     (T <TELL "com " T-ELE ,PRSO " na mão">)>
+		       <JIGS-UP " naquele momento.">)
 		      (T
 		       <REMOVE-CAREFULLY ,PRSO>
 		       <TELL
-"The " D ,PRSO " catches fire and is consumed." CR>)>)
+"O fogo consome " T-O ,PRSO " por completo." CR>)>)
 	       (T
-		<TELL "You can't burn a " D ,PRSO "." CR>)>>
+		<TELL "Você não pode queimar " T-UM ,PRSO "." CR>)>>
 
 <ROUTINE V-CHOMP ()
-	 <TELL "Preposterous!" CR>>
+	 <TELL "Que absurdo!" CR>>
 
 <ROUTINE V-CLIMB-DOWN () <V-CLIMB-UP ,P?DOWN ,PRSO>>
 
@@ -295,7 +295,7 @@ Release ">
 			'<PERFORM ,V?BOARD ,PRSO>)>
 		<RTRUE>)
 	       (T
-		<TELL "You can't climb onto the " D ,PRSO "." CR>)>>
+		<TELL "Você não consegue subir " T-NO ,PRSO "." CR>)>>
 
 <ROUTINE V-CLIMB-UP ("OPTIONAL" (DIR ,P?UP) (OBJ <>) "AUX" X TX)
 	 <COND (<AND .OBJ <NOT <EQUAL? ,PRSO ,ROOMS>>>
@@ -306,80 +306,77 @@ Release ">
 		       <COND (<OR <EQUAL? .X ,NEXIT>
 				  <AND <EQUAL? .X ,CEXIT ,DEXIT ,UEXIT>
 				       <NOT <GLOBAL-IN? ,PRSO <GET .TX ,REXIT>>>>> ;"V5"
-			      <TELL "The " D .OBJ " do">
-			      <COND (<NOT <EQUAL? .OBJ ,STAIRS>>
-				     <TELL "es">)>
-			      <TELL "n't lead ">
+			      <TELL "Não dá para ">
 			      <COND (<==? .DIR ,P?UP>
-				     <TELL "up">)
-				    (T <TELL "down">)>
-			      <TELL "ward." CR>
+				     <TELL "subir">)
+				    (T <TELL "descer">)>
+			      <TELL " " T-PELO .OBJ "." CR>
 			      <RTRUE>)>)>
 		<DO-WALK .DIR>
 		<RTRUE>)
 	       (<AND .OBJ
 		     <ZMEMQ ,W?WALL
 			    <SET X <GETPT ,PRSO ,P?SYNONYM>> <PTSIZE .X>>>
-		<TELL "Climbing the walls is to no avail." CR>)
+		<TELL "Escalar as paredes não adianta nada." CR>)
 	       (%<COND (<==? ,ZORK-NUMBER 1>
 			'<AND <NOT <EQUAL? ,HERE ,PATH>>
 			      <EQUAL? .OBJ <> ,TREE>
 			      <GLOBAL-IN? ,TREE ,HERE>>)
 		       (ELSE '<NULL-F>)>
-		<TELL "There are no climbable trees here." CR>
+		<TELL "Não há árvores para escalar aqui." CR>
 		<RTRUE>)
 	       (<EQUAL? .OBJ <> ,ROOMS>
-		<TELL "You can't go that way." CR>)
+		<TELL "Você não pode ir por aí." CR>)
 	       (T
-	        <TELL "You can't do that!" CR>)>>
+	        <TELL "Você não pode fazer isso!" CR>)>>
 
 <ROUTINE V-CLOSE ()
 	 <COND (<AND <NOT <FSET? ,PRSO ,CONTBIT>>
 		     <NOT <FSET? ,PRSO ,DOORBIT>>>
-		<TELL "You must tell me how to do that to a " D ,PRSO "." CR>)
+		<TELL "Você precisa me explicar como se faz isso com " T-UM ,PRSO "." CR>)
 	       (<AND <NOT <FSET? ,PRSO ,SURFACEBIT>>
 		     <NOT <EQUAL? <GETP ,PRSO ,P?CAPACITY> 0>>>
 		<COND (<FSET? ,PRSO ,OPENBIT>
 		       <FCLEAR ,PRSO ,OPENBIT>
-		       <TELL "Closed." CR>
+		       <TELL "Você fechou " T-O ,PRSO "." CR>
 		       <COND (<AND ,LIT <NOT <SETG LIT <LIT? ,HERE>>>>
-			      <TELL "It is now pitch black." CR>)>
+			      <TELL "Agora está um breu total." CR>)>
 		       <RTRUE>)
 		      (T
-	 	       <TELL "It is already closed." CR>)>)
+	 	       <TELL T-CO ,PRSO " já " T-ESTA ,PRSO " fechad" T-G ,PRSO "." CR>)>)
 	       (<FSET? ,PRSO ,DOORBIT>
 		<COND (<FSET? ,PRSO ,OPENBIT>
 		       <FCLEAR ,PRSO ,OPENBIT>
-		       <TELL "The " D ,PRSO " is now closed." CR>)
+		       <TELL T-CO ,PRSO " agora " T-ESTA ,PRSO " fechad" T-G ,PRSO "." CR>)
 		      (T
-	 	       <TELL "It is already closed." CR>)>)
+	 	       <TELL T-CO ,PRSO " já " T-ESTA ,PRSO " fechad" T-G ,PRSO "." CR>)>)
 	       (T
-		<TELL "You cannot close that." CR>)>>
+		<TELL "Você não pode fechar isso." CR>)>>
 
 <ROUTINE V-COMMAND ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
-		<TELL "The " D ,PRSO " pays no attention." CR>)
+		<TELL T-CO ,PRSO " não " T-ESTA ,PRSO " prestando a menor atenção." CR>)
 	       (T
-		<TELL "You cannot talk to that!" CR>)>>
+		<TELL "Você não pode falar com isso!" CR>)>>
 
 <ROUTINE V-COUNT ()
 	 <COND (<EQUAL? ,PRSO ,BLESSINGS>
-	 	<TELL "Well, for one, you are playing Zork..." CR>)
+	 	<TELL "Bem, para começar, você está jogando Zork..." CR>)
 	       (T
-		<TELL "You have lost your mind." CR>)>>
+		<TELL "Você perdeu o juízo." CR>)>>
 
 <ROUTINE V-CROSS ()
-	 <TELL "You can't cross that!" CR>>
+	 <TELL "Você não pode atravessar isso!" CR>>
 
 <ROUTINE V-CURSES ()
 	 <COND (,PRSO
 		<COND (<FSET? ,PRSO ,ACTORBIT>
-		       <TELL "Insults of this nature won't help you." CR>)
+		       <TELL "Insultos desse tipo não vão ajudar em nada." CR>)
 		      (T
-		       <TELL "What a loony!" CR>)>)
+		       <TELL "Que maluquice!" CR>)>)
 	       (T
 		<TELL
-"Such language in a high-class establishment like this!" CR>)>>
+"Que linguajar, num estabelecimento fino como este!" CR>)>>
 
 <ROUTINE V-CUT ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
@@ -388,32 +385,32 @@ Release ">
 		     <FSET? ,PRSI ,WEAPONBIT>>
 		<COND (<IN? ,WINNER ,PRSO>
 		       <TELL
-"Not a bright idea, especially since you're in it." CR>
+"Não é uma ideia brilhante, ainda mais com você aí dentro." CR>
 		       <RTRUE>)>
 		<REMOVE-CAREFULLY ,PRSO>
-		<TELL "Your skillful " D ,PRSI "smanship slices the " D ,PRSO
-" into innumerable slivers which blow away." CR>)
+		<TELL "Com grande perícia no manejo " T-DO ,PRSI ", você reduz " T-O ,PRSO
+" a inúmeros pedacinhos, que o vento leva embora." CR>)
 	       (<NOT <FSET? ,PRSI ,WEAPONBIT>>
 		<TELL
-"The \"cutting edge\" of a " D ,PRSI " is hardly adequate." CR>)
+"O \"gume\" de " T-UM ,PRSI " deixa muito a desejar." CR>)
 	       (T
-		<TELL "Strange concept, cutting the " D ,PRSO "...." CR>)>>
+		<TELL "Que ideia estranha, cortar " T-O ,PRSO "..." CR>)>>
 
 <ROUTINE V-DEFLATE ()
-	 <TELL "Come on, now!" CR>>
+	 <TELL "Ah, faça-me o favor!" CR>>
 
 <ROUTINE V-DIG ()
 	 <COND (<NOT ,PRSI>
 		<SETG PRSI ,HANDS>)>
 	 %<COND (<==? ,ZORK-NUMBER 1>
 		 '<COND (<EQUAL? ,PRSI ,SHOVEL>
-			 <TELL "There's no reason to be digging here." CR>
+			 <TELL "Não há motivo para cavar aqui." CR>
 			 <RTRUE>)>)
 		(ELSE T)>
 	 <COND (<FSET? ,PRSI ,TOOLBIT>
-		<TELL "Digging with the " D ,PRSI " is slow and tedious." CR>)
+		<TELL "Cavar com " T-O ,PRSI " é lento e tedioso." CR>)
 	       (T
-		<TELL "Digging with a " D ,PRSI " is silly." CR>)>>
+		<TELL "Cavar com " T-UM ,PRSI " é bobagem." CR>)>>
 
 <ROUTINE V-DISEMBARK ()
 	 <COND (<AND <EQUAL? ,PRSO ,ROOMS>
@@ -421,14 +418,14 @@ Release ">
 		<PERFORM ,V?DISEMBARK <LOC ,WINNER>>
 		<RTRUE>)
 	       (<NOT <EQUAL? <LOC ,WINNER> ,PRSO>>
-		<TELL "You're not in that!" CR>
+		<TELL "Você não está dentro disso!" CR>
 		<RFATAL>)
 	       (<FSET? ,HERE ,RLANDBIT>
-		<TELL "You are on your own feet again." CR>
+		<TELL "Você está de pé outra vez." CR>
 		<MOVE ,WINNER ,HERE>)
 	       (T
 		<TELL
-"You realize that getting out here would be fatal." CR>
+"Você percebe que sair aqui seria fatal." CR>
 		<RFATAL>)>>
 
 <ROUTINE V-DISENCHANT ()
@@ -441,35 +438,35 @@ Release ">
 		          <COND (<FSET? ,PRSO ,ACTORBIT>
 		                 <COND (<EQUAL? ,SPELL-USED ,W?FEEBLE>
 			                <TELL
-"The " D ,PRSO " seems stronger now." CR>)
+T-CO ,PRSO " já não " T-ESTA ,PRSO " tão frac" T-G ,PRSO "." CR>)
 			               (<EQUAL? ,SPELL-USED ,W?FUMBLE>
 			                <TELL
-"The " D ,PRSO " no longer appears clumsy." CR>)
+T-CO ,PRSO " já não " T-ESTA ,PRSO " tão desajeitad" T-G ,PRSO "." CR>)
 			               (<EQUAL? ,SPELL-USED ,W?FEAR>
 			                <TELL
-"The " D ,PRSO " no longer appears afraid." CR>)
+T-CO ,PRSO " já não " T-ESTA ,PRSO " com medo." CR>)
 			               (<EQUAL? ,SPELL-USED ,W?FREEZE>
 			                <TELL
-"The " D ,PRSO " moves again." CR>)
+T-CO ,PRSO " já " T-ESTA ,PRSO " se mexendo de novo." CR>)
 			               (<EQUAL? ,SPELL-USED ,W?FERMENT>
 			                <TELL
-"The " D ,PRSO " stops swaying." CR>)
+T-CO ,PRSO " já não " T-ESTA ,PRSO " cambaleando." CR>)
 			               (<EQUAL? ,SPELL-USED ,W?FIERCE>
 			                <TELL
-"The " D ,PRSO " appears more peaceful." CR>)>)>)
+T-CO ,PRSO " agora " T-ESTA ,PRSO " mais calm" T-G ,PRSO "." CR>)>)>)
 	                        (<EQUAL? ,SPELL-USED ,W?FLOAT>
 		                 <TELL
-"The " D ,PRSO " sinks to the ground." CR>)
+T-CO ,PRSO " " T-ESTA ,PRSO " de volta ao chão." CR>)
 	                        (<EQUAL? ,SPELL-USED ,W?FUDGE>
-		                 <TELL "The sweet smell has dispersed." CR>)>)
+		                 <TELL "O cheiro doce se dissipou." CR>)>)
 		(T
-		 '<TELL "Nothing happens." CR>)>>
+		 '<TELL "Nada acontece." CR>)>>
 
 <ROUTINE V-DRINK ()
 	 <V-EAT>>
 
 <ROUTINE V-DRINK-FROM ()
-	 <TELL "How peculiar!" CR>>
+	 <TELL "Que coisa peculiar!" CR>>
 
 <ROUTINE PRE-DROP ()
 	 <COND (<EQUAL? ,PRSO <LOC ,WINNER>>
@@ -478,17 +475,17 @@ Release ">
 
 <ROUTINE V-DROP ()
 	 <COND (<IDROP>
-		<TELL "Dropped." CR>)>>
+		<TELL "Você largou " T-O ,PRSO "." CR>)>>
 
 <ROUTINE V-EAT ("AUX" (EAT? <>) (DRINK? <>) (NOBJ <>))
 	 <COND (<SET EAT? <FSET? ,PRSO ,FOODBIT>>
 		<COND (<AND <NOT <IN? ,PRSO ,WINNER>>
 			    <NOT <IN? <LOC ,PRSO> ,WINNER>>>
-		       <TELL "You're not holding that." CR>)
+		       <TELL "Você não está segurando isso." CR>)
 		      (<VERB? DRINK>
-		       <TELL "How can you drink that?">)
+		       <TELL "Como você pretende beber isso?">)
 		      (T
-		       <TELL "Thank you very much. It really hit the spot.">
+		       <TELL "Muito obrigado. Caiu muito bem.">
 		       <REMOVE-CAREFULLY ,PRSO>)>
 		<CRLF>)
 	       (<FSET? ,PRSO ,DRINKBIT>
@@ -501,27 +498,27 @@ Release ">
 		      (<OR <NOT .NOBJ>
 			   <NOT <ACCESSIBLE? .NOBJ>>>
 		       <TELL
-"There isn't any water here." CR>)
+"Não há água aqui." CR>)
 		      (<AND <ACCESSIBLE? .NOBJ>
 			    <NOT <IN? .NOBJ ,WINNER>>>
 		       <TELL
-"You have to be holding the " D .NOBJ " first." CR>)
+"Primeiro você precisa estar segurando " T-O .NOBJ "." CR>)
 		      (<NOT <FSET? .NOBJ ,OPENBIT>>
 		       <TELL
-"You'll have to open the " D .NOBJ " first." CR>)
+"Primeiro você vai ter que abrir " T-O .NOBJ "." CR>)
 		      (T
 		       <HIT-SPOT>)>)
 	       (<NOT <OR .EAT? .DRINK?>>
 		<TELL
-"I don't think that the " D ,PRSO " would agree with you." CR>)>>
+"Duvido que seu estômago se dê bem com " T-O ,PRSO "." CR>)>>
 
 <ROUTINE HIT-SPOT ()
 	 <COND (<AND <EQUAL? ,PRSO ,WATER>
 		     <NOT <GLOBAL-IN? ,GLOBAL-WATER ,HERE>>>
 		<REMOVE-CAREFULLY ,PRSO>)>
 	 <TELL
-"Thank you very much. I was rather thirsty (from all this talking,
-probably)." CR>>
+"Muito obrigado. Eu estava com bastante sede (de tanto falar,
+provavelmente)." CR>>
 
 <ROUTINE V-ECHO ("AUX" LST MAX (ECH 0) CNT) 
 	 #DECL ((LST) <PRIMTYPE VECTOR> (MAX CNT ECH) FIX)
@@ -543,9 +540,9 @@ probably)." CR>>
 					    (T
 					     <PRINTC <GETB ,P-INBUF .CNT>>)>>
 			           <TELL " ">)>>)
-			(T <TELL "echo echo ..." CR>)>)
+			(T <TELL "eco eco ..." CR>)>)
 		(T
-		 '<TELL "echo echo ..." CR>)>>
+		 '<TELL "eco eco ..." CR>)>>
 
 <ROUTINE V-ENCHANT ()
 %<COND (<==? ,ZORK-NUMBER 2>
@@ -555,55 +552,55 @@ probably)." CR>>
 %<COND (<==? ,ZORK-NUMBER 2>
 	'<COND (,SPELL-VICTIM
 		<COND (<NOT ,SPELL-USED>
-		       <TELL "You must be more specific." CR>
+		       <TELL "Você precisa ser mais específico." CR>
 		       <RTRUE>)>
 		<COND (<OR <EQUAL? ,SPELL-USED ,W?FEEBLE ,W?FUMBLE ,W?FEAR>
 			   <EQUAL? ,SPELL-USED ,W?FREEZE ,W?FALL ,W?FERMENT>
 			   <EQUAL? ,SPELL-USED ,W?FIERCE ,W?FENCE ,W?FANTASIZE>>
 		       <COND (<FSET? ,PRSO ,ACTORBIT>
 			      <TELL
-"The wand stops glowing, but there is no other obvious effect." CR>)
+"A varinha para de brilhar, mas não há nenhum outro efeito visível." CR>)
 			     (T
 			      <TELL
-"That might have done something, but it's hard to tell with a " D ,PRSO "." CR>)>)
+"Isso pode ter feito alguma coisa, mas é difícil dizer, tratando-se de " T-UM ,PRSO "." CR>)>)
 		      ;(<EQUAL? ,SPELL-USED ,W?FIREPROOF>
 		       <RTRUE>)
 		      (<EQUAL? ,SPELL-USED ,W?FUDGE>
 		       <TELL
-"A strong odor of chocolate permeates the room." CR>)
+"Um forte cheiro de chocolate toma conta do ambiente." CR>)
 		      (<EQUAL? ,SPELL-USED ,W?FLUORESCE>
 		       <FSET ,PRSO ,LIGHTBIT>
 		       <FSET ,PRSO ,ONBIT>
 		       <SETG LIT T>
 		       <TELL
-"The " D ,PRSO " begins to glow." CR>)
+T-CO ,PRSO " agora " T-ESTA ,PRSO " brilhando." CR>)
 		      (<EQUAL? ,SPELL-USED ,W?FILCH>
 		       <SETG SPELL-HANDLED? T>
 		       <COND (<FSET? ,PRSO ,TAKEBIT>
 			      <MOVE ,PRSO ,WINNER>
 			      <SCORE-OBJ ,PRSO>
-			      <TELL "Filched!" CR>)
+			      <TELL "Você afanou " T-O ,PRSO "!" CR>)
 			     (ELSE
-			      <TELL "You can't filch the " D ,PRSO "!" CR>)>)
+			      <TELL "Você não pode afanar " T-O ,PRSO "!" CR>)>)
 		      (<AND <EQUAL? ,SPELL-USED ,W?FLOAT>
 			    <FSET? ,PRSO ,TAKEBIT>>
 		       <COND (<AND <EQUAL? ,SPELL-VICTIM ,COLLAR>
 				   <IN? ,COLLAR ,CERBERUS>>
 			      <SETG SPELL-VICTIM ,CERBERUS>)>
 		       <TELL
-"The " D ,PRSO " floats serenely in midair." CR>)
+T-CO ,PRSO " agora " T-ESTA ,PRSO " flutuando serenamente no ar." CR>)
 		      (<AND <EQUAL? ,SPELL-USED ,W?FRY>
 			    <FSET? ,PRSO ,TAKEBIT>>
 		       <SETG SPELL-HANDLED? T>
 		       <REMOVE-CAREFULLY ,PRSO>
-		       <TELL "The " D ,PRSO " goes up in a puff of smoke." CR>)
+		       <TELL "Puf! Não sobra nada " T-DO ,PRSO " além de uma nuvem de fumaça." CR>)
 		      (ELSE
 		       <SETG SPELL-VICTIM <>>
 		       <TELL
-"The wand stops glowing, but there is no other apparent effect." CR>)>)
+"A varinha para de brilhar, mas não há nenhum outro efeito aparente." CR>)>)
 	       (ELSE
 		<SETG SPELL-VICTIM <>>
-		<TELL "Nothing happens." CR>)>)
+		<TELL "Nada acontece." CR>)>)
        (T
 	'<V-DISENCHANT>)>>
 
@@ -614,7 +611,7 @@ probably)." CR>>
 	 <REMOVE .OBJ>
 	 <SETG LIT <LIT? ,HERE>>
 	 <COND (<AND .OLIT <NOT <EQUAL? .OLIT ,LIT>>>
-		<TELL "You are left in the dark..." CR>)>
+		<TELL "Você fica no escuro..." CR>)>
 	 T>
 
 <ROUTINE V-ENTER ()
@@ -627,7 +624,7 @@ probably)." CR>>
 		    <FSET? ,PRSO ,DOORBIT>>
 		<V-LOOK-INSIDE>)
 	       (T
-		<TELL "There's nothing special about the " D ,PRSO "." CR>)>>
+		<TELL "Você não vê nada de especial " T-NO ,PRSO "." CR>)>>
 
 <ROUTINE V-EXIT ()
 	 <COND (<AND <EQUAL? ,PRSO <> ,ROOMS>
@@ -641,7 +638,7 @@ probably)." CR>>
 		<DO-WALK ,P?OUT>)>>
 
 <ROUTINE V-EXORCISE ()
-	 <TELL "What a bizarre concept!" CR>>
+	 <TELL "Que ideia bizarra!" CR>>
 
 <ROUTINE PRE-FILL ("AUX" TX)
 	 <COND (<NOT ,PRSI>
@@ -653,7 +650,7 @@ probably)." CR>>
 		       <PERFORM ,V?FILL ,PRSO ,WATER>
 		       <RTRUE>)
 		      (T
-		       <TELL "There is nothing to fill it with." CR>
+		       <TELL "Não há com o que enchê-l" T-G ,PRSO "." CR>
 		       <RTRUE>)>)>
 	 <COND (<EQUAL? ,PRSI ,WATER>
 		<RFALSE>)
@@ -670,54 +667,54 @@ probably)." CR>>
 		       <PERFORM ,V?FILL ,PRSO ,WATER>
 		       <RTRUE>)
 		      (T
-		       <TELL "There's nothing to fill it with." CR>)>)
+		       <TELL "Não há nada aqui para enchê-l" T-G ,PRSO "." CR>)>)
 	       (T
-		<TELL "You may know how to do that, but I don't." CR>)>>
+		<TELL "Você pode até saber como fazer isso, mas eu não sei." CR>)>>
 
 <ROUTINE V-FIND ("AUX" (L <LOC ,PRSO>))
 	 <COND (<EQUAL? ,PRSO ,HANDS ,LUNGS>
 		<TELL
-"Within six feet of your head, assuming you haven't left that
-somewhere." CR>)
+"A menos de dois metros da sua cabeça, supondo que você não tenha
+esquecido isso em algum lugar." CR>)
 	       (<EQUAL? ,PRSO ,ME>
-		<TELL "You're around here somewhere..." CR>)
+		<TELL "Você está por aqui, em algum lugar..." CR>)
 	       (<EQUAL? .L ,GLOBAL-OBJECTS>
-		<TELL "You find it." CR>)
+		<TELL "Você encontrou " T-O ,PRSO "." CR>)
 	       (<IN? ,PRSO ,WINNER>
-		<TELL "You have it." CR>)
+		<TELL T-CELE ,PRSO " " T-ESTA ,PRSO " com você." CR>)
 	       (<OR <IN? ,PRSO ,HERE>
 		    <GLOBAL-IN? ,PRSO ,HERE>
 		    <EQUAL? ,PRSO ,PSEUDO-OBJECT>>
-		<TELL "It's right here." CR>)
+		<TELL T-CELE ,PRSO " " T-ESTA ,PRSO " bem aqui." CR>)
 	       (<FSET? .L ,ACTORBIT>
-		<TELL "The " D .L " has it." CR>)
+		<TELL T-CO .L " " T-ESTA .L " com " T-ELE ,PRSO "." CR>)
 	       (<FSET? .L ,SURFACEBIT>
-		<TELL "It's on the " D .L "." CR>)
+		<TELL T-CELE ,PRSO " " T-ESTA ,PRSO " " T-NO .L "." CR>)
 	       (<FSET? .L ,CONTBIT>
-		<TELL "It's in the " D .L "." CR>)
+		<TELL T-CELE ,PRSO " " T-ESTA ,PRSO " dentro " T-DO .L "." CR>)
 	       (T
-		<TELL "Beats me." CR>)>>
+		<TELL "Não faço a menor ideia." CR>)>>
 
 <ROUTINE V-FOLLOW ()
-	 <TELL "You're nuts!" CR>>
+	 <TELL "Você pirou!" CR>>
 
 <ROUTINE V-FROBOZZ ()
 	 <TELL
-"The FROBOZZ Corporation created, owns, and operates this dungeon." CR>>
+"A Corporação FROBOZZ criou esta masmorra, é dona dela e a administra." CR>>
 
 <ROUTINE PRE-GIVE ()
 	 <COND (<NOT <HELD? ,PRSO>>
 		<TELL 
-"That's easy for you to say since you don't even have the " D ,PRSO "." CR>)>>
+"Falar é fácil, mas você nem tem " T-O ,PRSO "." CR>)>>
 
 <ROUTINE V-GIVE ()
 	 <COND (<NOT <FSET? ,PRSI ,ACTORBIT>>
-		<TELL "You can't give a " D ,PRSO " to a " D ,PRSI "!" CR>)
+		<TELL "Você não pode dar " T-UM ,PRSO " para " T-UM ,PRSI "!" CR>)
 	       (T
-		<TELL "The " D ,PRSI " refuses it politely." CR>)>>
+		<TELL T-CO ,PRSI " recusa educadamente." CR>)>>
 
 <ROUTINE V-HATCH ()
-	 <TELL "Bizarre!" CR>>
+	 <TELL "Que bizarro!" CR>>
 
 <GLOBAL HS 0> ;"counts occurences of HELLO, SAILOR"
 
@@ -725,114 +722,114 @@ somewhere." CR>)
 	 <COND (,PRSO
 		<COND (<FSET? ,PRSO ,ACTORBIT>
 		       <TELL
-"The " D ,PRSO " bows his head to you in greeting." CR>)
+T-CO ,PRSO " inclina a cabeça para você, em sinal de saudação." CR>)
 		      (T
 		       <TELL
-"It's a well known fact that only schizophrenics say \"Hello\" to a "
-D ,PRSO "." CR>)>)
+"Todo mundo sabe que só esquizofrênicos dizem \"Olá\" para "
+T-UM ,PRSO "." CR>)>)
 	       (T
 		<TELL <PICK-ONE ,HELLOS> CR>)>>
 
 <ROUTINE V-INCANT ()
 %<COND (<==? ,ZORK-NUMBER 2>
 	'<COND (,SPELL-USED
-		<TELL "Nothing happens." CR>)
+		<TELL "Nada acontece." CR>)
 	       (,WAND-ON
 		<SETG SPELL-VICTIM ,WAND-ON>
 		<SETG SPELL-USED <GET ,P-LEXV ,P-CONT>>
-		<TELL "The wand glows very brightly for a moment." CR>
+		<TELL "A varinha brilha com muita força por um instante." CR>
 		<ENABLE <QUEUE I-SPELL <+ 10 <RANDOM 10>>>>
 		<SETG WAND-ON <>>
 		<PERFORM ,V?ENCHANT ,SPELL-VICTIM>)
 	       (T
 		<TELL
-"The incantation echoes back faintly, but nothing else happens." CR>)>)
+"O encantamento ecoa baixinho, mas nada mais acontece." CR>)>)
        (T
 	'<TELL
-"The incantation echoes back faintly, but nothing else happens." CR>)>
+"O encantamento ecoa baixinho, mas nada mais acontece." CR>)>
 	 <SETG QUOTE-FLAG <>>
 	 <SETG P-CONT <>>
 	 <RTRUE>>
 
 <ROUTINE V-INFLATE ()
-	 <TELL "How can you inflate that?" CR>>
+	 <TELL "Como você pretende inflar isso?" CR>>
 
-<ROUTINE V-KICK () <HACK-HACK "Kicking the ">>
+<ROUTINE V-KICK () <HACK-HACK "Chutar ">>
 
 <ROUTINE V-KISS ()
-	 <TELL "I'd sooner kiss a pig." CR>>
+	 <TELL "Prefiro beijar um porco." CR>>
 
 <ROUTINE V-KNOCK ()
 	 <COND (<FSET? ,PRSO ,DOORBIT>
-		<TELL "Nobody's home." CR>)
+		<TELL "Não tem ninguém em casa." CR>)
 	       (T
-		<TELL "Why knock on a " D ,PRSO "?" CR>)>>
+		<TELL "Para que bater em " T-UM ,PRSO "?" CR>)>>
 
 <ROUTINE V-LAMP-OFF ()
 	 <COND (<FSET? ,PRSO ,LIGHTBIT>
 		<COND (<NOT <FSET? ,PRSO ,ONBIT>>
-		       <TELL "It is already off." CR>)
+		       <TELL T-CO ,PRSO " já " T-ESTA ,PRSO " apagad" T-G ,PRSO "." CR>)
 		      (T
 		       <FCLEAR ,PRSO ,ONBIT>
 		       <COND (,LIT
 			      <SETG LIT <LIT? ,HERE>>)>
-		       <TELL "The " D ,PRSO " is now off." CR>
+		       <TELL T-CO ,PRSO " agora " T-ESTA ,PRSO " apagad" T-G ,PRSO "." CR>
 		       <COND (<NOT ,LIT>
-			      <TELL "It is now pitch black." CR>)>)>)
+			      <TELL "Agora está um breu total." CR>)>)>)
 	       (T
-		<TELL "You can't turn that off." CR>)>
+		<TELL "Você não pode desligar isso." CR>)>
 	 <RTRUE>>
 
 <ROUTINE V-LAMP-ON ()
 	 <COND (<FSET? ,PRSO ,LIGHTBIT>
 		<COND (<FSET? ,PRSO ,ONBIT>
-		       <TELL "It is already on." CR>)
+		       <TELL T-CO ,PRSO " já " T-ESTA ,PRSO " aces" T-G ,PRSO "." CR>)
 		      (T
 		       <FSET ,PRSO ,ONBIT>
-		       <TELL "The " D ,PRSO " is now on." CR>
+		       <TELL T-CO ,PRSO " agora " T-ESTA ,PRSO " aces" T-G ,PRSO "." CR>
 		       <COND (<NOT ,LIT>
 			      <SETG LIT <LIT? ,HERE>>
 			      <CRLF>
 			      <V-LOOK>)>)>)
 	       (<FSET? ,PRSO ,BURNBIT>
 		<TELL
-"If you wish to burn the " D ,PRSO ", you should say so." CR>)
+"Se você quer pôr fogo " T-NO ,PRSO ", é só dizer." CR>)
 	       (T
-		<TELL "You can't turn that on." CR>)>
+		<TELL "Você não pode ligar isso." CR>)>
 	 <RTRUE>>
 
 <ROUTINE V-LAUNCH ()
 	 <COND (<FSET? ,PRSO ,VEHBIT>
-		<TELL "You can't launch that by saying \"launch\"!" CR>)
+		<TELL "Não dá para lançar isso só dizendo \"lance\"!" CR>)
 	       (T
-		<TELL "That's pretty weird." CR>)>>
+		<TELL "Isso é bem esquisito." CR>)>>
 
 <ROUTINE V-LEAN-ON ()
-	 <TELL "Getting tired?" CR>>
+	 <TELL "Cansou?" CR>>
 
 <ROUTINE V-LEAP ("AUX" TX S)
 	 <COND (,PRSO
 		<COND (<IN? ,PRSO ,HERE>
 		       <COND (<FSET? ,PRSO ,ACTORBIT>
 			      <TELL
-"The " D ,PRSO " is too big to jump over." CR>)
+T-CO ,PRSO " " T-SER ,PRSO " grande demais para você pular por cima." CR>)
 			     (T
 			      <V-SKIP>)>)
 		      (T
-		       <TELL "That would be a good trick." CR>)>)
+		       <TELL "Isso seria um belo truque." CR>)>)
 	       (<SET TX <GETPT ,HERE ,P?DOWN>>
 		<SET S <PTSIZE .TX>>
 		<COND (<OR <EQUAL? .S ,NEXIT> ;"V5: eram 2 e 4 fixos"
        			   <AND <EQUAL? .S ,CEXIT>
 				<NOT <VALUE <GETB .TX ,CEXITFLAG>>>>>
 		       <TELL
-"This was not a very safe place to try jumping." CR>
+"Este não era um lugar muito seguro para tentar pular." CR>
 		       <JIGS-UP <PICK-ONE ,JUMPLOSS>>)
 		      %<COND (<==? ,ZORK-NUMBER 1>
 			      '(<EQUAL? ,HERE ,UP-A-TREE>
 		                <TELL
-"In a feat of unaccustomed daring, you manage to land on your feet without
-killing yourself." CR CR>
+"Num ato de ousadia incomum, você consegue cair de pé sem
+se matar." CR CR>
 		                <DO-WALK ,P?DOWN>
 		                <RTRUE>))
 			     (T '(<NULL-F> T))>
@@ -843,36 +840,36 @@ killing yourself." CR CR>
 
 <GLOBAL JUMPLOSS
 	<LTABLE 0
-	       "You should have looked before you leaped."
-	       "In the movies, your life would be passing before your eyes."
-	       "Geronimo...">>
+	       "Devia ter olhado antes de pular."
+	       "Nos filmes, sua vida estaria passando diante dos seus olhos."
+	       "Gerônimo...">>
 
 <ROUTINE V-LEAVE () <DO-WALK ,P?OUT>>
 
 <ROUTINE V-LISTEN ()
-	 <TELL "The " D ,PRSO " makes no sound." CR>>
+	 <TELL "Você não ouve nenhum som vindo " T-DO ,PRSO "." CR>>
 
 <ROUTINE V-LOCK ()
-	 <TELL "It doesn't seem to work." CR>>
+	 <TELL "Isso não parece funcionar." CR>>
 
 <ROUTINE V-LOOK ()
 	 <COND (<DESCRIBE-ROOM T>
 		<DESCRIBE-OBJECTS T>)>>
 
 <ROUTINE V-LOOK-BEHIND ()
-	 <TELL "There is nothing behind the " D ,PRSO "." CR>>
+	 <TELL "Não há nada atrás " T-DO ,PRSO "." CR>>
 
 <ROUTINE V-LOOK-INSIDE ()
 	 <COND (<FSET? ,PRSO ,DOORBIT>
 		<COND (<FSET? ,PRSO ,OPENBIT>
 		       <TELL
-"The " D ,PRSO " is open, but I can't tell what's beyond it.">)
+T-CO ,PRSO " " T-ESTA ,PRSO " abert" T-G ,PRSO ", mas não sei dizer o que há do outro lado.">)
 		      (T
-		       <TELL "The " D ,PRSO " is closed.">)>
+		       <TELL T-CO ,PRSO " " T-ESTA ,PRSO " fechad" T-G ,PRSO ".">)>
 		<CRLF>)
 	       (<FSET? ,PRSO ,CONTBIT>
 		<COND (<FSET? ,PRSO ,ACTORBIT>
-		       <TELL "There is nothing special to be seen." CR>)
+		       <TELL "Não há nada de especial para ver." CR>)
 		      (<SEE-INSIDE? ,PRSO>
 		       <COND (<AND <FIRST? ,PRSO>
 				   <PRINT-CONT ,PRSO>>
@@ -880,45 +877,45 @@ killing yourself." CR CR>
 			     %<COND (<==? ,ZORK-NUMBER 3>
 				     '(<FSET? ,PRSO ,SURFACEBIT>
 				       <TELL
-"There is nothing on the " D ,PRSO "." CR>))
+"Não há nada sobre " T-O ,PRSO "." CR>))
 				    (ELSE '(<NULL-F> <RTRUE>))>
 			     (T
-			      <TELL "The " D ,PRSO " is empty." CR>)>)
+			      <TELL T-CO ,PRSO " " T-ESTA ,PRSO " vazi" T-G ,PRSO "." CR>)>)
 		      (T
-		       <TELL "The " D ,PRSO " is closed." CR>)>)
+		       <TELL T-CO ,PRSO " " T-ESTA ,PRSO " fechad" T-G ,PRSO "." CR>)>)
 	       (T
-		<TELL "You can't look inside a " D ,PRSO "." CR>)>>
+		<TELL "Você não pode olhar dentro de " T-UM ,PRSO "." CR>)>>
 
 <ROUTINE V-LOOK-ON ()
 	 <COND (<FSET? ,PRSO ,SURFACEBIT>
 		<PERFORM ,V?LOOK-INSIDE ,PRSO>
 		<RTRUE>)
 	       (T
-		<TELL "Look on a " D ,PRSO "???" CR>)>>
+		<TELL "Olhar em cima de " T-UM ,PRSO "???" CR>)>>
 
 <ROUTINE V-LOOK-UNDER ()
-	 <TELL "There is nothing but dust there." CR>>
+	 <TELL "Não há nada além de poeira ali." CR>>
 
-<ROUTINE V-LOWER () <HACK-HACK "Playing in this way with the ">>
+<ROUTINE V-LOWER () <HACK-HACK "Brincar assim com ">>
 
 <ROUTINE V-MAKE ()
-    	<TELL "You can't do that." CR>>
+    	<TELL "Você não pode fazer isso." CR>>
 
 <ROUTINE V-MELT ()
-	 <TELL "It's not clear that a " D ,PRSO " can be melted." CR>>
+	 <TELL "Não está claro se dá para derreter " T-UM ,PRSO "." CR>>
 
 <ROUTINE PRE-MOVE ()
 	 <COND (<HELD? ,PRSO>
-		<TELL "You aren't an accomplished enough juggler." CR>)>>
+		<TELL "Você não é um malabarista tão habilidoso assim." CR>)>>
 
 <ROUTINE V-MOVE ()
 	 <COND (<FSET? ,PRSO ,TAKEBIT>
-		<TELL "Moving the " D ,PRSO " reveals nothing." CR>)
+		<TELL "Mover " T-O ,PRSO " não revela nada." CR>)
 	       (T
-		<TELL "You can't move the " D ,PRSO "." CR>)>>
+		<TELL "Você não consegue mover " T-O ,PRSO "." CR>)>>
 
 <ROUTINE V-MUMBLE ()
-	 <TELL "You'll have to speak up if you expect me to hear you!" CR>>
+	 <TELL "Você vai ter que falar mais alto se quiser que eu ouça!" CR>>
 
 <ROUTINE PRE-MUNG ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 3>
@@ -928,19 +925,19 @@ killing yourself." CR CR>
 		       '(<NULL-F> <RTRUE>))>
 	       (<OR <NOT ,PRSI>
 		    <NOT <FSET? ,PRSI ,WEAPONBIT>>>
-		<TELL "Trying to destroy the " D ,PRSO " with ">
+		<TELL "Tentar destruir " T-O ,PRSO " com ">
 		<COND (<NOT ,PRSI>
-		       <TELL "your bare hands">)
+		       <TELL "as próprias mãos">)
 		      (T
-		       <TELL "a " D ,PRSI>)>
-		<TELL " is futile." CR>)>>
+		       <TELL T-UM ,PRSI>)>
+		<TELL " é inútil." CR>)>>
 
 <ROUTINE V-MUNG ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
 		<PERFORM ,V?ATTACK ,PRSO>
 		<RTRUE>)
 	       (T
-		<TELL "Nice try." CR>)>>
+		<TELL "Boa tentativa." CR>)>>
 
 <ROUTINE V-ODYSSEUS ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 1>
@@ -950,82 +947,82 @@ killing yourself." CR CR>
 		         <DISABLE <INT I-CYCLOPS>>
 		         <SETG CYCLOPS-FLAG T>
 		         <TELL 
-"The cyclops, hearing the name of his father's deadly nemesis, flees the room
-by knocking down the wall on the east of the room." CR>
+"O ciclope, ao ouvir o nome do inimigo mortal de seu pai, foge da sala
+derrubando a parede do lado leste." CR>
 		        <SETG MAGIC-FLAG T>
 		        <FCLEAR ,CYCLOPS ,FIGHTBIT>
 		        <REMOVE-CAREFULLY ,CYCLOPS>))
 		      (T
 		       '(<NULL-F> T))>
 	       (T
-		<TELL "Wasn't he a sailor?" CR>)>>
+		<TELL "Ele não era um marinheiro?" CR>)>>
 
 <ROUTINE V-OIL ()
-	 <TELL "You probably put spinach in your gas tank, too." CR>>
+	 <TELL "Aposto que você também põe espinafre no tanque de gasolina." CR>>
 
 <ROUTINE V-OPEN ("AUX" F STR)
 	 <COND (<AND <FSET? ,PRSO ,CONTBIT>
 		     <NOT <EQUAL? <GETP ,PRSO ,P?CAPACITY> 0>>>
 		<COND (<FSET? ,PRSO ,OPENBIT>
-		       <TELL "It is already open." CR>)
+		       <TELL T-CO ,PRSO " já " T-ESTA ,PRSO " abert" T-G ,PRSO "." CR>)
 		      (T
 		       <FSET ,PRSO ,OPENBIT>
 		       <FSET ,PRSO ,TOUCHBIT>
 		       <COND (<OR <NOT <FIRST? ,PRSO>> <FSET? ,PRSO ,TRANSBIT>>
-			      <TELL "Opened." CR>)
+			      <TELL "Você abriu " T-O ,PRSO "." CR>)
 			     (<AND <SET F <FIRST? ,PRSO>>
 				   <NOT <NEXT? .F>>
 				   <NOT <FSET? .F ,TOUCHBIT>>
 				   <SET STR <GETP .F ,P?FDESC>>>
-			      <TELL "The " D ,PRSO " opens." CR>
+			      <TELL "Você abriu " T-O ,PRSO "." CR>
 			      <TELL .STR CR>)
 			     (T
-			      <TELL "Opening the " D ,PRSO " reveals ">
+			      <TELL "Ao abrir " T-O ,PRSO ", você encontra ">
 			      <PRINT-CONTENTS ,PRSO>
 			      <TELL "." CR>)>)>)
 	       (<FSET? ,PRSO ,DOORBIT>
 		<COND (<FSET? ,PRSO ,OPENBIT>
-		       <TELL "It is already open." CR>)
+		       <TELL T-CO ,PRSO " já " T-ESTA ,PRSO " abert" T-G ,PRSO "." CR>)
 		      (T
-		       <TELL "The " D ,PRSO " opens." CR>
+		       <TELL "Você abriu " T-O ,PRSO "." CR>
 		       <FSET ,PRSO ,OPENBIT>)>)
 	       (T
 		<TELL
-"You must tell me how to do that to a " D ,PRSO "." CR>)>>
+"Você precisa me explicar como se faz isso com " T-UM ,PRSO "." CR>)>>
 
 <ROUTINE V-OVERBOARD ("AUX" LOCN)
 	 <COND %<COND (<==? ,ZORK-NUMBER 1>
 		       '(<EQUAL? ,PRSI ,TEETH>
 			 <COND (<FSET? <SET LOCN <LOC ,WINNER>> ,VEHBIT>
 				<MOVE ,PRSO <LOC .LOCN>>
-				<TELL "Ahoy -- " D ,PRSO " overboard!" CR>)
+				<TELL "Ó de bordo -- " D ,PRSO " ao mar!" CR>)
 			       (T
-				<TELL "You're not in anything!" CR>)>))
+				<TELL "Você não está dentro de nada!" CR>)>))
 		      (T '(<NULL-F> T))>
 	       (<FSET? <LOC ,WINNER> ,VEHBIT>
 		<PERFORM ,V?THROW ,PRSO>
 		<RTRUE>)
 	       (T
-		<TELL "Huh?" CR>)>>
+		<TELL "Hein?" CR>)>>
 
-<ROUTINE V-PICK () <TELL "You can't pick that." CR>>
+<ROUTINE V-PICK () <TELL "Você não pode arrombar isso." CR>>
 
 <ROUTINE V-PLAY ()
     <COND (<FSET? ,PRSO ,ACTORBIT>
 	   <TELL
-"You become so engrossed in the role of the " D ,PRSO " that
-you kill yourself, just as he might have done!" CR>
+"Você se envolve tanto no papel " T-DO ,PRSO " que acaba
+se matando, como " T-ELE ,PRSO " talvez tivesse feito!" CR>
 	   <JIGS-UP "">)
-	  (ELSE <TELL "That's silly!" CR>)>>
+	  (ELSE <TELL "Que bobagem!" CR>)>>
 
 <ROUTINE V-PLUG ()
-	 <TELL "This has no effect." CR>>
+	 <TELL "Isso não tem efeito nenhum." CR>>
 
 <ROUTINE V-POUR-ON ()
 	 <COND (<EQUAL? ,PRSO ,WATER>
 		<REMOVE-CAREFULLY ,PRSO>
 	        <COND (<FLAMING? ,PRSI>
-		       <TELL "The " D ,PRSI " is extinguished." CR>
+		       <TELL "A água apaga " T-O ,PRSI "." CR>
 		       %<COND (<==? ,ZORK-NUMBER 2>
 			       '<COND (<EQUAL? ,PRSI ,BINF-FLAG>
 				       <SETG BINF-FLAG <>>)>)
@@ -1034,14 +1031,14 @@ you kill yourself, just as he might have done!" CR>
 		       <FCLEAR ,PRSI ,FLAMEBIT>)
 	              (T
 		       <TELL
-"The water spills over the " D ,PRSI ", to the floor, and evaporates." CR>)>)
+"A água escorre " T-PELO ,PRSI ", cai no chão e evapora." CR>)>)
 	       %<COND (<==? ,ZORK-NUMBER 1>
 		       '(<EQUAL? ,PRSO ,PUTTY>
 			 <PERFORM ,V?PUT ,PUTTY ,PRSI>))
 		      (T
 		       '(<NULL-F> <RTRUE>))>
 	       (T
-		<TELL "You can't pour that." CR>)>>
+		<TELL "Você não pode derramar isso." CR>)>>
 
 <ROUTINE V-PRAY ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 1>
@@ -1051,12 +1048,12 @@ you kill yourself, just as he might have done!" CR>
 		       '(<NULL-F> <RTRUE>))>
 	       (T
 		<TELL
-"If you pray enough, your prayers may be answered." CR>)>>
+"Se você rezar bastante, suas preces podem ser atendidas." CR>)>>
 
 <ROUTINE V-PUMP ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 1>
 		       '(<AND ,PRSI <NOT <EQUAL? ,PRSI ,PUMP>>>
-		         <TELL "Pump it up with a " D ,PRSI "?" CR>))
+		         <TELL "Encher isso com " T-UM ,PRSI "?" CR>))
 		      (T
 		       '(<NULL-F> <RTRUE>))>
 	       %<COND (<==? ,ZORK-NUMBER 1>
@@ -1065,12 +1062,12 @@ you kill yourself, just as he might have done!" CR>
 		      (T
 		       '(<NULL-F> <RTRUE>))>
 	       (T
-		<TELL "It's really not clear how." CR>)>>
+		<TELL "Não está nada claro como." CR>)>>
 
-<ROUTINE V-PUSH () <HACK-HACK "Pushing the ">>
+<ROUTINE V-PUSH () <HACK-HACK "Empurrar ">>
 
 <ROUTINE V-PUSH-TO ()
-	 <TELL "You can't push things to that." CR>>
+	 <TELL "Você não pode empurrar coisas até isso." CR>>
 
 <ROUTINE PRE-PUT ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 3>
@@ -1087,22 +1084,22 @@ you kill yourself, just as he might have done!" CR>
 		    <OPENABLE? ,PRSI>
 		    <FSET? ,PRSI ,VEHBIT>>)
 	       (T
-		<TELL "You can't do that." CR>
+		<TELL "Você não pode fazer isso." CR>
 		<RTRUE>)>
 	 <COND (<NOT <FSET? ,PRSI ,OPENBIT>>
-		<TELL "The " D ,PRSI " isn't open." CR>
+		<TELL T-CO ,PRSI " não " T-ESTA ,PRSI " abert" T-G ,PRSI "." CR>
 		<THIS-IS-IT ,PRSI>)
 	       (<EQUAL? ,PRSI ,PRSO>
-		<TELL "How can you do that?" CR>)
+		<TELL "Como você pretende fazer isso?" CR>)
 	       (<IN? ,PRSO ,PRSI>
-		<TELL "The " D ,PRSO " is already in the " D ,PRSI "." CR>)
+		<TELL T-CO ,PRSO " já " T-ESTA ,PRSO " " T-NO ,PRSI "." CR>)
 	       (<G? <- <+ <WEIGHT ,PRSI> <WEIGHT ,PRSO>>
 		       <GETP ,PRSI ,P?SIZE>>
 		    <GETP ,PRSI ,P?CAPACITY>>
-		<TELL "There's no room." CR>)
+		<TELL "Não há espaço." CR>)
 	       (<AND <NOT <HELD? ,PRSO>>
 		     <FSET? ,PRSO ,TRYTAKEBIT>>
-		<TELL "You don't have the " D ,PRSO "." CR>
+		<TELL "Você não tem " T-O ,PRSO "." CR>
 		<RTRUE>)
 	       (<AND <NOT <HELD? ,PRSO>>
 		     <NOT <ITAKE>>>
@@ -1111,10 +1108,10 @@ you kill yourself, just as he might have done!" CR>
 		<MOVE ,PRSO ,PRSI>
 		<FSET ,PRSO ,TOUCHBIT>
 		<SCORE-OBJ ,PRSO>
-		<TELL "Done." CR>)>>
+		<TELL "Você colocou " T-O ,PRSO " " T-NO ,PRSI "." CR>)>>
 
 <ROUTINE V-PUT-BEHIND ()
-	 <TELL "That hiding place is too obvious." CR>>
+	 <TELL "Esse esconderijo é óbvio demais." CR>>
 
 <ROUTINE V-PUT-ON ()
 	 <COND (<EQUAL? ,PRSI ,GROUND>
@@ -1123,26 +1120,26 @@ you kill yourself, just as he might have done!" CR>
 	       (<FSET? ,PRSI ,SURFACEBIT>
 		<V-PUT>)
 	       (T
-		<TELL "There's no good surface on the " D ,PRSI "." CR>)>>
+		<TELL "Não há uma superfície adequada " T-NO ,PRSI "." CR>)>>
 
 <ROUTINE V-PUT-UNDER ()
-	 <TELL "You can't do that." CR>>
+	 <TELL "Você não pode fazer isso." CR>>
 
 <ROUTINE V-RAISE ()
 	 <V-LOWER>>
 
 <ROUTINE V-RAPE ()
-	 <TELL "What a (ahem!) strange idea." CR>>
+	 <TELL "Que ideia (aham!) estranha." CR>>
 
 <ROUTINE PRE-READ ()
 	 <COND (<NOT ,LIT>
-		<TELL "It is impossible to read in the dark." CR>)
+		<TELL "É impossível ler no escuro." CR>)
 	       (<AND ,PRSI <NOT <FSET? ,PRSI ,TRANSBIT>>>
-		<TELL "How does one look through a " D ,PRSI "?" CR>)>>
+		<TELL "E como alguém olha através de " T-UM ,PRSI "?" CR>)>>
 
 <ROUTINE V-READ ()
 	 <COND (<NOT <FSET? ,PRSO ,READBIT>>
-		<TELL "How does one read a " D ,PRSO "?" CR>)
+		<TELL "E como alguém lê " T-UM ,PRSO "?" CR>)
 	       (T
 		<TELL <GETP ,PRSO ,P?TEXT> CR>)>>
 
@@ -1151,18 +1148,18 @@ you kill yourself, just as he might have done!" CR>
 	 <RTRUE>>
 
 <ROUTINE V-REPENT ()
-	 <TELL "It could very well be too late!" CR>>
+	 <TELL "Pode muito bem ser tarde demais!" CR>>
 
 <ROUTINE V-REPLY ()
-	 <TELL "It is hardly likely that the " D ,PRSO " is interested." CR>
+	 <TELL "Duvido que isso interesse " T-AO ,PRSO "." CR>
 	 <SETG P-CONT <>>
 	 <SETG QUOTE-FLAG <>>
 	 <RTRUE>>
 
 <ROUTINE V-RING ()
-	 <TELL "How, exactly, can you ring that?" CR>>
+	 <TELL "Como, exatamente, você pretende tocar isso?" CR>>
 
-<ROUTINE V-RUB () <HACK-HACK "Fiddling with the ">>
+<ROUTINE V-RUB () <HACK-HACK "Ficar apalpando ">>
 
 <ROUTINE V-SAY ("AUX" V)
 	 %<COND (<==? ,ZORK-NUMBER 2>
@@ -1178,66 +1175,66 @@ you kill yourself, just as he might have done!" CR>
 		                <CRLF>
 		                <GOTO ,FRONT-DOOR>)
 		               (T
-		                <TELL "Nothing happens." CR>)>
+		                <TELL "Nada acontece." CR>)>
 		                <RTRUE>)>)
 		(T
 		 '<COND (<NOT ,P-CONT>
-			 <TELL "Say what?" CR>
+			 <TELL "Dizer o quê?" CR>
 			 <RTRUE>)>)>
 	 <SETG QUOTE-FLAG <>>
 	 <COND (<SET V <FIND-IN ,HERE ,ACTORBIT>>
-		<TELL "You must address the " D .V " directly." CR>
+		<TELL "Você precisa falar diretamente com " T-O .V "." CR>
 		<SETG P-CONT <>>)
 	       (<NOT <EQUAL? <GET ,P-LEXV ,P-CONT> ,W?HELLO>>
 	        <SETG P-CONT <>>
 		<TELL
-"Talking to yourself is a sign of impending mental collapse." CR>)>
+"Falar sozinho é sinal de colapso mental iminente." CR>)>
 	 <RTRUE>>
 
 <ROUTINE V-SEARCH ()
-	 <TELL "You find nothing unusual." CR>>
+	 <TELL "Você não encontra nada de incomum." CR>>
 
 <ROUTINE V-SEND ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
-		<TELL "Why would you send for the " D ,PRSO "?" CR>)
+		<TELL "Por que você mandaria chamar " T-O ,PRSO "?" CR>)
 	       (T
-		<TELL "That doesn't make sends." CR>)>>
+		<TELL "Isso é totalmente inenviável." CR>)>>
 
 <ROUTINE PRE-SGIVE ()
 	 <PERFORM ,V?GIVE ,PRSI ,PRSO>
 	 <RTRUE>>
 
 <ROUTINE V-SGIVE ()
-	 <TELL "Foo!" CR>>
+	 <TELL "Ora bolas!" CR>>
 
 <ROUTINE V-SHAKE ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
-		<TELL "This seems to have no effect." CR>)
+		<TELL "Isso não parece ter efeito nenhum." CR>)
 	       (<NOT <FSET? ,PRSO ,TAKEBIT>>
-		<TELL "You can't take it; thus, you can't shake it!" CR>)
+		<TELL "Se não dá para pegar, não dá para chacoalhar!" CR>)
 	       (<FSET? ,PRSO ,CONTBIT>
 		<COND (<FSET? ,PRSO ,OPENBIT>
 		       <COND (<FIRST? ,PRSO>
 			      <SHAKE-LOOP>
-			      <TELL "The contents of the " D, PRSO " spill ">
+			      <TELL "O conteúdo " T-DO ,PRSO " se derrama ">
 	                      <COND (%<COND (<==? ,ZORK-NUMBER 3>
 					     '<FSET? ,HERE ,NONLANDBIT>)
 					    (ELSE
 					     '<NOT <FSET? ,HERE ,RLANDBIT>>)>
-		                     <TELL "out and disappears">)
+		                     <TELL "e desaparece">)
 	                            (T
-		                     <TELL "to the ground">)>
+		                     <TELL "no chão">)>
 	                      <TELL "." CR>)
 			     (T
-			      <TELL "Shaken." CR>)>)
+			      <TELL "Você sacudiu " T-O ,PRSO "." CR>)>)
 		      (T
 		       <COND (<FIRST? ,PRSO>
 			      <TELL
-"It sounds like there is something inside the " D ,PRSO "." CR>)
+"Parece que há alguma coisa dentro " T-DO ,PRSO "." CR>)
 			     (T
-			      <TELL "The " D, PRSO " sounds empty." CR>)>)>)
+			      <TELL "Pelo som, " T-O ,PRSO " " T-ESTA ,PRSO " vazi" T-G ,PRSO "." CR>)>)>)
 	       (T
-		<TELL "Shaken." CR>)>>
+		<TELL "Você sacudiu " T-O ,PRSO "." CR>)>>
 
 <ROUTINE SHAKE-LOOP ("AUX" X)
 	 <REPEAT ()
@@ -1270,25 +1267,25 @@ you kill yourself, just as he might have done!" CR>
 	 <TELL <PICK-ONE ,WHEEEEE> CR>>
 
 <GLOBAL WHEEEEE
-	<LTABLE 0 "Very good. Now you can go to the second grade."
-	       "Are you enjoying yourself?"
-	       "Wheeeeeeeeee!!!!!"
-	       "Do you expect me to applaud?">>
+	<LTABLE 0 "Muito bem. Agora você pode ir para a segunda série."
+	       "Está se divertindo?"
+	       "Uhuuuuuuuuu!!!!!"
+	       "Quer que eu aplauda?">>
 
 <ROUTINE V-SMELL ()
-	 <TELL "It smells like a " D ,PRSO "." CR>>
+	 <TELL "Tem cheiro de " D ,PRSO "." CR>>
 
 <ROUTINE V-SPIN ()
-	 <TELL "You can't spin that!" CR>>
+	 <TELL "Você não pode girar isso!" CR>>
 
 <ROUTINE V-SPRAY ()
 	 <V-SQUEEZE>>
 
 <ROUTINE V-SQUEEZE ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
-		<TELL "The " D ,PRSO " does not understand this.">)
+		<TELL "Isso não faz sentido para " T-O ,PRSO ".">)
 	       (T
-		<TELL "How singularly useless.">)>
+		<TELL "Que coisa singularmente inútil.">)>
 	 <CRLF>>
 
 <ROUTINE V-SSPRAY ()
@@ -1300,23 +1297,23 @@ you kill yourself, just as he might have done!" CR>
 		<RTRUE>)
 	       (T
 		<TELL
-"No doubt you propose to stab the " D ,PRSO " with your pinky?" CR>)>>
+"Por acaso você pretende esfaquear " T-O ,PRSO " com o dedo mindinho?" CR>)>>
 
 <ROUTINE V-STAND ()
 	 <COND (<FSET? <LOC ,WINNER> ,VEHBIT>
 		<PERFORM ,V?DISEMBARK <LOC ,WINNER>>
 		<RTRUE>)
 	       (T
-		<TELL "You are already standing, I think." CR>)>>
+		<TELL "Você já está de pé, eu acho." CR>)>>
 
 <ROUTINE V-STAY ()
-	 <TELL "You will be lost without me!" CR>>
+	 <TELL "Você vai se perder sem mim!" CR>>
 
 <ROUTINE V-STRIKE ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
 		<TELL
-"Since you aren't versed in hand-to-hand combat, you'd better attack the "
-D ,PRSO " with a weapon." CR>)
+"Como você não é versado em combate corpo a corpo, é melhor atacar "
+T-O ,PRSO " com uma arma." CR>)
 	       (T
 		<PERFORM ,V?LAMP-ON ,PRSO>
 		<RTRUE>)>>
@@ -1325,41 +1322,41 @@ D ,PRSO " with a weapon." CR>)
 	 <COND %<COND (<OR <==? ,ZORK-NUMBER 1>
 			   <==? ,ZORK-NUMBER 2>>
 		       '(<GLOBAL-IN? ,GLOBAL-WATER ,HERE>
-		         <TELL "Swimming isn't usually allowed in the ">
+		         <TELL "Normalmente não é permitido nadar ">
 		         <COND (<NOT <EQUAL? ,PRSO ,WATER ,GLOBAL-WATER>>
-	                        <TELL D ,PRSO ".">)
+	                        <TELL T-NO ,PRSO ".">)
 		               (T
-		                <TELL "dungeon.">)>
+		                <TELL "na masmorra.">)>
 		         <CRLF>))
 		      (T
 		       '(<EQUAL? ,HERE ,ON-LAKE ,IN-LAKE>
-		         <TELL "What do you think you're doing?" CR>))>
+		         <TELL "O que você pensa que está fazendo?" CR>))>
 	       %<COND (<==? ,ZORK-NUMBER 3>
 		       '(<EQUAL? ,HERE ,FLATHEAD-OCEAN>
 		         <TELL
-"Between the rocks and waves, you wouldn't last a minute!" CR>))
+"Entre as pedras e as ondas, você não duraria um minuto!" CR>))
 		      (T
 		       '(<NULL-F>
 			 <RFALSE>))>
 	       (T
-		<TELL "Go jump in a lake!" CR>)>>
+		<TELL "Vá tomar banho!" CR>)>>
 
 <ROUTINE V-SWING ()
 	 <COND (<NOT ,PRSI>
-		<TELL "Whoosh!" CR>)
+		<TELL "Vupt!" CR>)
 	       (T
 		<PERFORM ,V?ATTACK ,PRSI ,PRSO>)>>
 
 <ROUTINE PRE-TAKE ()
 	 <COND (<IN? ,PRSO ,WINNER>
 		<COND (<FSET? ,PRSO ,WEARBIT>
-		       <TELL "You are already wearing it." CR>)
+		       <TELL "Você já está usando " T-O ,PRSO "." CR>)
 		      (T
-		       <TELL "You already have that!" CR>)>)
+		       <TELL "Você já está com isso!" CR>)>)
 	       (<AND <FSET? <LOC ,PRSO> ,CONTBIT>
 		     <NOT <FSET? <LOC ,PRSO> ,OPENBIT>>>
 		<TELL
-"You can't reach something that's inside a closed container." CR>
+"Você não alcança algo que está dentro de um recipiente fechado." CR>
 		<RTRUE>)
 	       (,PRSI
 		<COND (<EQUAL? ,PRSI ,GROUND>
@@ -1372,19 +1369,19 @@ D ,PRSO " with a weapon." CR>)
 		       (ELSE
 			'<NULL-F>)>
 		<COND (<NOT <EQUAL? ,PRSI <LOC ,PRSO>>>
-		       <TELL "The " D ,PRSO " isn't in the " D ,PRSI "." CR>)
+		       <TELL T-CO ,PRSO " não " T-ESTA ,PRSO " " T-NO ,PRSI "." CR>)
 		      (T
 		       <SETG PRSI <>>
 		       <RFALSE>)>)
 	       (<EQUAL? ,PRSO <LOC ,WINNER>>
-		<TELL "You're inside of it!" CR>)>>
+		<TELL "Você está dentro d" T-ELE ,PRSO "!" CR>)>>
 
 <ROUTINE V-TAKE ()
 	 <COND (<EQUAL? <ITAKE> T>
 		<COND (<FSET? ,PRSO ,WEARBIT>
-		       <TELL "You are now wearing the " D ,PRSO "." CR>)
+		       <TELL "Agora você está usando " T-O ,PRSO "." CR>)
 		      (T
-		       <TELL "Taken." CR>)>)>>
+		       <TELL "Você pegou " T-O ,PRSO "." CR>)>)>>
 
 <ROUTINE V-TELL ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
@@ -1392,11 +1389,11 @@ D ,PRSO " with a weapon." CR>)
 		       <SETG WINNER ,PRSO>
 		       <SETG HERE <LOC ,WINNER>>)
 		      (T
-		       <TELL "The " D ,PRSO
-" pauses for a moment, perhaps thinking that you should reread
-the manual." CR>)>)
+		       <TELL T-CO ,PRSO
+" fica em silêncio por um instante, talvez achando que você devia
+reler o manual." CR>)>)
 	       (T
-		<TELL "You can't talk to the " D ,PRSO "!" CR>
+		<TELL "Você não pode falar com " T-O ,PRSO "!" CR>
 		<SETG QUOTE-FLAG <>>
 		<SETG P-CONT <>>
 		<RFATAL>)>>
@@ -1432,13 +1429,13 @@ the manual." CR>)>)
 			      <RTRUE>)
 			     (<EQUAL? ,PRSO ,CURTAIN>
 			      <TELL
-"You can't go more than part way through the curtain." CR>
+"Você não consegue atravessar a cortina além da metade." CR>
 			      <RTRUE>)>)
 		      (ELSE '<NULL-F>)>
 	       <TELL
-"You hit your head against the " D ,PRSO " as you attempt this feat." CR>)
+"Você bate com a cabeça contra " T-O ,PRSO " ao tentar essa proeza." CR>)
 	      (<IN? ,PRSO ,WINNER>
-	       <TELL "That would involve quite a contortion!" CR>)
+	       <TELL "Isso exigiria um belo contorcionismo!" CR>)
 	      (T
 	       <TELL <PICK-ONE ,YUKS> CR>)>>
 
@@ -1446,30 +1443,30 @@ the manual." CR>)>)
 	 <COND (<IDROP>
 		<COND (<EQUAL? ,PRSI ,ME>
 		       <TELL
-"A terrific throw! The " D ,PRSO>
+"Que arremesso fantástico! " T-CO ,PRSO>
 		       <SETG WINNER ,PLAYER>
-		       <JIGS-UP " hits you squarely in the head. Normally,
-this wouldn't do much damage, but by incredible mischance, you fall over
-backwards trying to duck, and break your neck, justice being swift and
-merciful in the Great Underground Empire.">)
+		       <JIGS-UP " acerta você em cheio na cabeça. Normalmente,
+isso não causaria grande estrago, mas, por um incrível azar, você cai
+para trás tentando se esquivar e quebra o pescoço, pois a justiça é rápida e
+misericordiosa no Grande Império Subterrâneo.">)
 		      (<AND ,PRSI <FSET? ,PRSI ,ACTORBIT>>
 		       <TELL
-"The " D ,PRSI " ducks as the " D ,PRSO " flies by and crashes to the ground."
+T-CO ,PRSI " se abaixa, e " T-O ,PRSO " passa voando e se espatifa no chão."
 CR>)
-		      (T <TELL "Thrown." CR>)>)
-	       (ELSE <TELL "Huh?" CR>)>>
+		      (T <TELL "Você jogou " T-O ,PRSO "." CR>)>)
+	       (ELSE <TELL "Hein?" CR>)>>
 
 <ROUTINE V-THROW-OFF ()
-	 <TELL "You can't throw anything off of that!" CR>>
+	 <TELL "Você não pode jogar nada de cima disso!" CR>>
 
 <ROUTINE V-TIE ()
 	 <COND (<EQUAL? ,PRSI ,WINNER>
-		<TELL "You can't tie anything to yourself." CR>)
+		<TELL "Você não pode amarrar nada em si mesmo." CR>)
 	       (T
-		<TELL "You can't tie the " D ,PRSO " to that." CR>)>>
+		<TELL "Você não pode amarrar " T-O ,PRSO " nisso." CR>)>>
 
 <ROUTINE V-TIE-UP ()
-	 <TELL "You could certainly never tie it with that!" CR>>
+	 <TELL "Com isso você jamais conseguiria amarrá-l" T-G ,PRSO "!" CR>>
 
 <ROUTINE V-TREASURE ()
 	 <COND %<COND (<==? ,ZORK-NUMBER 1>
@@ -1483,14 +1480,14 @@ CR>)
 		      (T
 		       '(<NULL-F> <RTRUE>))>
 	       (T
-		<TELL "Nothing happens." CR>)>>
+		<TELL "Nada acontece." CR>)>>
 
 <ROUTINE PRE-TURN ()
 	 %<COND (<==? ,ZORK-NUMBER 3>
 		 '<COND (<AND <EQUAL? ,PRSI <> ,ROOMS>
 			      <EQUAL? ,PRSO ,DIAL ,TM-DIAL ,T-BAR>>
 			 <TELL
-"You should turn the " D ,PRSO " to something." CR>
+"Você deveria girar " T-O ,PRSO " para alguma posição." CR>
 			 <RTRUE>)>)
 		(ELSE T)>
 	 <COND (%<COND (<==? ,ZORK-NUMBER 1>
@@ -1498,21 +1495,21 @@ CR>)
 			      <NOT <EQUAL? ,PRSO ,BOOK>>>)
 		       (ELSE
 			'<EQUAL? ,PRSI <> ,ROOMS>)>
-		<TELL "Your bare hands don't appear to be enough." CR>)
+		<TELL "Parece que só as mãos não bastam." CR>)
 	       (<NOT <FSET? ,PRSO ,TURNBIT>>
-		<TELL "You can't turn that!" CR>)>>
+		<TELL "Você não pode girar isso!" CR>)>>
 
 <ROUTINE V-TURN ()
-	 <TELL "This has no effect." CR>>
+	 <TELL "Isso não tem efeito nenhum." CR>>
 
 <ROUTINE V-UNLOCK ()
 	 <V-LOCK>>
 
 <ROUTINE V-UNTIE ()
-	 <TELL "This cannot be tied, so it cannot be untied!" CR>>
+	 <TELL "Isso não pode ser amarrado, então também não pode ser desamarrado!" CR>>
 
 <ROUTINE V-WAIT ("OPTIONAL" (NUM 3))
-	 <TELL "Time passes..." CR>
+	 <TELL "O tempo passa..." CR>
 	 <REPEAT ()
 		 <COND (<L? <SET NUM <- .NUM 1>> 0> <RETURN>)
 		       (<CLOCKER> <RETURN>)>>
@@ -1545,7 +1542,7 @@ CR>)
 			      <TELL .STR CR>
 			      <RFATAL>)
 			     (T
-			      <TELL "You can't go that way." CR>
+			      <TELL "Você não pode ir por aí." CR>
 			      <RFATAL>)>)
 		      (<EQUAL? .PTS ,DEXIT>
 		       <COND (<FSET? <SET OBJ <GET .PT ,DEXITOBJ>> ,OPENBIT>
@@ -1554,7 +1551,7 @@ CR>)
 			      <TELL .STR CR>
 			      <RFATAL>)
 			     (T
-			      <TELL "The " D .OBJ " is closed." CR>
+			      <TELL T-CO .OBJ " " T-ESTA .OBJ " fechad" T-G .OBJ "." CR>
 			      <THIS-IS-IT .OBJ>
 			      <RFATAL>)>)>)
 	       (<AND <NOT ,LIT>
@@ -1563,65 +1560,65 @@ CR>)
 		     <NOT <FSET? ,HERE ,NONLANDBIT>>>
 		<COND (,SPRAYED?
 		       <TELL
-"There are odd noises in the darkness, and there is no exit in that
-direction." CR>
+"Há ruídos estranhos na escuridão, e não há saída nessa
+direção." CR>
 		       <RFATAL>)
 		      %<COND (<==? ,ZORK-NUMBER 3>
 			      '(<EQUAL? ,HERE ,DARK-1 ,DARK-2>
 		                <JIGS-UP
-"Oh, no! You have walked into a den of hungry grues and it's dinner time!">))
+"Ah, não! Você entrou num covil de grues famintos, e é hora do jantar!">))
 			     (T
 			      '(<NULL-F>
 				<RFALSE>))>
 		      (T
 		       <JIGS-UP
-"Oh, no! You have walked into the slavering fangs of a lurking grue!">)>)
+"Ah, não! Você caminhou direto para as presas salivantes de um grue à espreita!">)>)
 	       (T
-		<TELL "You can't go that way." CR>
+		<TELL "Você não pode ir por aí." CR>
 		<RFATAL>)>>
 
 <ROUTINE V-WALK-AROUND ()
-	 <TELL "Use compass directions for movement." CR>>
+	 <TELL "Use os pontos cardeais para se mover." CR>>
 
 <ROUTINE V-WALK-TO ()
 	 <COND (<AND ,PRSO
 		     <OR <IN? ,PRSO ,HERE>
 			 <GLOBAL-IN? ,PRSO ,HERE>>>
-		<TELL "It's here!" CR>)
+		<TELL T-CELE ,PRSO " " T-ESTA ,PRSO " aqui!" CR>)
 	       (T
-		<TELL "You should supply a direction!" CR>)>>
+		<TELL "Você precisa indicar uma direção!" CR>)>>
 
 <ROUTINE V-WAVE ()
-	 <HACK-HACK "Waving the ">>
+	 <HACK-HACK "Acenar com ">>
 
 <ROUTINE V-WEAR ()
 	 <COND (<NOT <FSET? ,PRSO ,WEARBIT>>
-		<TELL "You can't wear the " D ,PRSO "." CR>)
+		<TELL "Você não pode vestir " T-O ,PRSO "." CR>)
 	       (T
 		<PERFORM ,V?TAKE ,PRSO>
 		<RTRUE>)>>
 
 <ROUTINE V-WIN ()
-	 <TELL "Naturally!" CR>>
+	 <TELL "Naturalmente!" CR>>
 
 <ROUTINE V-WIND ()
-	 <TELL "You cannot wind up a " D ,PRSO "." CR>>
+	 <TELL "Você não pode dar corda em " T-UM ,PRSO "." CR>>
 
 <ROUTINE V-WISH ()
 	 %<COND (<==? ,ZORK-NUMBER 2>
 		 '<PERFORM ,V?MAKE ,WISH>)
 		(T
-		 '<TELL "With luck, your wish will come true." CR>)>>
+		 '<TELL "Com sorte, seu desejo vai se realizar." CR>)>>
 
 <ROUTINE V-YELL () <TELL "Aaaarrrrgggghhhh!" CR>>
 
-<ROUTINE V-ZORK () <TELL "At your service!" CR>>
+<ROUTINE V-ZORK () <TELL "Às suas ordens!" CR>>
 
 ^L
 
-"Verb-Associated Routines"
+"Rotinas associadas aos verbos"
 
-"Descriptions"
+"Descrições"
 
 <GLOBAL LIT <>>
 
@@ -1635,15 +1632,15 @@ direction." CR>
 <ROUTINE DESCRIBE-ROOM ("OPTIONAL" (LOOK? <>) "AUX" V? STR AV)
 	 <SET V? <OR .LOOK? ,VERBOSE>>
 	 <COND (<NOT ,LIT>
-		<TELL "It is pitch black.">
+		<TELL "Está um breu total.">
 		<COND (<NOT ,SPRAYED?>
-		       <TELL " You are likely to be eaten by a grue.">)>
+		       <TELL " É provável que você seja devorado por um grue.">)>
 		<CRLF>
 		%<COND (<==? ,ZORK-NUMBER 3>
 			'<COND (<EQUAL? ,HERE ,DARK-2>
 		                <TELL
-"The ground continues to slope upwards away from the lake. You can barely
-detect a dim light from the east." CR>)>)
+"O chão continua subindo, afastando-se do lago. Você mal consegue
+perceber uma luz fraca vindo do leste." CR>)>)
 		       (T
 			'<NULL-F>)>
 		<RFALSE>)>
@@ -1659,7 +1656,7 @@ detect a dim light from the east." CR>)>)
 		;"Was <TELL D ,HERE CR>"
 		<TELL D ,HERE>
 		<COND (<FSET? <SET AV <LOC ,WINNER>> ,VEHBIT>
-		       <TELL ", in the " D .AV>)>
+		       <TELL ", " T-NO .AV>)>
 		<CRLF>)>
 	 <COND (%<COND (<==? ,ZORK-NUMBER 2>
 			'<OR .LOOK? <NOT ,SUPER-BRIEF> <EQUAL? ,HERE ,ZORK3>>)
@@ -1683,10 +1680,10 @@ detect a dim light from the east." CR>)>)
 		<COND (<FIRST? ,HERE>
 		       <PRINT-CONT ,HERE <SET V? <OR .V? ,VERBOSE>> -1>)>)
 	       (T
-		<TELL "Only bats can see in the dark. And you're not one." CR>)>>
+		<TELL "Só morcegos enxergam no escuro. E você não é um deles." CR>)>>
 
-"DESCRIBE-OBJECT -- takes object and flag.  if flag is true will print a
-long description (fdesc or ldesc), otherwise will print short."
+"DESCRIBE-OBJECT -- recebe o objeto e um sinalizador. Se o sinalizador for
+verdadeiro, escreve a descrição longa (fdesc ou ldesc); senão, a curta."
 
 <GLOBAL DESC-OBJECT <>>
 
@@ -1701,28 +1698,28 @@ long description (fdesc or ldesc), otherwise will print short."
 			 <SET STR <GETP .OBJ ,P?LDESC>>>>
 		<TELL .STR>)
 	       (<0? .LEVEL>
-		<TELL "There is a " D .OBJ " here">
+		<TELL "Há " T-UM .OBJ " aqui">
 		<COND (<FSET? .OBJ ,ONBIT>
-		       <TELL " (providing light)">)>
+		       <TELL " (aces" T-G .OBJ ")">)>
 		<TELL ".">)
 	       (T
 		<TELL <GET ,INDENTS .LEVEL>>
-		<TELL "A " D .OBJ>
+		<TELL T-CUM .OBJ>
 		<COND (<FSET? .OBJ ,ONBIT>
-		       <TELL " (providing light)">)
+		       <TELL " (aces" T-G .OBJ ")">)
 		      (<AND <FSET? .OBJ ,WEARBIT>
 			    <IN? .OBJ ,WINNER>>
-		       <TELL " (being worn)">)>)>
+		       <TELL " (vestid" T-G .OBJ ")">)>)>
 	 %<COND (<==? ,ZORK-NUMBER 2>
 		 '<COND (<AND <EQUAL? .OBJ ,SPELL-VICTIM>
 		              <EQUAL? ,SPELL-USED ,W?FLOAT>>
-		         <TELL " (floating in midair)">)>)
+		         <TELL " (flutuando no ar)">)>)
 		(T
 		 '<NULL-F>)>
 	 <COND (<AND <0? .LEVEL>
 		     <SET AV <LOC ,WINNER>>
 		     <FSET? .AV ,VEHBIT>>
-		<TELL " (outside the " D .AV ")">)>
+		<TELL " (fora " T-DO .AV ")">)>
 	 <CRLF>
 	 <COND (<AND <SEE-INSIDE? .OBJ> <FIRST? .OBJ>>
 		<PRINT-CONT .OBJ .V? .LEVEL>)>>
@@ -1733,9 +1730,9 @@ long description (fdesc or ldesc), otherwise will print short."
 			<SET N <NEXT? .F>>
 			<COND (.1ST? <SET 1ST? <>>)
 			      (ELSE
-			       <TELL ", ">
-			       <COND (<NOT .N> <TELL "and ">)>)>
-			<TELL "a " D .F>
+			       <COND (<NOT .N> <TELL " e ">)
+				     (T <TELL ", ">)>)>
+			<TELL T-UM .F>
 			<COND (<AND <NOT .IT?> <NOT .TWO?>>
 			       <SET IT? .F>)
 			      (ELSE
@@ -1764,9 +1761,9 @@ long description (fdesc or ldesc), otherwise will print short."
 					<COND (<AND <0? .LEVEL>
 						    <==? ,SPELL? ,S-FANTASIZE>
 						    <PROB 20>>
-					       <TELL "There is a "
+					       <TELL "Há "
 						     <PICK-ONE ,FANTASIES>
-						     " here." CR>
+						     " aqui." CR>
 					       <SET 1ST? <>>)>
 					<RETURN>))
 				     (ELSE
@@ -1819,26 +1816,26 @@ long description (fdesc or ldesc), otherwise will print short."
 	 <COND %<COND (<==? ,ZORK-NUMBER 1>
 		       '(<EQUAL? .OBJ ,TROPHY-CASE>
 		         <TELL
-"Your collection of treasures consists of:" CR>))
+"Sua coleção de tesouros consiste em:" CR>))
 		      (T
 		       '(<NULL-F> <RTRUE>))>
 	       (<EQUAL? .OBJ ,WINNER>
-		<TELL "You are carrying:" CR>)
+		<TELL "Você está carregando:" CR>)
 	       (<NOT <IN? .OBJ ,ROOMS>>
 		<COND (<G? .LEVEL 0>
 		       <TELL <GET ,INDENTS .LEVEL>>)>
 		<COND (<FSET? .OBJ ,SURFACEBIT>
-		       <TELL "Sitting on the " D .OBJ " is: " CR>)
+		       <TELL "Em cima " T-DO .OBJ " há: " CR>)
 		      (<FSET? .OBJ ,ACTORBIT>
-		       <TELL "The " D .OBJ " is holding: " CR>)
+		       <TELL T-CO .OBJ " " T-ESTA .OBJ " segurando: " CR>)
 		      (T
-		       <TELL "The " D .OBJ " contains:" CR>)>)>>
+		       <TELL "Dentro " T-DO .OBJ " há:" CR>)>)>>
 
 <ROUTINE SEE-INSIDE? (OBJ)
 	 <AND <NOT <FSET? .OBJ ,INVISIBLE>>
 	      <OR <FSET? .OBJ ,TRANSBIT> <FSET? .OBJ ,OPENBIT>>>>
 
-"Scoring"
+"Pontuação"
 
 <GLOBAL MOVES 0>
 
@@ -1858,8 +1855,8 @@ long description (fdesc or ldesc), otherwise will print short."
 		         <FCLEAR ,MAP ,INVISIBLE>
 		         <FCLEAR ,WEST-OF-HOUSE ,TOUCHBIT>
 		         <TELL
-"An almost inaudible voice whispers in your ear, \"Look to your treasures
-for the final secret.\"" CR>)>)
+"Uma voz quase inaudível sussurra em seu ouvido: \"Procure em seus tesouros
+o segredo final.\"" CR>)>)
 		(T
 		 '<NULL-F>)>
 	 T>
@@ -1877,7 +1874,7 @@ for the final secret.\"" CR>)>)
 	       (T
 		<RFALSE>)>>
 
-"Death"
+"Morte"
 
 <GLOBAL DEAD <>>
 
@@ -1891,7 +1888,7 @@ for the final secret.\"" CR>)>)
 
 ;"KILL-INTERRUPTS is in ACTIONS.ZIL"
 
-"Object Manipulation"
+"Manipulação de objetos"
 
 <GLOBAL FUMBLE-NUMBER 7>
 
@@ -1903,7 +1900,7 @@ for the final secret.\"" CR>)>)
 		       '(,DEAD
 		         <COND (.VB
 				<TELL
-"Your hand passes through its object." CR>)>
+"Sua mão atravessa o objeto." CR>)>
 		         <RFALSE>))
 		      (T
 		       '(<NULL-F>
@@ -1917,9 +1914,9 @@ for the final secret.\"" CR>)>)
 		              <EQUAL? ,SPELL-USED ,W?FLOAT ,W?FREEZE>>
 		         <COND (<EQUAL? ,SPELL-USED ,W?FLOAT>
 		                <TELL
-"You can't reach that. It's floating above your head." CR>)
+"Você não alcança. " T-CELE ,PRSO " " T-ESTA ,PRSO " flutuando acima da sua cabeça." CR>)
 		               (T
-		                <TELL "It seems rooted to the spot." CR>)>
+		                <TELL "Parece que " T-ELE ,PRSO " " T-ESTA ,PRSO " pregad" T-G ,PRSO " no lugar." CR>)>
 		         <RFALSE>))
 		      (T
 		       '(<NULL-F>
@@ -1931,9 +1928,9 @@ for the final secret.\"" CR>)>)
 	       (<AND <NOT <IN? <LOC ,PRSO> ,WINNER>>
 		     <G? <+ <WEIGHT ,PRSO> <WEIGHT ,WINNER>> ,LOAD-ALLOWED>>
 		<COND (.VB
-		       <TELL "Your load is too heavy">
+		       <TELL "Sua carga está pesada demais">
 		       <COND (<L? ,LOAD-ALLOWED ,LOAD-MAX>
-			      <TELL", especially in light of your condition.">)
+			      <TELL", ainda mais no seu estado.">)
 			     (T
 			      <TELL ".">)>
 		       <CRLF>)>
@@ -1942,7 +1939,7 @@ for the final secret.\"" CR>)>)
 		     <G? <SET CNT <CCOUNT ,WINNER>> ,FUMBLE-NUMBER>
 		     <PROB <* .CNT ,FUMBLE-PROB>>>
 		<TELL
-"You're holding too many things already!" CR>
+"Você já está segurando coisas demais!" CR>
 		<RFALSE>)
 	       (T
 		<MOVE ,PRSO ,WINNER>
@@ -1952,7 +1949,7 @@ for the final secret.\"" CR>)>)
 			'<COND (<EQUAL? ,SPELL? ,S-FILCH>
 		                <COND (<RIPOFF ,PRSO ,WIZARD-CASE>
 			               <TELL
-"When you touch the " D ,PRSO " it immediately disappears!" CR>
+"Assim que você toca " T-O ,PRSO ", " T-ELE ,PRSO " desaparece!" CR>
 			               <RFALSE>)>)>)
 		       (T
 			'<NULL-F>)>
@@ -1966,11 +1963,11 @@ for the final secret.\"" CR>)>)
 <ROUTINE IDROP ()
 	 <COND (<AND <NOT <IN? ,PRSO ,WINNER>>
 		     <NOT <IN? <LOC ,PRSO> ,WINNER>>>
-		<TELL "You're not carrying the " D ,PRSO "." CR>
+		<TELL "Você não está carregando " T-O ,PRSO "." CR>
 		<RFALSE>)
 	       (<AND <NOT <IN? ,PRSO ,WINNER>>
 		     <NOT <FSET? <LOC ,PRSO> ,OPENBIT>>>
-		<TELL "The " D ,PRSO " is closed." CR>
+		<TELL T-CO ,PRSO " " T-ESTA ,PRSO " fechad" T-G ,PRSO "." CR>
 		<RFALSE>)
 	       (T
 		<MOVE ,PRSO <LOC ,WINNER>>
@@ -1996,7 +1993,7 @@ for the final secret.\"" CR>)>)
 			<COND (<NOT <SET CONT <NEXT? .CONT>>> <RETURN>)>>)>
 	 <+ .WT <GETP .OBJ ,P?SIZE>>>
 
-"Miscellaneous"
+"Diversos"
 
 ;"V5: salas e objetos ocupam uma palavra nas saídas, então os tamanhos e
   deslocamentos mudam. REXIT, DEXITOBJ, CEXITSTR e DEXITSTR são índices de
@@ -2027,22 +2024,22 @@ for the final secret.\"" CR>)>)
 <ROUTINE HACK-HACK (STR)
 	 <COND (<AND <IN? ,PRSO ,GLOBAL-OBJECTS>
 		     <VERB? WAVE RAISE LOWER>>
-		<TELL "The " D ,PRSO " isn't here!" CR>)
+		<TELL T-CO ,PRSO " não " T-ESTA ,PRSO " aqui!" CR>)
 	       (T
-		<TELL .STR D ,PRSO <PICK-ONE ,HO-HUM> CR>)>>
+		<TELL .STR T-O ,PRSO <PICK-ONE ,HO-HUM> CR>)>>
 
 <GLOBAL HO-HUM
 	<LTABLE
 	 0
-	 " doesn't seem to work."
-	 " isn't notably helpful."
-	 " has no effect.">>
+	 " não parece adiantar."
+	 " não ajuda muito."
+	 " não tem efeito nenhum.">>
 
 <ROUTINE NO-GO-TELL (AV WLOC)
 	 <COND (.AV
-		<TELL "You can't go there in a " D .WLOC ".">)
+		<TELL "Você não pode ir até lá de " D .WLOC ".">)
 	       (T
-		<TELL "You can't go there without a vehicle.">)>
+		<TELL "Você não pode ir até lá sem um veículo.">)>
 	 <CRLF>>
 
 <ROUTINE GOTO (RM "OPTIONAL" (V? T)
@@ -2077,18 +2074,18 @@ for the final secret.\"" CR>)>)
 			    <FSET? .WLOC ,VEHBIT>>
 		       %<COND (<==? ,ZORK-NUMBER 1>
 			       '<TELL
-"The " D .WLOC " comes to a rest on the shore." CR CR>)
+T-CO .WLOC " encosta na margem." CR CR>)
 			      (<==? ,ZORK-NUMBER 2>
 			       '<COND (<EQUAL? .WLOC ,BALLOON>
 				       <TELL
-"The balloon lands." CR>)
+"O balão pousa." CR>)
 				      (<FSET? .WLOC ,VEHBIT>
 				       <TELL
-"The " D .WLOC " comes to a stop." CR CR>)>)
+T-CO .WLOC " finalmente para." CR CR>)>)
 			      (<==? ,ZORK-NUMBER 3>
 			       '<COND (<FSET? .WLOC ,VEHBIT>
 				       <TELL
-"The " D .WLOC " comes to a stop." CR CR>)>)>)>
+T-CO .WLOC " finalmente para." CR CR>)>)>)>
 		<COND (.AV
 		       <MOVE .WLOC .RM>)
 		      (T
@@ -2100,33 +2097,33 @@ for the final secret.\"" CR>)>)
 			    <PROB 80>>
 		       <COND (,SPRAYED?
 			      <TELL
-"There are sinister gurgling noises in the darkness all around you!" CR>)
+"Há ruídos sinistros de gorgolejo na escuridão ao seu redor!" CR>)
 			     %<COND (<==? ,ZORK-NUMBER 3>
 				     '(<EQUAL? ,HERE ,DARK-1 ,DARK-2>
 		                       <JIGS-UP
-"Oh, no! Dozen of lurking grues attack and devour you! You must have
-stumbled into an authentic grue lair!">))
+"Ah, não! Dezenas de grues à espreita atacam e devoram você! Você deve
+ter tropeçado num autêntico covil de grues!">))
 				    (T
 				     '(<NULL-F>
 				       <RFALSE>))>
 			     (T
 			      <TELL
-"Oh, no! A lurking grue slithered into the ">
+"Ah, não! Um grue à espreita deslizou para dentro ">
 			      <COND (<FSET? <LOC ,WINNER> ,VEHBIT>
-				     <TELL D <LOC ,WINNER>>)
-				    (T <TELL "room">)>
-			      <JIGS-UP " and devoured you!">
+				     <TELL T-DO <LOC ,WINNER>>)
+				    (T <TELL "da sala">)>
+			      <JIGS-UP " e devorou você!">
 			      <RTRUE>)>)>
 		<COND (<AND <NOT ,LIT>
 			    <EQUAL? ,WINNER ,ADVENTURER>>
-		       <TELL "You have moved into a dark place." CR>
+		       <TELL "Você entrou num lugar escuro." CR>
 		       <SETG P-CONT <>>)>
 		<APPLY <GETP ,HERE ,P?ACTION> ,M-ENTER>
 		<SCORE-OBJ .RM>
 		<COND (<NOT <EQUAL? ,HERE .RM>> <RTRUE>)
 		      (<AND <NOT <EQUAL? ,ADVENTURER ,WINNER>>
 			    <IN? ,ADVENTURER .OHERE>>
-		       <TELL "The " D ,WINNER " leaves the room." CR>)
+		       <TELL T-CO ,WINNER " sai da sala." CR>)
 		      %<COND (<==? ,ZORK-NUMBER 1>
 			      '(<AND <EQUAL? ,HERE .OHERE>
 				      ;"no double description"
@@ -2196,25 +2193,25 @@ stumbled into an authentic grue lair!">))
 
 <COND (<N==? ,ZORK-NUMBER 3>
        <GLOBAL SWIMYUKS
-	       <LTABLE 0 "You can't swim in the dungeon.">>)>
+	       <LTABLE 0 "Você não pode nadar na masmorra.">>)>
 
 <GLOBAL HELLOS
-	<LTABLE 0 "Hello."
-	       "Good day."
-	       "Nice weather we've been having lately."
-	       "Goodbye.">>
+	<LTABLE 0 "Olá."
+	       "Bom dia."
+	       "Que tempo bom tem feito ultimamente, não?"
+	       "Tchau.">>
 
 <GLOBAL YUKS
 	<LTABLE
 	 0
-	 "A valiant attempt."
-	 "You can't be serious."
+	 "Uma tentativa corajosa."
+	 "Você não pode estar falando sério."
 	 ;"Not bloody likely."
-	 "An interesting idea..."
-	 "What a concept!">>
+	 "Uma ideia interessante..."
+	 "Que conceito!">>
 
 <GLOBAL DUMMY
 	<LTABLE 0 
-		"Look around."
-	        "Too late for that."
-	        "Have your eyes checked.">>
+		"Olhe em volta."
+	        "Tarde demais para isso."
+	        "Vá ao oculista.">>
