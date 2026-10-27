@@ -111,21 +111,23 @@
 
 <OBJECT GHOSTS
 	(IN ENTRANCE-TO-HADES)
-	(SYNONYM GHOSTS SPIRITS FIENDS FORCE)
-	(ADJECTIVE INVISIBLE EVIL)
-	(DESC "number of ghosts")
-	(FLAGS ACTORBIT NDESCBIT)
+	(SYNONYM GHOSTS SPIRITS FIENDS FORCE ESPIRITOS ESPIRITO FANTASMAS
+		 FANTASMA DEMONIOS DEMONIO ASSOMBRAC FORCA)
+	(ADJECTIVE INVISIBLE EVIL INVISIVEI MALIGNOS MAUS)
+	(DESC "espíritos")
+	(FLAGS ACTORBIT NDESCBIT PLURALBIT)
 	(ACTION GHOSTS-F)>
 
 <OBJECT SKULL
 	(IN LAND-OF-LIVING-DEAD)
-	(SYNONYM SKULL HEAD TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE CRYSTAL)
-	(DESC "crystal skull")
+	(SYNONYM SKULL HEAD TREASURE TREASURES TESOURO TESOUROS CAVEIRA CRANIO
+		 CABECA)
+	(ADJECTIVE CRYSTAL CRISTAL)
+	(DESC "caveira de cristal")
 	(FDESC
-"Lying in one corner of the room is a beautifully carved crystal skull.
-It appears to be grinning at you rather nastily.")
-	(FLAGS TAKEBIT)
+"Num canto da sala há uma caveira de cristal lindamente esculpida. Ela
+parece sorrir para você com um ar bem maldoso.")
+	(FLAGS TAKEBIT FEMBIT)
 	(VALUE 10)
 	(TVALUE 10)>
 
@@ -166,19 +168,19 @@ It appears to be grinning at you rather nastily.")
 
 <OBJECT BELL
 	(IN NORTH-TEMPLE)
-	(SYNONYM BELL)
-	(ADJECTIVE SMALL BRASS)
-	(DESC "brass bell")
+	(SYNONYM BELL SINO SININHO)
+	(ADJECTIVE SMALL BRASS PEQUENO LATAO)
+	(DESC "sino de latão")
 	(FLAGS TAKEBIT)
 	(ACTION BELL-F)>
 
 <OBJECT HOT-BELL
-	(SYNONYM BELL)
-	(ADJECTIVE BRASS HOT RED SMALL)
-	(DESC "red hot brass bell")
+	(SYNONYM BELL SINO SININHO)
+	(ADJECTIVE BRASS HOT RED SMALL LATAO QUENTE VERMELHO INCANDESC PEQUENO)
+	(DESC "sino de latão em brasa")
 	(FLAGS TRYTAKEBIT)
 	(ACTION HOT-BELL-F)
-	(LDESC "On the ground is a red hot bell.")>
+	(LDESC "No chão há um sino em brasa.")>
 
 <OBJECT AXE
 	(IN TROLL)
@@ -214,24 +216,24 @@ It appears to be grinning at you rather nastily.")
 
 <OBJECT BOOK
 	(IN ALTAR)
-	(SYNONYM BOOK PRAYER PAGE BOOKS)
-	(ADJECTIVE LARGE BLACK)
-	(DESC "black book")
+	(SYNONYM BOOK PRAYER PAGE BOOKS LIVRO LIVROS PAGINA ORACAO)
+	(ADJECTIVE LARGE BLACK GRANDE NEGRO PRETO)
+	(DESC "livro negro")
 	(FLAGS READBIT TAKEBIT CONTBIT BURNBIT TURNBIT)
 	(ACTION BLACK-BOOK)
-	(FDESC "On the altar is a large black book, open to page 569.")
+	(FDESC "Sobre o altar há um grande livro negro, aberto na página 569.")
 	(SIZE 10)
 	(TEXT
-"Commandment #12592|
+"Mandamento #12592|
 |
-Oh ye who go about saying unto each:  \"Hello sailor\":|
-Dost thou know the magnitude of thy sin before the gods?|
-Yea, verily, thou shalt be ground between two stones.|
-Shall the angry gods cast thy body into the whirlpool?|
-Surely, thy eye shall be put out with a sharp stick!|
-Even unto the ends of the earth shalt thou wander and|
-Unto the land of the dead shalt thou be sent at last.|
-Surely thou shalt repent of thy cunning." )>
+Ó vós que andais por aí dizendo a cada um:  \"Olá, marinheiro\":|
+Sabes tu a grandeza do teu pecado diante dos deuses?|
+Sim, em verdade, serás moído entre duas pedras.|
+Lançarão os deuses irados o teu corpo no redemoinho?|
+Por certo, teu olho será furado com uma vara pontuda!|
+Até os confins da terra vagarás, e|
+À terra dos mortos serás enfim enviado.|
+Por certo te arrependerás da tua astúcia." )>
 
 <OBJECT BROKEN-LAMP
 	(SYNONYM LAMP LANTERN LANTERNA LAMPADA LAMPIAO)
@@ -241,16 +243,17 @@ Surely thou shalt repent of thy cunning." )>
 
 <OBJECT SCEPTRE
 	(IN COFFIN)
-	(SYNONYM SCEPTRE SCEPTER TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE SHARP EGYPTIAN ANCIENT ENAMELED)
-	(DESC "sceptre")
+	(SYNONYM SCEPTRE SCEPTER TREASURE TREASURES TESOURO TESOUROS CETRO)
+	(ADJECTIVE SHARP EGYPTIAN ANCIENT ENAMELED AFIADO PONTIAGUD EGIPCIO
+		   ANTIGO ESMALTADO ORNAMENTA)
+	(DESC "cetro")
 	(FLAGS TAKEBIT WEAPONBIT)
 	(ACTION SCEPTRE-FUNCTION)
 	(LDESC
-"An ornamented sceptre, tapering to a sharp point, is here.")
+"Há aqui um cetro ornamentado, que se afina até terminar numa ponta afiada.")
 	(FDESC
-"A sceptre, possibly that of ancient Egypt itself, is in the coffin. The
-sceptre is ornamented with colored enamel, and tapers to a sharp point.")
+"Dentro do caixão há um cetro, talvez o do próprio Egito antigo. O cetro é
+ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.")
 	(SIZE 3)
 	(VALUE 4)
 	(TVALUE 6)>
@@ -466,12 +469,13 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT COFFIN
 	(IN EGYPT-ROOM)
-	(SYNONYM COFFIN CASKET TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE SOLID GOLD)
-	(DESC "gold coffin")
+	(SYNONYM COFFIN CASKET TREASURE TREASURES TESOURO TESOUROS CAIXAO ATAUDE
+		 SARCOFAGO ESQUIFE)
+	(ADJECTIVE SOLID GOLD OURO MACICO DOURADO)
+	(DESC "caixão de ouro")
 	(FLAGS TAKEBIT CONTBIT SACREDBIT SEARCHBIT)
 	(LDESC
-"The solid-gold coffin used for the burial of Ramses II is here.")
+"Aqui está o caixão de ouro maciço usado no enterro de Ramsés II.")
 	(CAPACITY 35)
 	(SIZE 55)
 	(VALUE 10)
@@ -652,15 +656,17 @@ brilhante." )>
 
 <OBJECT MIRROR-2
 	(IN MIRROR-ROOM-2)
-	(SYNONYM REFLECTION MIRROR ENORMOUS)
-	(DESC "mirror")
+	(SYNONYM REFLECTION MIRROR ENORMOUS ESPELHO REFLEXO)
+	(ADJECTIVE ENORME)
+	(DESC "espelho")
 	(FLAGS TRYTAKEBIT NDESCBIT)
 	(ACTION MIRROR-MIRROR)>
 
 <OBJECT MIRROR-1
 	(IN MIRROR-ROOM-1)
-	(SYNONYM REFLECTION MIRROR ENORMOUS)
-	(DESC "mirror")
+	(SYNONYM REFLECTION MIRROR ENORMOUS ESPELHO REFLEXO)
+	(ADJECTIVE ENORME)
+	(DESC "espelho")
 	(FLAGS TRYTAKEBIT NDESCBIT)
 	(ACTION MIRROR-MIRROR)>
 
@@ -682,12 +688,12 @@ fundo há uma pintura de beleza sem igual.")
 
 <OBJECT CANDLES
 	(IN SOUTH-TEMPLE)
-	(SYNONYM CANDLES CANDLE PAIR)
-	(ADJECTIVE BURNING)
-	(DESC "pair of candles")
+	(SYNONYM CANDLES CANDLE PAIR VELAS VELA PAR)
+	(ADJECTIVE BURNING VELAS ACESAS ACESA)
+	(DESC "par de velas")
 	(FLAGS TAKEBIT FLAMEBIT ONBIT LIGHTBIT)
 	(ACTION CANDLES-FCN)
-	(FDESC "On the two ends of the altar are burning candles.")
+	(FDESC "Nas duas pontas do altar há velas acesas.")
 	(SIZE 10)>
 
 <OBJECT GUNK
@@ -700,9 +706,10 @@ fundo há uma pintura de beleza sem igual.")
 
 <OBJECT BODIES
 	(IN LOCAL-GLOBALS)
-	(SYNONYM BODIES BODY REMAINS PILE)
-	(ADJECTIVE MANGLED)
-	(DESC "pile of bodies")
+	(SYNONYM BODIES BODY REMAINS PILE CORPOS CORPO RESTOS MONTE PILHA
+		 CADAVERES CADAVER)
+	(ADJECTIVE MANGLED CORPOS MUTILADOS)
+	(DESC "monte de corpos")
 	(FLAGS NDESCBIT TRYTAKEBIT)
 	(ACTION BODY-FUNCTION)>
 
@@ -760,22 +767,21 @@ ele.")
 
 <OBJECT PRAYER
 	(IN NORTH-TEMPLE)
-	(SYNONYM PRAYER INSCRIPTION)
-	(ADJECTIVE ANCIENT OLD)
-	(DESC "prayer")
-	(FLAGS READBIT SACREDBIT NDESCBIT)
+	(SYNONYM PRAYER INSCRIPTION ORACAO PRECE INSCRICAO)
+	(ADJECTIVE ANCIENT OLD ANTIGA VELHA)
+	(DESC "oração")
+	(FLAGS READBIT SACREDBIT NDESCBIT FEMBIT)
 	(TEXT
-"The prayer is inscribed in an ancient script, rarely used today. It seems
-to be a philippic against small insects, absent-mindedness, and the picking
-up and dropping of small objects. The final verse consigns trespassers to
-the land of the dead. All evidence indicates that the beliefs of the ancient
-Zorkers were obscure." )>
+"A oração está gravada numa escrita antiga, hoje raramente usada. Parece
+ser uma filípica contra os insetos pequenos, a distração e o hábito de pegar
+e largar objetos pequenos. O último verso condena os invasores à terra dos
+mortos. Tudo indica que as crenças dos antigos zorkianos eram obscuras." )>
 
 <OBJECT RAILING
 	(IN DOME-ROOM)
-	(SYNONYM RAILING RAIL)
-	(ADJECTIVE WOODEN)
-	(DESC "wooden railing")
+	(SYNONYM RAILING RAIL CORRIMAO GRADIL PARAPEITO)
+	(ADJECTIVE WOODEN MADEIRA)
+	(DESC "corrimão de madeira")
 	(FLAGS NDESCBIT)>
 
 <OBJECT RAINBOW
@@ -1003,7 +1009,7 @@ um saco grande. Ele está armado com um estilete letal.")
 <OBJECT PEDESTAL
 	(IN TORCH-ROOM)
 	(SYNONYM PEDESTAL)
-	(ADJECTIVE WHITE MARBLE)
+	(ADJECTIVE WHITE MARBLE BRANCO MARMORE)
 	(DESC "pedestal")
 	(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT)
 	(ACTION DUMB-CONTAINER)
@@ -1011,12 +1017,13 @@ um saco grande. Ele está armado com um estilete letal.")
 
 <OBJECT TORCH
 	(IN PEDESTAL)
-	(SYNONYM TORCH IVORY TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE FLAMING IVORY)
-	(DESC "torch")
-	(FLAGS TAKEBIT FLAMEBIT ONBIT LIGHTBIT)
+	(SYNONYM TORCH IVORY TREASURE TREASURES TESOURO TESOUROS TOCHA MARFIM
+		 ARCHOTE)
+	(ADJECTIVE FLAMING IVORY FLAMEJANT MARFIM ACESA)
+	(DESC "tocha")
+	(FLAGS TAKEBIT FLAMEBIT ONBIT LIGHTBIT FEMBIT)
 	(ACTION TORCH-OBJECT)
-	(FDESC "Sitting on the pedestal is a flaming torch, made of ivory.")
+	(FDESC "Sobre o pedestal há uma tocha flamejante, feita de marfim.")
 	(SIZE 20)
 	(VALUE 14)
 	(TVALUE 6)>
@@ -1110,18 +1117,19 @@ bloqueia todas as saídas da sala.")
 
 <OBJECT ENGRAVINGS
 	(IN ENGRAVINGS-CAVE)
-	(SYNONYM WALL ENGRAVINGS INSCRIPTION)
-	(ADJECTIVE OLD ANCIENT)
-	(DESC "wall with engravings")
-	(FLAGS READBIT SACREDBIT)
-	(LDESC "There are old engravings on the walls here.")
+	(SYNONYM WALL ENGRAVINGS INSCRIPTION PAREDE PAREDES INSCRICOES INSCRICAO
+		 GRAVURAS ENTALHES)
+	(ADJECTIVE OLD ANCIENT ANTIGAS VELHAS)
+	(DESC "parede com inscrições")
+	(FLAGS READBIT SACREDBIT FEMBIT)
+	(LDESC "Há inscrições antigas nas paredes aqui.")
 	(TEXT
-"The engravings were incised in the living rock of the cave wall by
-an unknown hand. They depict, in symbolic form, the beliefs of the
-ancient Zorkers. Skillfully interwoven with the bas reliefs are excerpts
-illustrating the major religious tenets of that time. Unfortunately, a
-later age seems to have considered them blasphemous and just as skillfully
-excised them.")>
+"As inscrições foram talhadas na rocha viva da parede da caverna por uma
+mão desconhecida. Elas retratam, de forma simbólica, as crenças dos antigos
+zorkianos. Habilmente entremeados aos baixos-relevos, há trechos que ilustram
+os principais dogmas religiosos daquela época. Infelizmente, uma era
+posterior parece tê-los considerado blasfemos e, com a mesma habilidade,
+os apagou.")>
 
 <OBJECT OWNERS-MANUAL
 	(IN STUDIO)
@@ -1892,7 +1900,7 @@ para atracar.")
 
 <ROOM MIRROR-ROOM-1
       (IN ROOMS)
-      (DESC "Mirror Room")
+      (DESC "Sala do Espelho")
       (NORTH TO COLD-PASSAGE)
       (WEST TO TWISTING-PASSAGE)
       (EAST TO SMALL-CAVE)
@@ -1901,7 +1909,7 @@ para atracar.")
 
 <ROOM MIRROR-ROOM-2
       (IN ROOMS)
-      (DESC "Mirror Room")
+      (DESC "Sala do Espelho")
       (WEST TO WINDING-PASSAGE)
       (NORTH TO NARROW-PASSAGE)
       (EAST TO TINY-CAVE)
@@ -1911,9 +1919,9 @@ para atracar.")
 <ROOM SMALL-CAVE
       (IN ROOMS)
       (LDESC
-"This is a tiny cave with entrances west and north, and a staircase
-leading down.")
-      (DESC "Cave")
+"Esta é uma caverna minúscula, com entradas a oeste e ao norte, e uma escada
+que desce.")
+      (DESC "Caverna")
       (NORTH TO MIRROR-ROOM-1)
       (DOWN TO ATLANTIS-ROOM)
       (SOUTH TO ATLANTIS-ROOM)
@@ -1924,9 +1932,9 @@ leading down.")
 <ROOM TINY-CAVE
       (IN ROOMS)
       (LDESC
-"This is a tiny cave with entrances west and north, and a dark,
-forbidding staircase leading down.")
-      (DESC "Cave")
+"Esta é uma caverna minúscula, com entradas a oeste e ao norte, e uma escada
+escura e ameaçadora que desce.")
+      (DESC "Caverna")
       (NORTH TO MIRROR-ROOM-2)
       (WEST TO WINDING-PASSAGE)
       (DOWN TO ENTRANCE-TO-HADES)
@@ -1937,9 +1945,9 @@ forbidding staircase leading down.")
 <ROOM COLD-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a cold and damp corridor where a long east-west passageway
-turns into a southward path.")
-      (DESC "Cold Passage")
+"Este é um corredor frio e úmido, onde uma longa passagem leste-oeste vira
+um caminho que segue para o sul.")
+      (DESC "Passagem Fria")
       (SOUTH TO MIRROR-ROOM-1)
       (WEST TO SLIDE-ROOM)
       (FLAGS RLANDBIT)>
@@ -1947,9 +1955,9 @@ turns into a southward path.")
 <ROOM NARROW-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a long and narrow corridor where a long north-south passageway
-briefly narrows even further.")
-      (DESC "Narrow Passage")
+"Este é um corredor longo e estreito, onde uma longa passagem norte-sul fica,
+por um trecho, mais estreita ainda.")
+      (DESC "Passagem Estreita")
       (NORTH TO ROUND-ROOM)
       (SOUTH TO MIRROR-ROOM-2)
       (FLAGS RLANDBIT)>
@@ -1957,9 +1965,9 @@ briefly narrows even further.")
 <ROOM WINDING-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a winding passage. It seems that there are only exits
-on the east and north.")
-      (DESC "Winding Passage")
+"Esta é uma passagem sinuosa. Parece que só há saídas a leste e ao
+norte.")
+      (DESC "Passagem Sinuosa")
       (NORTH TO MIRROR-ROOM-2)
       (EAST TO TINY-CAVE)
       (FLAGS RLANDBIT)>
@@ -1967,9 +1975,9 @@ on the east and north.")
 <ROOM TWISTING-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a winding passage. It seems that there are only exits
-on the east and north.")
-      (DESC "Twisting Passage")
+"Esta é uma passagem sinuosa. Parece que só há saídas a leste e ao
+norte.")
+      (DESC "Passagem Tortuosa")
       (NORTH TO MIRROR-ROOM-1)
       (EAST TO SMALL-CAVE)
       (FLAGS RLANDBIT)>
@@ -2080,25 +2088,27 @@ está no lado sul do abismo, onde uma fenda se abre para uma passagem.")
 
 <ROOM ENTRANCE-TO-HADES
       (IN ROOMS)
-      (DESC "Entrance to Hades")
+      (DESC "Entrada do Hades")
       (UP TO TINY-CAVE)
       (IN TO LAND-OF-LIVING-DEAD IF LLD-FLAG
-       ELSE "Some invisible force prevents you from passing through the gate.")
+       ELSE "Alguma força invisível impede você de atravessar o portão.")
       (SOUTH TO LAND-OF-LIVING-DEAD IF LLD-FLAG
-       ELSE "Some invisible force prevents you from passing through the gate.")
+       ELSE "Alguma força invisível impede você de atravessar o portão.")
       (ACTION LLD-ROOM)
       (FLAGS RLANDBIT ONBIT)
       (GLOBAL BODIES)
-      (PSEUDO "GATE" GATE-PSEUDO "GATES" GATE-PSEUDO)>
+      (PSEUDO "GATE" GATE-PSEUDO "GATES" GATE-PSEUDO
+	      "PORTAO" GATE-PSEUDO "PORTOES" GATE-PSEUDO
+	      "PORTAL" GATE-PSEUDO)>
 
 <ROOM LAND-OF-LIVING-DEAD
       (IN ROOMS)
       (LDESC
-"You have entered the Land of the Living Dead. Thousands of lost souls
-can be heard weeping and moaning. In the corner are stacked the remains
-of dozens of previous adventurers less fortunate than yourself.
-A passage exits to the north.")
-      (DESC "Land of the Dead")
+"Você entrou na Terra dos Mortos-Vivos. Dá para ouvir milhares de almas
+perdidas chorando e gemendo. Num canto estão empilhados os restos de dezenas
+de aventureiros que passaram por aqui antes, com menos sorte que você.
+Uma passagem sai para o norte.")
+      (DESC "Terra dos Mortos")
       (OUT TO ENTRANCE-TO-HADES)
       (NORTH TO ENTRANCE-TO-HADES)
       (FLAGS RLANDBIT ONBIT)
@@ -2111,8 +2121,8 @@ A passage exits to the north.")
 <ROOM ENGRAVINGS-CAVE	;"was CAVE4"
       (IN ROOMS)
       (LDESC
-"You have entered a low cave with passages leading northwest and east.")
-      (DESC "Engravings Cave")
+"Você entrou em uma caverna baixa, com passagens para noroeste e para leste.")
+      (DESC "Caverna das Inscrições")
       (NW TO ROUND-ROOM)
       (EAST TO DOME-ROOM)
       (FLAGS RLANDBIT)>
@@ -2120,9 +2130,9 @@ A passage exits to the north.")
 <ROOM EGYPT-ROOM	;"was EGYPT"
       (IN ROOMS)
       (LDESC
-"This is a room which looks like an Egyptian tomb. There is an
-ascending staircase to the west.")
-      (DESC "Egyptian Room")
+"Esta sala parece um túmulo egípcio. A oeste, há uma escada que
+sobe.")
+      (DESC "Sala Egípcia")
       (WEST TO NORTH-TEMPLE)
       (UP TO NORTH-TEMPLE)
       (FLAGS RLANDBIT)
@@ -2130,34 +2140,34 @@ ascending staircase to the west.")
 
 <ROOM DOME-ROOM	;"was DOME"
       (IN ROOMS)
-      (DESC "Dome Room")
+      (DESC "Sala da Cúpula")
       (WEST TO ENGRAVINGS-CAVE)
       (DOWN TO TORCH-ROOM
-       IF DOME-FLAG ELSE "You cannot go down without fracturing many bones.")
+       IF DOME-FLAG ELSE "Você não consegue descer sem fraturar vários ossos.")
       (ACTION DOME-ROOM-FCN)
       (FLAGS RLANDBIT)
-      (PSEUDO "DOME" DOME-PSEUDO)>
+      (PSEUDO "DOME" DOME-PSEUDO "CUPULA" DOME-PSEUDO)>
 
 <ROOM TORCH-ROOM
       (IN ROOMS)
-      (DESC "Torch Room")
-      (UP "You cannot reach the rope.")
+      (DESC "Sala da Tocha")
+      (UP "Você não alcança a corda.")
       (SOUTH TO NORTH-TEMPLE)
       (DOWN TO NORTH-TEMPLE)
       (ACTION TORCH-ROOM-FCN)
       (FLAGS RLANDBIT)
       (GLOBAL STAIRS)
-      (PSEUDO "DOME" DOME-PSEUDO)>
+      (PSEUDO "DOME" DOME-PSEUDO "CUPULA" DOME-PSEUDO)>
 
 <ROOM NORTH-TEMPLE	;"was TEMP1"
       (IN ROOMS)
       (LDESC
-"This is the north end of a large temple. On the east wall is an
-ancient inscription, probably a prayer in a long-forgotten language.
-Below the prayer is a staircase leading down. The west wall is solid
-granite. The exit to the north end of the room is through huge
-marble pillars.")
-      (DESC "Temple")
+"Esta é a extremidade norte de um grande templo. Na parede leste há uma
+inscrição antiga, provavelmente uma oração numa língua há muito esquecida.
+Abaixo da oração há uma escada que desce. A parede oeste é de granito
+maciço. A saída, no lado norte da sala, passa entre enormes pilares de
+mármore.")
+      (DESC "Templo")
       (DOWN TO EGYPT-ROOM)
       (EAST TO EGYPT-ROOM)
       (NORTH TO TORCH-ROOM)
@@ -2171,14 +2181,14 @@ marble pillars.")
       (IN ROOMS)
       (LDESC
 
-"This is the south end of a large temple. In front of you is what
-appears to be an altar. In one corner is a small hole in the floor
-which leads into darkness. You probably could not get back up it.")
+"Esta é a extremidade sul de um grande templo. À sua frente está o que
+parece ser um altar. Num canto há um pequeno buraco no chão, que leva à
+escuridão. Você provavelmente não conseguiria subir de volta por ele.")
       (DESC "Altar")
       (NORTH TO NORTH-TEMPLE)
       (DOWN TO TINY-CAVE
        IF COFFIN-CURE
-       ELSE "You haven't a prayer of getting the coffin down there.")
+       ELSE "Nem rezando muito você conseguiria levar o caixão lá para baixo.")
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (ACTION SOUTH-TEMPLE-FCN)>
 

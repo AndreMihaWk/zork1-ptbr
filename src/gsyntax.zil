@@ -762,3 +762,10 @@ só valem como comando de uma palavra (ver AJUSTA-LEXV)."
   esfaqueie o ladrão com a faca (stab)."
 <SYNONYM POKE FURE FURAR FURA CUTUQUE CUTUCAR CUTUCA ESPETE ESPETAR ESPETA>
 <SYNONYM STAB ESFAQUEIE ESFAQUEAR ESFAQUEIA APUNHALE APUNHALAR APUNHALA>
+
+;"Região 5: Templo, Hades e espíritos. templo, como tesouro (acima), é a
+  palavra mágica que leva do Templo à Sala do Tesouro e de volta."
+<SYNONYM TREASURE TEMPLO>
+;"amarre o troll com a corda = tie up troll with rope"
+<SYNTAX TIE OBJECT (FIND ACTORBIT) (ON-GROUND IN-ROOM) WITH OBJECT
+	(FIND TOOLBIT) (ON-GROUND IN-ROOM HELD CARRIED HAVE) = V-TIE-UP>
