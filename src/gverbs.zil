@@ -1872,7 +1872,7 @@ for the final secret.\"" CR>)>)
 <ROUTINE YES? ()
 	 <PRINTI ">">
 	 <READ-INPUT>
-	 <COND (<EQUAL? <GET ,P-LEXV 1> ,W?YES ,W?Y>
+	 <COND (<EQUAL? <GET ,P-LEXV 1> ,W?YES ,W?Y ,W?S> ;"PT: sim (vira yes) ou s"
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>

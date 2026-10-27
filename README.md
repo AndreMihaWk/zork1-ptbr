@@ -6,8 +6,11 @@ liberou sob licença MIT em novembro de 2025. Dá para jogar no navegador do
 celular ou do computador, e o jogo pode ser instalado como aplicativo (PWA)
 para funcionar offline.
 
-> **Status:** em andamento. O jogo já roda no navegador, mas ainda está em
-> inglês. A tradução entra por região do mapa, um Pull Request por vez.
+> **Status:** em andamento. O jogo já entende comandos em português
+> (`pegue a lanterna`, `abra a caixa de correio`, `vá para o norte`), mas os
+> textos ainda estão em inglês. A tradução entra aos poucos, um Pull Request
+> por vez. Veja o [glossário](GLOSSARIO.md) e o
+> [guia de tradução](docs/TRADUCAO.md).
 
 ## Como jogar
 
@@ -47,6 +50,8 @@ Chromium: `NAVEGADOR_CANAL=msedge node tools/testar-site.mjs`.
 
 ### Testes
 
+- **Parser em português:** `tests/smoke-pt.txt` testa artigos, contrações,
+  pronomes com hífen, acentos, abreviações e frases como `vá para o norte`.
 - **Roteiro completo:** `tests/walkthrough.txt` joga o jogo inteiro até os 350
   pontos, com aleatoriedade previsível (o mesmo modo da suíte de testes do
   ZILF). A saída é comparada com `tests/walkthrough.transcricao.txt`. Quando
@@ -77,7 +82,8 @@ Para lançar uma versão: `git tag v0.1.0 && git push --tags`.
 |---|---|
 | `original/` | Código ZIL original, intacto (referência) |
 | `src/` | Código ZIL que é compilado: porte para Z-machine V5 (mudanças marcadas com `V5:`) e tradução |
-| `tests/` | Roteiro completo, transcrição de referência e testes do parser |
+| `tests/` | Roteiro completo, teste do parser em português e as transcrições de referência |
+| `docs/` | Guia de tradução |
 | `tools/` | Scripts de compilação, teste e montagem do site; `zrunner` é o executor de testes |
 | `web/` | Página do jogo (Parchment), barra de atalhos e PWA |
 | `.github/workflows/` | CI/CD |

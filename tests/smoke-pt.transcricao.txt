@@ -1,0 +1,156 @@
+ZORK I: The Great Underground Empire
+Infocom interactive fiction - a fantasy story
+Copyright (c) 1981, 1982, 1983, 1984, 1985, 1986 Infocom, Inc. All rights reserved.
+ZORK is a registered trademark of Infocom, Inc.
+Release 0 / Serial number 000000
+
+West of House
+You are standing in an open field west of a white house, with a boarded front door.
+There is a small mailbox here.
+
+>abra a caixa de correio
+Opening the small mailbox reveals a leaflet.
+
+>pegue o folheto
+Taken.
+
+>leia-o
+"WELCOME TO ZORK!
+
+ZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!"
+
+>LEIA O FOLHETO
+"WELCOME TO ZORK!
+
+ZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!"
+
+>largue-o
+Dropped.
+
+>pegue-o
+Taken.
+
+>coloque o folheto na caixa
+Done.
+
+>tire o folheto da caixa
+Taken.
+
+>examine a pequena caixa
+The small mailbox is empty.
+
+>x caixa pequena
+The small mailbox is empty.
+
+>feche a caixa de correio
+Closed.
+
+>inventário
+You are carrying:
+  A leaflet
+
+>vá para o norte
+North of House
+You are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.
+
+>l
+Behind House
+You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+
+>olhe para cima
+Behind House
+You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+
+>olhe em volta
+Behind House
+You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+
+>abra a janela
+With great effort, you open the window far enough to allow entry.
+
+>entre
+Kitchen
+You are in the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
+On the table is an elongated brown sack, smelling of hot peppers.
+A bottle is sitting on the table.
+The glass bottle contains:
+  A quantity of water
+
+>abra o saco
+Opening the brown sack reveals a lunch, and a clove of garlic.
+
+>pegue o alho do saco
+Taken.
+
+>coma o alho
+What the heck! You won't make friends this way, but nobody around here is too friendly anyhow. Gulp!
+
+>pegue a garrafa de vidro
+Taken.
+
+>beba a água
+You'll have to open the glass bottle first.
+
+>o
+Living Room
+You are in the living room. There is a doorway to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, a trophy case, and a large oriental rug in the center of the room.
+Above the trophy case hangs an elvish sword of great antiquity.
+A battery-powered brass lantern is on the trophy case.
+
+>pegue a lanterna e a espada
+brass lantern: Taken.
+sword: Taken.
+
+>ligue a lanterna
+The brass lantern is now on.
+
+>apague-a
+The brass lantern is now off.
+
+>acenda a lanterna
+The brass lantern is now on.
+
+>largue tudo exceto a lanterna
+sword: Dropped.
+glass bottle: Dropped.
+leaflet: Dropped.
+
+>pegue tudo
+leaflet: Taken.
+glass bottle: Taken.
+sword: Taken.
+trophy case: The trophy case is securely fastened to the wall.
+carpet: The rug is extremely heavy and cannot be carried.
+
+>dê a espada para mim
+You already have that!
+
+>mova o tapete
+With a great effort, the rug is moved to one side of the room, revealing the dusty cover of a closed trap door.
+
+>abra o alçapão
+The door reluctantly opens to reveal a rickety staircase descending into darkness.
+
+>desça
+The trap door crashes shut, and you hear someone barring it.
+
+Cellar
+You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
+Your sword is glowing with a faint blue glow.
+
+>suba
+The trap door is closed.
+
+>pontos
+Your score is 35 (total of 350 points), in 35 moves.
+This gives you the rank of Amateur Adventurer.
+
+>diagnóstico
+You are in perfect health.
+You can be killed by a serious wound.
+
+>de novo
+You are in perfect health.
+You can be killed by a serious wound.
+
+>

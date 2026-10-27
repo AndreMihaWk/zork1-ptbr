@@ -386,12 +386,16 @@ or creatures." CR>
 
 ;"V5: todas as leituras de comando passam por aqui. O byte 0 do buffer é o
   tamanho máximo e o byte 1 diz quantos caracteres já estão digitados, por
-  isso é zerado antes de cada leitura."
+  isso é zerado antes de cada leitura. O texto é normalizado antes do LEX e a
+  lista de palavras é ajustada depois (ver pt-parser.zil)."
 <ROUTINE READ-INPUT ()
 	 <UPDATE-STATUS-LINE>
 	 <PUTB ,P-INBUF 0 118>
 	 <PUTB ,P-INBUF 1 0>
-	 <READ ,P-INBUF ,P-LEXV>>
+	 <READ ,P-INBUF 0>
+	 <NORMALIZA-ENTRADA>
+	 <LEX ,P-INBUF ,P-LEXV>
+	 <AJUSTA-LEXV>>
 
 ;"V5: o interpretador não desenha mais a linha de status; o jogo desenha a
   sua na janela de cima. Em telas estreitas (celular) usa a forma curta."
@@ -513,6 +517,11 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				    (<AND <WT? .WRD ,PS?ADJECTIVE> ;"V5"
 					  <NOT <EQUAL? .NW 0>>
 					  <WT? .NW ,PS?OBJECT>>)
+				    ;"PT: adjetivo depois do substantivo
+				      (caixa pequena) continua o nome"
+				    (<AND <NOT <EQUAL? .NW 0>>
+					  <WT? .NW ,PS?ADJECTIVE>
+					  <NOT <WT? .NW ,PS?PREPOSITION>>>)
 				    (<AND <NOT .ANDFLG>
 					  <NOT <EQUAL? .NW ,W?BUT ,W?EXCEPT>>
 					  <NOT <EQUAL? .NW ,W?AND ,W?COMMA>>>

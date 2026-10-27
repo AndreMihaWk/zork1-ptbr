@@ -43,6 +43,9 @@ jobs:
       - name: Roteiro completo (350 pontos)
         run: bash tools/run-walkthrough.sh
 
+      - name: Teste do parser em português
+        run: bash tools/run-walkthrough.sh tests/smoke-pt.txt
+
       - name: Montar o site
         run: node tools/build-site.mjs --versao "${GITHUB_SHA::7}"
 
