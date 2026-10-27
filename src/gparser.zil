@@ -655,6 +655,15 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				<RETURN>)
 			       (<BTST <GETB .WRD ,P-PSOFF> ,PS?OBJECT>
 				<COND (<EQUAL? .WRD ,P-ANAM>
+				       ;"PT: o adjetivo vem depois do nome
+					 (a chave inglesa, a escada de madeira)"
+				       <COND (<AND <NOT .ADJ>
+						   <NOT <EQUAL? <REST .BEG ,P-WORDLEN>
+								.END>>
+						   <SET TEMP <GET <REST .BEG ,P-WORDLEN> 0>>
+						   <BTST <GETB .TEMP ,P-PSOFF>
+							 ,PS?ADJECTIVE>>
+					      <SET ADJ .TEMP>)>
 				       <ACLAUSE-WIN .ADJ>)
 				      (T
 				       <NCLAUSE-WIN>)>

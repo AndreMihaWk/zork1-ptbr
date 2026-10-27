@@ -58,6 +58,10 @@ dê a espada para mim
 ## sente = sit (climb on)
 sente sobre o tapete
 mova o tapete
+## Pergunta de qual objeto, respondida com o comando inteiro (adjetivo
+## depois do nome):
+abra a porta
+abra a porta de madeira
 abra o alçapão
 ## suba e desça sozinhos viram cima e baixo:
 desça

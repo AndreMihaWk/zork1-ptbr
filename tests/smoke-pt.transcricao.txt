@@ -162,6 +162,12 @@ Ao se sentar, você nota uma irregularidade embaixo dele. Para não ficar descon
 >mova o tapete
 Com grande esforço, você arrasta o tapete para um canto da sala e revela a tampa empoeirada de um alçapão fechado.
 
+>abra a porta
+Você quer dizer a porta de madeira ou o alçapão?
+
+>abra a porta de madeira
+A porta não pode ser aberta.
+
 >abra o alçapão
 O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
@@ -176,7 +182,7 @@ Sua espada emite um fraco brilho azulado.
 O alçapão está fechado.
 
 >pontos
-Sua pontuação é 35 (de um total de 350 pontos), em 44 jogadas.
+Sua pontuação é 35 (de um total de 350 pontos), em 45 jogadas.
 Isso lhe dá o título de Aventureiro Amador.
 
 >diagnóstico
