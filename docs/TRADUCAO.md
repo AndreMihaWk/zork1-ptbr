@@ -50,6 +50,12 @@ objetos e personagens) estão no [GLOSSARIO.md](../GLOSSARIO.md).
   substantivo, ele vira a preposição "de" (`tire a moeda do saco`). Por isso,
   um complemento de nome **não pode** ser substantivo de outro objeto que
   costuma ser alvo de "de".
+- Quando o complemento também serve sozinho (`pegue o alho`, `pegue as
+  folhas`), ele entra **nas duas listas**: `(SYNONYM ALHO DENTE)
+  (ADJECTIVE ALHO)`. Assim `dente de alho` e `alho` funcionam.
+- Construções do português que o inglês não tem (`entre pela janela`,
+  `suba na árvore`) ganham `SYNTAX` própria no fim de `src/gsyntax.zil`.
+  "Pela/pelo" valem como `WITH`.
 - Adjetivos com flexão de gênero: use a forma que concorda com o objeto
   (`ESPADA` → `ELFICA`).
 - Verbos novos entram como `SYNONYM` do verbo original em `src/gsyntax.zil`.
@@ -63,7 +69,11 @@ objetos e personagens) estão no [GLOSSARIO.md](../GLOSSARIO.md).
 
 - `DESC` sem artigo e em minúsculas: `(DESC "lanterna de latão")`.
 - Marque o gênero e o número nas `FLAGS`: `FEMBIT` (feminino), `PLURALBIT`
-  (plural), `SEMARTIGOBIT` (nome próprio, sem artigo).
+  (plural), `SEMARTIGOBIT` (nome próprio, sem artigo), `PARTITIVOBIT` (o que
+  não se conta: com `(DESC "água")`, `T-UM` escreve "um pouco de água").
+- Verbo que concorda com o objeto, fora de "estar" e "ser": escreva a forma
+  com `PRINT-PLURAL` entre dois `TELL`:
+  `<TELL T-CO ,PRSO " "> <PRINT-PLURAL ,PRSO "cai" "caem"> <TELL " no chão." CR>`.
 - Nas mensagens, use os marcadores do `TELL`, que escrevem o artigo certo:
 
 | Marcador | Masculino | Feminino | Plural (fem.) |

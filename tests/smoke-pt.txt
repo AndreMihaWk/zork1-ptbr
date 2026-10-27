@@ -26,9 +26,15 @@ olhe para cima
 olhe em volta
 abra a janela
 entre
+## pela = por (WITH): olhe pela janela, saia pela janela, entre pela janela
+olhe pela janela
+saia pela janela
+entre pela janela
 ## Objetos com "de" + substantivo (FROM) e com "de" + adjetivo (nome):
 abra o saco
 pegue o alho do saco
+## Complemento que também é substantivo (dente de alho): vale sozinho e junto
+examine o dente de alho
 coma o alho
 pegue a garrafa de vidro
 beba a água
@@ -38,10 +44,14 @@ pegue a lanterna e a espada
 ligue a lanterna
 apague-a
 acenda a lanterna
+desligue-a
+acenda-a
 ## Tudo, exceto, dê e conjunção e:
 largue tudo exceto a lanterna
 pegue tudo
 dê a espada para mim
+## sente = sit (climb on)
+sente sobre o tapete
 mova o tapete
 abra o alçapão
 ## suba e desça sozinhos viram cima e baixo:

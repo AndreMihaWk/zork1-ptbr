@@ -7,22 +7,21 @@
 <ROUTINE WEST-HOUSE (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are standing in an open field west of a white house, with a boarded
-front door.">
+"Você está em um campo aberto a oeste de uma casa branca, com a porta da
+frente tapada com tábuas.">
 		<COND (,WON-FLAG
 		       <TELL
-" A secret path leads southwest into the forest.">)>
+" Uma trilha secreta leva para sudoeste, floresta adentro.">)>
 		<CRLF>)>>
 
 <ROUTINE EAST-HOUSE (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are behind the white house. A path leads into the forest
-to the east. In one corner of the house there is a small window
-which is ">
+"Você está atrás da casa branca. Uma trilha leva para a floresta, a
+leste. Em um canto da casa há uma pequena janela, que está ">
 		<COND (<FSET? ,KITCHEN-WINDOW ,OPENBIT>
-		       <TELL "open.">)
-		      (T <TELL "slightly ajar.">)>
+		       <TELL "aberta.">)
+		      (T <TELL "entreaberta.">)>
 		<CRLF>)>>
 
 <ROUTINE OPEN-CLOSE (OBJ STROPN STRCLS)
@@ -43,7 +42,7 @@ which is ">
 
 <ROUTINE BOARD-F ()
 	 <COND (<VERB? TAKE EXAMINE>
-		<TELL "The boards are securely fastened." CR>)>>
+		<TELL "As tábuas estão bem pregadas." CR>)>>
 
 <ROUTINE TEETH-F ()
 	 <COND (<AND <VERB? BRUSH>
@@ -51,48 +50,48 @@ which is ">
 		<COND (<AND <EQUAL? ,PRSI ,PUTTY>
 			    <IN? ,PRSI ,WINNER>>
 		       <JIGS-UP
-"Well, you seem to have been brushing your teeth with some sort of
-glue. As a result, your mouth gets glued together (with your nose)
-and you die of respiratory failure.">)
+"Bem, parece que você escovou os dentes com algum tipo de cola. Por
+causa disso, sua boca fica grudada (junto com o nariz) e você morre de
+insuficiência respiratória.">)
 		      (<NOT ,PRSI>
 		       <TELL
-"Dental hygiene is highly recommended, but I'm not sure what you want
-to brush them with." CR>)
+"A higiene bucal é altamente recomendável, mas não sei com o que você
+quer escová-los." CR>)
 		      (T
-		       <TELL "A nice idea, but with a " D ,PRSI "?" CR>)>)>>
+		       <TELL "Boa ideia, mas com " T-UM ,PRSI "?" CR>)>)>>
 
 <ROUTINE GRANITE-WALL-F ()
 	 <COND (<EQUAL? ,HERE ,NORTH-TEMPLE>
 		<COND (<VERB? FIND>
-		       <TELL "The west wall is solid granite here." CR>)
+		       <TELL "Aqui, a parede oeste é de granito maciço." CR>)
 		      (<VERB? TAKE RAISE LOWER>
-		       <TELL "It's solid granite." CR>)>)
+		       <TELL "É granito maciço." CR>)>)
 	       (<EQUAL? ,HERE ,TREASURE-ROOM>
 		<COND (<VERB? FIND>
-		       <TELL "The east wall is solid granite here." CR>)
+		       <TELL "Aqui, a parede leste é de granito maciço." CR>)
 		      (<VERB? TAKE RAISE LOWER>
-		       <TELL "It's solid granite." CR>)>)
+		       <TELL "É granito maciço." CR>)>)
 	       (<EQUAL? ,HERE ,SLIDE-ROOM>
 		<COND (<VERB? FIND READ>
-		       <TELL "It only SAYS \"Granite Wall\"." CR>)
-		      (T <TELL "The wall isn't granite." CR>)>)
+		       <TELL "Só está ESCRITO \"Parede de Granito\"." CR>)
+		      (T <TELL "A parede não é de granito." CR>)>)
 	       (T
-		<TELL "There is no granite wall here." CR>)>>
+		<TELL "Não há nenhuma parede de granito aqui." CR>)>>
 
 <ROUTINE SONGBIRD-F ()
 	 <COND (<VERB? FIND TAKE>
-		<TELL "The songbird is not here but is probably nearby." CR>)
+		<TELL "O pássaro canoro não está aqui, mas deve estar por perto." CR>)
 	       (<VERB? LISTEN>
-		<TELL "You can't hear the songbird now." CR>)
+		<TELL "Você não consegue ouvir o pássaro canoro agora." CR>)
 	       (<VERB? FOLLOW>
-		<TELL "It can't be followed." CR>)
+		<TELL "Não dá para segui-lo." CR>)
 	       (T
-		<TELL "You can't see any songbird here." CR>)>>
+		<TELL "Você não vê nenhum pássaro canoro aqui." CR>)>>
 
 <ROUTINE WHITE-HOUSE-F ()
     <COND (<EQUAL? ,HERE ,KITCHEN ,LIVING-ROOM ,ATTIC>
 	   <COND (<VERB? FIND>
-		  <TELL "Why not find your brains?" CR>)
+		  <TELL "Por que você não procura o seu juízo?" CR>)
 		 (<VERB? WALK-AROUND>
 		  <GO-NEXT ,IN-HOUSE-AROUND>
 		  T)>)
@@ -100,31 +99,31 @@ to brush them with." CR>)
 		    <EQUAL? ,HERE ,NORTH-OF-HOUSE ,SOUTH-OF-HOUSE>>>
 	   <COND (<VERB? FIND>
 		  <COND (<EQUAL? ,HERE ,CLEARING>
-			 <TELL "It seems to be to the west." CR>)
+			 <TELL "Parece que fica a oeste." CR>)
 			(T
-			 <TELL "It was here just a minute ago...." CR>)>)
-		 (T <TELL "You're not at the house." CR>)>)
+			 <TELL "Estava aqui agora há pouco...." CR>)>)
+		 (T <TELL "Você não está perto da casa." CR>)>)
 	  (<VERB? FIND>
 	   <TELL
-"It's right here! Are you blind or something?" CR>)
+"Está bem aqui! Você é cego ou o quê?" CR>)
 	  (<VERB? WALK-AROUND>
 	   <GO-NEXT ,HOUSE-AROUND>
 	   T)
 	  (<VERB? EXAMINE>
 	   <TELL
-"The house is a beautiful colonial house which is painted white.
-It is clear that the owners must have been extremely wealthy." CR>)
+"É uma bela casa colonial, pintada de branco. Os donos com certeza eram
+riquíssimos." CR>)
 	  (<VERB? THROUGH OPEN>
 	   <COND (<EQUAL? ,HERE ,EAST-OF-HOUSE>
 		  <COND (<FSET? ,KITCHEN-WINDOW ,OPENBIT>
 			 <GOTO ,KITCHEN>)
 			(T
-			 <TELL "The window is closed." CR>
+			 <TELL "A janela está fechada." CR>
 			 <THIS-IS-IT ,KITCHEN-WINDOW>)>)
 		 (T
-		  <TELL "I can't see how to get in from here." CR>)>)
+		  <TELL "Não vejo como entrar por aqui." CR>)>)
 	  (<VERB? BURN>
-	   <TELL "You must be joking." CR>)>>
+	   <TELL "Você só pode estar brincando." CR>)>>
 
 ;"0 -> no next, 1 -> success, 2 -> failed move"
 
@@ -139,19 +138,19 @@ It is clear that the owners must have been extremely wealthy." CR>)
 			       ,WEST-OF-HOUSE ,NORTH-OF-HOUSE
 			       ,SOUTH-OF-HOUSE>
 			   <EQUAL? ,HERE ,EAST-OF-HOUSE>>
-		       <TELL "You aren't even in the forest." CR>)>
+		       <TELL "Você nem está na floresta." CR>)>
 		<GO-NEXT ,FOREST-AROUND>)
 	       (<VERB? DISEMBARK>
-		<TELL "You will have to specify a direction." CR>)
+		<TELL "Você vai ter que dizer uma direção." CR>)
 	       (<VERB? FIND>
-		<TELL "You cannot see the forest for the trees." CR>)
+		<TELL "As árvores não deixam você ver a floresta." CR>)
 	       (<VERB? LISTEN>
-		<TELL "The pines and the hemlocks seem to be murmuring."
+		<TELL "Os pinheiros e os abetos parecem murmurar."
 		      CR>)>>
 
 <ROUTINE MOUNTAIN-RANGE-F ()
 	 <COND (<VERB? CLIMB-UP CLIMB-DOWN CLIMB-FOO>
-		<TELL "Don't you believe me? The mountains are impassable!"
+		<TELL "Não acredita em mim? As montanhas são intransponíveis!"
 		      CR>)>>
 
 <ROUTINE WATER-F ("AUX" AV W PI?)
@@ -184,56 +183,56 @@ It is clear that the owners must have been extremely wealthy." CR>)
 			    <OR <EQUAL? .AV ,PRSI>
 				<AND <NOT ,PRSI>
 				     <NOT <IN? .W .AV>>>>>
-		       <TELL "There is now a puddle in the bottom of the "
-			     D .AV "." CR>
+		       <TELL "Agora há uma poça no fundo "
+			     T-DO .AV "." CR>
 		       <REMOVE-CAREFULLY ,PRSO>
 		       <MOVE ,PRSO .AV>)
 		      (<AND ,PRSI <NOT <EQUAL? ,PRSI ,BOTTLE>>>
-		       <TELL "The water leaks out of the " D ,PRSI
-			     " and evaporates immediately." CR>
+		       <TELL "A água vaza " T-DO ,PRSI
+			     " e evapora na hora." CR>
 		       <REMOVE-CAREFULLY .W>)
 		      (<IN? ,BOTTLE ,WINNER>
 		       <COND (<NOT <FSET? ,BOTTLE ,OPENBIT>>
-			      <TELL "The bottle is closed." CR>
+			      <TELL "A garrafa está fechada." CR>
 			      <THIS-IS-IT ,BOTTLE>)
 			     (<NOT <FIRST? ,BOTTLE>>
 			      <MOVE ,WATER ,BOTTLE>
-			      <TELL "The bottle is now full of water." CR>)
+			      <TELL "Agora a garrafa está cheia de água." CR>)
 			     (T
-			      <TELL "The water slips through your fingers." CR>
+			      <TELL "A água escorre entre os seus dedos." CR>
 			      <RTRUE>)>)
 		      (<AND <IN? ,PRSO ,BOTTLE>
 			    <VERB? TAKE>
 			    <NOT ,PRSI>>
 		       <TELL
-"It's in the bottle. Perhaps you should take that instead." CR>)
+"Ela está na garrafa. Talvez seja melhor pegar a garrafa." CR>)
 		      (T
-		       <TELL "The water slips through your fingers." CR>)>)
+		       <TELL "A água escorre entre os seus dedos." CR>)>)
 	       (.PI?
 		<COND (<AND <VERB? PUT>
 			    <GLOBAL-IN? ,RIVER ,HERE>>
 		       <PERFORM ,V?PUT ,PRSO ,RIVER>)
 		      (ELSE
-		       <TELL "Nice try." CR>)>
+		       <TELL "Boa tentativa." CR>)>
 		<RTRUE>)
 	       (<VERB? DROP GIVE>
 		<COND (<AND <VERB? DROP>
 			    <IN? ,WATER ,BOTTLE>
 			    <NOT <FSET? ,BOTTLE ,OPENBIT>>>
-		       <TELL "The bottle is closed." CR>
+		       <TELL "A garrafa está fechada." CR>
 		       <RTRUE>)>
 		<REMOVE-CAREFULLY ,WATER>
 		<COND (.AV
-		       <TELL "There is now a puddle in the bottom of the "
-			     D .AV "." CR>
+		       <TELL "Agora há uma poça no fundo "
+			     T-DO .AV "." CR>
 		       <MOVE ,WATER .AV>)
 		      (T
 		       <TELL
-"The water spills to the floor and evaporates immediately." CR>
+"A água se derrama no chão e evapora na hora." CR>
 		       <REMOVE-CAREFULLY ,WATER>)>)
 	       (<VERB? THROW>
 		<TELL
-"The water splashes on the walls and evaporates immediately." CR>
+"A água espirra nas paredes e evapora na hora." CR>
 		<REMOVE-CAREFULLY ,WATER>)>>
 
 <GLOBAL KITCHEN-WINDOW-FLAG <>>
@@ -242,12 +241,12 @@ It is clear that the owners must have been extremely wealthy." CR>)
 	 <COND (<VERB? OPEN CLOSE>
 		<SETG KITCHEN-WINDOW-FLAG T>
 		<OPEN-CLOSE ,KITCHEN-WINDOW
-"With great effort, you open the window far enough to allow entry."
-"The window closes (more easily than it opened).">)
+"Com grande esforço, você abre a janela o suficiente para passar."
+"A janela se fecha (com mais facilidade do que abriu).">)
 	       (<AND <VERB? EXAMINE>
 		     <NOT ,KITCHEN-WINDOW-FLAG>>
 		<TELL
-"The window is slightly ajar, but not enough to allow entry." CR>)
+"A janela está entreaberta, mas não o suficiente para passar." CR>)
 	       (<VERB? WALK BOARD THROUGH>
 		<COND (<EQUAL? ,HERE ,KITCHEN>
 		       <DO-WALK ,P?EAST>)
@@ -255,11 +254,11 @@ It is clear that the owners must have been extremely wealthy." CR>)
 		       <DO-WALK ,P?WEST>)>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE>
-		<TELL "You can see ">
+		<TELL "Você vê ">
 		<COND (<EQUAL? ,HERE ,KITCHEN>
-		       <TELL "a clear area leading towards a forest." CR>)
+		       <TELL "uma área aberta que leva a uma floresta." CR>)
 		      (T
-		       <TELL "what appears to be a kitchen." CR>)>)>>
+		       <TELL "o que parece ser uma cozinha." CR>)>)>>
 
 <ROUTINE GHOSTS-F ()
 	 <COND (<VERB? TELL>
@@ -369,14 +368,14 @@ It is clear that the owners must have been extremely wealthy." CR>)
 
 <ROUTINE BOARDED-WINDOW-FCN ()
 	 <COND (<VERB? OPEN>
-		<TELL "The windows are boarded and can't be opened." CR>)
+		<TELL "As janelas estão tapadas com tábuas e não podem ser abertas." CR>)
 	       (<VERB? MUNG>
-		<TELL "You can't break the windows open." CR>)>>
+		<TELL "Você não consegue arrombar as janelas." CR>)>>
 
 <ROUTINE NAILS-PSEUDO ()
 	 <COND (<VERB? TAKE>
 		<TELL
-"The nails, deeply imbedded in the door, cannot be removed." CR>)>>
+"Os pregos, cravados fundo na porta, não podem ser arrancados." CR>)>>
 
 <ROUTINE CRACK-FCN ()
 	 <COND (<VERB? THROUGH>
@@ -385,20 +384,19 @@ It is clear that the owners must have been extremely wealthy." CR>)
 <ROUTINE KITCHEN-FCN (RARG)
 	<COND (<EQUAL? .RARG ,M-LOOK>
 	       <TELL
-"You are in the kitchen of the white house. A table seems to
-have been used recently for the preparation of food. A passage
-leads to the west and a dark staircase can be seen leading
-upward. A dark chimney leads down and to the east is a small
-window which is ">
+"Você está na cozinha da casa branca. Uma mesa parece ter sido usada há
+pouco tempo para preparar comida. Uma passagem leva para oeste, e uma
+escada escura sobe. Uma chaminé escura desce, e a leste há uma pequena
+janela, que está ">
 	       <COND (<FSET? ,KITCHEN-WINDOW ,OPENBIT>
-		      <TELL "open." CR>)
+		      <TELL "aberta." CR>)
 		     (T
-		      <TELL "slightly ajar." CR>)>)
+		      <TELL "entreaberta." CR>)>)
 	      (<==? .RARG ,M-BEG>
 	       <COND (<AND <VERB? CLIMB-UP> <EQUAL? ,PRSO ,STAIRS>>
 		      <DO-WALK ,P?UP>)
 		     (<AND <VERB? CLIMB-UP> <EQUAL? ,PRSO ,STAIRS>>
-		      <TELL "There are no stairs leading down." CR>)>)>>
+		      <TELL "Não há escada que desça daqui." CR>)>)>>
 
 <ROUTINE STONE-BARROW-FCN (RARG)
 	 <COND (<AND <EQUAL? .RARG ,M-BEG>
@@ -442,36 +440,36 @@ ZORK: The Great Underground Empire.|" CR>)>
 <ROUTINE TROPHY-CASE-FCN ()
     <COND (<AND <VERB? TAKE> <EQUAL? ,PRSO ,TROPHY-CASE>>
 	   <TELL
-"The trophy case is securely fastened to the wall." CR>)>>
+"A vitrine de troféus está bem presa à parede." CR>)>>
 	
 <GLOBAL RUG-MOVED <>>
 
 <ROUTINE LIVING-ROOM-FCN (RARG "AUX" RUG? TC)
 	<COND (<EQUAL? .RARG ,M-LOOK>
 	       <TELL
-"You are in the living room. There is a doorway to the east">
+"Você está na sala de estar. Há uma passagem para leste">
 	       <COND (,MAGIC-FLAG
 		      <TELL
-". To the
-west is a cyclops-shaped opening in an old wooden door, above which is
-some strange gothic lettering, ">)
+". A oeste,
+uma velha porta de madeira tem uma abertura com o formato de um ciclope e,
+acima dela, umas estranhas letras góticas. Há também ">)
 		     (T
 		      <TELL
-", a wooden
-door with strange gothic lettering to the west, which appears to be
-nailed shut, ">)>
-	       <TELL "a trophy case, ">
+", uma porta
+de madeira a oeste com estranhas letras góticas, que parece estar
+pregada, ">)>
+	       <TELL "uma vitrine de troféus ">
 	       <SET RUG? ,RUG-MOVED>
 	       <COND (<AND .RUG? <FSET? ,TRAP-DOOR ,OPENBIT>>
 		      <TELL
-		       "and a rug lying beside an open trap door.">)
+		       "e um tapete largado ao lado de um alçapão aberto.">)
 		     (.RUG?
-		      <TELL "and a closed trap door at your feet.">)
+		      <TELL "e um alçapão fechado aos seus pés.">)
 		     (<FSET? ,TRAP-DOOR ,OPENBIT>
-		      <TELL "and an open trap door at your feet.">)
+		      <TELL "e um alçapão aberto aos seus pés.">)
 		     (T
 		      <TELL
-		       "and a large oriental rug in the center of the room.">)>
+		       "e um grande tapete oriental no centro da sala.">)>
 	       <CRLF>
 	       T)
 	      (<EQUAL? .RARG ,M-END>
@@ -508,23 +506,23 @@ nailed shut, ">)>
 	  (<AND <VERB? OPEN CLOSE>
 		<EQUAL? ,HERE ,LIVING-ROOM>>
 	   <OPEN-CLOSE ,PRSO
-"The door reluctantly opens to reveal a rickety staircase descending into
-darkness."
-"The door swings shut and closes.">)
+"O alçapão se abre a contragosto e revela uma escada bamba que desce para
+a escuridão."
+"O alçapão se fecha com um baque.">)
 	  (<AND <VERB? LOOK-UNDER> <EQUAL? ,HERE LIVING-ROOM>>
 	   <COND (<FSET? ,TRAP-DOOR ,OPENBIT>
 		  <TELL
-"You see a rickety staircase descending into darkness." CR>)
-		 (T <TELL "It's closed." CR>)>)
+"Você vê uma escada bamba que desce para a escuridão." CR>)
+		 (T <TELL "Está fechado." CR>)>)
 	  (<EQUAL? ,HERE ,CELLAR>
 	   <COND (<AND <VERB? OPEN UNLOCK>
 		       <NOT <FSET? ,TRAP-DOOR ,OPENBIT>>>
 		  <TELL
-"The door is locked from above." CR>)
+"O alçapão está trancado por cima." CR>)
 		 (<AND <VERB? CLOSE> <NOT <FSET? ,TRAP-DOOR ,OPENBIT>>>
 		  <FCLEAR ,TRAP-DOOR ,TOUCHBIT>
 		  <FCLEAR ,TRAP-DOOR ,OPENBIT>
-		  <TELL "The door closes and locks." CR>)
+		  <TELL "O alçapão se fecha e se tranca." CR>)
 		 (<VERB? OPEN CLOSE>
 		  <TELL <PICK-ONE ,DUMMY> CR>)>)>>
 
@@ -544,15 +542,15 @@ steep metal ramp which is unclimbable." CR>)
 
 <ROUTINE CHIMNEY-F ()
 	 <COND (<VERB? EXAMINE>
-		<TELL "The chimney leads ">
+		<TELL "A chaminé leva para ">
 		<COND (<==? ,HERE ,KITCHEN>
-		       <TELL "down">)
-		      (T <TELL "up">)>
-		<TELL "ward, and looks climbable." CR>)>>
+		       <TELL "baixo">)
+		      (T <TELL "cima">)>
+		<TELL " e parece dar para escalá-la." CR>)>>
 
 <ROUTINE UP-CHIMNEY-FUNCTION ("AUX" F)
   <COND (<NOT <SET F <FIRST? ,WINNER>>>
-	 <TELL "Going up empty-handed is a bad idea." CR>
+	 <TELL "Subir de mãos vazias é uma má ideia." CR>
 	 <RFALSE>)
 	(<AND <OR <NOT <SET F <NEXT? .F>>>
 		  <NOT <NEXT? .F>>>
@@ -561,7 +559,7 @@ steep metal ramp which is unclimbable." CR>)
 		<FCLEAR ,TRAP-DOOR ,TOUCHBIT>)>
 	 <RETURN ,KITCHEN>)
 	(T
-	 <TELL "You can't get up there with what you're carrying." CR>
+	 <TELL "Você não consegue subir por ali com o que está carregando." CR>
 	 <RFALSE>)>>
 
 <ROUTINE TRAP-DOOR-EXIT ()
@@ -569,51 +567,50 @@ steep metal ramp which is unclimbable." CR>)
 		<COND (<FSET? ,TRAP-DOOR ,OPENBIT>
 		       <RETURN ,CELLAR>)
 		      (T
-		       <TELL "The trap door is closed." CR>
+		       <TELL "O alçapão está fechado." CR>
 		       <THIS-IS-IT ,TRAP-DOOR>
 		       <RFALSE>)>)
 	       (T
-		<TELL "You can't go that way." CR>
+		<TELL "Você não pode ir por aí." CR>
 		<RFALSE>)>>
 
 <ROUTINE RUG-FCN ()
    <COND (<VERB? RAISE>
-	  <TELL "The rug is too heavy to lift">
+	  <TELL "O tapete é pesado demais para levantar">
 	  <COND (,RUG-MOVED
 		 <TELL "." CR>)
 		(T
 		 <TELL
-", but in trying to take it you have
-noticed an irregularity beneath it." CR>)>)
+", mas, ao tentar, você
+notou uma irregularidade embaixo dele." CR>)>)
 	 (<VERB? MOVE PUSH>
 	  <COND (,RUG-MOVED
 		 <TELL
-"Having moved the carpet previously, you find it impossible to move
-it again." CR>)
+"Como você já moveu o tapete antes, não consegue movê-lo de novo." CR>)
 		(T
 		 <TELL
-"With a great effort, the rug is moved to one side of the room, revealing
-the dusty cover of a closed trap door." CR>
+"Com grande esforço, você arrasta o tapete para um canto da sala e revela
+a tampa empoeirada de um alçapão fechado." CR>
 		 <FCLEAR ,TRAP-DOOR ,INVISIBLE>
 		 <THIS-IS-IT ,TRAP-DOOR>
 		 <SETG RUG-MOVED T>)>)
 	 (<VERB? TAKE>
 	  <TELL
-"The rug is extremely heavy and cannot be carried." CR>)
+"O tapete é pesadíssimo e não dá para carregá-lo." CR>)
 	 (<AND <VERB? LOOK-UNDER>
 	       <NOT ,RUG-MOVED>
 	       <NOT <FSET? ,TRAP-DOOR ,OPENBIT>>>
 	  <TELL
-"Underneath the rug is a closed trap door. As you drop the corner of the
-rug, the trap door is once again concealed from view." CR>)
+"Embaixo do tapete há um alçapão fechado. Quando você solta a ponta do
+tapete, o alçapão volta a ficar escondido." CR>)
 	 (<VERB? CLIMB-ON>
 	  <COND (<AND <NOT ,RUG-MOVED>
 		      <NOT <FSET? ,TRAP-DOOR ,OPENBIT>>>
 		 <TELL
-"As you sit, you notice an irregularity underneath it. Rather than be
-uncomfortable, you stand up again." CR>)
+"Ao se sentar, você nota uma irregularidade embaixo dele. Para não ficar
+desconfortável, você se levanta de novo." CR>)
 		(ELSE
-		 <TELL "I suppose you think it's a magic carpet?" CR>)>)>>
+		 <TELL "Por acaso você acha que é um tapete voador?" CR>)>)>>
 
 \
 
@@ -776,32 +773,32 @@ his guttural tongue." CR>)
 	            <NOT ,GRATE-REVEALED>>
 	       <COND (<VERB? MOVE TAKE>
 		      <TELL
-"In disturbing the pile of leaves, a grating is revealed." CR>)
+"Ao mexer no monte de folhas, você descobre uma grade." CR>)
 		     (T <TELL
-"With the leaves moved, a grating is revealed." CR>)>
+"Com as folhas fora do lugar, aparece uma grade." CR>)>
 	       <FCLEAR ,GRATE ,INVISIBLE>
 	       <SETG GRATE-REVEALED T>)>
 	<>>
 
 <ROUTINE LEAF-PILE ()
 	<COND (<VERB? COUNT>
-	       <TELL "There are 69,105 leaves here." CR>)
+	       <TELL "Há 69.105 folhas aqui." CR>)
 	      (<VERB? BURN>
 	       <LEAVES-APPEAR>
 	       <REMOVE-CAREFULLY ,PRSO>
 	       <COND (<IN? ,PRSO ,HERE>
 		      <TELL
-"The leaves burn." CR>)
+"As folhas queimam." CR>)
 		     (T
 		      <JIGS-UP
-"The leaves burn, and so do you.">)>)
+"As folhas queimam, e você também.">)>)
 	      (<VERB? CUT>
-	       <TELL "You rustle the leaves around, making quite a mess." CR>
+	       <TELL "Você remexe as folhas e faz a maior bagunça." CR>
 	       <LEAVES-APPEAR>
 	       <RTRUE>)
 	      (<VERB? MOVE TAKE>
 	       <COND (<VERB? MOVE>
-		      <TELL "Done." CR>)>
+		      <TELL "Pronto." CR>)>
 	       <COND (,GRATE-REVEALED <RFALSE>)>
 	       <LEAVES-APPEAR>
 	       <COND (<VERB? TAKE> <RFALSE>)
@@ -809,8 +806,8 @@ his guttural tongue." CR>)
 	      (<AND <VERB? LOOK-UNDER>
 		    <NOT ,GRATE-REVEALED>>
 	       <TELL
-"Underneath the pile of leaves is a grating. As you release the leaves,
-the grating is once again concealed from view." CR>)>>
+"Embaixo do monte de folhas há uma grade. Quando você solta as folhas, a
+grade volta a ficar escondida." CR>)>>
  
 <ROUTINE CLEARING-FCN (RARG)
   	 <COND (<EQUAL? .RARG ,M-ENTER>
@@ -818,16 +815,16 @@ the grating is once again concealed from view." CR>)>>
 		       <FSET ,GRATE ,INVISIBLE>)>)
 	       (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are in a clearing, with a forest surrounding you on all sides. A
-path leads south.">
+"Você está em uma clareira, cercado pela floresta por todos os lados.
+Uma trilha leva para o sul.">
 		<COND (<FSET? ,GRATE ,OPENBIT>
 		       <CRLF>
 		       <TELL
-"There is an open grating, descending into darkness.">)
+"Há uma grade aberta, que desce para a escuridão.">)
 		      (,GRATE-REVEALED
 		       <CRLF>
 		       <TELL
-"There is a grating securely fastened into the ground.">)>
+"Há uma grade firmemente presa ao chão.">)>
 		<CRLF>)>>
 
 <ROUTINE MAZE-11-FCN (RARG)
@@ -854,46 +851,47 @@ in the immediate vicinity." CR>
 	       (<VERB? LOCK>
 		<COND (<EQUAL? ,HERE ,GRATING-ROOM>
 		       <SETG GRUNLOCK <>>
-		       <TELL "The grate is locked." CR>)
+		       <TELL "A grade está trancada." CR>)
 	              (<EQUAL? ,HERE ,GRATING-CLEARING>
-		       <TELL "You can't lock it from this side." CR>)>)
+		       <TELL "Você não consegue trancá-la deste lado." CR>)>)
 	       (<AND <VERB? UNLOCK> <EQUAL? ,PRSO ,GRATE>>
 		<COND (<AND <EQUAL? ,HERE ,GRATING-ROOM> <EQUAL? ,PRSI ,KEYS>>
 		       <SETG GRUNLOCK T>
-		       <TELL "The grate is unlocked." CR>)
+		       <TELL "A grade está destrancada." CR>)
 		      (<AND <EQUAL? ,HERE ,GRATING-CLEARING>
 			    <EQUAL? ,PRSI ,KEYS>>
-		       <TELL "You can't reach the lock from here." CR>)
+		       <TELL "Você não alcança a fechadura daqui." CR>)
 		      (T
 		       <TELL
-"Can you unlock a grating with a " D ,PRSI "?" CR>)>)
+"Dá para destrancar uma grade com " T-UM ,PRSI "?" CR>)>)
                (<VERB? PICK>
-		<TELL "You can't pick the lock." CR>)
+		<TELL "Você não consegue forçar a fechadura." CR>)
                (<VERB? OPEN CLOSE>
 		<COND (,GRUNLOCK
 		       <OPEN-CLOSE ,GRATE
 				   <COND (<EQUAL? ,HERE ,CLEARING>
-					  "The grating opens.")
+					  "A grade se abre.")
 					 (T
-"The grating opens to reveal trees above you.")>
-				   "The grating is closed.">
+"A grade se abre e revela árvores acima de você.")>
+				   "A grade se fecha.">
 		       <COND (<FSET? ,GRATE ,OPENBIT>
 			      <COND (<AND <NOT <EQUAL? ,HERE ,CLEARING>>
 					  <NOT ,GRATE-REVEALED>>
 				     <TELL
-"A pile of leaves falls onto your head and to the ground." CR>
+"Um monte de folhas cai na sua cabeça e no chão." CR>
 				     <SETG GRATE-REVEALED T>
 				     <MOVE ,LEAVES ,HERE>)>
 			      <FSET ,GRATING-ROOM ,ONBIT>)
 			     (T <FCLEAR ,GRATING-ROOM ,ONBIT>)>)
-		      (T <TELL "The grating is locked." CR>)>)
+		      (T <TELL "A grade está trancada." CR>)>)
 	       (<AND <VERB? PUT> <EQUAL? ,PRSI ,GRATE>>
 		<COND (<G? <GETP ,PRSO ,P?SIZE> 20>
-		       <TELL "It won't fit through the grating." CR>)
+		       <TELL "Isso não passa pela grade." CR>)
 		      (T
 		       <MOVE ,PRSO ,GRATING-ROOM>
-		       <TELL
-"The " D ,PRSO " goes through the grating into the darkness below." CR>)>)>>
+		       <TELL T-CO ,PRSO " ">
+		       <PRINT-PLURAL ,PRSO "passa" "passam">
+		       <TELL " pela grade rumo à escuridão lá embaixo." CR>)>)>>
 
 <ROUTINE MAZE-DIODES ()
 	 <TELL
@@ -1492,16 +1490,16 @@ that before long it will be impossible to cross to the other side.">)
   <COND (<AND <VERB? THROW> <==? ,PRSO ,BOTTLE>>
 	 <REMOVE-CAREFULLY ,PRSO>
 	 <SET E? T>
-	 <TELL "The bottle hits the far wall and shatters." CR>)
+	 <TELL "A garrafa bate na parede do outro lado e se espatifa." CR>)
 	(<VERB? MUNG>
 	 <SET E? T>
 	 <REMOVE-CAREFULLY ,PRSO>
-	 <TELL "A brilliant maneuver destroys the bottle." CR>)
+	 <TELL "Uma manobra brilhante destrói a garrafa." CR>)
 	(<VERB? SHAKE>
 	 <COND (<AND <FSET? ,PRSO ,OPENBIT> <IN? ,WATER ,PRSO>>
 		<SET E? T>)>)>
   <COND (<AND .E? <IN? ,WATER ,PRSO>>
-	 <TELL "The water spills to the floor and evaporates." CR>
+	 <TELL "A água se derrama no chão e evapora." CR>
 	 <REMOVE-CAREFULLY ,WATER>
 	 T)
 	(.E? <RTRUE>)>>
@@ -2162,14 +2160,14 @@ suddenly vanish." CR CR>)>
 
 <ROUTINE FRONT-DOOR-FCN ()
 	 <COND (<VERB? OPEN>
-		<TELL "The door cannot be opened." CR>)
+		<TELL "A porta não pode ser aberta." CR>)
 	       (<VERB? BURN>
 		<TELL
-		 "You cannot burn this door." CR>)
+		 "Você não pode queimar esta porta." CR>)
 	       (<VERB? MUNG>
-		<TELL "You can't seem to damage the door." CR>)
+		<TELL "Você não consegue danificar a porta." CR>)
 	       (<VERB? LOOK-BEHIND>
-		<TELL "It won't open." CR>)>>
+		<TELL "Ela não abre." CR>)>>
 
 \
 
@@ -2220,45 +2218,45 @@ artist's masterpieces, you have destroyed one." CR>)>>
 <GLOBAL LAMP-TABLE
 	<TABLE (PURE)
 	       100
-	       "The lamp appears a bit dimmer."
+	       "A lanterna parece um pouco mais fraca."
 	       70
-	       "The lamp is definitely dimmer now."
-	       15   
-	       "The lamp is nearly out."
+	       "A lanterna está bem mais fraca agora."
+	       15
+	       "A lanterna está quase apagando."
 	       0>>
 
 <ROUTINE LANTERN ()
 	 <COND (<VERB? THROW>
 		<TELL
-"The lamp has smashed into the floor, and the light has gone out." CR>
+"A lanterna se espatifa no chão, e a luz se apaga." CR>
 		<DISABLE <INT I-LANTERN>>
 		<REMOVE-CAREFULLY ,LAMP>
 		<MOVE ,BROKEN-LAMP ,HERE>)
 	       (<VERB? LAMP-ON>
 		<COND (<FSET? ,LAMP ,RMUNGBIT>
-		       <TELL "A burned-out lamp won't light." CR>)
+		       <TELL "Uma lanterna sem bateria não acende." CR>)
 		      (T
 		       <ENABLE <INT I-LANTERN>>
 		       <>)>)
 	       (<VERB? LAMP-OFF>
 		<COND (<FSET? ,LAMP ,RMUNGBIT>
-		       <TELL "The lamp has already burned out." CR>)
+		       <TELL "A bateria da lanterna já acabou." CR>)
 		      (T
 		       <DISABLE <INT I-LANTERN>>
 		       <>)>)
 	       (<VERB? EXAMINE>
-		<TELL "The lamp ">
+		<TELL "A lanterna ">
 		<COND (<FSET? ,LAMP ,RMUNGBIT>
-		       <TELL "has burned out.">)
+		       <TELL "está sem bateria.">)
 		      (<FSET? ,LAMP ,ONBIT>
-		       <TELL "is on.">)
+		       <TELL "está acesa.">)
 		      (T
-		       <TELL "is turned off.">)>
+		       <TELL "está apagada.">)>
 		<CRLF>)>>
 
 <ROUTINE MAILBOX-F ()
 	 <COND (<AND <VERB? TAKE> <EQUAL? ,PRSO ,MAILBOX>>
-		<TELL "It is securely anchored." CR>)>>
+		<TELL "Ela está firmemente presa ao chão." CR>)>>
 
 <GLOBAL MATCH-COUNT 6>
 
@@ -2332,7 +2330,7 @@ artist's masterpieces, you have destroyed one." CR>)>>
 	 <COND (<OR <HELD? .OBJ> <IN? .OBJ ,HERE>>
 		<COND (<0? .TICK>
 		       <TELL
-"You'd better have more light than from the " D .OBJ "." CR>)
+"É melhor você arranjar uma luz melhor que " T-O .OBJ "." CR>)
 		      (T
 		       <TELL <GET .TBL 1> CR>)>)>>
 
@@ -2436,10 +2434,10 @@ burn." CR>)
 	       (<VERB? EXAMINE>
 		<COND (<EQUAL? <SET G <GETP ,SWORD ,P?TVALUE>> 1>
 		       <TELL
-"Your sword is glowing with a faint blue glow." CR>)
+"Sua espada emite um fraco brilho azulado." CR>)
 		      (<EQUAL? .G 2>
 		       <TELL
-"Your sword is glowing very brightly." CR>)>)>>
+"Sua espada está brilhando intensamente." CR>)>)>>
 
 "SUBTITLE COAL MINE"
 
@@ -2880,11 +2878,11 @@ The boat deflates to the sounds of hissing, sputtering, and cursing." CR>
 <ROUTINE TREE-ROOM (RARG "AUX" F)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are about 10 feet above the ground nestled among some large
-branches. The nearest branch above you is above your reach." CR>
+"Você está a uns três metros do chão, aninhado entre alguns galhos
+grandes. O galho mais próximo acima de você está fora do seu alcance." CR>
 		<COND (<AND <SET F <FIRST? ,PATH>>
 			    <NEXT? .F>>
-		       <TELL "On the ground below you can see:  ">
+		       <TELL "No chão, lá embaixo, você vê:  ">
 		       <PRINT-CONTENTS ,PATH>
 		       <TELL "." CR>)>)
 	       (<EQUAL? .RARG ,M-BEG>
@@ -2897,63 +2895,64 @@ branches. The nearest branch above you is above your reach." CR>
 		       <COND (<NOT <IDROP>> <RTRUE>)
 			     (<AND <EQUAL? ,PRSO ,NEST> <IN? ,EGG ,NEST>>
 			      <TELL
-"The nest falls to the ground, and the egg spills out of it, seriously
-damaged." CR>
+"O ninho cai no chão, e o ovo rola para fora, seriamente
+danificado." CR>
 			      <REMOVE-CAREFULLY ,EGG>
 			      <MOVE ,BROKEN-EGG ,PATH>)
 			     (<EQUAL? ,PRSO ,EGG>
 			      <TELL
-"The egg falls to the ground and springs open, seriously damaged.">
+"O ovo cai no chão e se abre, seriamente danificado.">
 			      <MOVE ,EGG ,PATH>
 			      <BAD-EGG>
 			      <CRLF>)
 			     (<NOT <EQUAL? ,PRSO ,WINNER ,TREE>>
 			      <MOVE ,PRSO ,PATH>
-			      <TELL
-"The " D ,PRSO " falls to the ground." CR>)
+			      <TELL T-CO ,PRSO " ">
+			      <PRINT-PLURAL ,PRSO "cai" "caem">
+			      <TELL " no chão." CR>)
 			     (<VERB? LEAP>
 			      <JIGS-UP
-			        "That was just a bit too far down.">)>)>)
+			        "Era um pouquinho alto demais.">)>)>)
 	       (<EQUAL? .RARG ,M-ENTER> <ENABLE <QUEUE I-FOREST-ROOM -1>>)>>
 
 <ROUTINE EGG-OBJECT ()
 	 <COND (<AND <VERB? OPEN MUNG> <EQUAL? ,PRSO ,EGG>>
 		<COND (<FSET? ,PRSO ,OPENBIT>
-		       <TELL "The egg is already open." CR>)
+		       <TELL "O ovo já está aberto." CR>)
 		      (<NOT ,PRSI>
-		       <TELL "You have neither the tools nor the expertise."
+		       <TELL "Você não tem nem as ferramentas nem a habilidade."
 			     CR>)
 		      (<EQUAL? ,PRSI ,HANDS>
-		       <TELL "I doubt you could do that without damaging it."
+		       <TELL "Duvido que você consiga fazer isso sem danificá-lo."
 			     CR>)
 		      (<OR <FSET? ,PRSI ,WEAPONBIT>
 			   <FSET? ,PRSI ,TOOLBIT>
 			   <VERB? MUNG>>
 		       <TELL
-"The egg is now open, but the clumsiness of your attempt has seriously
-compromised its esthetic appeal.">
+"O ovo agora está aberto, mas a falta de jeito da sua tentativa
+comprometeu seriamente o valor estético dele.">
 		       <BAD-EGG>
 		       <CRLF>)
 		      (<FSET? ,PRSO ,FIGHTBIT>
-		       <TELL "Not to say that using the "
-			     D ,PRSI
-			     " isn't original too..." CR>)
+		       <TELL "Não que usar "
+			     T-O ,PRSI
+			     " também não seja original..." CR>)
 		      (T
-		       <TELL "The concept of using a "
-			     D ,PRSI
-			     " is certainly original." CR>
+		       <TELL "A ideia de usar "
+			     T-UM ,PRSI
+			     " é sem dúvida original." CR>
 		       <FSET ,PRSO ,FIGHTBIT>)>)
 	       (<VERB? CLIMB-ON HATCH>
 		<TELL
-"There is a noticeable crunch from beneath you, and inspection reveals
-that the egg is lying open, badly damaged.">
+"Você ouve um estalo bem nítido embaixo de você e, ao examinar, descobre
+que o ovo está aberto e muito danificado.">
 		<BAD-EGG>
 		<CRLF>)
 	       (<VERB? OPEN MUNG THROW>
 		<COND (<VERB? THROW> <MOVE ,PRSO ,HERE>)>
 		<TELL
-"Your rather indelicate handling of the egg has caused it some damage,
-although you have succeeded in opening it.">
+"Seu manuseio nada delicado causou alguns danos ao ovo, embora você
+tenha conseguido abri-lo.">
 		<BAD-EGG>
 		<CRLF>)>>
 
@@ -2972,22 +2971,22 @@ although you have succeeded in opening it.">
 		<COND (<EQUAL? ,PRSO ,CANARY>
 		       <COND (<AND <NOT ,SING-SONG> <FOREST-ROOM?>>
 			      <TELL
-"The canary chirps, slightly off-key, an aria from a forgotten opera.
-From out of the greenery flies a lovely songbird. It perches on a
-limb just over your head and opens its beak to sing. As it does so
-a beautiful brass bauble drops from its mouth, bounces off the top of
-your head, and lands glimmering in the grass. As the canary winds
-down, the songbird flies away." CR>
+"O canário gorjeia, um pouco desafinado, uma ária de uma ópera
+esquecida. Do meio do verde sai voando um belo pássaro canoro. Ele
+pousa num galho bem acima da sua cabeça e abre o bico para cantar. Ao
+fazer isso, deixa cair do bico um lindo berloque de latão, que quica no
+alto da sua cabeça e vai parar, reluzente, na grama. Quando a corda do
+canário acaba, o pássaro canoro vai embora voando." CR>
 			     <SETG SING-SONG T>
 			     <MOVE ,BAUBLE
 				   <COND (<EQUAL? ,HERE ,UP-A-TREE> ,PATH)
 					 (T ,HERE)>>)
 			    (T
 			     <TELL
-"The canary chirps blithely, if somewhat tinnily, for a short time." CR>)>)
+"O canário gorjeia alegre, ainda que meio metálico, por um tempinho." CR>)>)
 		     (T
 		      <TELL
-"There is an unpleasant grinding noise from inside the canary." CR>)>)>>
+"Sai um rangido desagradável de dentro do canário." CR>)>)>>
 
 <ROUTINE FOREST-ROOM? ()
 	 <OR <EQUAL? ,HERE ,FOREST-1 ,FOREST-2 ,FOREST-3>
@@ -2999,7 +2998,7 @@ down, the songbird flies away." CR>
 		<RFALSE>)
 	       (<PROB 15>
 		<TELL
-"You hear in the distance the chirping of a song bird." CR>)>>
+"Você ouve ao longe o gorjeio de um pássaro canoro." CR>)>>
 
 <ROUTINE FOREST-ROOM (RARG)
 	 <COND (<EQUAL? .RARG ,M-ENTER> <ENABLE <QUEUE I-FOREST-ROOM -1>>)
@@ -3106,7 +3105,7 @@ down, the songbird flies away." CR>
 <ROUTINE SANDWICH-BAG-FCN ()
 	 <COND (<AND <VERB? SMELL>
 		     <IN? ,LUNCH ,PRSO>>
-		<TELL "It smells of hot peppers." CR>)>>
+		<TELL "Tem cheiro de pimenta." CR>)>>
 
 "MORE RANDOMNESS"
 
@@ -3866,12 +3865,12 @@ livelihood.">>>>
 						    <RETURN>)>)>)>>)>
 		<COND (<EQUAL? .NG .G> <RFALSE>)
 		      (<EQUAL? .NG 2>
-		       <TELL "Your sword has begun to glow very brightly." CR>)
+		       <TELL "Sua espada começou a brilhar intensamente." CR>)
 		      (<1? .NG>
-		       <TELL "Your sword is glowing with a faint blue glow."
+		       <TELL "Sua espada emite um fraco brilho azulado."
 			     CR>)
 		      (<0? .NG>
-		       <TELL "Your sword is no longer glowing." CR>)>
+		       <TELL "Sua espada parou de brilhar." CR>)>
 		<PUTP ,SWORD ,P?TVALUE .NG>
 		<RTRUE>)
 	       (T
@@ -4160,8 +4159,8 @@ completo, mas não dá para ter tudo." CR CR>
 	 <COND (<VERB? EAT>
 		<REMOVE-CAREFULLY ,PRSO>
 		<TELL
-"What the heck! You won't make friends this way, but nobody around
-here is too friendly anyhow. Gulp!" CR>)>>
+"Ah, que se dane! Assim você não vai fazer amigos, mas ninguém por aqui
+é muito simpático mesmo. Glup!" CR>)>>
 
 <ROUTINE CHAIN-PSEUDO ()
 	 <COND (<VERB? TAKE MOVE>
