@@ -22,12 +22,22 @@ para funcionar offline.
 
 A barra de atalhos embaixo da tela tem as direções e os comandos mais usados.
 Os botões com "…" só começam o comando, para você completar (por exemplo,
-"Pegar…" e depois o nome do objeto).
+"Pegar…" e depois o nome do objeto). O botão ↶ envia `desfazer`, e o ⓘ abre
+o painel **Sobre**, com os créditos e um resumo de como guardar os saves.
 
-**Salvar o jogo:** use o botão **Salvar** (ou o comando correspondente) e dê um
-nome ao arquivo. Para continuar depois, use **Carregar**. Os saves ficam no
-navegador. No diálogo de arquivos, **Download** baixa um save para guardar ou
-passar para outro aparelho, e **Add file** importa um save baixado.
+**Salvar o jogo:** o jogo não continua sozinho de onde parou quando você fecha
+e reabre a página, então use o botão **Salvar** (ou o comando `salvar`) e dê um
+nome ao arquivo. Para continuar depois, use **Carregar**.
+
+**Guardar o save fora do navegador:** os saves ficam no armazenamento do
+navegador, que pode apagá-los (ao limpar os cookies, por exemplo). No iPhone
+isso é mais sério: o Safari apaga os dados de sites que ficam uma semana sem
+ser abertos. Para guardar uma cópia, toque em **Carregar**, escolha o save,
+toque em **Baixar** e depois em **Cancelar** (o jogo avisa que não carregou;
+é normal). O arquivo `.glksave` vai para os downloads do aparelho (no iPhone,
+para o app Arquivos). Para usar a cópia, ou levá-la para outro aparelho, toque
+em **Carregar**, depois em **Importar**, escolha o arquivo e toque em **Abrir**.
+Se o arquivo não aparecer na lista, troque o **Tipo** para **Todos**.
 
 ## Desenvolvimento
 
@@ -62,8 +72,12 @@ Chromium: `NAVEGADOR_CANAL=msedge node tools/testar-site.mjs`.
   de `src/` com os de `original/` e falha se algum texto do jogo ficar igual
   ao original (modo `--estrito`), a não ser os de `tests/textos-iguais.txt`.
 - **Site:** `tools/testar-site.mjs` abre o site num navegador simulando um
-  celular e confere o jogo, a barra de atalhos, o teclado virtual e o modo
-  offline.
+  celular e confere o jogo, a barra de atalhos (inclusive o Desfazer e o
+  Sobre, e que nenhum rótulo é cortado de 320 a 430 px), o teclado virtual, os
+  acentos digitados com tecla morta (ABNT2), o histórico com as setas, o modo
+  offline, que todo arquivo do site está no cache do service worker e o ciclo
+  completo de salvar, baixar o save, apagar o armazenamento, importar o
+  arquivo e carregar.
 
 ### CI/CD (GitHub Actions)
 
@@ -85,14 +99,22 @@ Para lançar uma versão: `git tag v0.1.0 && git push --tags`.
 | `tests/` | Roteiro completo, teste do parser em português e as transcrições de referência |
 | `docs/` | Guia de tradução |
 | `tools/` | Scripts de compilação, teste e montagem do site; `zrunner` é o executor de testes |
-| `web/` | Página do jogo (Parchment), barra de atalhos e PWA |
+| `web/` | Página do jogo (Parchment), barra de atalhos, painel Sobre, tradução dos diálogos do Parchment (`dialogos.js`) e PWA |
 | `.github/workflows/` | CI/CD |
 
 ## Pendências conhecidas
 
-- O autosave do Parchment (continuar de onde parou ao reabrir) não está
-  funcionando com o interpretador Bocfel. Por enquanto, use Salvar/Carregar.
-- O diálogo de arquivos do Parchment está em inglês.
+- Não há autosave (continuar de onde parou ao reabrir). A opção
+  `do_vm_autosave` do Parchment não tem efeito na versão fixada (2026.8.23):
+  o Bocfel que ele usa é compilado com `ZTERP_NO_OPTIONS`, então o autosave
+  do próprio Bocfel fica desligado e não dá para ligá-lo pela página. Por
+  enquanto, use Salvar/Carregar.
+- Os textos do diálogo de arquivos do Parchment são traduzidos por
+  `web/dialogos.js`, que troca o texto na tela. Se uma versão nova do
+  Parchment mudar algum texto, ele volta a aparecer em inglês até ser
+  acrescentado à lista. Avisos do interpretador Bocfel (como
+  "Warning: unable to open save file" ao cancelar o carregamento) continuam
+  em inglês.
 
 ## Créditos
 
