@@ -153,25 +153,25 @@
 	       <TELL ">">
 	       <READ-INPUT>)>
 	<SETG P-LEN <GETB ,P-LEXV ,P-LEXWORDS>>
-	<COND (<ZERO? ,P-LEN> <TELL "I beg your pardon?" CR> <RFALSE>)>
+	<COND (<ZERO? ,P-LEN> <TELL "Como é?" CR> <RFALSE>)>
 	<COND (<EQUAL? <SET WRD <GET ,P-LEXV .PTR>> ,W?OOPS>
 	       <COND (<EQUAL? <GET ,P-LEXV <+ .PTR ,P-LEXELEN>>
 			      ,W?PERIOD ,W?COMMA>
 		      <SET PTR <+ .PTR ,P-LEXELEN>>
 		      <SETG P-LEN <- ,P-LEN 1>>)>
 	       <COND (<NOT <G? ,P-LEN 1>>
-		      <TELL "I can't help your clumsiness." CR>
+		      <TELL "Não tenho como ajudar com a sua falta de jeito." CR>
 		      <RFALSE>)
 		     (<GET ,OOPS-TABLE ,O-PTR>
 		      <COND (<AND <G? ,P-LEN 2>
 				  <EQUAL? <GET ,P-LEXV <+ .PTR ,P-LEXELEN>>
 					  ,W?QUOTE>>
 			     <TELL
-"Sorry, you can't correct mistakes in quoted text." CR>
+"Desculpe, não dá para corrigir erros em texto entre aspas." CR>
 			     <RFALSE>)
 			    (<G? ,P-LEN 2>
 			     <TELL
-"Warning: only the first word after OOPS is used." CR>)>
+"Atenção: só a primeira palavra depois de OPS é usada." CR>)>
 		      <PUT ,AGAIN-LEXV <GET ,OOPS-TABLE ,O-PTR>
 			   <GET ,P-LEXV <+ .PTR ,P-LEXELEN>>>
 		      <SETG WINNER .OWINNER> ;"maybe fix oops vs. chars.?"
@@ -184,7 +184,7 @@
 		      <INBUF-STUFF ,OOPS-INBUF ,P-INBUF>)
 		     (T
 		      <PUT ,OOPS-TABLE ,O-END <>>
-		      <TELL "There was no word to replace!" CR>
+		      <TELL "Não havia nenhuma palavra para trocar!" CR>
 		      <RFALSE>)>)
 	      (T
 	       <COND (<NOT <EQUAL? .WRD ,W?AGAIN ,W?G>>
@@ -192,13 +192,13 @@
 	       <PUT ,OOPS-TABLE ,O-END <>>)>
 	<COND (<EQUAL? <GET ,P-LEXV .PTR> ,W?AGAIN ,W?G>
 	       <COND (<ZERO? <GETB ,OOPS-INBUF 1>>
-		      <TELL "Beg pardon?" CR>
+		      <TELL "Como?" CR>
 		      <RFALSE>)
 		     (,P-OFLAG
-		      <TELL "It's difficult to repeat fragments." CR>
+		      <TELL "É difícil repetir pedaços de frase." CR>
 		      <RFALSE>)
 		     (<NOT ,P-WON>
-		      <TELL "That would just repeat a mistake." CR>
+		      <TELL "Isso só repetiria um erro." CR>
 		      <RFALSE>)
 		     (<G? ,P-LEN 1>
 		      <COND (<OR <EQUAL? <GET ,P-LEXV <+ .PTR ,P-LEXELEN>>
@@ -209,7 +209,7 @@
 			     <PUTB ,P-LEXV ,P-LEXWORDS
 				   <- <GETB ,P-LEXV ,P-LEXWORDS> 2>>)
 			    (T
-			     <TELL "I couldn't understand that sentence." CR>
+			     <TELL "Não consegui entender essa frase." CR>
 			     <RFALSE>)>)
 		     (T
 		      <SET PTR <+ .PTR ,P-LEXELEN>>
@@ -330,7 +330,7 @@
 					    <PUT ,P-ITBL ,P-PREP1N .WRD>)>)
 				    (<EQUAL? ,P-NCN 2>
 				     <TELL
-"There were too many nouns in that sentence." CR>
+"Há substantivos demais nessa frase." CR>
 				     <RFALSE>)
 				    (T
 				     <SETG P-NCN <+ ,P-NCN 1>>
@@ -352,8 +352,8 @@
 				   <WT? .WRD ,PS?VERB ,P1?VERB>
 				   <EQUAL? ,WINNER ,PLAYER>>
 			      <TELL
-"Please consult your manual for the correct way to talk to other people
-or creatures." CR>
+"Consulte o seu manual para saber como falar com outras pessoas ou
+criaturas." CR>
 			      <RFALSE>)
 			     (T
 			      <CANT-USE .PTR>
@@ -411,8 +411,8 @@ or creatures." CR>
 		<CURSET 1 <- .WIDTH 10>>
 		<TELL " " N ,SCORE "/" N ,MOVES>)
 	       (T
-		<CURSET 1 <- .WIDTH 23>>
-		<TELL "Score: " N ,SCORE "  Moves: " N ,MOVES>)>
+		<CURSET 1 <- .WIDTH 26>>
+		<TELL "Pontos: " N ,SCORE "  Jogadas: " N ,MOVES>)>
 	 <HLIGHT 0>
 	 <SCREEN 0>>
 
@@ -706,9 +706,9 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 <ROUTINE UNKNOWN-WORD (PTR "AUX" BUF)
 	<PUT ,OOPS-TABLE ,O-PTR .PTR>
 	<COND (<VERB? SAY>
-	       <TELL "Nothing happens." CR>
+	       <TELL "Nada acontece." CR>
 	       <RFALSE>)>
-	<TELL "I don't know the word \"">
+	<TELL "Não conheço a palavra \"">
 	<WORD-PRINT <GETB <REST ,P-LEXV <SET BUF <* .PTR 2>>> 2>
 		    <GETB <REST ,P-LEXV .BUF> 3>>
 	<TELL "\"." CR>
@@ -717,12 +717,12 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 
 <ROUTINE CANT-USE (PTR "AUX" BUF)
 	<COND (<VERB? SAY>
-	       <TELL "Nothing happens." CR>
+	       <TELL "Nada acontece." CR>
 	       <RFALSE>)>
-	<TELL "You used the word \"">
+	<TELL "Você usou a palavra \"">
 	<WORD-PRINT <GETB <REST ,P-LEXV <SET BUF <* .PTR 2>>> 2>
 		    <GETB <REST ,P-LEXV .BUF> 3>>
-	<TELL "\" in a way that I don't understand." CR>
+	<TELL "\" de um jeito que não entendo." CR>
 	<SETG QUOTE-FLAG <>>
 	<SETG P-OFLAG <>>>
 
@@ -748,7 +748,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 <ROUTINE SYNTAX-CHECK ("AUX" SYN LEN NUM OBJ
 		       	    (DRIVE1 <>) (DRIVE2 <>) PREP VERB TMP)
 	<COND (<ZERO? <SET VERB <GET ,P-ITBL ,P-VERB>>>
-	       <TELL "There was no verb in that sentence!" CR>
+	       <TELL "Não há nenhum verbo nessa frase!" CR>
 	       <RFALSE>)>
 	<SET SYN <GET ,VERBS <- 255 .VERB>>>
 	<SET LEN <GETB .SYN 0>>
@@ -772,7 +772,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 		       <COND (<OR .DRIVE1 .DRIVE2> <RETURN>)
 			     (T
 			      <TELL
-"That sentence isn't one I recognize." CR>
+"Não reconheço essa frase." CR>
 			      <RFALSE>)>)
 		      (T <SET SYN <REST .SYN ,P-SYNLEN>>)>>
 	<COND (<AND .DRIVE1
@@ -792,31 +792,29 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	       <PUT ,P-PRSI 1 .OBJ>
 	       <SYNTAX-FOUND .DRIVE2>)
 	      (<EQUAL? .VERB ,ACT?FIND>
-	       <TELL "That question can't be answered." CR>
+	       <TELL "Essa pergunta não tem resposta." CR>
 	       <RFALSE>)
 	      (<NOT <EQUAL? ,WINNER ,PLAYER>>
 	       <CANT-ORPHAN>)
 	      (T
 	       <ORPHAN .DRIVE1 .DRIVE2>
-	       <TELL "What do you want to ">
-	       <SET TMP <GET ,P-OTBL ,P-VERBN>>
-	       <COND (<EQUAL? .TMP 0> <TELL "tell">)
-		     (<ZERO? <GETB ,P-VTBL 2>>
-		      <PRINTB <GET .TMP 0>>)
-		     (T
-		      <WORD-PRINT <GETB .TMP 2> <GETB .TMP 3>>
+	       ;"PT: O que você quer pegar? / Em que você quer colocar o folheto?
+		 O verbo vai no infinitivo (a forma digitada perdeu os acentos)."
+	       <PERGUNTA-PREP <COND (.DRIVE1 <GETB .DRIVE1 ,P-SPREP1>)
+				    (T <GETB .DRIVE2 ,P-SPREP2>)>>
+	       <TELL " você quer ">
+	       <PRINT-INFINITIVO .VERB>
+	       <COND (<NOT <ZERO? <GET ,P-OTBL ,P-VERBN>>>
 		      <PUTB ,P-VTBL 2 0>)>
 	       <COND (.DRIVE2
 		      <TELL " ">
 		      <THING-PRINT T T>)>
 	       <SETG P-OFLAG T>
-	       <PREP-PRINT <COND (.DRIVE1 <GETB .DRIVE1 ,P-SPREP1>)
-				 (T <GETB .DRIVE2 ,P-SPREP2>)>>
 	       <TELL "?" CR>
 	       <RFALSE>)>>
 
 <ROUTINE CANT-ORPHAN ()
-	 <TELL "\"I don't understand! What are you referring to?\"" CR>
+	 <TELL "\"Não entendi! Do que você está falando?\"" CR>
 	 <RFALSE>>
 
 
@@ -878,7 +876,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			      <SET PN T>)
 			     (T
 			      <COND (<AND .FIRST?? <NOT .PN> .CP>
-				     <TELL "the ">)>
+				     <ARTIGO-DIGITADO .BEG>)>
 			      <COND (<OR ,P-OFLAG ,P-MERGED> <PRINTB .WRD>)
 				    (<AND <EQUAL? .WRD ,W?IT>
 					  <ACCESSIBLE? ,P-IT-OBJECT>>
@@ -950,19 +948,15 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	       <COND (<EQUAL? <GET ,P-MERGE ,P-MATCHLEN> 1>
 		      <SET OBJ <GET ,P-MERGE 1>>
 		      <TELL "(">
-		      <COND (<AND <NOT <ZERO? .PREP>>
-				  <NOT ,P-END-ON-PREP>>
-			     <PRINTB <SET PREP <PREP-FIND .PREP>>>
-			     <COND (<EQUAL? .PREP ,W?OUT>
-				    <TELL " of">)>
-			     <TELL " ">
-			     <COND (<EQUAL? .OBJ ,HANDS>
-				    <TELL "your hands">)
-				   (T
-				    <TELL "the " D .OBJ>)>
-			     <TELL ")" CR>)
-			    (ELSE
-			     <TELL D .OBJ ")" CR>)>
+			      <COND (<AND <NOT <ZERO? .PREP>>
+					  <NOT ,P-END-ON-PREP>>
+				     <COND (<EQUAL? .OBJ ,HANDS>
+					    <TELL "com as mãos">)
+					   (T
+					    <PRINT-PREP-OBJ .PREP .OBJ>)>
+				     <TELL ")" CR>)
+				    (ELSE
+				     <TELL T-O .OBJ ")" CR>)>
 		      .OBJ)>)
 	      (T <SETG P-GWIMBIT 0> <RFALSE>)>>
 
@@ -1106,7 +1100,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 		     <ZERO? ,P-GWIMBIT>>
 		<COND (.VRB
 		       <TELL
-"There seems to be a noun missing in that sentence!" CR>)>
+"Parece que falta um substantivo nessa frase!" CR>)>
 		<RFALSE>)>
 	 <COND (<OR <NOT <EQUAL? ,P-GETFLAGS ,P-ALL>> <ZERO? ,P-SLOCBITS>>
 		<SETG P-SLOCBITS -1>)>
@@ -1125,9 +1119,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			   <NOT <ZERO? .LEN>>>
 		      <COND (<NOT <EQUAL? .LEN 1>>
 			     <PUT .TBL 1 <GET .TBL <RANDOM .LEN>>>
-			     <TELL "(How about the ">
-			     <PRINTD <GET .TBL 1>>
-			     <TELL "?)" CR>)>
+			     <TELL "(Que tal " T-O <GET .TBL 1> "?)" CR>)>
 		      <PUT .TBL ,P-MATCHLEN 1>)
 		     (<OR <G? .LEN 1>
 			  <AND <ZERO? .LEN> <NOT <EQUAL? ,P-SLOCBITS -1>>>>
@@ -1154,7 +1146,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				    <SETG P-OFLAG T>)
 				   (.VRB
 				    <TELL
-"There seems to be a noun missing in that sentence!" CR>)>
+"Parece que falta um substantivo nessa frase!" CR>)>
 			     <SETG P-NAM <>>
 			     <SETG P-ADJ <>>
 			     <RFALSE>)>)>
@@ -1172,7 +1164,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				    <SETG P-ADJ <>>
 				    <SETG P-ADJN <>>
 				    <RTRUE>)
-				   (T <TELL "It's too dark to see!" CR>)>)>
+				   (T <TELL "Está escuro demais para enxergar!" CR>)>)>
 		      <SETG P-NAM <>>
 		      <SETG P-ADJ <>>
 		      <RFALSE>)
@@ -1188,21 +1180,14 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 
 <ROUTINE WHICH-PRINT (TLEN LEN TBL "AUX" OBJ RLEN)
 	 <SET RLEN .LEN>
-	 <TELL "Which ">
-         <COND (<OR ,P-OFLAG ,P-MERGED ,P-AND>
-		<PRINTB <COND (,P-NAM ,P-NAM)
-			      (,P-ADJ ,P-ADJN)
-			      (ELSE ,W?ONE)>>)
-	       (ELSE
-		<THING-PRINT <EQUAL? .TBL ,P-PRSO>>)>
-	 <TELL " do you mean, ">
+	 ;"PT: Você quer dizer a lanterna de latão ou a lanterna quebrada?"
+	 <TELL "Você quer dizer ">
 	 <REPEAT ()
 		 <SET TLEN <+ .TLEN 1>>
 		 <SET OBJ <GET .TBL .TLEN>>
-		 <TELL "the " D .OBJ>
+		 <TELL T-O .OBJ>
 		 <COND (<EQUAL? .LEN 2>
-		        <COND (<NOT <EQUAL? .RLEN 2>> <TELL ",">)>
-		        <TELL " or ">)
+		        <TELL " ou ">)
 		       (<G? .LEN 2> <TELL ", ">)>
 		 <COND (<L? <SET LEN <- .LEN 1>> 1>
 		        <TELL "?" CR>
@@ -1304,7 +1289,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			       <COND (<EQUAL? .OBJ ,IT>
 				      <COND (<NOT <ACCESSIBLE? ,P-IT-OBJECT>>
 					     <TELL
-"I don't see what you're referring to." CR>
+"Não sei a que você se refere." CR>
 					     <RFALSE>)
 					    (T
 					     <SET OBJ ,P-IT-OBJECT>)>)>
@@ -1326,15 +1311,13 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 					     <COND (<EQUAL? .OBJ
 							    ,NOT-HERE-OBJECT>
 						    <TELL
-"You don't have that!" CR>
+"Você não está com isso!" CR>
 						    <RFALSE>)>
-					     <TELL "You don't have the ">
-					     <PRINTD .OBJ>
-					     <TELL "." CR>
+					     <TELL "Você não está com " T-O .OBJ "." CR>
 					     <RFALSE>)
 					    (<AND <NOT .TAKEN>
 						  <EQUAL? ,WINNER ,ADVENTURER>>
-					     <TELL "(Taken)" CR>)>)>)>>)
+					     <TELL "(pegando " T-O .OBJ " antes)" CR>)>)>)>>)
 	       (T)>>
 
 <ROUTINE MANY-CHECK ("AUX" (LOSS <>) TMP)
@@ -1345,15 +1328,10 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 		    <NOT <BTST <GETB ,P-SYNTAX ,P-SLOC2> ,SMANY>>>
 	       <SET LOSS 2>)>
 	<COND (.LOSS
-	       <TELL "You can't use multiple ">
-	       <COND (<EQUAL? .LOSS 2> <TELL "in">)>
-	       <TELL "direct objects with \"">
-	       <SET TMP <GET ,P-ITBL ,P-VERBN>>
-	       <COND (<ZERO? .TMP> <TELL "tell">)
-		     (<OR ,P-OFLAG ,P-MERGED>
-		      <PRINTB <GET .TMP 0>>)
-		     (T
-		      <WORD-PRINT <GETB .TMP 2> <GETB .TMP 3>>)>
+	       <TELL "Você não pode usar vários objetos ">
+	       <COND (<EQUAL? .LOSS 2> <TELL "indiretos ">)>
+	       <TELL "com o verbo \"">
+	       <PRINT-INFINITIVO <GET ,P-ITBL ,P-VERB>>
 	       <TELL "\"." CR>
 	       <RFALSE>)
 	      (T)>>

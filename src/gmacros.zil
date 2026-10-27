@@ -39,6 +39,34 @@
 						   <=? .P "CHR">
 						   <=? .P "C">>
 					       <MAPRET <FORM PRINTC .O>>)
+					      ;"PT: artigos com concordância
+						(ver pt-parser.zil)"
+					      (<=? .P "T-O">
+					       <MAPRET <FORM PRINT-ARTIGO .O <>>>)
+					      (<=? .P "T-CO">
+					       <MAPRET <FORM PRINT-ARTIGO .O T>>)
+					      (<=? .P "T-UM">
+					       <MAPRET <FORM PRINT-INDEFINIDO .O <>>>)
+					      (<=? .P "T-CUM">
+					       <MAPRET <FORM PRINT-INDEFINIDO .O T>>)
+					      (<=? .P "T-DO">
+					       <MAPRET <FORM PRINT-CONTRACAO .O "d" "de">>)
+					      (<=? .P "T-NO">
+					       <MAPRET <FORM PRINT-CONTRACAO .O "n" "em">>)
+					      (<=? .P "T-PELO">
+					       <MAPRET <FORM PRINT-CONTRACAO .O "pel" "por">>)
+					      (<=? .P "T-AO">
+					       <MAPRET <FORM PRINT-AO .O>>)
+					      (<=? .P "T-G">
+					       <MAPRET <FORM PRINT-TERMINACAO .O>>)
+					      (<=? .P "T-ELE">
+					       <MAPRET <FORM PRINT-PRONOME .O <>>>)
+					      (<=? .P "T-CELE">
+					       <MAPRET <FORM PRINT-PRONOME .O T>>)
+					      (<=? .P "T-ESTA">
+					       <MAPRET <FORM PRINT-PLURAL .O "está" "estão">>)
+					      (<=? .P "T-SER">
+					       <MAPRET <FORM PRINT-PLURAL .O "é" "são">>)
 					      (ELSE
 					       <MAPRET
 						 <FORM PRINT

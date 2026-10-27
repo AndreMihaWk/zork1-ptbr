@@ -50,6 +50,8 @@ function textos(codigo) {
     }
   }
 
+  // Em ZIL, um texto solto no nível de topo do arquivo é comentário.
+  let nivel = 0
   while (i < codigo.length) {
     const c = codigo[i]
     if (c === ';') { i++; pularObjeto() }
@@ -57,8 +59,16 @@ function textos(codigo) {
     else if (c === '"') {
       const antes = codigo.slice(Math.max(0, i - 20), i)
       const texto = lerTexto()
-      if (/[A-Za-z]/.test(texto) && !/INSERT-FILE\s+$/.test(antes)) encontrados.push(texto)
-    } else i++
+      const visivel = nivel > 0
+        && /[A-Za-z]/.test(texto)
+        && !/INSERT-FILE\s+$/.test(antes)
+        && !/^[A-Z0-9?-]+$/.test(texto) // AUX, OPTIONAL e outros marcadores de código
+      if (visivel) encontrados.push(texto)
+    } else {
+      if ('<(['.includes(c)) nivel++
+      else if ('>)]'.includes(c)) nivel = Math.max(0, nivel - 1)
+      i++
+    }
   }
   return encontrados
 }

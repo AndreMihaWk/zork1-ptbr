@@ -32,7 +32,7 @@
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM INTNUM)
 	(FLAGS TOOLBIT)
-	(DESC "number")>
+	(DESC "número")>
 
 <OBJECT PSEUDO-OBJECT
 	(IN LOCAL-GLOBALS)
@@ -42,18 +42,19 @@
 <OBJECT IT
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM IT THEM HER HIM)
-	(DESC "random object")
+	(DESC "objeto qualquer")
 	(FLAGS NDESCBIT TOUCHBIT)>
 
 <OBJECT NOT-HERE-OBJECT
-	(DESC "such thing" ;"[not here]")
+	(DESC "coisa dessas" ;"[not here]")
+	(FLAGS FEMBIT)
 	(ACTION NOT-HERE-OBJECT-F)>
 
 <ROUTINE NOT-HERE-OBJECT-F ("AUX" TBL (PRSO? T) OBJ)
 	 ;"This COND is game independent (except the TELL)"
 	 <COND (<AND <EQUAL? ,PRSO ,NOT-HERE-OBJECT>
 		     <EQUAL? ,PRSI ,NOT-HERE-OBJECT>>
-		<TELL "Those things aren't here!" CR>
+		<TELL "Essas coisas não estão aqui!" CR>
 		<RTRUE>)
 	       (<EQUAL? ,PRSO ,NOT-HERE-OBJECT>
 		<SET TBL ,P-PRSO>)
@@ -64,13 +65,13 @@
 	 <SETG P-CONT <>>
 	 <SETG QUOTE-FLAG <>>
 	 <COND (<EQUAL? ,WINNER ,PLAYER>
-		<TELL "You can't see any ">
+		<TELL "Você não vê ">
 		<NOT-HERE-PRINT .PRSO?>
-		<TELL " here!" CR>)
+		<TELL " aqui!" CR>)
 	       (T
-		<TELL "The " D ,WINNER " seems confused. \"I don't see any ">
+		<TELL T-CO ,WINNER " parece confus" T-G ,WINNER ". \"Não vejo ">
 		<NOT-HERE-PRINT .PRSO?>
-		<TELL " here!\"" CR>)>
+		<TELL " aqui!\"" CR>)>
 	 <RTRUE>>
 
 <ROUTINE NOT-HERE-PRINT (PRSO?)
@@ -78,9 +79,9 @@
 	<COND (,P-XADJ <PRINTB ,P-XADJN>)>
 	<COND (,P-XNAM <PRINTB ,P-XNAM>)>)
        (.PRSO?
-	<BUFFER-PRINT <GET ,P-ITBL ,P-NC1> <GET ,P-ITBL ,P-NC1L> <>>)
+	<BUFFER-PRINT <GET ,P-ITBL ,P-NC1> <GET ,P-ITBL ,P-NC1L> T>) ;"PT: com o artigo digitado"
        (T
-	<BUFFER-PRINT <GET ,P-ITBL ,P-NC2> <GET ,P-ITBL ,P-NC2L> <>>)>>
+	<BUFFER-PRINT <GET ,P-ITBL ,P-NC2> <GET ,P-ITBL ,P-NC2L> T>)>>
 
 <ROUTINE NULL-F ("OPTIONAL" A1 A2)
 	 <RFALSE>>
@@ -96,26 +97,26 @@
 <OBJECT BLESSINGS
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM BLESSINGS GRACES BENCAOS BENCAO GRACAS)
-	(DESC "blessings")
+	(DESC "bênçãos")
 	(FLAGS NDESCBIT FEMBIT PLURALBIT)>
 
 <OBJECT STAIRS
 	(IN LOCAL-GLOBALS)
 	(SYNONYM STAIRS STEPS STAIRCASE STAIRWAY ESCADA ESCADAS DEGRAUS ESCADARIA)
 	(ADJECTIVE STONE DARK MARBLE FORBIDDING STEEP PEDRA ESCURA MARMORE INGREME)
-	(DESC "stairs")
+	(DESC "escada")
 	(FLAGS NDESCBIT CLIMBBIT FEMBIT)
 	(ACTION STAIRS-F)>
 
 <ROUTINE STAIRS-F ()
 	 <COND (<VERB? THROUGH>
 		<TELL
-"You should say whether you want to go up or down." CR>)>>
+"Diga se você quer subir ou descer." CR>)>>
 
 <OBJECT SAILOR
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM SAILOR FOOTPAD AVIATOR MARINHEIR)
-	(DESC "sailor")
+	(DESC "marinheiro")
 	(FLAGS NDESCBIT)
 	(ACTION SAILOR-FCN)>
 
@@ -123,48 +124,49 @@
 	  <COND (<VERB? TELL>
 		 <SETG P-CONT <>>
 		 <SETG QUOTE-FLAG <>>
-		 <TELL "You can't talk to the sailor that way." CR>)
+		 <TELL "Não dá para falar com o marinheiro desse jeito." CR>)
 		(<VERB? EXAMINE>
 		 %<COND (<==? ,ZORK-NUMBER 3>
 			 '<COND (<NOT <FSET? ,VIKING-SHIP ,INVISIBLE>>
 				 <TELL
-"He looks like a sailor." CR>
+"Ele tem cara de marinheiro." CR>
 				 <RTRUE>)>)
 			(ELSE T)>
 		 <TELL
-"There is no sailor to be seen." CR>)
+"Não há marinheiro nenhum à vista." CR>)
 		(<VERB? HELLO>
 		 <SETG HS <+ ,HS 1>>
 		 %<COND (<==? ,ZORK-NUMBER 3>
 			 '<COND (<NOT <FSET? ,VIKING-SHIP ,INVISIBLE>>
 		                 <TELL
-"The seaman looks up and maneuvers the boat toward shore. He cries out \"I
-have waited three ages for someone to say those words and save me from
-sailing this endless ocean. Please accept this gift. You may find it
-useful!\" He throws something which falls near you in the sand, then sails
-off toward the west, singing a lively, but somewhat uncouth, sailor song." CR>
+"O marujo levanta os olhos e manobra o barco em direção à praia. Ele grita:
+\"Esperei três eras por alguém que dissesse essas palavras e me salvasse de
+navegar por este oceano sem fim. Por favor, aceite este presente. Talvez ele
+lhe seja útil!\" Ele joga algo que cai perto de você na areia e depois parte
+navegando para o oeste, cantando uma canção de marinheiro animada, mas um
+tanto grosseira." CR>
 		                 <FSET ,VIKING-SHIP ,INVISIBLE>
 		                 <MOVE ,VIAL ,HERE>)
 		                (<==? ,HERE ,FLATHEAD-OCEAN>
 		                 <COND (,SHIP-GONE
-			                <TELL "Nothing happens anymore." CR>)
+			                <TELL "Nada mais acontece." CR>)
 			               (T
-				        <TELL "Nothing happens yet." CR>)>)
-				(T <TELL "Nothing happens here." CR>)>)
+				        <TELL "Nada acontece ainda." CR>)>)
+				(T <TELL "Nada acontece aqui." CR>)>)
 			(T
 			 '<COND (<0? <MOD ,HS 20>>
 				 <TELL
-"You seem to be repeating yourself." CR>)
+"Você parece estar se repetindo." CR>)
 				(<0? <MOD ,HS 10>>
 				 <TELL
-"I think that phrase is getting a bit worn out." CR>)
+"Acho que essa frase já está meio gasta." CR>)
 				(T
-				 <TELL "Nothing happens here." CR>)>)>)>>
+				 <TELL "Nada acontece aqui." CR>)>)>)>>
 
 <OBJECT GROUND
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM GROUND SAND DIRT FLOOR CHAO SOLO AREIA TERRA PISO)
-	(DESC "ground")
+	(DESC "chão")
 	(ACTION GROUND-FUNCTION)>
 
 <ROUTINE GROUND-FUNCTION ()
@@ -179,42 +181,42 @@ off toward the west, singing a lively, but somewhat uncouth, sailor song." CR>
 		       '(<NULL-F>
 			 <RFALSE>))>
 	       (<VERB? DIG>
-		<TELL "The ground is too hard for digging here." CR>)>>
+		<TELL "O chão aqui é duro demais para cavar." CR>)>>
 
 <OBJECT GRUE
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM GRUE)
 	(ADJECTIVE LURKING SINISTER HUNGRY SILENT SINISTRO FAMINTO SILENCIOS)
-	(DESC "lurking grue")
+	(DESC "grue à espreita")
 	(ACTION GRUE-FUNCTION)>
 
 <ROUTINE GRUE-FUNCTION ()
     <COND (<VERB? EXAMINE>
 	   <TELL
-"The grue is a sinister, lurking presence in the dark places of the
-earth. Its favorite diet is adventurers, but its insatiable
-appetite is tempered by its fear of light. No grue has ever been
-seen by the light of day, and few have survived its fearsome jaws
-to tell the tale." CR>)
+"O grue é uma presença sinistra, sempre à espreita nos lugares escuros da
+terra. Seu prato favorito são aventureiros, mas o apetite insaciável dele é
+contido pelo medo da luz. Nenhum grue jamais foi visto à luz do dia, e
+poucos sobreviveram às suas mandíbulas temíveis para contar a história." CR>)
 	  (<VERB? FIND>
 	   <TELL
-"There is no grue here, but I'm sure there is at least one lurking
-in the darkness nearby. I wouldn't let my light go out if I were
-you!" CR>)
+"Não há nenhum grue aqui, mas tenho certeza de que pelo menos um está à
+espreita na escuridão aqui perto. Se eu fosse você, não deixaria a minha
+luz se apagar!" CR>)
 	  (<VERB? LISTEN>
 	   <TELL
-"It makes no sound but is always lurking in the darkness nearby." CR>)>>
+"Ele não faz barulho nenhum, mas está sempre à espreita na escuridão aqui
+perto." CR>)>>
 
 <OBJECT LUNGS
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM LUNGS AIR MOUTH BREATH PULMOES AR BOCA FOLEGO)
-	(DESC "blast of air")
+	(DESC "sopro de ar")
 	(FLAGS NDESCBIT)>
 
 <OBJECT ME
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM ME MYSELF SELF CRETIN EU MIM)
-	(DESC "you")
+	(DESC "você")
 	(FLAGS ACTORBIT SEMARTIGOBIT)
 	(ACTION CRETIN-FCN)>
 
@@ -223,50 +225,50 @@ you!" CR>)
 		<SETG P-CONT <>>
 		<SETG QUOTE-FLAG <>>
 		<TELL
-"Talking to yourself is said to be a sign of impending mental collapse." CR>)
+"Dizem que falar sozinho é sinal de colapso mental iminente." CR>)
 	       (<AND <VERB? GIVE>
 		     <EQUAL? ,PRSI ,ME>>
 		<PERFORM ,V?TAKE ,PRSO>
 		<RTRUE>)
 	       (<VERB? MAKE>
-		<TELL "Only you can do that." CR>)
+		<TELL "Só você pode fazer isso." CR>)
 	       (<VERB? DISEMBARK>
-		<TELL "You'll have to do that on your own." CR>)
+		<TELL "Isso você vai ter que fazer sozinho." CR>)
 	       (<VERB? EAT>
-		<TELL "Auto-cannibalism is not the answer." CR>)
+		<TELL "Autocanibalismo não é a resposta." CR>)
 	       (<VERB? ATTACK MUNG>
 		<COND (<AND ,PRSI <FSET? ,PRSI ,WEAPONBIT>>
-		       <JIGS-UP "If you insist.... Poof, you're dead!">)
+		       <JIGS-UP "Se você insiste... Puf, você morreu!">)
 		      (T
-		       <TELL "Suicide is not the answer." CR>)>)
+		       <TELL "Suicídio não é a resposta." CR>)>)
 	       (<VERB? THROW>
 		<COND (<==? ,PRSO ,ME>
 		       <TELL
-"Why don't you just walk like normal people?" CR>)>)
+"Por que você não anda como as pessoas normais?" CR>)>)
 	       (<VERB? TAKE>
-		<TELL "How romantic!" CR>)
+		<TELL "Que romântico!" CR>)
 	       (<VERB? EXAMINE>
 		<COND %<COND (<==? ,ZORK-NUMBER 1>
 			      '(<EQUAL? ,HERE <LOC ,MIRROR-1> <LOC ,MIRROR-2>>
 		                <TELL
-"Your image in the mirror looks tired." CR>))
+"A sua imagem no espelho parece cansada." CR>))
 			     (<==? ,ZORK-NUMBER 3>
 			      '(,INVIS
 				<TELL
-"A good trick, as you are currently invisible." CR>))
+"Belo truque, já que você está invisível no momento." CR>))
 			     (T
 			      '(<NULL-F> <RTRUE>))>
 		      (T
 		       %<COND (<==? ,ZORK-NUMBER 3>
 			       '<TELL
-"What you can see looks pretty much as usual, sorry to say." CR>)
+"O que dá para ver parece bem normal, lamento dizer." CR>)
 			      (ELSE
 			       '<TELL
-"That's difficult unless your eyes are prehensile." CR>)>)>)>>
+"Isso é difícil, a não ser que os seus olhos sejam preênseis." CR>)>)>)>>
 
 <OBJECT ADVENTURER
 	(SYNONYM ADVENTURER AVENTUREI)
-	(DESC "cretin")
+	(DESC "cretino")
 	(FLAGS NDESCBIT INVISIBLE SACREDBIT ACTORBIT)
 	(STRENGTH 0)
 	(ACTION 0)>
@@ -275,17 +277,17 @@ you!" CR>)
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM TRAIL PATH TRILHA CAMINHO PASSAGEM)
         (ADJECTIVE FOREST NARROW LONG WINDING FLORESTA ESTREITA LONGA SINUOSA)
-	(DESC "passage")
+	(DESC "passagem")
 	(FLAGS NDESCBIT FEMBIT)
 	(ACTION PATH-OBJECT)>
 
 <ROUTINE PATH-OBJECT ()
 	 <COND (<VERB? TAKE FOLLOW>
-		<TELL "You must specify a direction to go." CR>)
+		<TELL "Você precisa dizer em que direção ir." CR>)
 	       (<VERB? FIND>
-		<TELL "I can't help you there...." CR>)
+		<TELL "Aí eu não posso ajudar..." CR>)
 	       (<VERB? DIG>
-		<TELL "Not a chance." CR>)>>
+		<TELL "Nem pensar." CR>)>>
 
 <OBJECT ZORKMID
 	(IN GLOBAL-OBJECTS)
@@ -296,14 +298,14 @@ you!" CR>)
 <ROUTINE ZORKMID-FUNCTION ()
     <COND (<VERB? EXAMINE>
 	   <TELL
-"The zorkmid is the unit of currency of the Great Underground Empire." CR>)
+"O zorkmid é a unidade monetária do Grande Império Subterrâneo." CR>)
 	  (<VERB? FIND>
 	   <TELL
-"The best way to find zorkmids is to go out and look for them." CR>)>>
+"O melhor jeito de achar zorkmids é sair por aí procurando." CR>)>>
 
 <OBJECT HANDS
 	(IN GLOBAL-OBJECTS)
 	(SYNONYM PAIR HANDS HAND PAR MAOS MAO)
 	(ADJECTIVE BARE NUAS)
-	(DESC "pair of hands")
+	(DESC "par de mãos")
 	(FLAGS NDESCBIT TOOLBIT)>

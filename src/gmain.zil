@@ -84,9 +84,9 @@
 			  <SET V <PERFORM ,PRSA>>
 			  <SETG PRSO <>>)
 			 (<NOT ,LIT>
-			  <TELL "It's too dark to see." CR>)
+			  <TELL "Está escuro demais para enxergar." CR>)
 			 (T
-			  <TELL "It's not clear what you're referring to." CR>
+			  <TELL "Não está claro a que você se refere." CR>
 			  <SET V <>>)>)
 		  (T
 		   <SETG P-NOT-HERE 0>
@@ -96,20 +96,26 @@
 		   <REPEAT ()
 			   <COND (<G? <SET CNT <+ .CNT 1>> .NUM>
 				  <COND (<G? ,P-NOT-HERE 0>
-					 <TELL "The ">
+					 ;"PT: O (outro) objeto que você mencionou não está
+					   aqui. / Os (outros) objetos ... não estão aqui."
+					 <COND (<EQUAL? ,P-NOT-HERE 1> <TELL "O ">)
+					       (T <TELL "Os ">)>
 					 <COND (<NOT <EQUAL? ,P-NOT-HERE .NUM>>
-						<TELL "other ">)>
-					 <TELL "object">
+						<TELL "outro">
+						<COND (<NOT <EQUAL? ,P-NOT-HERE 1>>
+						       <TELL "s">)>
+						<TELL " ">)>
+					 <TELL "objeto">
 					 <COND (<NOT <EQUAL? ,P-NOT-HERE 1>>
 						<TELL "s">)>
-					 <TELL " that you mentioned ">
+					 <TELL " que você mencionou ">
 					 <COND (<NOT <EQUAL? ,P-NOT-HERE 1>>
-						<TELL "are">)
-					       (T <TELL "is">)>
-					 <TELL "n't here." CR>)
+						<TELL "não estão">)
+					       (T <TELL "não está">)>
+					 <TELL " aqui." CR>)
 					(<NOT .TMP>
 					 <TELL
-"There's nothing here you can take." CR>)>
+"Não há nada aqui que você possa pegar." CR>)>
 				  <RETURN>)
 				 (T
 				  <COND (.PTBL <SET OBJ1 <GET ,P-PRSO .CNT>>)
@@ -193,7 +199,7 @@
 	<SET OI ,PRSI>
 	<COND (<AND <EQUAL? ,IT .I .O>
 		    <NOT <ACCESSIBLE? ,P-IT-OBJECT>>>
-	       <TELL "I don't see what you are referring to." CR>
+	       <TELL "Não sei a que você se refere." CR>
 	       <RFATAL>)>
 	<COND (<==? .O ,IT> <SET O ,P-IT-OBJECT>)>
 	<COND (<==? .I ,IT> <SET I ,P-IT-OBJECT>)>
@@ -245,7 +251,7 @@
 	<SET OI ,PRSI>
 	<COND (<AND <EQUAL? ,IT .I .O>
 		    <NOT <ACCESSIBLE? ,P-IT-OBJECT>>>
-	       <TELL "I don't see what you are referring to." CR>
+	       <TELL "Não sei a que você se refere." CR>
 	       <RFATAL>)>
 	<COND (<==? .O ,IT> <SET O ,P-IT-OBJECT>)>
 	<COND (<==? .I ,IT> <SET I ,P-IT-OBJECT>)>
