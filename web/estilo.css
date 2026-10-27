@@ -82,7 +82,13 @@ body {
 }
 
 /* Comandos: cada botão tem a largura do rótulo mais uma parte igual da sobra,
-   para que "Inventário" e "Carregar" caibam ao lado dos curtos. */
+   para que "Inventário" e "Carregar" caibam ao lado dos curtos. Se a fonte do
+   aparelho for larga demais para uma linha só, a linha quebra em vez de
+   cortar os rótulos. */
+#atalhos .comandos {
+  flex-wrap: wrap;
+}
+
 #atalhos .comandos button {
   flex: 1 1 auto;
 }
