@@ -170,3 +170,6 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | sand / white cliffs / all-purpose gunk | areia (f; "um pouco de areia") / penhascos brancos (m, pl) / gosma multiuso (f) |
 | FCD#3 (sigla da barragem) | BCE#3 |
 | burned-out lantern / large bag (do ladrão) | lanterna queimada (f) / saco grande (m) |
+| red hot brass bell / pile of bodies / wraiths | sino de latão em brasa (m) / monte de corpos (m) / assombrações (f, pl) |
+| gate (Hades) / dome / wall with engravings | portão (m) / cúpula (f) / parede com inscrições (f) |
+| Ramses II | Ramsés II |
