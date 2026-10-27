@@ -8,3 +8,7 @@ _site/
 *.dbg
 
 node_modules/
+
+# saídas do .NET
+bin/
+obj/

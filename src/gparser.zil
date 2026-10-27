@@ -75,8 +75,9 @@
 <CONSTANT P-LEXELEN 2>
 <CONSTANT P-WORDLEN 4> ;"Offset to parts of speech byte"
 
-<CONSTANT P-PSOFF 4> ;"Offset to first part of speech"
-<CONSTANT P-P1OFF 5> ;"First part of speech bit mask in PSOFF byte"
+;"V5: o texto de cada palavra do dicionário ocupa 6 bytes (era 4)"
+<CONSTANT P-PSOFF 6> ;"Offset to first part of speech"
+<CONSTANT P-P1OFF 7> ;"First part of speech bit mask in PSOFF byte"
 <CONSTANT P-P1BITS 3>
 
 <CONSTANT P-ITBLLEN 9>
@@ -150,7 +151,7 @@
 	       <SETG LIT <LIT? ,HERE>>
 	       <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 	       <TELL ">">
-	       <READ ,P-INBUF ,P-LEXV>)>
+	       <READ-INPUT>)>
 	<SETG P-LEN <GETB ,P-LEXV ,P-LEXWORDS>>
 	<COND (<ZERO? ,P-LEN> <TELL "I beg your pardon?" CR> <RFALSE>)>
 	<COND (<EQUAL? <SET WRD <GET ,P-LEXV .PTR>> ,W?OOPS>
@@ -383,6 +384,39 @@ or creatures." CR>
 <GLOBAL P-WALK-DIR <>>
 <GLOBAL AGAIN-DIR <>>
 
+;"V5: todas as leituras de comando passam por aqui. O byte 0 do buffer é o
+  tamanho máximo e o byte 1 diz quantos caracteres já estão digitados, por
+  isso é zerado antes de cada leitura."
+<ROUTINE READ-INPUT ()
+	 <UPDATE-STATUS-LINE>
+	 <PUTB ,P-INBUF 0 118>
+	 <PUTB ,P-INBUF 1 0>
+	 <READ ,P-INBUF ,P-LEXV>>
+
+;"V5: o interpretador não desenha mais a linha de status; o jogo desenha a
+  sua na janela de cima. Em telas estreitas (celular) usa a forma curta."
+<ROUTINE UPDATE-STATUS-LINE ("AUX" (WIDTH <GETB 0 33>))
+	 <SPLIT 1>
+	 <SCREEN 1>
+	 <CURSET 1 1>
+	 <HLIGHT 1>
+	 <STATUS-SPACES .WIDTH>
+	 <CURSET 1 2>
+	 <COND (,HERE <TELL D ,HERE>)>
+	 <COND (<L? .WIDTH 50>
+		<CURSET 1 <- .WIDTH 10>>
+		<TELL " " N ,SCORE "/" N ,MOVES>)
+	       (T
+		<CURSET 1 <- .WIDTH 23>>
+		<TELL "Score: " N ,SCORE "  Moves: " N ,MOVES>)>
+	 <HLIGHT 0>
+	 <SCREEN 0>>
+
+<ROUTINE STATUS-SPACES (N)
+	 <REPEAT ()
+		 <COND (<L? <SET N <- .N 1>> 0> <RETURN>)>
+		 <PRINTC 32>>>
+
 ;"For AGAIN purposes, put contents of one LEXV table into another."
 <ROUTINE STUFF (SRC DEST "OPTIONAL" (MAX 29) "AUX" (PTR ,P-LEXSTART) (CTR 1)
 						   BPTR)
@@ -476,9 +510,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 					  <EQUAL? .NW ,W?OF>
 					  <NOT <EQUAL? .WRD ,W?ALL ,W?ONE>>>
 				     T)
-				    (<AND <WT? .WRD
-					       ,PS?ADJECTIVE
-					       ,P1?ADJECTIVE>
+				    (<AND <WT? .WRD ,PS?ADJECTIVE> ;"V5"
 					  <NOT <EQUAL? .NW 0>>
 					  <WT? .NW ,PS?OBJECT>>)
 				    (<AND <NOT .ANDFLG>
@@ -1018,9 +1050,11 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			(<EQUAL? .WRD ,W?OF>
 			 <COND (<ZERO? ,P-GETFLAGS>
 				<SETG P-GETFLAGS ,P-INHIBIT>)>)
-			(<AND <SET WV <WT? .WRD ,PS?ADJECTIVE ,P1?ADJECTIVE>>
+			;"V5: adjetivos não têm número no dicionário; P-ADJ
+			  guarda a própria palavra"
+			(<AND <WT? .WRD ,PS?ADJECTIVE>
 			      <NOT ,P-ADJ>>
-			 <SETG P-ADJ .WV>
+			 <SETG P-ADJ .WRD>
 			 <SETG P-ADJN .WRD>)
 			(<WT? .WRD ,PS?OBJECT ,P1?OBJECT>
 			 <SETG P-NAM .WRD>
@@ -1170,9 +1204,9 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	<SET LEN <GET .TBL ,P-MATCHLEN>>
 	<SET OBITS ,P-SLOCBITS>
 	<COND (<SET RMG <GETPT ,HERE ,P?GLOBAL>>
-	       <SET RMGL <- <PTSIZE .RMG> 1>>
+	       <SET RMGL <- </ <PTSIZE .RMG> 2> 1>> ;"V5: objetos são palavras"
 	       <REPEAT ()
-		       <COND (<THIS-IT? <SET OBJ <GETB .RMG .CNT>> .TBL>
+		       <COND (<THIS-IT? <SET OBJ <GET .RMG .CNT>> .TBL>
 			      <OBJ-FOUND .OBJ .TBL>)>
 		       <COND (<IGRTR? CNT .RMGL> <RETURN>)>>)>
 	<COND (<SET RMG <GETPT ,HERE ,P?PSEUDO>>
@@ -1183,10 +1217,13 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			      <PUTP ,PSEUDO-OBJECT
 				    ,P?ACTION
 				    <GET .RMG <+ <* .CNT 2> 1>>>
+			      ;"V5: o nome curto tem 3 palavras, como as
+				entradas do dicionário (era 2)"
 			      <SET FOO
-				   <BACK <GETPT ,PSEUDO-OBJECT ,P?ACTION> 5>>
+				   <BACK <GETPT ,PSEUDO-OBJECT ,P?ACTION> 7>>
 			      <PUT .FOO 0 <GET ,P-NAM 0>>
 			      <PUT .FOO 1 <GET ,P-NAM 1>>
+			      <PUT .FOO 2 <GET ,P-NAM 2>>
 			      <OBJ-FOUND ,PSEUDO-OBJECT .TBL>
 			      <RETURN>)
 		             (<IGRTR? CNT .RMGL> <RETURN>)>>)>
@@ -1363,7 +1400,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	<RFALSE>)
        (<AND ,P-ADJ
 	     <OR <NOT <SET SYNS <GETPT .OBJ ,P?ADJECTIVE>>>
-		 <NOT <ZMEMQB ,P-ADJ .SYNS <- <PTSIZE .SYNS> 1>>>>>
+		 <NOT <ZMEMQ ,P-ADJ .SYNS <- </ <PTSIZE .SYNS> 2> 1>>>>> ;"V5"
 	<RFALSE>)
        (<AND <NOT <ZERO? ,P-GWIMBIT>> <NOT <FSET? .OBJ ,P-GWIMBIT>>>
 	<RFALSE>)>

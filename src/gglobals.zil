@@ -36,7 +36,7 @@
 
 <OBJECT PSEUDO-OBJECT
 	(IN LOCAL-GLOBALS)
-	(DESC "pseudo")
+	(DESC "pseudoobj") ;"V5: 9 letras = 3 palavras, ver GLOBAL-CHECK"
 	(ACTION CRETIN-FCN)>
 
 <OBJECT IT

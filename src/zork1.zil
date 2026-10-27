@@ -2,7 +2,9 @@
 	        Zork I: The Great Underground Empire
 	(c) Copyright 1983 Infocom, Inc.  All Rights Reserved."
 
-<VERSION ZIP>
+;"V5 (XZIP): linha de status desenhada pelo jogo, dicionário de 9 letras e
+  espaço para o texto em português. Mudanças marcadas com V5: nos arquivos."
+<VERSION XZIP>
 
 <SETG ZORK-NUMBER 1>
 

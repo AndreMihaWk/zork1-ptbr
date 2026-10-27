@@ -39,7 +39,7 @@
 game position, or end this session of the game?|
 (Type RESTART, RESTORE, or QUIT):|
 >">
-		 <READ ,P-INBUF ,P-LEXV>
+		 <READ-INPUT>
 		 <SET WRD <GET ,P-LEXV 1>>
 		 <COND (<EQUAL? .WRD ,W?RESTART>
 			<RESTART>
@@ -305,7 +305,7 @@ Release ">
 		       <SET X <PTSIZE .TX>>
 		       <COND (<OR <EQUAL? .X ,NEXIT>
 				  <AND <EQUAL? .X ,CEXIT ,DEXIT ,UEXIT>
-				       <NOT <GLOBAL-IN? ,PRSO <GETB .TX 0>>>>>
+				       <NOT <GLOBAL-IN? ,PRSO <GET .TX ,REXIT>>>>> ;"V5"
 			      <TELL "The " D .OBJ " do">
 			      <COND (<NOT <EQUAL? .OBJ ,STAIRS>>
 				     <TELL "es">)>
@@ -646,7 +646,7 @@ probably)." CR>>
 <ROUTINE PRE-FILL ("AUX" TX)
 	 <COND (<NOT ,PRSI>
 		<SET TX <GETPT ,HERE ,P?GLOBAL>>
-		<COND (<AND .TX <ZMEMQB ,GLOBAL-WATER .TX <- <PTSIZE .TX> 1>>>
+		<COND (<AND .TX <ZMEMQ ,GLOBAL-WATER .TX <- </ <PTSIZE .TX> 2> 1>>>
 		       <PERFORM ,V?FILL ,PRSO ,GLOBAL-WATER>
 		       <RTRUE>)
 		      (<IN? ,WATER <LOC ,WINNER>>
@@ -822,9 +822,9 @@ D ,PRSO "." CR>)>)
 		       <TELL "That would be a good trick." CR>)>)
 	       (<SET TX <GETPT ,HERE ,P?DOWN>>
 		<SET S <PTSIZE .TX>>
-		<COND (<OR <EQUAL? .S 2> ;NEXIT
-       			   <AND <EQUAL? .S 4> ;CEXIT
-				<NOT <VALUE <GETB .TX 1>>>>>
+		<COND (<OR <EQUAL? .S ,NEXIT> ;"V5: eram 2 e 4 fixos"
+       			   <AND <EQUAL? .S ,CEXIT>
+				<NOT <VALUE <GETB .TX ,CEXITFLAG>>>>>
 		       <TELL
 "This was not a very safe place to try jumping." CR>
 		       <JIGS-UP <PICK-ONE ,JUMPLOSS>>)
@@ -1524,7 +1524,7 @@ CR>)
 		<RTRUE>)
 	       (<SET PT <GETPT ,HERE ,PRSO>>
 		<COND (<EQUAL? <SET PTS <PTSIZE .PT>> ,UEXIT>
-		       <GOTO <GETB .PT ,REXIT>>)
+		       <GOTO <GET .PT ,REXIT>>)
 		      (<EQUAL? .PTS ,NEXIT>
 		       <TELL <GET .PT ,NEXITSTR> CR>
 		       <RFATAL>)
@@ -1540,7 +1540,7 @@ CR>)
 			      <RFATAL>)>)
 		      (<EQUAL? .PTS ,CEXIT>
 		       <COND (<VALUE <GETB .PT ,CEXITFLAG>>
-			      <GOTO <GETB .PT ,REXIT>>)
+			      <GOTO <GET .PT ,REXIT>>)
 			     (<SET STR <GET .PT ,CEXITSTR>>
 			      <TELL .STR CR>
 			      <RFATAL>)
@@ -1548,8 +1548,8 @@ CR>)
 			      <TELL "You can't go that way." CR>
 			      <RFATAL>)>)
 		      (<EQUAL? .PTS ,DEXIT>
-		       <COND (<FSET? <SET OBJ <GETB .PT ,DEXITOBJ>> ,OPENBIT>
-			      <GOTO <GETB .PT ,REXIT>>)
+		       <COND (<FSET? <SET OBJ <GET .PT ,DEXITOBJ>> ,OPENBIT>
+			      <GOTO <GET .PT ,REXIT>>)
 			     (<SET STR <GET .PT ,DEXITSTR>>
 			      <TELL .STR CR>
 			      <RFATAL>)
@@ -1871,7 +1871,7 @@ for the final secret.\"" CR>)>)
 
 <ROUTINE YES? ()
 	 <PRINTI ">">
-	 <READ ,P-INBUF ,P-LEXV>
+	 <READ-INPUT>
 	 <COND (<EQUAL? <GET ,P-LEXV 1> ,W?YES ,W?Y>
 		<RTRUE>)
 	       (T
@@ -1998,19 +1998,22 @@ for the final secret.\"" CR>)>)
 
 "Miscellaneous"
 
+;"V5: salas e objetos ocupam uma palavra nas saídas, então os tamanhos e
+  deslocamentos mudam. REXIT, DEXITOBJ, CEXITSTR e DEXITSTR são índices de
+  palavra (GET); CEXITFLAG é índice de byte (GETB)."
 <CONSTANT REXIT 0>
-<CONSTANT UEXIT 1>
-<CONSTANT NEXIT 2>
-<CONSTANT FEXIT 3>
-<CONSTANT CEXIT 4>
-<CONSTANT DEXIT 5>
+<CONSTANT UEXIT 2>
+<CONSTANT NEXIT 3>
+<CONSTANT FEXIT 4>
+<CONSTANT CEXIT 5>
+<CONSTANT DEXIT 6>
 
 <CONSTANT NEXITSTR 0>
 <CONSTANT FEXITFCN 0>
-<CONSTANT CEXITFLAG 1>
+<CONSTANT CEXITFLAG 4>
 <CONSTANT CEXITSTR 1>
 <CONSTANT DEXITOBJ 1>
-<CONSTANT DEXITSTR 1>
+<CONSTANT DEXITSTR 2>
 
 <GLOBAL INDENTS
 	<TABLE (PURE)
@@ -2151,7 +2154,7 @@ stumbled into an authentic grue lair!">))
 
 <ROUTINE GLOBAL-IN? (OBJ1 OBJ2 "AUX" TX)
 	 <COND (<SET TX <GETPT .OBJ2 ,P?GLOBAL>>
-		<ZMEMQB .OBJ1 .TX <- <PTSIZE .TX> 1>>)>> 
+		<ZMEMQ .OBJ1 .TX <- </ <PTSIZE .TX> 2> 1>>)>> ;"V5: objetos são palavras"
 
 <ROUTINE FIND-IN (WHERE WHAT "AUX" W)
 	 <SET W <FIRST? .WHERE>>
@@ -2177,7 +2180,7 @@ stumbled into an authentic grue lair!">))
 		       (ELSE
 			<SET TX <GETPT ,HERE .P>>
 			<COND (<AND <EQUAL? <PTSIZE .TX> ,DEXIT>
-				    <EQUAL? <GETB .TX ,DEXITOBJ> .DOBJ>>
+				    <EQUAL? <GET .TX ,DEXITOBJ> .DOBJ>>
 			       <RETURN .P>)>)>>>
 
 <ROUTINE MUNG-ROOM (RM STR)

@@ -1693,7 +1693,7 @@ stop. With a tremendous effort, you scramble out of the room." CR CR>
 		       <REPEAT ()
 			       <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 			       <TELL ">">
-			       <READ ,P-INBUF ,P-LEXV>
+			       <READ-INPUT>
 			       <COND (<0? <GETB ,P-LEXV ,P-LEXWORDS>>
 			              <TELL "I beg your pardon?" CR>
 				      <AGAIN>)>
@@ -3861,7 +3861,7 @@ livelihood.">>>>
 				      <SET T <GETPT ,HERE .P>>
 				      <SET L <PTSIZE .T>>
 				      <COND (<EQUAL? .L ,UEXIT ,CEXIT ,DEXIT>
-					     <COND (<INFESTED? <GETB .T 0>>
+					     <COND (<INFESTED? <GET .T ,REXIT>> ;"V5"
 						    <SET NG 1>
 						    <RETURN>)>)>)>>)>
 		<COND (<EQUAL? .NG .G> <RFALSE>)
