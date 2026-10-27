@@ -1,0 +1,47 @@
+# Em cada Pull Request: testa e publica um preview em
+# https://<usuário>.github.io/<repositório>/pr-preview/pr-<número>/
+# para jogar a versão no celular antes de aprovar. O preview some quando o PR fecha.
+name: Pull Request
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.number }}
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    if: github.event.action != 'closed'
+    uses: ./.github/workflows/ci.yml
+
+  preview:
+    name: Preview para o celular
+    needs: ci
+    # PRs vindos de forks não têm permissão de escrita; para eles só roda o CI.
+    if: >-
+      always()
+      && github.event.pull_request.head.repo.full_name == github.repository
+      && (needs.ci.result == 'success' || github.event.action == 'closed')
+    runs-on: ubuntu-24.04
+    # Mesmo grupo da publicação principal: um envio para a gh-pages por vez.
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+
+      - if: github.event.action != 'closed'
+        uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: _site
+
+      - uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: _site

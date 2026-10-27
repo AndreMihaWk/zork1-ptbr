@@ -1,0 +1,72 @@
+# Compila o jogo, roda todos os testes e monta o site.
+# É chamado pelos workflows de Pull Request, de publicação e de release.
+name: CI
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compilar:
+    name: Compilar e testar
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '9.0.x'
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cache das ferramentas (ZILF e Parchment)
+        uses: actions/cache@v6
+        with:
+          path: .tools
+          key: ferramentas-${{ runner.os }}-${{ hashFiles('tools/baixar-ferramentas.sh') }}
+
+      - name: Baixar ferramentas
+        run: bash tools/baixar-ferramentas.sh
+
+      - name: Compilar o jogo
+        run: bash tools/build.sh
+
+      - name: Detector de texto em inglês
+        run: node tools/check-strings.mjs
+
+      - name: Roteiro completo (350 pontos)
+        run: bash tools/run-walkthrough.sh
+
+      - name: Montar o site
+        run: node tools/build-site.mjs --versao "${GITHUB_SHA::7}"
+
+      - name: Testar o site num navegador de celular
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          node tools/testar-site.mjs
+
+      - name: Guardar o jogo e os resultados dos testes
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: jogo
+          path: |
+            build/zork1-ptbr.z5
+            build/*.transcricao.txt
+            build/transcricao.diff
+            build/site-celular.png
+          if-no-files-found: ignore
+
+      - name: Guardar o site
+        uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: _site
+          include-hidden-files: true

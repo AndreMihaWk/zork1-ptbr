@@ -1,0 +1,15 @@
+{
+  "name": "zork1-ptbr",
+  "private": true,
+  "type": "module",
+  "description": "Tradução não oficial de Zork I para o português do Brasil",
+  "license": "MIT",
+  "scripts": {
+    "build": "bash tools/build.sh && node tools/build-site.mjs",
+    "testar": "bash tools/run-walkthrough.sh && node tools/check-strings.mjs",
+    "testar-site": "node tools/testar-site.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.55.0"
+  }
+}
