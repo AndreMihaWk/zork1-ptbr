@@ -1,18 +1,18 @@
-ZORK I: The Great Underground Empire
-Infocom interactive fiction - a fantasy story
-Copyright (c) 1981, 1982, 1983, 1984, 1985, 1986 Infocom, Inc. All rights reserved.
-ZORK is a registered trademark of Infocom, Inc.
-Release 0 / Serial number 000000
+ZORK I: O Grande Império Subterrâneo
+Ficção interativa da Infocom - uma história de fantasia
+Copyright (c) 1981, 1982, 1983, 1984, 1985, 1986 Infocom, Inc. Todos os direitos reservados.
+ZORK é uma marca registrada da Infocom, Inc.
+Versão 0 / Número de série 000000
 
 West of House
 You are standing in an open field west of a white house, with a boarded front door.
-There is a small mailbox here.
+Há uma small mailbox aqui.
 
 >abra a caixa de correio
-Opening the small mailbox reveals a leaflet.
+Ao abrir a small mailbox, você encontra um leaflet.
 
 >pegue o folheto
-Taken.
+Você pegou o leaflet.
 
 >leia-o
 "WELCOME TO ZORK!
@@ -25,29 +25,29 @@ ZORK is a game of adventure, danger, and low cunning. In it you will explore som
 ZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!"
 
 >largue-o
-Dropped.
+Você largou o leaflet.
 
 >pegue-o
-Taken.
+Você pegou o leaflet.
 
 >coloque o folheto na caixa
-Done.
+Você colocou o leaflet na small mailbox.
 
 >tire o folheto da caixa
-Taken.
+Você pegou o leaflet.
 
 >examine a pequena caixa
-The small mailbox is empty.
+A small mailbox está vazia.
 
 >x caixa pequena
-The small mailbox is empty.
+A small mailbox está vazia.
 
 >feche a caixa de correio
-Closed.
+Você fechou a small mailbox.
 
 >inventário
-You are carrying:
-  A leaflet
+Você está carregando:
+  Um leaflet
 
 >vá para o norte
 North of House
@@ -73,23 +73,23 @@ Kitchen
 You are in the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
 On the table is an elongated brown sack, smelling of hot peppers.
 A bottle is sitting on the table.
-The glass bottle contains:
-  A quantity of water
+Dentro da glass bottle há:
+  Uma quantity of water
 
 >abra o saco
-Opening the brown sack reveals a lunch, and a clove of garlic.
+Ao abrir o brown sack, você encontra um lunch e um clove of garlic.
 
 >pegue o alho do saco
-Taken.
+Você pegou o clove of garlic.
 
 >coma o alho
 What the heck! You won't make friends this way, but nobody around here is too friendly anyhow. Gulp!
 
 >pegue a garrafa de vidro
-Taken.
+Você pegou a glass bottle.
 
 >beba a água
-You'll have to open the glass bottle first.
+Primeiro você vai ter que abrir a glass bottle.
 
 >o
 Living Room
@@ -98,32 +98,32 @@ Above the trophy case hangs an elvish sword of great antiquity.
 A battery-powered brass lantern is on the trophy case.
 
 >pegue a lanterna e a espada
-brass lantern: Taken.
-sword: Taken.
+brass lantern: Você pegou a brass lantern.
+sword: Você pegou a sword.
 
 >ligue a lanterna
-The brass lantern is now on.
+A brass lantern agora está acesa.
 
 >apague-a
-The brass lantern is now off.
+A brass lantern agora está apagada.
 
 >acenda a lanterna
-The brass lantern is now on.
+A brass lantern agora está acesa.
 
 >largue tudo exceto a lanterna
-sword: Dropped.
-glass bottle: Dropped.
-leaflet: Dropped.
+sword: Você largou a sword.
+glass bottle: Você largou a glass bottle.
+leaflet: Você largou o leaflet.
 
 >pegue tudo
-leaflet: Taken.
-glass bottle: Taken.
-sword: Taken.
+leaflet: Você pegou o leaflet.
+glass bottle: Você pegou a glass bottle.
+sword: Você pegou a sword.
 trophy case: The trophy case is securely fastened to the wall.
 carpet: The rug is extremely heavy and cannot be carried.
 
 >dê a espada para mim
-You already have that!
+Você já está com isso!
 
 >mova o tapete
 With a great effort, the rug is moved to one side of the room, revealing the dusty cover of a closed trap door.
@@ -139,11 +139,11 @@ You are in a dark and damp cellar with a narrow passageway leading north, and a 
 Your sword is glowing with a faint blue glow.
 
 >suba
-The trap door is closed.
+O trap door está fechado.
 
 >pontos
-Your score is 35 (total of 350 points), in 35 moves.
-This gives you the rank of Amateur Adventurer.
+Sua pontuação é 35 (de um total de 350 pontos), em 35 jogadas.
+Isso lhe dá o título de Aventureiro Amador.
 
 >diagnóstico
 You are in perfect health.

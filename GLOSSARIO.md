@@ -21,6 +21,12 @@ nomes próprios de lugares (Aragain, Hades, Atlântida com acento).
 | Taken. / Dropped. | Você pegou o/a … / Você largou o/a … |
 | It is pitch black. You are likely to be eaten by a grue. | Está um breu total. É provável que você seja devorado por um grue. |
 | I beg your pardon? | Como é? |
+| You can't go that way. | Você não pode ir por aí. |
+| Time passes... | O tempo passa... |
+| dungeon | masmorra |
+| The Great Underground Empire | O Grande Império Subterrâneo |
+| Release / Serial number | Versão / Número de série |
+| (Type RESTART, RESTORE, or QUIT) | (Digite REINICIAR, CARREGAR ou DESISTIR) |
 
 **Títulos** (pontuação): Iniciante, Aventureiro Amador, Aventureiro Novato,
 Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
