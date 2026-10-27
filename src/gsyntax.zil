@@ -742,3 +742,18 @@ só valem como comando de uma palavra (ver AJUSTA-LEXV)."
 ;"dê corda no canário (AJUSTA-LEXV troca dê corda por wind)"
 <SYNTAX WIND IN OBJECT = V-WIND>
 <SYNTAX WIND TO OBJECT = V-WIND>
+
+;"Região 3: barragem e rio.
+  encha a garrafa de água (o de antes de água é a preposição FROM);
+  atraque = land (direção, como no rótulo do barco); zarpe = lance;
+  bombeie o barco (o original só tem pump up);
+  embarque no barco, desembarque do barco."
+<SYNTAX FILL OBJECT (FIND CONTBIT) (HELD CARRIED ON-GROUND IN-ROOM)
+	FROM OBJECT = V-FILL PRE-FILL>
+<SYNONYM LAND ATRAQUE ATRACAR ATRACA APORTE APORTAR>
+<SYNONYM LAUNCH ZARPE ZARPAR ZARPA>
+<SYNTAX PUMP OBJECT = V-PUMP>
+<SYNTAX PUMP OBJECT WITH OBJECT = V-PUMP>
+<SYNTAX BOARD IN OBJECT (FIND VEHBIT) (ON-GROUND IN-ROOM) = V-BOARD PRE-BOARD>
+<SYNTAX DISEMBARK FROM OBJECT (FIND VEHBIT) (ON-GROUND IN-ROOM)
+	= V-DISEMBARK>

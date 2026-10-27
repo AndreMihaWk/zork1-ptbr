@@ -191,18 +191,18 @@ It appears to be grinning at you rather nastily.")
 
 <OBJECT BOLT
 	(IN DAM-ROOM)
-	(SYNONYM BOLT NUT)
-	(ADJECTIVE METAL LARGE)
-	(DESC "bolt")
+	(SYNONYM BOLT NUT PARAFUSO PORCA)
+	(ADJECTIVE METAL LARGE GRANDE METALICO)
+	(DESC "parafuso")
 	(FLAGS NDESCBIT TURNBIT TRYTAKEBIT)
 	(ACTION BOLT-F)>
 
 <OBJECT BUBBLE
 	(IN DAM-ROOM)
-	(SYNONYM BUBBLE)
-	(ADJECTIVE SMALL GREEN PLASTIC)
-	(DESC "green bubble")
-	(FLAGS NDESCBIT TRYTAKEBIT)
+	(SYNONYM BUBBLE BOLHA)
+	(ADJECTIVE SMALL GREEN PLASTIC PEQUENA VERDE PLASTICO)
+	(DESC "bolha verde")
+	(FLAGS NDESCBIT TRYTAKEBIT FEMBIT)
 	(ACTION BUBBLE-F)>
 
 <OBJECT ALTAR
@@ -300,41 +300,41 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT TOOL-CHEST
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM CHEST CHESTS GROUP TOOLCHESTS)
-	(ADJECTIVE TOOL)
-	(DESC "group of tool chests")
-	(FLAGS CONTBIT OPENBIT TRYTAKEBIT SACREDBIT)
+	(SYNONYM CHEST CHESTS GROUP TOOLCHESTS CAIXA CAIXAS GRUPO)
+	(ADJECTIVE TOOL FERRAMENTA FERRAMENTAS)
+	(DESC "caixas de ferramentas")
+	(FLAGS CONTBIT OPENBIT TRYTAKEBIT SACREDBIT FEMBIT PLURALBIT)
 	(ACTION TOOL-CHEST-FCN)>
 
 <OBJECT YELLOW-BUTTON
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM BUTTON SWITCH)
-	(ADJECTIVE YELLOW)
-	(DESC "yellow button")
+	(SYNONYM BUTTON SWITCH BOTAO BOTOES)
+	(ADJECTIVE YELLOW AMARELO)
+	(DESC "botão amarelo")
 	(FLAGS NDESCBIT)
 	(ACTION BUTTON-F)>
 
 <OBJECT BROWN-BUTTON
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM BUTTON SWITCH)
-	(ADJECTIVE BROWN)
-	(DESC "brown button")
+	(SYNONYM BUTTON SWITCH BOTAO BOTOES)
+	(ADJECTIVE BROWN MARROM)
+	(DESC "botão marrom")
 	(FLAGS NDESCBIT)
 	(ACTION BUTTON-F)>
 
 <OBJECT RED-BUTTON
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM BUTTON SWITCH)
-	(ADJECTIVE RED)
-	(DESC "red button")
+	(SYNONYM BUTTON SWITCH BOTAO BOTOES)
+	(ADJECTIVE RED VERMELHO)
+	(DESC "botão vermelho")
 	(FLAGS NDESCBIT)
 	(ACTION BUTTON-F)>
 
 <OBJECT BLUE-BUTTON
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM BUTTON SWITCH)
-	(ADJECTIVE BLUE)
-	(DESC "blue button")
+	(SYNONYM BUTTON SWITCH BOTAO BOTOES)
+	(ADJECTIVE BLUE AZUL)
+	(DESC "botão azul")
 	(FLAGS NDESCBIT)
 	(ACTION BUTTON-F)>
 
@@ -399,9 +399,9 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT DAM
 	(IN DAM-ROOM)
-	(SYNONYM DAM GATE GATES FCD\#3)
-	(DESC "dam")
-	(FLAGS NDESCBIT TRYTAKEBIT)
+	(SYNONYM DAM GATE GATES FCD\#3 BARRAGEM COMPORTA COMPORTAS BCE\#3)
+	(DESC "barragem")
+	(FLAGS NDESCBIT TRYTAKEBIT FEMBIT)
 	(ACTION DAM-FUNCTION)>
 
 <OBJECT TRAP-DOOR
@@ -484,10 +484,10 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT PUMP
 	(IN RESERVOIR-NORTH)
-	(SYNONYM PUMP AIR-PUMP TOOL TOOLS)
-	(ADJECTIVE SMALL HAND-HELD)
-	(DESC "hand-held air pump")
-	(FLAGS TAKEBIT TOOLBIT)>
+	(SYNONYM PUMP AIR-PUMP TOOL TOOLS BOMBA FERRAMENTA FERRAMENTAS)
+	(ADJECTIVE SMALL HAND-HELD AR MANUAL PEQUENA)
+	(DESC "bomba de ar manual")
+	(FLAGS TAKEBIT TOOLBIT FEMBIT)>
 
 <OBJECT DIAMOND
 	(SYNONYM DIAMOND TREASURE TREASURES TESOURO TESOUROS)
@@ -559,10 +559,10 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT EMERALD
 	(IN BUOY)
-	(SYNONYM EMERALD TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE LARGE)
-	(DESC "large emerald")
-	(FLAGS TAKEBIT)
+	(SYNONYM EMERALD TREASURE TREASURES TESOURO TESOUROS ESMERALDA)
+	(ADJECTIVE LARGE GRANDE)
+	(DESC "esmeralda grande")
+	(FLAGS TAKEBIT FEMBIT)
 	(VALUE 5)
 	(TVALUE 10)>
 
@@ -583,8 +583,8 @@ viram. Nenhum computador deveria ficar sem ele!\"")
 
 <OBJECT LEAK
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM LEAK DRIP PIPE)
-	(DESC "leak")
+	(SYNONYM LEAK DRIP PIPE VAZAMENTO CANO GOTEIRA JATO)
+	(DESC "vazamento")
 	(FLAGS NDESCBIT INVISIBLE)
 	(ACTION LEAK-FUNCTION)>
 
@@ -597,9 +597,11 @@ viram. Nenhum computador deveria ficar sem ele!\"")
 	(CAPACITY 50)>
 
 <OBJECT INFLATED-BOAT
-	(SYNONYM BOAT RAFT)
-	(ADJECTIVE INFLATED INFLATABLE MAGIC PLASTIC SEAWORTHY)
-	(DESC "magic boat")
+	(SYNONYM BOAT RAFT BARCO BOTE)
+	;"PT: PLASTICO só como adjetivo, igual a PLASTIC no original"
+	(ADJECTIVE INFLATED INFLATABLE MAGIC PLASTIC SEAWORTHY MAGICO PLASTICO
+		   INFLADO INFLAVEL)
+	(DESC "barco mágico")
 	(FLAGS TAKEBIT BURNBIT VEHBIT OPENBIT SEARCHBIT)
 	(ACTION RBOAT-FUNCTION)
 	(CAPACITY 100)
@@ -617,30 +619,33 @@ viram. Nenhum computador deveria ficar sem ele!\"")
 
 <OBJECT MATCH
 	(IN DAM-LOBBY)
-	(SYNONYM MATCH MATCHES MATCHBOOK)
-	(ADJECTIVE MATCH)
-	(DESC "matchbook")
-	(FLAGS READBIT TAKEBIT)
+	(SYNONYM MATCH MATCHES MATCHBOOK CAIXA CAIXINHA FOSFORO FOSFOROS)
+	(ADJECTIVE MATCH FOSFOROS)
+	(DESC "caixa de fósforos")
+	(FLAGS READBIT TAKEBIT FEMBIT)
 	(ACTION MATCH-FUNCTION)
 	(LDESC
-"There is a matchbook whose cover says \"Visit Beautiful FCD#3\" here.")
+"Há aqui uma caixa de fósforos com os dizeres \"Visite a Bela BCE#3\" na
+capa.")
 	(SIZE 2)
 	(TEXT
 "|
-(Close cover before striking)|
+(Feche a capa antes de riscar)|
 |
-YOU too can make BIG MONEY in the exciting field of PAPER SHUFFLING!|
+VOCÊ também pode GANHAR MUITO DINHEIRO no empolgante ramo do EMBARALHAMENTO
+DE PAPÉIS!|
 |
-Mr. Anderson of Muddle, Mass. says: \"Before I took this course I
-was a lowly bit twiddler. Now with what I learned at GUE Tech
-I feel really important and can obfuscate and confuse with the best.\"|
+O Sr. Anderson, de Embrulhada, MA, conta: \"Antes de fazer este curso, eu
+era um reles escovador de bits. Agora, com o que aprendi na GUE Tech, eu me
+sinto muito importante e sei enrolar e confundir como os melhores.\"|
 |
-Dr. Blank had this to say: \"Ten short days ago all I could look
-forward to was a dead-end job as a doctor. Now I have a promising
-future and make really big Zorkmids.\"|
+O Dr. Fulano de Tal tem isto a dizer: \"Dez curtos dias atrás, tudo o que
+eu tinha pela frente era um emprego sem futuro como médico. Agora tenho um
+futuro promissor e ganho zorkmids de montão.\"|
 |
-GUE Tech can't promise these fantastic results to everyone. But when
-you earn your degree from GUE Tech, your future will be brighter." )>
+A GUE Tech não pode prometer esses resultados fantásticos a todo mundo. Mas,
+quando você conquistar o seu diploma da GUE Tech, o seu futuro vai ser mais
+brilhante." )>
 
 <OBJECT MIRROR-2
 	(IN MIRROR-ROOM-2)
@@ -709,23 +714,23 @@ fundo há uma pintura de beleza sem igual.")
 	(SIZE 25)>
 
 <OBJECT PUNCTURED-BOAT
-	(SYNONYM BOAT PILE PLASTIC)
-	(ADJECTIVE PLASTIC PUNCTURE LARGE)
-	(DESC "punctured boat")
+	(SYNONYM BOAT PILE PLASTIC BARCO BOTE MONTE PLASTICO)
+	(ADJECTIVE PLASTIC PUNCTURE LARGE FURADO PLASTICO GRANDE)
+	(DESC "barco furado")
 	(FLAGS TAKEBIT BURNBIT)
 	(ACTION DBOAT-FUNCTION)
 	(SIZE 20)>
 
 <OBJECT INFLATABLE-BOAT
 	(IN DAM-BASE)
-	(SYNONYM BOAT PILE PLASTIC VALVE)
-	(ADJECTIVE PLASTIC INFLATABLE INFLATED)
-	(DESC "pile of plastic")
+	(SYNONYM BOAT PILE PLASTIC VALVE BARCO BOTE MONTE PLASTICO VALVULA)
+	(ADJECTIVE PLASTIC INFLATABLE INFLATED PLASTICO INFLAVEL DOBRADO)
+	(DESC "monte de plástico")
 	(FLAGS TAKEBIT BURNBIT)
 	(ACTION IBOAT-FUNCTION)
 	(LDESC
-"There is a folded pile of plastic here which has a small valve
-attached.")
+"Há aqui um monte de plástico dobrado, com uma pequena válvula presa a
+ele.")
 	(SIZE 20)>
 
 <OBJECT BAR
@@ -779,19 +784,19 @@ Zorkers were obscure." )>
 
 <OBJECT RIVER
 	(IN LOCAL-GLOBALS)
-	(DESC "river")
-	(SYNONYM RIVER)
-	(ADJECTIVE FRIGID)
+	(DESC "rio")
+	(SYNONYM RIVER RIO)
+	(ADJECTIVE FRIGID FRIGIDO)
 	(ACTION RIVER-FUNCTION)
 	(FLAGS NDESCBIT)>
 
 <OBJECT BUOY
 	(IN RIVER-4)
-	(SYNONYM BUOY)
-	(ADJECTIVE RED)
-	(DESC "red buoy")
-	(FLAGS TAKEBIT CONTBIT)
-	(FDESC "There is a red buoy here (probably a warning).")
+	(SYNONYM BUOY BOIA)
+	(ADJECTIVE RED VERMELHA)
+	(DESC "boia vermelha")
+	(FLAGS TAKEBIT CONTBIT FEMBIT)
+	(FDESC "Há uma boia vermelha aqui (provavelmente um aviso).")
 	(CAPACITY 20)
 	(SIZE 10)
 	(ACTION TREASURE-INSIDE)>
@@ -822,9 +827,9 @@ Zorkers were obscure." )>
 
 <OBJECT SAND
 	(IN SANDY-CAVE)
-	(SYNONYM SAND)
-	(DESC "sand")
-	(FLAGS NDESCBIT)
+	(SYNONYM SAND AREIA)
+	(DESC "areia")
+	(FLAGS NDESCBIT FEMBIT PARTITIVOBIT)
 	(ACTION SAND-FUNCTION)>
 
 <OBJECT BRACELET
@@ -839,10 +844,10 @@ Zorkers were obscure." )>
 
 <OBJECT SCREWDRIVER
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM SCREWDRIVER TOOL TOOLS DRIVER)
-	(ADJECTIVE SCREW)
-	(DESC "screwdriver")
-	(FLAGS TAKEBIT TOOLBIT)>
+	(SYNONYM SCREWDRIVER TOOL TOOLS DRIVER CHAVE FERRAMENTA FERRAMENTAS)
+	(ADJECTIVE SCREW FENDA)
+	(DESC "chave de fenda")
+	(FLAGS TAKEBIT TOOLBIT FEMBIT)>
 
 <OBJECT KEYS
 	(IN MAZE-5)
@@ -854,9 +859,9 @@ Zorkers were obscure." )>
 
 <OBJECT SHOVEL
 	(IN SANDY-BEACH)
-	(SYNONYM SHOVEL TOOL TOOLS)
-	(DESC "shovel")
-	(FLAGS TAKEBIT TOOLBIT)
+	(SYNONYM SHOVEL TOOL TOOLS PA FERRAMENTA FERRAMENTAS)
+	(DESC "pá")
+	(FLAGS TAKEBIT TOOLBIT FEMBIT)
 	(SIZE 15)>
 
 <OBJECT COAL
@@ -876,9 +881,10 @@ Zorkers were obscure." )>
 
 <OBJECT SCARAB
 	(IN SANDY-CAVE)
-	(SYNONYM SCARAB BUG BEETLE TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE BEAUTIFUL CARVED JEWELED)
-	(DESC "beautiful jeweled scarab")
+	(SYNONYM SCARAB BUG BEETLE TREASURE TREASURES TESOURO TESOUROS ESCARAVELHO
+		 BESOURO)
+	(ADJECTIVE BEAUTIFUL CARVED JEWELED LINDO CRAVEJADO JOIAS ENTALHADO)
+	(DESC "lindo escaravelho cravejado de joias")
 	(FLAGS TAKEBIT INVISIBLE)
 	(SIZE 8)
 	(VALUE 5)
@@ -950,30 +956,31 @@ southwest, is marked \"To Stone Barrow\".")>
 
 <OBJECT BOAT-LABEL
 	(IN INFLATED-BOAT)
-	(SYNONYM LABEL FINEPRINT PRINT)
-	(ADJECTIVE TAN FINE)
-	(DESC "tan label")
-	(FLAGS READBIT TAKEBIT BURNBIT)
+	(SYNONYM LABEL FINEPRINT PRINT ETIQUETA ROTULO LETRINHAS)
+	(ADJECTIVE TAN FINE BEGE MIUDAS)
+	(DESC "etiqueta bege")
+	(FLAGS READBIT TAKEBIT BURNBIT FEMBIT)
 	(SIZE 2)
 	(TEXT
-"  !!!!FROBOZZ MAGIC BOAT COMPANY!!!!|
+"  !!!!COMPANHIA FROBOZZ DE BARCOS MÁGICOS!!!!|
 |
-Hello, Sailor!|
+Olá, marinheiro!|
 |
-Instructions for use:|
+Instruções de uso:|
 |
-   To get into a body of water, say \"Launch\".|
-   To get to shore, say \"Land\" or the direction in which you want
-to maneuver the boat.|
+   Para entrar na água, diga \"Lance\".|
+   Para chegar à margem, diga \"Atraque\" ou a direção para onde você quer
+manobrar o barco.|
 |
-Warranty:|
+Garantia:|
 |
-  This boat is guaranteed against all defects for a period of 76
-milliseconds from date of purchase or until first used, whichever comes first.|
+  Este barco tem garantia contra todos os defeitos por um período de 76
+milissegundos a partir da data da compra ou até o primeiro uso, o que
+ocorrer primeiro.|
 |
-Warning:|
-   This boat is made of thin plastic.|
-   Good Luck!" )>
+Aviso:|
+   Este barco é feito de plástico fino.|
+   Boa sorte!" )>
 
 <OBJECT THIEF
 	(IN ROUND-ROOM)
@@ -1010,38 +1017,38 @@ against one wall. He is armed with a deadly stiletto.")
 
 <OBJECT GUIDE
 	(IN DAM-LOBBY)
-	(SYNONYM GUIDE BOOK BOOKS GUIDEBOOKS)
-	(ADJECTIVE TOUR GUIDE)
-	(DESC "tour guidebook")
+	(SYNONYM GUIDE BOOK BOOKS GUIDEBOOKS GUIA GUIAS LIVRO LIVRETO)
+	(ADJECTIVE TOUR GUIDE TURISTICO TURISTICOS)
+	(DESC "guia turístico")
 	(FLAGS READBIT TAKEBIT BURNBIT)
 	(FDESC
-"Some guidebooks entitled \"Flood Control Dam #3\" are on the reception
-desk.")
+"Sobre o balcão da recepção há alguns guias turísticos intitulados
+\"Barragem de Controle de Enchentes #3\".")
 	(TEXT
-"\"	Flood Control Dam #3|
+"\"	Barragem de Controle de Enchentes #3|
 |
-FCD#3 was constructed in year 783 of the Great Underground Empire to
-harness the mighty Frigid River. This work was supported by a grant of
-37 million zorkmids from your omnipotent local tyrant Lord Dimwit
-Flathead the Excessive. This impressive structure is composed of
-370,000 cubic feet of concrete, is 256 feet tall at the center, and 193
-feet wide at the top. The lake created behind the dam has a volume
-of 1.7 billion cubic feet, an area of 12 million square feet, and a
-shore line of 36 thousand feet.|
+A BCE#3 foi construída no ano 783 do Grande Império Subterrâneo para
+domar o poderoso Rio Frígido. A obra contou com uma verba de 37 milhões de
+zorkmids concedida pelo seu tirano local onipotente, Lorde Dimwit
+Flathead, o Excessivo. Esta impressionante estrutura é composta de 10.477
+metros cúbicos de concreto, tem 78 metros de altura no centro e 59 metros
+de largura no topo. O lago formado atrás da barragem tem um volume de 48
+milhões de metros cúbicos, uma área de 1,1 milhão de metros quadrados e
+11 quilômetros de margem.|
 |
-The construction of FCD#3 took 112 days from ground breaking to
-the dedication. It required a work force of 384 slaves, 34 slave
-drivers, 12 engineers, 2 turtle doves, and a partridge in a pear
-tree. The work was managed by a command team composed of 2345
-bureaucrats, 2347 secretaries (at least two of whom could type),
-12,256 paper shufflers, 52,469 rubber stampers, 245,193 red tape
-processors, and nearly one million dead trees.|
+A construção da BCE#3 levou 112 dias, do primeiro buraco cavado à
+inauguração. Ela exigiu uma força de trabalho de 384 escravos, 34
+feitores, 12 engenheiros, 2 rolinhas e uma perdiz numa pereira. A obra foi
+gerenciada por uma equipe de comando formada por 2.345 burocratas, 2.347
+secretárias (pelo menos duas delas sabiam datilografar), 12.256
+embaralhadores de papel, 52.469 carimbadores, 245.193 processadores de
+papelada e quase um milhão de árvores mortas.|
 |
-We will now point out some of the more interesting features
-of FCD#3 as we conduct you on a guided tour of the facilities:|
+Agora vamos destacar algumas das características mais interessantes da
+BCE#3 enquanto conduzimos você numa visita guiada pelas instalações:|
 |
-        1) You start your tour here in the Dam Lobby. You will notice
-on your right that...." )>
+        1) Você começa a visita aqui na Recepção da Barragem. Repare que,
+à sua direita, ...." )>
 
 <OBJECT TROLL
 	(IN TROLL-ROOM)
@@ -1057,13 +1064,15 @@ bloqueia todas as saídas da sala.")
 
 <OBJECT TRUNK
 	(IN RESERVOIR)
-	(SYNONYM TRUNK CHEST JEWELS TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE OLD)
-	(DESC "trunk of jewels")
+	(SYNONYM TRUNK CHEST JEWELS TREASURE TREASURES TESOURO TESOUROS BAU)
+	;"PT: JOIAS só como adjetivo (pegue as joias também funciona). Como
+	  substantivo, estragaria \"ovo cravejado de joias\"."
+	(ADJECTIVE OLD VELHO JOIAS)
+	(DESC "baú de joias")
 	(FLAGS TAKEBIT INVISIBLE)
 	(FDESC
-"Lying half buried in the mud is an old trunk, bulging with jewels.")
-	(LDESC "There is an old trunk here, bulging with assorted jewels.")
+"Meio enterrado na lama, há um baú velho abarrotado de joias.")
+	(LDESC "Há aqui um baú velho, abarrotado de joias variadas.")
 	(ACTION TRUNK-F)
 	(SIZE 35)
 	(VALUE 15)
@@ -1071,23 +1080,24 @@ bloqueia todas as saídas da sala.")
 
 <OBJECT TUBE
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM TUBE TOOTH PASTE)
-	(DESC "tube")
+	(SYNONYM TUBE TOOTH PASTE TUBO BISNAGA CREME PASTA)
+	(ADJECTIVE CREME DENTAL PASTA)
+	(DESC "tubo")
 	(FLAGS TAKEBIT CONTBIT READBIT)
 	(ACTION TUBE-FUNCTION)
 	(LDESC
-	 "There is an object which looks like a tube of toothpaste here.")
+	 "Há aqui um objeto que parece um tubo de creme dental.")
 	(CAPACITY 7)
 	(SIZE 5)
 	(TEXT
-"---> Frobozz Magic Gunk Company <---|
-	  All-Purpose Gunk")>
+"---> Companhia Frobozz de Gosma Mágica <---|
+	  Gosma Multiuso")>
 
 <OBJECT PUTTY
 	(IN TUBE)
-	(SYNONYM MATERIAL GUNK)
-	(ADJECTIVE VISCOUS)
-	(DESC "viscous material")
+	(SYNONYM MATERIAL GUNK GOSMA MASSA COLA)
+	(ADJECTIVE VISCOUS VISCOSO)
+	(DESC "material viscoso")
 	(FLAGS TAKEBIT TOOLBIT)
 	(SIZE 6)
 	(ACTION PUTTY-FCN)>
@@ -1133,24 +1143,25 @@ sem problemas.")>
 
 <OBJECT WHITE-CLIFF
 	(IN LOCAL-GLOBALS)
-	(SYNONYM CLIFF CLIFFS)
-	(ADJECTIVE WHITE)
-	(DESC "white cliffs")
-	(FLAGS NDESCBIT CLIMBBIT)
+	(SYNONYM CLIFF CLIFFS PENHASCO PENHASCOS ROCHEDO ROCHEDOS)
+	(ADJECTIVE WHITE BRANCO BRANCOS)
+	(DESC "penhascos brancos")
+	(FLAGS NDESCBIT CLIMBBIT PLURALBIT)
 	(ACTION WCLIF-OBJECT)>
 
 <OBJECT WRENCH
 	(IN MAINTENANCE-ROOM)
-	(SYNONYM WRENCH TOOL TOOLS)
-	(DESC "wrench")
-	(FLAGS TAKEBIT TOOLBIT)
+	(SYNONYM WRENCH TOOL TOOLS CHAVE FERRAMENTA FERRAMENTAS)
+	(ADJECTIVE INGLESA)
+	(DESC "chave inglesa")
+	(FLAGS TAKEBIT TOOLBIT FEMBIT)
 	(SIZE 10)>
 
 <OBJECT CONTROL-PANEL
 	(IN DAM-ROOM)
-	(SYNONYM PANEL)
-	(ADJECTIVE CONTROL)
-	(DESC "control panel")
+	(SYNONYM PANEL PAINEL)
+	(ADJECTIVE CONTROL CONTROLE)
+	(DESC "painel de controle")
 	(FLAGS NDESCBIT)>
 
 <OBJECT NEST
@@ -1785,69 +1796,73 @@ on the floor. There is an exit down a staircase.")
 
 <ROOM RESERVOIR-SOUTH
       (IN ROOMS)
-      (DESC "Reservoir South")
+      (DESC "Represa Sul")
       (SE TO DEEP-CANYON)
       (SW TO CHASM-ROOM)
       (EAST TO DAM-ROOM)
       (WEST TO STREAM-VIEW)
       (NORTH TO RESERVOIR
-       IF LOW-TIDE ELSE "You would drown.")
+       IF LOW-TIDE ELSE "Você se afogaria.")
       (ACTION RESERVOIR-SOUTH-FCN)
       (FLAGS RLANDBIT)
       (GLOBAL GLOBAL-WATER)
-      (PSEUDO "LAKE" LAKE-PSEUDO "CHASM" CHASM-PSEUDO)>
+      ;"PT: o pseudo-objeto não tem gênero (é sempre o), por isso só nomes
+	masculinos: lago, abismo"
+      (PSEUDO "LAKE" LAKE-PSEUDO "CHASM" CHASM-PSEUDO
+	      "LAGO" LAKE-PSEUDO "ABISMO" CHASM-PSEUDO)>
 
 <ROOM RESERVOIR
       (IN ROOMS)
-      (DESC "Reservoir")
+      (DESC "Represa")
       (NORTH TO RESERVOIR-NORTH)
       (SOUTH TO RESERVOIR-SOUTH)
       (UP TO IN-STREAM)
       (WEST TO IN-STREAM)
-      (DOWN "The dam blocks your way.")
+      (DOWN "A barragem bloqueia o caminho.")
       (ACTION RESERVOIR-FCN)
       (FLAGS NONLANDBIT )
-      (PSEUDO "STREAM" STREAM-PSEUDO)
+      (PSEUDO "STREAM" STREAM-PSEUDO "RIACHO" STREAM-PSEUDO)
       (GLOBAL GLOBAL-WATER)>
 
 <ROOM RESERVOIR-NORTH
       (IN ROOMS)
-      (DESC "Reservoir North")
+      (DESC "Represa Norte")
       (NORTH TO ATLANTIS-ROOM)
       (SOUTH TO RESERVOIR
-       IF LOW-TIDE ELSE "You would drown.")
+       IF LOW-TIDE ELSE "Você se afogaria.")
       (ACTION RESERVOIR-NORTH-FCN)
       (FLAGS RLANDBIT)
       (GLOBAL GLOBAL-WATER STAIRS)
-      (PSEUDO "LAKE" LAKE-PSEUDO)>
+      (PSEUDO "LAKE" LAKE-PSEUDO "LAGO" LAKE-PSEUDO)>
 
 <ROOM STREAM-VIEW
       (IN ROOMS)
       (LDESC
-"You are standing on a path beside a gently flowing stream. The path
-follows the stream, which flows from west to east.")
-      (DESC "Stream View")
+"Você está numa trilha ao lado de um riacho de correnteza mansa. A trilha
+acompanha o riacho, que corre de oeste para leste.")
+      (DESC "Vista do Riacho")
       (EAST TO RESERVOIR-SOUTH)
-      (WEST "The stream emerges from a spot too small for you to enter.")
+      (WEST "O riacho brota de uma abertura pequena demais para você entrar.")
       (FLAGS RLANDBIT)
       (GLOBAL GLOBAL-WATER)
-      (PSEUDO "STREAM" STREAM-PSEUDO)>
+      (PSEUDO "STREAM" STREAM-PSEUDO "RIACHO" STREAM-PSEUDO)>
 
 <ROOM IN-STREAM
       (IN ROOMS)
       (LDESC
-"You are on the gently flowing stream. The upstream route is too narrow
-to navigate, and the downstream route is invisible due to twisting
-walls. There is a narrow beach to land on.")
-      (DESC "Stream")
-      (UP "The channel is too narrow.")
-      (WEST "The channel is too narrow.")
+"Você está no riacho de correnteza mansa. Correnteza acima, o canal é
+estreito demais para navegar, e correnteza abaixo não dá para ver o
+caminho por causa das paredes tortuosas. Há uma prainha estreita onde dá
+para atracar.")
+      (DESC "Riacho")
+      (UP "O canal é estreito demais.")
+      (WEST "O canal é estreito demais.")
       (LAND TO STREAM-VIEW)
       (DOWN TO RESERVOIR)
       (EAST TO RESERVOIR)
       (FLAGS NONLANDBIT )
       (GLOBAL GLOBAL-WATER)
-      (PSEUDO "STREAM" STREAM-PSEUDO)>
+      (PSEUDO "STREAM" STREAM-PSEUDO "RIACHO" STREAM-PSEUDO)>
 
 \
 
@@ -2151,7 +2166,7 @@ which leads into darkness. You probably could not get back up it.")
 
 <ROOM DAM-ROOM	;"was DAM"
       (IN ROOMS)
-      (DESC "Dam")
+      (DESC "Barragem")
       (SOUTH TO DEEP-CANYON)
       (DOWN TO DAM-BASE)
       (EAST TO DAM-BASE)
@@ -2164,10 +2179,10 @@ which leads into darkness. You probably could not get back up it.")
 <ROOM DAM-LOBBY	;"was LOBBY"
       (IN ROOMS)
       (LDESC
-"This room appears to have been the waiting room for groups touring
-the dam. There are open doorways here to the north and east marked
-\"Private\", and there is a path leading south over the top of the dam.")
-      (DESC "Dam Lobby")
+"Esta sala parece ter sido a sala de espera dos grupos que visitavam a
+barragem. Há passagens abertas ao norte e a leste com a placa
+\"Privativo\", e uma trilha segue para o sul por cima da barragem.")
+      (DESC "Recepção da Barragem")
       (SOUTH TO DAM-ROOM)
       (NORTH TO MAINTENANCE-ROOM)
       (EAST TO MAINTENANCE-ROOM)
@@ -2176,12 +2191,12 @@ the dam. There are open doorways here to the north and east marked
 <ROOM MAINTENANCE-ROOM	;"was MAINT"
       (IN ROOMS)
       (LDESC
-"This is what appears to have been the maintenance room for Flood
-Control Dam #3. Apparently, this room has been ransacked recently, for
-most of the valuable equipment is gone. On the wall in front of you is a
-group of buttons colored blue, yellow, brown, and red. There are doorways to
-the west and south.")
-      (DESC "Maintenance Room")
+"Esta parece ter sido a sala de manutenção da Barragem de Controle de
+Enchentes #3. Pelo visto, a sala foi saqueada há pouco tempo, porque quase
+todo o equipamento de valor sumiu. Na parede à sua frente há uma fileira
+de botões: um azul, um amarelo, um marrom e um vermelho. Há passagens a
+oeste e ao sul.")
+      (DESC "Sala de Manutenção")
       (SOUTH TO DAM-LOBBY)
       (WEST TO DAM-LOBBY)
       (FLAGS RLANDBIT)>
@@ -2193,12 +2208,11 @@ the west and south.")
 <ROOM DAM-BASE	;"was DOCK"
       (IN ROOMS)
       (LDESC
-"You are at the base of Flood Control Dam #3, which looms above you
-and to the north. The river Frigid is flowing by here. Along the
-river are the White Cliffs which seem to form giant walls stretching
-from north to south along the shores of the river as it winds its
-way downstream.")
-      (DESC "Dam Base")
+"Você está na base da Barragem de Controle de Enchentes #3, que se ergue
+imponente acima de você, ao norte. O Rio Frígido passa por aqui. Ao longo
+do rio ficam os Penhascos Brancos, que parecem formar muralhas gigantes de
+norte a sul pelas margens do rio, enquanto ele serpenteia rio abaixo.")
+      (DESC "Base da Barragem")
       (NORTH TO DAM-ROOM)
       (UP TO DAM-ROOM)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
@@ -2207,40 +2221,39 @@ way downstream.")
 <ROOM RIVER-1	;"was RIVR1"
       (IN ROOMS)
       (LDESC
-"You are on the Frigid River in the vicinity of the Dam. The river
-flows quietly here. There is a landing on the west shore.")
-      (DESC "Frigid River")
-      (UP "You cannot go upstream due to strong currents.")
+"Você está no Rio Frígido, perto da Barragem. Aqui o rio corre tranquilo.
+Há um ponto de desembarque na margem oeste.")
+      (DESC "Rio Frígido")
+      (UP "As correntes fortes não deixam você subir o rio.")
       (WEST TO DAM-BASE)
       (LAND TO DAM-BASE)
       (DOWN TO RIVER-2)
-      (EAST "The White Cliffs prevent your landing here.")
+      (EAST "Os Penhascos Brancos impedem que você atraque aqui.")
       (FLAGS NONLANDBIT SACREDBIT ONBIT)
       (GLOBAL GLOBAL-WATER RIVER)>
 
 <ROOM RIVER-2	;"was RIVR2"
       (IN ROOMS)
       (LDESC
-"The river turns a corner here making it impossible to see the
-Dam. The White Cliffs loom on the east bank and large rocks prevent
-landing on the west.")
-      (DESC "Frigid River")
-      (UP "You cannot go upstream due to strong currents.")
+"Aqui o rio faz uma curva, e não dá mais para ver a Barragem. Os
+Penhascos Brancos se erguem na margem leste, e pedras grandes impedem o
+desembarque na margem oeste.")
+      (DESC "Rio Frígido")
+      (UP "As correntes fortes não deixam você subir o rio.")
       (DOWN TO RIVER-3)
-      (LAND "There is no safe landing spot here.")
-      (EAST "The White Cliffs prevent your landing here.")
-      (WEST "Just in time you steer away from the rocks.")
+      (LAND "Não há nenhum lugar seguro para atracar aqui.")
+      (EAST "Os Penhascos Brancos impedem que você atraque aqui.")
+      (WEST "Bem na hora, você desvia das pedras.")
       (FLAGS NONLANDBIT SACREDBIT)
       (GLOBAL GLOBAL-WATER RIVER)>
 
 <ROOM RIVER-3	;"was RIVR3"
       (IN ROOMS)
       (LDESC
-"The river descends here into a valley. There is a narrow beach on the
-west shore below the cliffs. In the distance a faint rumbling can be
-heard.")
-      (DESC "Frigid River")
-      (UP "You cannot go upstream due to strong currents.")
+"Aqui o rio desce para um vale. Há uma praia estreita na margem oeste, ao
+pé dos penhascos. Ao longe, dá para ouvir um ronco fraco.")
+      (DESC "Rio Frígido")
+      (UP "As correntes fortes não deixam você subir o rio.")
       (DOWN TO RIVER-4)
       (LAND TO WHITE-CLIFFS-NORTH)
       (WEST TO WHITE-CLIFFS-NORTH)
@@ -2250,12 +2263,12 @@ heard.")
 <ROOM WHITE-CLIFFS-NORTH	;"was WCLF1"
       (IN ROOMS)
       (LDESC
-"You are on a narrow strip of beach which runs along the base of the
-White Cliffs. There is a narrow path heading south along the Cliffs
-and a tight passage leading west into the cliffs themselves.")
-      (DESC "White Cliffs Beach")
-      (SOUTH TO WHITE-CLIFFS-SOUTH IF DEFLATE ELSE "The path is too narrow.")
-      (WEST TO DAMP-CAVE IF DEFLATE ELSE "The path is too narrow.")
+"Você está numa faixa estreita de praia que corre ao pé dos Penhascos
+Brancos. Uma trilha estreita segue para o sul ao longo dos Penhascos, e uma
+passagem apertada leva para oeste, para dentro dos próprios penhascos.")
+      (DESC "Praia dos Penhascos Brancos")
+      (SOUTH TO WHITE-CLIFFS-SOUTH IF DEFLATE ELSE "O caminho é estreito demais.")
+      (WEST TO DAMP-CAVE IF DEFLATE ELSE "O caminho é estreito demais.")
       (ACTION WHITE-CLIFFS-FUNCTION)
       (FLAGS RLANDBIT SACREDBIT)
       (GLOBAL GLOBAL-WATER WHITE-CLIFF RIVER)>
@@ -2263,11 +2276,11 @@ and a tight passage leading west into the cliffs themselves.")
 <ROOM WHITE-CLIFFS-SOUTH	;"was WCLF2"
       (IN ROOMS)
       (LDESC
-"You are on a rocky, narrow strip of beach beside the Cliffs. A
-narrow path leads north along the shore.")
-      (DESC "White Cliffs Beach")
+"Você está numa faixa estreita e pedregosa de praia, ao lado dos
+Penhascos. Uma trilha estreita segue para o norte pela margem.")
+      (DESC "Praia dos Penhascos Brancos")
       (NORTH TO WHITE-CLIFFS-NORTH
-       IF DEFLATE ELSE "The path is too narrow.")
+       IF DEFLATE ELSE "O caminho é estreito demais.")
       (ACTION WHITE-CLIFFS-FUNCTION)
       (FLAGS RLANDBIT SACREDBIT)
       (GLOBAL GLOBAL-WATER WHITE-CLIFF RIVER)>
@@ -2275,13 +2288,13 @@ narrow path leads north along the shore.")
 <ROOM RIVER-4	;"was RIVR4"
       (IN ROOMS)
       (LDESC
-"The river is running faster here and the sound ahead appears to be
-that of rushing water. On the east shore is a sandy beach. A small
-area of beach can also be seen below the cliffs on the west shore.")
-      (DESC "Frigid River")
-      (UP "You cannot go upstream due to strong currents.")
+"Aqui o rio corre mais rápido, e o som mais adiante parece ser de água em
+turbilhão. Na margem leste há uma praia de areia. Também dá para ver um
+pequeno trecho de praia ao pé dos penhascos, na margem oeste.")
+      (DESC "Rio Frígido")
+      (UP "As correntes fortes não deixam você subir o rio.")
       (DOWN TO RIVER-5)
-      (LAND "You can land either to the east or the west.")
+      (LAND "Você pode atracar a leste ou a oeste.")
       (WEST TO WHITE-CLIFFS-SOUTH)
       (EAST TO SANDY-BEACH)
       (ACTION RIVR4-ROOM)
@@ -2291,10 +2304,10 @@ area of beach can also be seen below the cliffs on the west shore.")
 <ROOM RIVER-5	;"was RIVR5"
       (IN ROOMS)
       (LDESC
-"The sound of rushing water is nearly unbearable here. On the east
-shore is a large landing area.")
-      (DESC "Frigid River")
-      (UP "You cannot go upstream due to strong currents.")
+"Aqui o barulho da água em turbilhão é quase insuportável. Na margem
+leste há uma área grande para desembarque.")
+      (DESC "Rio Frígido")
+      (UP "As correntes fortes não deixam você subir o rio.")
       (EAST TO SHORE)
       (LAND TO SHORE)
       (FLAGS NONLANDBIT SACREDBIT ONBIT)
@@ -2303,10 +2316,10 @@ shore is a large landing area.")
 <ROOM SHORE	;"was FANTE"
       (IN ROOMS)
       (LDESC
-"You are on the east shore of the river. The water here seems somewhat
-treacherous. A path travels from north to south here, the south end
-quickly turning around a sharp corner.")
-      (DESC "Shore")
+"Você está na margem leste do rio. Aqui a água parece um tanto
+traiçoeira. Uma trilha vai de norte a sul, e a ponta sul logo dobra uma
+curva fechada.")
+      (DESC "Margem")
       (NORTH TO SANDY-BEACH)
       (SOUTH TO ARAGAIN-FALLS)
       (FLAGS RLANDBIT SACREDBIT ONBIT)
@@ -2316,10 +2329,10 @@ quickly turning around a sharp corner.")
       (IN ROOMS)
       (LDESC
 
-"You are on a large sandy beach on the east shore of the river, which is
-flowing quickly by. A path runs beside the river to the south here, and
-a passage is partially buried in sand to the northeast.")
-      (DESC "Sandy Beach")
+"Você está numa grande praia de areia na margem leste do rio, que passa
+depressa. Uma trilha acompanha o rio para o sul, e a nordeste há uma
+passagem parcialmente soterrada pela areia.")
+      (DESC "Praia de Areia")
       (NE TO SANDY-CAVE)
       (SOUTH TO SHORE)
       (FLAGS RLANDBIT SACREDBIT)
@@ -2328,8 +2341,8 @@ a passage is partially buried in sand to the northeast.")
 <ROOM SANDY-CAVE	;"was TCAVE"
       (IN ROOMS)
       (LDESC
-"This is a sand-filled cave whose exit is to the southwest.")
-      (DESC "Sandy Cave")
+"Esta é uma caverna cheia de areia, com a saída a sudoeste.")
+      (DESC "Caverna de Areia")
       (SW TO SANDY-BEACH)
       (FLAGS RLANDBIT)>
 
