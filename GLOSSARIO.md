@@ -166,4 +166,6 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | surrounding wall / granite wall / set of teeth | paredes ao redor (f, pl) / parede de granito (f) / dentes (m, pl) |
 | crack / ramp / crawlway | fenda (f) / rampa (f) / túnel baixo (m) |
 | piece of paper / worthless piece of canvas / paint | pedaço de papel (m) / pedaço de tela sem valor (m) / tinta (f) |
-| group of tool chests / leak / sluice gates | caixas de ferramentas (f, pl) / vazamento (m) / comportas (f, pl) || sand / white cliffs / all-purpose gunk | areia (f; "um pouco de areia") / penhascos brancos (m, pl) / gosma multiuso (f) || FCD#3 (sigla da barragem) | BCE#3 |
+| group of tool chests / leak / sluice gates | caixas de ferramentas (f, pl) / vazamento (m) / comportas (f, pl) |
+| sand / white cliffs / all-purpose gunk | areia (f; "um pouco de areia") / penhascos brancos (m, pl) / gosma multiuso (f) |
+| FCD#3 (sigla da barragem) | BCE#3 |
