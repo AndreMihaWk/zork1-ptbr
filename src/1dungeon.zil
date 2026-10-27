@@ -357,12 +357,13 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT CHALICE
 	(IN TREASURE-ROOM)
-	(SYNONYM CHALICE CUP SILVER TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE SILVER ENGRAVINGS) ;"engravings exists..."
-	(DESC "chalice")
+	(SYNONYM CHALICE CUP SILVER TREASURE TREASURES TESOURO TESOUROS CALICE
+		 TACA PRATA)
+	(ADJECTIVE SILVER ENGRAVINGS PRATA GRAVADO) ;"engravings exists..."
+	(DESC "cálice")
 	(FLAGS TAKEBIT TRYTAKEBIT CONTBIT)
 	(ACTION CHALICE-FCN)
-	(LDESC "There is a silver chalice, intricately engraved, here.")
+	(LDESC "Há um cálice de prata, ricamente gravado, aqui.")
 	(CAPACITY 5)
 	(SIZE 10)
 	(VALUE 10)
@@ -390,9 +391,10 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT CYCLOPS
 	(IN CYCLOPS-ROOM)
-	(SYNONYM CYCLOPS MONSTER EYE)
-	(ADJECTIVE HUNGRY GIANT)
-	(DESC "cyclops")
+	(SYNONYM CYCLOPS MONSTER EYE CICLOPE MONSTRO OLHO GIGANTE)
+	(ADJECTIVE HUNGRY GIANT FAMINTO GIGANTE CICLOPE)
+	;"PT: CICLOPE também é adjetivo, para olho do ciclope"
+	(DESC "ciclope")
 	(FLAGS ACTORBIT NDESCBIT TRYTAKEBIT)
 	(ACTION CYCLOPS-FCN)
 	(STRENGTH 10000)>
@@ -520,27 +522,28 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT BONES
 	(IN MAZE-5)
-	(SYNONYM BONES SKELETON BODY)
-	(DESC "skeleton")
+	(SYNONYM BONES SKELETON BODY ESQUELETO OSSOS OSSADA CORPO RESTOS)
+	(DESC "esqueleto")
 	(FLAGS TRYTAKEBIT NDESCBIT)
 	(ACTION SKELETON)>
 
 <OBJECT BURNED-OUT-LANTERN
 	(IN MAZE-5)
-	(SYNONYM LANTERN LAMP)
-	(ADJECTIVE RUSTY BURNED DEAD USELESS)
-	(DESC "burned-out lantern")
-	(FLAGS TAKEBIT)
-	(FDESC "The deceased adventurer's useless lantern is here.")
+	(SYNONYM LANTERN LAMP LANTERNA LAMPADA LAMPIAO)
+	(ADJECTIVE RUSTY BURNED DEAD USELESS QUEIMADA ENFERRUJA INUTIL VELHA)
+	(DESC "lanterna queimada")
+	(FLAGS TAKEBIT FEMBIT)
+	(FDESC "A lanterna inútil do falecido aventureiro está aqui.")
 	(SIZE 20)>
 
 <OBJECT BAG-OF-COINS
 	(IN MAZE-5)
-	(SYNONYM BAG COINS TREASURE TREASURES TESOURO TESOUROS)
-	(ADJECTIVE OLD LEATHER)
-	(DESC "leather bag of coins")
+	(SYNONYM BAG COINS TREASURE TREASURES TESOURO TESOUROS SACO MOEDAS MOEDA)
+	(ADJECTIVE OLD LEATHER COURO VELHO MOEDAS)
+	;"PT: saco de couro com moedas; saco de moedas e moedas também valem"
+	(DESC "saco de couro com moedas")
 	(FLAGS TAKEBIT)
-	(LDESC "An old leather bag, bulging with coins, is here.")
+	(LDESC "Há aqui um velho saco de couro, estufado de moedas.")
 	(ACTION BAG-OF-COINS-F)
 	(SIZE 15)
 	(VALUE 10)
@@ -817,12 +820,12 @@ Zorkers were obscure." )>
 
 <OBJECT RUSTY-KNIFE
 	(IN MAZE-5)
-	(SYNONYM KNIVES KNIFE)
-	(ADJECTIVE RUSTY)
-	(DESC "rusty knife")
-	(FLAGS TAKEBIT TRYTAKEBIT WEAPONBIT TOOLBIT)
+	(SYNONYM KNIVES KNIFE FACA FACAS)
+	(ADJECTIVE RUSTY ENFERRUJA)
+	(DESC "faca enferrujada")
+	(FLAGS TAKEBIT TRYTAKEBIT WEAPONBIT TOOLBIT FEMBIT)
 	(ACTION RUSTY-KNIFE-FCN)
-	(FDESC "Beside the skeleton is a rusty knife.")
+	(FDESC "Ao lado do esqueleto há uma faca enferrujada.")
 	(SIZE 20)>
 
 <OBJECT SAND
@@ -851,10 +854,10 @@ Zorkers were obscure." )>
 
 <OBJECT KEYS
 	(IN MAZE-5)
-	(SYNONYM KEY)
-	(ADJECTIVE SKELETON)
-	(DESC "skeleton key")
-	(FLAGS TAKEBIT TOOLBIT)
+	(SYNONYM KEY CHAVE CHAVES)
+	(ADJECTIVE SKELETON MESTRA)
+	(DESC "chave mestra")
+	(FLAGS TAKEBIT TOOLBIT FEMBIT)
 	(SIZE 10)>
 
 <OBJECT SHOVEL
@@ -892,17 +895,19 @@ Zorkers were obscure." )>
 
 <OBJECT LARGE-BAG
 	(IN THIEF)
-	(SYNONYM BAG)
-	(ADJECTIVE LARGE THIEFS)
-	(DESC "large bag")
+	(SYNONYM BAG SACO SACOLA)
+	(ADJECTIVE LARGE THIEFS GRANDE LADRAO)
+	;"PT: LADRAO também é adjetivo (saco do ladrão, estilete do ladrão).
+	  Fora o saco e o estilete, o que está com o ladrão fica invisível."
+	(DESC "saco grande")
 	(ACTION LARGE-BAG-F)
-	(FLAGS TRYTAKEBIT NDESCBIT)>  
+	(FLAGS TRYTAKEBIT NDESCBIT)>
 
 <OBJECT STILETTO
 	(IN THIEF)
-	(SYNONYM STILETTO)
-	(ADJECTIVE VICIOUS)
-	(DESC "stiletto")
+	(SYNONYM STILETTO ESTILETE)
+	(ADJECTIVE VICIOUS CRUEL LETAL LADRAO)
+	(DESC "estilete")
 	(ACTION STILETTO-FUNCTION)
 	(FLAGS WEAPONBIT TRYTAKEBIT TAKEBIT NDESCBIT)
 	(SIZE 10)>
@@ -984,14 +989,15 @@ Aviso:|
 
 <OBJECT THIEF
 	(IN ROUND-ROOM)
-	(SYNONYM THIEF ROBBER MAN PERSON)
-	(ADJECTIVE SHADY SUSPICIOUS SEEDY)
-	(DESC "thief")
+	(SYNONYM THIEF ROBBER MAN PERSON LADRAO HOMEM PESSOA SUJEITO INDIVIDUO
+		 BANDIDO)
+	(ADJECTIVE SHADY SUSPICIOUS SEEDY SUSPEITO)
+	(DESC "ladrão")
 	(FLAGS ACTORBIT INVISIBLE CONTBIT OPENBIT TRYTAKEBIT)
 	(ACTION ROBBER-FUNCTION)
 	(LDESC
-"There is a suspicious-looking individual, holding a large bag, leaning
-against one wall. He is armed with a deadly stiletto.")
+"Há um indivíduo de aparência suspeita encostado numa parede, segurando
+um saco grande. Ele está armado com um estilete letal.")
 	(STRENGTH 5)>
 
 <OBJECT PEDESTAL
@@ -1565,8 +1571,9 @@ consiga descer de volta.")
 
 <ROOM MAZE-1
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (EAST TO TROLL-ROOM)
       (NORTH TO MAZE-1)
       (SOUTH TO MAZE-2)
@@ -1575,8 +1582,9 @@ consiga descer de volta.")
 
 <ROOM MAZE-2
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (SOUTH TO MAZE-1)
       (DOWN PER MAZE-DIODES) ;"to MAZE-4"
       (EAST TO MAZE-3)
@@ -1584,8 +1592,9 @@ consiga descer de volta.")
 
 <ROOM MAZE-3
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (WEST TO MAZE-2)
       (NORTH TO MAZE-4)
       (UP TO MAZE-5)
@@ -1593,8 +1602,9 @@ consiga descer de volta.")
 
 <ROOM MAZE-4
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (WEST TO MAZE-3)
       (NORTH TO MAZE-1)
       (EAST TO DEAD-END-1)
@@ -1602,16 +1612,18 @@ consiga descer de volta.")
 
 <ROOM DEAD-END-1
       (IN ROOMS)
-      (DESC "Dead End")
-      (LDESC "You have come to a dead end in the maze.")
+      (DESC "Beco sem Saída")
+      (LDESC "Você chegou a um beco sem saída no labirinto.")
       (SOUTH TO MAZE-4)
       (FLAGS RLANDBIT MAZEBIT)>
 
 <ROOM MAZE-5
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.
-A skeleton, probably the remains of a luckless adventurer, lies here.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
+Aqui jaz um esqueleto, provavelmente o que restou de um aventureiro sem
+sorte.")
+      (DESC "Labirinto")
       (EAST TO DEAD-END-2)
       (NORTH TO MAZE-3)
       (SW TO MAZE-6)
@@ -1619,15 +1631,16 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM DEAD-END-2
       (IN ROOMS)
-      (DESC "Dead End")
-      (LDESC "You have come to a dead end in the maze.")
+      (DESC "Beco sem Saída")
+      (LDESC "Você chegou a um beco sem saída no labirinto.")
       (WEST TO MAZE-5)
       (FLAGS RLANDBIT MAZEBIT)>
 
 <ROOM MAZE-6
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (DOWN TO MAZE-5)
       (EAST TO MAZE-7)
       (WEST TO MAZE-6)
@@ -1636,8 +1649,9 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM MAZE-7
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (UP TO MAZE-14)
       (WEST TO MAZE-6)
       (DOWN PER MAZE-DIODES) ;"to DEAD-END-1"
@@ -1647,8 +1661,9 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM MAZE-8
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (NE TO MAZE-7)
       (WEST TO MAZE-8)
       (SE TO DEAD-END-3)
@@ -1656,15 +1671,16 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM DEAD-END-3
       (IN ROOMS)
-      (DESC "Dead End")
-      (LDESC "You have come to a dead end in the maze.")
+      (DESC "Beco sem Saída")
+      (LDESC "Você chegou a um beco sem saída no labirinto.")
       (NORTH TO MAZE-8)
       (FLAGS RLANDBIT MAZEBIT)>
 
 <ROOM MAZE-9
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (NORTH TO MAZE-6)
       (DOWN PER MAZE-DIODES) ;"to MAZE-11"
       (EAST TO MAZE-10)
@@ -1675,8 +1691,9 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM MAZE-10
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (EAST TO MAZE-9)
       (WEST TO MAZE-13)
       (UP TO MAZE-11)
@@ -1684,8 +1701,9 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM MAZE-11
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
        (NE TO GRATING-ROOM)
       (DOWN TO MAZE-10)
       (NW TO MAZE-13)
@@ -1694,18 +1712,19 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM GRATING-ROOM
       (IN ROOMS)
-      (DESC "Grating Room")
+      (DESC "Sala da Grade")
       (SW TO MAZE-11)
       (UP TO GRATING-CLEARING
-       IF GRATE IS OPEN ELSE "The grating is closed.")
+       IF GRATE IS OPEN ELSE "A grade está fechada.")
       (ACTION MAZE-11-FCN)
       (GLOBAL GRATE)
       (FLAGS RLANDBIT)>
 
 <ROOM MAZE-12
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (DOWN PER MAZE-DIODES) ;"to MAZE-5"
       (SW TO MAZE-11)
       (EAST TO MAZE-13)
@@ -1715,15 +1734,16 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM DEAD-END-4
       (IN ROOMS)
-      (DESC "Dead End")
-      (LDESC "You have come to a dead end in the maze.")
+      (DESC "Beco sem Saída")
+      (LDESC "Você chegou a um beco sem saída no labirinto.")
       (SOUTH TO MAZE-12)
       (FLAGS RLANDBIT MAZEBIT)>
 
 <ROOM MAZE-13
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (EAST TO MAZE-9)
       (DOWN TO MAZE-12)
       (SOUTH TO MAZE-10)
@@ -1732,8 +1752,9 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM MAZE-14
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
        (WEST TO MAZE-15)
       (NW TO MAZE-14)
       (NE TO MAZE-7)
@@ -1742,8 +1763,9 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM MAZE-15
       (IN ROOMS)
-      (LDESC "This is part of a maze of twisty little passages, all alike.")
-      (DESC "Maze")
+      (LDESC
+"Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.")
+      (DESC "Labirinto")
       (WEST TO MAZE-14)
       (SOUTH TO MAZE-7)
       (SE TO CYCLOPS-ROOM)
@@ -1755,12 +1777,12 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 
 <ROOM CYCLOPS-ROOM
       (IN ROOMS)
-      (DESC "Cyclops Room")
+      (DESC "Sala do Ciclope")
       (NW TO MAZE-15)
       (EAST TO STRANGE-PASSAGE
-       IF MAGIC-FLAG ELSE "The east wall is solid rock.")
+       IF MAGIC-FLAG ELSE "A parede leste é de rocha maciça.")
       (UP TO TREASURE-ROOM IF CYCLOPS-FLAG
-        ELSE "The cyclops doesn't look like he'll let you past.")
+        ELSE "O ciclope não parece disposto a deixar você passar.")
       (ACTION CYCLOPS-ROOM-FCN)
       (FLAGS RLANDBIT)
       (GLOBAL STAIRS)>
@@ -1768,10 +1790,10 @@ A skeleton, probably the remains of a luckless adventurer, lies here.")
 <ROOM STRANGE-PASSAGE
       (IN ROOMS)
       (LDESC
-"This is a long passage. To the west is one entrance. On the
-east there is an old wooden door, with a large opening in it (about
-cyclops sized).")
-      (DESC "Strange Passage")
+"Esta é uma passagem comprida. A oeste fica uma das entradas. A leste há
+uma velha porta de madeira, com uma grande abertura (mais ou menos do
+tamanho de um ciclope).")
+      (DESC "Passagem Estranha")
       (WEST TO CYCLOPS-ROOM)
       (IN TO CYCLOPS-ROOM)
       (EAST TO LIVING-ROOM)
@@ -1780,10 +1802,10 @@ cyclops sized).")
 <ROOM TREASURE-ROOM
       (IN ROOMS)
       (LDESC
-"This is a large room, whose east wall is solid granite. A number
-of discarded bags, which crumble at your touch, are scattered about
-on the floor. There is an exit down a staircase.")
-      (DESC "Treasure Room")
+"Esta é uma sala grande, cuja parede leste é de granito maciço. Vários
+sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão.
+Há uma saída por uma escada que desce.")
+      (DESC "Sala do Tesouro")
       (DOWN TO CYCLOPS-ROOM)
       (ACTION TREASURE-ROOM-FCN)
       (FLAGS RLANDBIT ;"CANT-HAVE-ONBIT")

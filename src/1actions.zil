@@ -835,16 +835,17 @@ Uma trilha leva para o sul.">
 		<FCLEAR ,GRATE ,INVISIBLE>)
 	       (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are in a small room near the maze. There are twisty passages
-in the immediate vicinity." CR>
+"Você está em uma pequena sala perto do labirinto. Há passagens tortuosas
+logo ali ao lado." CR>
 		<COND (<FSET? ,GRATE ,OPENBIT>
 		       <TELL
- "Above you is an open grating with sunlight pouring in.">)
+ "Acima de você há uma grade aberta, por onde entra a luz do sol.">)
 		      (,GRUNLOCK
-		       <TELL "Above you is a grating.">)
+		       <TELL "Acima de você há uma grade.">)
 		      (T
 		       <TELL
- "Above you is a grating locked with a skull-and-crossbones lock.">)>
+ "Acima de você há uma grade trancada com uma fechadura de caveira e ossos
+cruzados.">)>
 		<CRLF>)>>
 
 <ROUTINE GRATE-FUNCTION ()
@@ -898,8 +899,8 @@ in the immediate vicinity." CR>
 
 <ROUTINE MAZE-DIODES ()
 	 <TELL
-"You won't be able to get back up to the tunnel you are going through
-when it gets to the next room." CR CR>
+"Você não vai conseguir voltar a subir por este túnel quando ele chegar à
+próxima sala." CR CR>
 	 <COND (<EQUAL? ,HERE ,MAZE-2> ,MAZE-4)
 	       (<EQUAL? ,HERE ,MAZE-7> ,DEAD-END-1)
 	       (<EQUAL? ,HERE ,MAZE-9> ,MAZE-11)
@@ -909,8 +910,8 @@ when it gets to the next room." CR CR>
 	<COND (<VERB? TAKE>
 	       <AND <IN? ,SWORD ,WINNER>
 		    <TELL
-"As you touch the rusty knife, your sword gives a single pulse of blinding
-blue light." CR>>
+"Quando você toca a faca enferrujada, sua espada emite um único pulso de
+luz azul ofuscante." CR>>
 	       <>)
 	      (<OR <AND <EQUAL? ,PRSI ,RUSTY-KNIFE>
 			<VERB? ATTACK>>
@@ -919,10 +920,10 @@ blue light." CR>>
 			,PRSI>>
 	       <REMOVE-CAREFULLY ,RUSTY-KNIFE>
 	       <JIGS-UP
-"As the knife approaches its victim, your mind is submerged by an
-overmastering will. Slowly, your hand turns, until the rusty blade
-is an inch from your neck. The knife seems to sing as it savagely
-slits your throat.">)>>
+"Quando a faca se aproxima da vítima, sua mente é dominada por uma vontade
+irresistível. Devagar, sua mão gira, até a lâmina enferrujada ficar a dois
+dedos do seu pescoço. A faca parece cantar enquanto corta sua garganta
+com selvageria.">)>>
 
 <ROUTINE KNIFE-F ()
 	 <COND (<VERB? TAKE>
@@ -932,10 +933,10 @@ slits your throat.">)>>
 <ROUTINE SKELETON ()
 	 <COND (<VERB? TAKE RUB MOVE PUSH RAISE LOWER ATTACK KICK KISS>
 		<TELL
-"A ghost appears in the room and is appalled at your desecration of
-the remains of a fellow adventurer. He casts a curse on your valuables
-and banishes them to the Land of the Living Dead. The ghost leaves,
-muttering obscenities." CR>
+"Um fantasma aparece na sala, horrorizado com a sua profanação dos restos
+mortais de um colega aventureiro. Ele lança uma maldição sobre os seus
+objetos de valor e os bane para a Terra dos Mortos. O fantasma vai embora,
+resmungando obscenidades." CR>
 	 	<ROB ,HERE ,LAND-OF-LIVING-DEAD 100>
 	 	<ROB ,ADVENTURER ,LAND-OF-LIVING-DEAD>
 	 	T)>>
@@ -1518,21 +1519,21 @@ atravessar para o outro lado.">)
 	<SET COUNT ,CYCLOWRATH>
 	<COND (<EQUAL? ,WINNER ,CYCLOPS>
 	       <COND (,CYCLOPS-FLAG
-		      <TELL "No use talking to him. He's fast asleep." CR>)
+		      <TELL "Não adianta falar com ele. Ele está dormindo pesado." CR>)
 		     (<VERB? ODYSSEUS>
 		      <SETG WINNER ,ADVENTURER>
 		      <PERFORM ,V?ODYSSEUS>
 		      <RTRUE>)
 		     (ELSE
 		      <TELL
-"The cyclops prefers eating to making conversation." CR>)>)
+"O ciclope prefere comer a conversar." CR>)>)
 	      (,CYCLOPS-FLAG
 	       <COND (<VERB? EXAMINE>
 		      <TELL
-"The cyclops is sleeping like a baby, albeit a very ugly one." CR>)
+"O ciclope está dormindo como um bebê, ainda que um bebê muito feio." CR>)
 		     (<VERB? ALARM KICK ATTACK BURN MUNG>
 		      <TELL
-"The cyclops yawns and stares at the thing that woke him up." CR>
+"O ciclope boceja e encara a coisa que o acordou." CR>
 		      <SETG CYCLOPS-FLAG <>>
 		      <FSET ,CYCLOPS ,FIGHTBIT>
 		      <COND (<L? .COUNT 0>
@@ -1541,15 +1542,15 @@ atravessar para o outro lado.">)
 			     <SETG CYCLOWRATH .COUNT>)>)>)
 	      (<VERB? EXAMINE>
 	       <TELL
-"A hungry cyclops is standing at the foot of the stairs." CR>)
+"Um ciclope faminto está parado ao pé da escada." CR>)
 	      (<AND <VERB? GIVE> <EQUAL? ,PRSI ,CYCLOPS>>
 	       <COND (<EQUAL? ,PRSO ,LUNCH>
 		      <COND (<NOT <L? .COUNT 0>>
 			     <REMOVE-CAREFULLY ,LUNCH>
 			     <TELL
-"The cyclops says \"Mmm Mmm. I love hot peppers! But oh, could I use
-a drink. Perhaps I could drink the blood of that thing.\"  From the
-gleam in his eye, it could be surmised that you are \"that thing\"." CR>
+"O ciclope diz: \"Hum, hum. Adoro pimenta! Mas, ai, que vontade de beber
+alguma coisa. Talvez eu possa beber o sangue daquela coisa ali.\" Pelo
+brilho no olho dele, dá para deduzir que \"aquela coisa ali\" é você." CR>
 			     <SETG CYCLOWRATH <MIN -1 <- .COUNT>>>)>
 		      <ENABLE <QUEUE I-CYCLOPS -1>>)
 		     (<OR <EQUAL? ,PRSO ,WATER>
@@ -1561,39 +1562,39 @@ gleam in his eye, it could be surmised that you are \"that thing\"." CR>
 			     <FSET ,BOTTLE ,OPENBIT>
 			     <FCLEAR ,CYCLOPS ,FIGHTBIT>
 			     <TELL
-"The cyclops takes the bottle, checks that it's open, and drinks the water.
-A moment later, he lets out a yawn that nearly blows you over, and then
-falls fast asleep (what did you put in that drink, anyway?)." CR>
+"O ciclope pega a garrafa, confere se está aberta e bebe a água. Um
+instante depois, solta um bocejo que quase derruba você e cai num sono
+profundo (afinal, o que você pôs nessa bebida?)." CR>
 			     <SETG CYCLOPS-FLAG T>)
 			    (T
 			     <TELL
-"The cyclops apparently is not thirsty and refuses your generous offer." CR>)>)
+"Pelo jeito, o ciclope não está com sede e recusa a sua generosa oferta." CR>)>)
 		     (<EQUAL? ,PRSO ,GARLIC>
 		      <TELL
-"The cyclops may be hungry, but there is a limit." CR>)
+"O ciclope pode estar com fome, mas tudo tem limite." CR>)
 		     (T
 		      <TELL
-"The cyclops is not so stupid as to eat THAT!" CR>)>)
+"O ciclope não é tão burro a ponto de comer ISSO!" CR>)>)
 	      (<VERB? THROW ATTACK MUNG>
 	       <ENABLE <QUEUE I-CYCLOPS -1>>
 	       <COND (<VERB? MUNG>
 		      <TELL
-"\"Do you think I'm as stupid as my father was?\", he says, dodging." CR>)
+"\"Você acha que eu sou tão burro quanto o meu pai?\", diz ele, desviando." CR>)
 		     (T
 		      <TELL
-"The cyclops shrugs but otherwise ignores your pitiful attempt." CR>
+"O ciclope dá de ombros, mas fora isso ignora a sua tentativa patética." CR>
 		      <COND (<VERB? THROW>
 			     <MOVE ,PRSO ,HERE>)>
 		      <RTRUE>)>)
 	      (<VERB? TAKE>
 	       <TELL
-"The cyclops doesn't take kindly to being grabbed." CR>)
+"O ciclope não gosta nem um pouco de ser agarrado." CR>)
 	      (<VERB? TIE>
 	       <TELL
-"You cannot tie the cyclops, though he is fit to be tied." CR>)
+"Você não consegue amarrar o ciclope, embora ele seja doido de amarrar." CR>)
 	      (<VERB? LISTEN>
 	       <TELL
-"You can hear his stomach rumbling." CR>)>>
+"Dá para ouvir o estômago dele roncando." CR>)>>
 
 <ROUTINE I-CYCLOPS ()
 	 <COND (<OR ,CYCLOPS-FLAG ,DEAD> <RTRUE>)
@@ -1603,9 +1604,9 @@ falls fast asleep (what did you put in that drink, anyway?)." CR>
 		<COND (<G? <ABS ,CYCLOWRATH> 5>
 		       <DISABLE <INT I-CYCLOPS>>
 		       <JIGS-UP
-"The cyclops, tired of all of your games and trickery, grabs you firmly.
-As he licks his chops, he says \"Mmm. Just like Mom used to make 'em.\"
-It's nice to be appreciated.">)
+"O ciclope, cansado de todos os seus joguinhos e truques, agarra você com
+firmeza. Lambendo os beiços, ele diz: \"Hum. Igualzinho ao que a mamãe
+fazia.\" É bom ser apreciado.">)
 		      (T
 		       <COND (<L? ,CYCLOWRATH 0>
 			      <SETG CYCLOWRATH <- ,CYCLOWRATH 1>>)
@@ -1618,40 +1619,40 @@ It's nice to be appreciated.">)
 <ROUTINE CYCLOPS-ROOM-FCN (RARG)
 	<COND (<EQUAL? .RARG ,M-LOOK>
 	       <TELL
-"This room has an exit on the northwest, and a staircase leading up." CR>
+"Esta sala tem uma saída a noroeste e uma escada que sobe." CR>
 	       <COND (<AND ,CYCLOPS-FLAG <NOT ,MAGIC-FLAG>>
 		      <TELL
-"The cyclops is sleeping blissfully at the foot of the stairs." CR>)
+"O ciclope dorme feliz da vida ao pé da escada." CR>)
 		     (,MAGIC-FLAG
 		      <TELL
-"The east wall, previously solid, now has a cyclops-sized opening in it." CR>)
+"A parede leste, antes maciça, agora tem uma abertura do tamanho de um
+ciclope." CR>)
 		     (<0? ,CYCLOWRATH>
 		      <TELL
-"A cyclops, who looks prepared to eat horses (much less mere
-adventurers), blocks the staircase. From his state of health, and
-the bloodstains on the walls, you gather that he is not very
-friendly, though he likes people." CR>)
+"Um ciclope, com cara de quem come até cavalos (que dirá meros
+aventureiros), bloqueia a escada. Pelo estado de saúde dele e pelas
+manchas de sangue nas paredes, você conclui que ele não é muito
+simpático, embora goste muito de gente." CR>)
 		     (<G? ,CYCLOWRATH 0>
 		      <TELL
-"The cyclops is standing in the corner, eyeing you closely. I don't
-think he likes you very much. He looks extremely hungry, even for a
-cyclops." CR>)
+"O ciclope está parado no canto, de olho em você. Acho que ele não vai
+muito com a sua cara. Ele parece faminto demais, até para um ciclope." CR>)
 		     (<L? ,CYCLOWRATH 0>
 		      <TELL
-"The cyclops, having eaten the hot peppers, appears to be gasping.
-His enflamed tongue protrudes from his man-sized mouth." CR>)>)
+"O ciclope, depois de comer a pimenta, parece estar sem fôlego. A língua
+em brasa pende para fora da boca, que é do tamanho de um homem." CR>)>)
 	      (<EQUAL? .RARG ,M-ENTER>
 	       <OR <0? ,CYCLOWRATH> <ENABLE <INT I-CYCLOPS>>>)>>
 
 <GLOBAL CYCLOMAD
 	<TABLE (PURE)
-	  "The cyclops seems somewhat agitated."
-	  "The cyclops appears to be getting more agitated."
-	  "The cyclops is moving about the room, looking for something."
-	  "The cyclops was looking for salt and pepper. No doubt they are
-condiments for his upcoming snack."
-	  "The cyclops is moving toward you in an unfriendly manner."
-	  "You have two choices: 1. Leave  2. Become dinner.">>
+	  "O ciclope parece um tanto agitado."
+	  "O ciclope parece estar ficando mais agitado."
+	  "O ciclope anda pela sala, procurando alguma coisa."
+	  "O ciclope estava procurando sal e pimenta. Sem dúvida, são os temperos
+do lanchinho que vem por aí."
+	  "O ciclope avança na sua direção, nada amigável."
+	  "Você tem duas opções: 1. Ir embora  2. Virar jantar.">>
 
 \
 
@@ -1774,9 +1775,9 @@ noroeste e sudoeste. Uma escada desce.">
 	        <COND (<IN? ,STILETTO ,THIEF>
 		       <FCLEAR ,THIEF ,INVISIBLE>
 		       <TELL
-"Someone carrying a large bag is casually leaning against one of the
-walls here. He does not speak, but it is clear from his aspect that
-the bag will be taken only over his dead body." CR>
+"Alguém carregando um saco grande está encostado, bem à vontade, numa das
+paredes daqui. Ele não diz nada, mas pela cara dele fica claro que o saco
+só sai dali por cima do cadáver dele." CR>
 		       <SETG THIEF-HERE T>
 		       <RTRUE>)
 		      ;(<IN? ,STILETTO ,WINNER>
@@ -1784,17 +1785,17 @@ the bag will be taken only over his dead body." CR>
 		       <FSET ,STILETTO ,NDESCBIT>
 		       <FCLEAR ,THIEF ,INVISIBLE>
 		       <TELL
-"You feel a light finger-touch, and turning, notice a grinning figure
-holding a large bag in one hand and a stiletto in the other.">
+"Você sente um leve toque de dedos e, ao se virar, vê uma figura sorridente
+com um saco grande numa das mãos e um estilete na outra.">
 		       <SETG THIEF-HERE T>
 		       <RTRUE>)>)
 	       (<AND .HERE?
 		     <FSET? ,THIEF ,FIGHTBIT>
 		     <NOT <WINNING? ,THIEF>>>
 		<TELL
-"Your opponent, determining discretion to be the better part of
-valor, decides to terminate this little contretemps. With a rueful
-nod of his head, he steps backward into the gloom and disappears." CR>
+"Seu adversário, concluindo que a prudência é a melhor parte da coragem,
+decide encerrar este pequeno contratempo. Com um aceno pesaroso de cabeça,
+ele recua para as sombras e desaparece." CR>
 		<FSET ,THIEF ,INVISIBLE>
 		<FCLEAR ,THIEF ,FIGHTBIT>
 		<RECOVER-STILETTO>
@@ -1803,8 +1804,8 @@ nod of his head, he steps backward into the gloom and disappears." CR>
 		<RFALSE>)
 	       (<AND .HERE? <PROB 30>>
 	        <TELL
-"The holder of the large bag just left, looking disgusted.
-Fortunately, he took nothing." CR>
+"O dono do saco grande acabou de sair, com cara de desgosto. Felizmente,
+não levou nada." CR>
 		<FSET ,THIEF ,INVISIBLE>
 		<RECOVER-STILETTO>
 	        <RTRUE>)
@@ -1817,39 +1818,39 @@ Fortunately, he took nothing." CR>
 		<SETG THIEF-HERE T>
 	        <COND (<AND .ROBBED? <NOT .HERE?>>
 		       <TELL
-"A seedy-looking individual with a large bag just wandered through
-the room. On the way through, he quietly abstracted some valuables from ">
+"Um indivíduo mal-encarado com um saco grande acabou de passar pela sala.
+No caminho, ele surrupiou discretamente alguns objetos de valor ">
 		       <COND (<EQUAL? .ROBBED? ,HERE>
-			      <TELL "the room">)
+			      <TELL "da sala">)
 			     (ELSE
-			      <TELL "your possession">)>
-		       <TELL ", mumbling something about
-\"Doing unto others before...\"" CR>
+			      <TELL "que estavam com você">)>
+		       <TELL ", resmungando algo como
+\"Faça aos outros antes que...\"" CR>
 		       <STOLE-LIGHT?>)
 		      (.HERE?
 		       <RECOVER-STILETTO>
 		       <COND (.ROBBED?
 			      <TELL
-"The thief just left, still carrying his large bag. You may
-not have noticed that he ">
+"O ladrão acabou de sair, ainda carregando o saco grande. Talvez você não
+tenha notado que, antes disso, ele ">
 			      <COND (<EQUAL? .ROBBED? ,PLAYER>
 				     <TELL
-"robbed you blind first.">)
+"depenou você.">)
 				    (T
 				     <TELL
-"appropriated the valuables in the room.">)>
+"embolsou os objetos de valor da sala.">)>
 			      <CRLF>
 			      <STOLE-LIGHT?>)
 			     (T
 			      <TELL
-"The thief, finding nothing of value, left disgusted." CR>)>
+"O ladrão, sem encontrar nada de valor, saiu desgostoso." CR>)>
 		       <FSET ,THIEF ,INVISIBLE>
 		       <SET HERE? <>>
 		       <RTRUE>)
 		      (T
 		       <TELL
-"A \"lean and hungry\" gentleman just wandered through, carrying a
-large bag. Finding nothing of value, he left disgruntled." CR>
+"Um cavalheiro \"magro e faminto\" acabou de passar por aqui, carregando um
+saco grande. Sem encontrar nada de valor, ele foi embora contrariado." CR>
 		       <RTRUE>)>)>)
 	(T
 	 <COND (.HERE?			;"Here, already announced."
@@ -1860,19 +1861,19 @@ large bag. Finding nothing of value, he left disgruntled." CR>
 			      <SET ROBBED? ,PLAYER>)>
 		       <COND (.ROBBED?
 			      <TELL
-"The thief just left, still carrying his large bag. You may
-not have noticed that he ">
+"O ladrão acabou de sair, ainda carregando o saco grande. Talvez você não
+tenha notado que, antes disso, ele ">
 			      <COND (<EQUAL? .ROBBED? ,PLAYER>
 				     <TELL
-"robbed you blind first.">)
+"depenou você.">)
 				    (T
 				     <TELL
-"appropriated the valuables in the room.">)>
+"embolsou os objetos de valor da sala.">)>
 			      <CRLF>
 			      <STOLE-LIGHT?>)
 			     (T
 			      <TELL
-"The thief, finding nothing of value, left disgusted." CR>)>
+"O ladrão, sem encontrar nada de valor, saiu desgostoso." CR>)>
 		       <FSET ,THIEF ,INVISIBLE>
 		       <SET HERE? <>>
 		       <RECOVER-STILETTO>)>)>)>
@@ -1882,7 +1883,7 @@ not have noticed that he ">
 	 <SET OLD-LIT ,LIT>
 	 <SETG LIT <LIT? ,HERE>>
 	 <COND (<AND <NOT ,LIT> .OLD-LIT>
-		<TELL "The thief seems to have left you in the dark." CR>)>
+		<TELL "Parece que o ladrão deixou você no escuro." CR>)>
 	 <RTRUE>>
 
 "SNARF STILETTO IF DROPPED IT"
@@ -1929,8 +1930,8 @@ not have noticed that he ">
 			     <NOT <FSET? .X ,INVISIBLE>>
 			     <PROB 40>>
 			<TELL
-"You hear, off in the distance, someone saying \"My, I wonder what
-this fine " D .X " is doing here.\"" CR>
+"Você ouve, ao longe, alguém dizer: \"Ora, vejam só! O que " T-UM .X
+" tão fin" T-G .X " " T-ESTA .X " fazendo aqui?\"" CR>
 			<COND (<PROB 60 80>
 			       <MOVE .X ,THIEF>
 			       <FSET .X ,TOUCHBIT>
@@ -1952,22 +1953,22 @@ this fine " D .X " is doing here.\"" CR>
 
 <ROUTINE ROBBER-FUNCTION ("OPTIONAL" (MODE <>) "AUX" (FLG <>) X N)
 	 <COND (<VERB? TELL>
-		<TELL "The thief is a strong, silent type." CR>
+		<TELL "O ladrão é do tipo forte e calado." CR>
 		<SETG P-CONT <>>)
 	       (<NOT .MODE>
 		<COND (<AND <VERB? HELLO>
 			    <EQUAL? <GETP ,THIEF ,P?LDESC> ,ROBBER-U-DESC>>
 		       <TELL
-"The thief, being temporarily incapacitated, is unable to acknowledge
-your greeting with his usual graciousness." CR>)
+"O ladrão, temporariamente fora de combate, não tem como retribuir o seu
+cumprimento com a gentileza de sempre." CR>)
 		      (<AND <EQUAL? ,PRSO ,KNIFE>
 			    <VERB? THROW>
 			    <NOT <FSET? ,THIEF ,FIGHTBIT>>>
 		       <MOVE ,PRSO ,HERE>
 		       <COND (<PROB 10 0>
 			      <TELL
-"You evidently frightened the robber, though you didn't hit him. He
-flees">
+"Pelo visto, você assustou o ladrão, embora não o tenha acertado. Ele
+foge">
 			      <REMOVE ,LARGE-BAG>
 			      <SET X <>>
 			      <COND (<IN? ,STILETTO ,THIEF>
@@ -1976,7 +1977,7 @@ flees">
 			      <COND (<FIRST? ,THIEF>
 				     <MOVE-ALL ,THIEF ,HERE>
 				     <TELL
-", but the contents of his bag fall on the floor.">)
+", mas o conteúdo do saco dele cai no chão.">)
 				    (T
 				     <TELL ".">)>
 			      <MOVE ,LARGE-BAG ,THIEF>
@@ -1985,9 +1986,9 @@ flees">
 			      <FSET ,THIEF ,INVISIBLE>)
 			     (T
 			      <TELL
-"You missed. The thief makes no attempt to take the knife, though it
-would be a fine addition to the collection in his bag. He does seem
-angered by your attempt." CR>
+"Você errou. O ladrão nem tenta pegar a faca, embora ela fosse um belo
+acréscimo à coleção do saco dele. Mas ele parece irritado com a sua
+tentativa." CR>
 			      <FSET ,THIEF ,FIGHTBIT>)>)
 		      (<AND <VERB? THROW GIVE>
 			    ,PRSO
@@ -2001,33 +2002,32 @@ angered by your attempt." CR>
 			      <RECOVER-STILETTO>
 			      <PUTP ,THIEF ,P?LDESC ,ROBBER-C-DESC>
 			      <TELL
-"Your proposed victim suddenly recovers consciousness." CR>)>
+"Sua pretensa vítima recobra os sentidos de repente." CR>)>
 		       <MOVE ,PRSO ,THIEF>
 		       <COND ;(<EQUAL? ,PRSO ,STILETTO>
 			      <TELL
-"The thief takes his stiletto and salutes you with a small nod of
-his head." CR>)
+"O ladrão pega o estilete e cumprimenta você com um leve aceno de
+cabeça." CR>)
 			     (<G? <GETP ,PRSO ,P?TVALUE> 0>
 			      <SETG THIEF-ENGROSSED T>
 			      <TELL
-"The thief is taken aback by your unexpected generosity, but accepts
-the " D ,PRSO " and stops to admire its beauty." CR>)
+"O ladrão fica surpreso com a sua generosidade inesperada, mas aceita "
+T-O ,PRSO " e se detém para admirar a beleza d" T-ELE ,PRSO "." CR>)
 			     (T
 			      <TELL
-"The thief places the " D ,PRSO " in his bag and thanks
-you politely." CR>)>)
+"O ladrão coloca " T-O ,PRSO " no saco e agradece educadamente." CR>)>)
 		      (<VERB? TAKE>
 		       <TELL
-"Once you got him, what would you do with him?" CR>)
+"E depois de pegá-lo, o que você faria com ele?" CR>)
 		      (<VERB? EXAMINE LOOK-INSIDE>
 		       <TELL
-"The thief is a slippery character with beady eyes that flit back
-and forth. He carries, along with an unmistakable arrogance, a large bag
-over his shoulder and a vicious stiletto, whose blade is aimed
-menacingly in your direction. I'd watch out if I were you." CR>)
+"O ladrão é um sujeito escorregadio, de olhinhos miúdos que correm de um
+lado para o outro. Ele carrega, além de uma arrogância inconfundível, um
+saco grande no ombro e um estilete cruel, com a lâmina apontada de forma
+ameaçadora na sua direção. Se eu fosse você, tomaria cuidado." CR>)
 		      (<VERB? LISTEN>
 		       <TELL
-"The thief says nothing, as you have not been formally introduced." CR>)>)
+"O ladrão não diz nada, já que vocês ainda não foram apresentados." CR>)>)
 	       (<EQUAL? .MODE ,F-BUSY?>
 		<COND (<IN? ,STILETTO ,THIEF> <>)
 		      (<IN? ,STILETTO <LOC ,THIEF>>
@@ -2035,8 +2035,8 @@ menacingly in your direction. I'd watch out if I were you." CR>)
 		       <FSET ,STILETTO ,NDESCBIT>
 		       <COND (<IN? ,THIEF ,HERE>
 			      <TELL
-"The robber, somewhat surprised at this turn of events, nimbly
-retrieves his stiletto." CR>)>
+"O ladrão, um tanto surpreso com essa reviravolta, recupera o estilete
+com agilidade." CR>)>
 		       T)>)
 	       (<EQUAL? .MODE ,F-DEAD>
 		<MOVE ,STILETTO ,HERE>
@@ -2047,24 +2047,24 @@ retrieves his stiletto." CR>)>
 		       <REPEAT ()
 			       <COND
 				(<NOT .X>
-				 <TELL "The chalice is now safe to take." CR>
+				 <TELL "Agora já dá para pegar o cálice sem perigo." CR>
 				 <RETURN>)
 				(<NOT <EQUAL? .X ,CHALICE ,THIEF ,ADVENTURER>>
 				 <FCLEAR .X ,INVISIBLE>
 				 <COND (<NOT .FLG>
 					<SET FLG T>
 					<TELL
-"As the thief dies, the power of his magic decreases, and his
-treasures reappear:" CR>)>
-				 <TELL "  A " D .X>
+"Quando o ladrão morre, o poder da magia dele se enfraquece, e os tesouros
+dele reaparecem:" CR>)>
+				 <TELL "  " T-CUM .X>
 				 <COND (<AND <FIRST? .X>
 					     <SEE-INSIDE? .X>>
-					<TELL ", with ">
+					<TELL ", com ">
 					<PRINT-CONTENTS .X>)>
 				 <CRLF>)>
 			       <SET X <NEXT? .X>>>)
 		      (.X
-		       <TELL "His booty remains." CR>)>
+		       <TELL "O espólio dele fica para trás." CR>)>
 		<DISABLE <INT I-THIEF>>)
 	       (<EQUAL? .MODE ,F-FIRST?>
 		<COND (<AND ,THIEF-HERE
@@ -2083,39 +2083,38 @@ treasures reappear:" CR>)>
 		<COND (<EQUAL? <LOC ,THIEF> ,HERE>
 		       <FSET ,THIEF ,FIGHTBIT>
 		       <TELL
-"The robber revives, briefly feigning continued unconsciousness, and,
-when he sees his moment, scrambles away from you." CR>)>
+"O ladrão volta a si, finge por um instante que continua desacordado e,
+quando vê a chance, foge de você às pressas." CR>)>
 		<ENABLE <INT I-THIEF>>
 		<PUTP ,THIEF ,P?LDESC ,ROBBER-C-DESC>
 		<RECOVER-STILETTO>)>>
 
 <GLOBAL ROBBER-C-DESC
-"There is a suspicious-looking individual, holding a bag, leaning
-against one wall. He is armed with a vicious-looking stiletto.">
+"Há um indivíduo de aparência suspeita encostado numa parede, segurando
+um saco. Ele está armado com um estilete de aspecto cruel.">
 
 <GLOBAL ROBBER-U-DESC
-"There is a suspicious-looking individual lying unconscious on the
-ground.">
+"Há um indivíduo de aparência suspeita caído no chão, desacordado.">
 
 <ROUTINE LARGE-BAG-F ()
 	 <COND (<VERB? TAKE>
 		<COND (<EQUAL? <GETP ,THIEF ,P?LDESC> ,ROBBER-U-DESC>
 		       <TELL
-"Sadly for you, the robber collapsed on top of the bag. Trying to take
-it would wake him." CR>)
+"Azar o seu: o ladrão desabou em cima do saco. Tentar pegá-lo iria
+acordar o dono." CR>)
 		      (T
 		       <TELL
-"The bag will be taken over his dead body." CR>)>)
+"O saco só sai daqui por cima do cadáver dele." CR>)>)
 	       (<AND <VERB? PUT>
 		     <EQUAL? ,PRSI ,LARGE-BAG>>
-		<TELL "It would be a good trick." CR>)
+		<TELL "Seria um belo truque." CR>)
 	       (<VERB? OPEN CLOSE>
 		<TELL
-"Getting close enough would be a good trick." CR>)
+"Chegar perto o bastante já seria um belo truque." CR>)
 	       (<VERB? EXAMINE LOOK-INSIDE>
 		<TELL
-"The bag is underneath the thief, so one can't say what, if anything, is
-inside." CR>)>>
+"O saco está debaixo do ladrão, então não dá para saber o que há dentro
+dele, se é que há alguma coisa." CR>)>>
 
 <ROUTINE MOVE-ALL (FROM TO "AUX" X N)
 	 <COND (<SET X <FIRST? .FROM>>
@@ -2135,10 +2134,10 @@ inside." CR>)>>
 			    <NOT <EQUAL? <GETP ,THIEF ,P?LDESC>
 					 ,ROBBER-U-DESC>>>
 		       <TELL
-"You'd be stabbed in the back first." CR>)>)
+"Antes disso, você levaria uma facada nas costas." CR>)>)
 	       (<AND <VERB? PUT> <EQUAL? ,PRSI ,CHALICE>>
 		<TELL
-"You can't. It's not a very good chalice, is it?" CR>)
+"Não dá. Não é um cálice lá muito bom, não é mesmo?" CR>)
 	       (T <DUMB-CONTAINER>)>>
 
 <ROUTINE TREASURE-ROOM-FCN (RARG "AUX" TL)
@@ -2147,8 +2146,8 @@ inside." CR>)>>
 		     <NOT ,DEAD>>
 		<COND (<NOT <IN? ,THIEF ,HERE>>
 		       <TELL
-"You hear a scream of anguish as you violate the robber's hideaway.
-Using passages unknown to you, he rushes to its defense." CR>
+"Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando
+passagens que você não conhece, ele corre para defendê-lo." CR>
 		       <MOVE ,THIEF ,HERE>)>
 		<FSET ,THIEF ,FIGHTBIT>
 		<FCLEAR ,THIEF ,INVISIBLE>
@@ -2158,8 +2157,8 @@ Using passages unknown to you, he rushes to its defense." CR>
 	 <SET F <FIRST? ,HERE>>
 	 <COND (<AND .F <NEXT? .F>>
 		<TELL
-"The thief gestures mysteriously, and the treasures in the room
-suddenly vanish." CR CR>)>
+"O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de
+repente." CR CR>)>
 	 <REPEAT ()
 		 <COND (<NOT .F> <RETURN>)
 		       (<NOT <EQUAL? .F ,CHALICE ,THIEF>>
@@ -3699,33 +3698,34 @@ se dissipa, a carcaça já desapareceu." CR>
 <GLOBAL CYCLOPS-MELEE
  <TABLE (PURE)
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops misses, but the backwash almost knocks you over.">
-   <LTABLE (PURE) "The Cyclops rushes you, but runs into the wall.">>
+   <LTABLE (PURE) "O ciclope erra, mas o deslocamento de ar quase derruba você.">
+   <LTABLE (PURE) "O ciclope investe contra você, mas dá de cara com a parede.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops sends you crashing to the floor, unconscious.">>
+   <LTABLE (PURE) "O ciclope joga você no chão, inconsciente.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops breaks your neck with a massive smash.">>
+   <LTABLE (PURE) "O ciclope quebra o seu pescoço com um golpe colossal.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "A quick punch, but it was only a glancing blow.">
-   <LTABLE (PURE) "A glancing blow from the Cyclops' fist.">>
+   <LTABLE (PURE) "Um soco rápido, mas só de raspão.">
+   <LTABLE (PURE) "O punho do ciclope pega você de raspão.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The monster smashes his huge fist into your chest, breaking several
-ribs.">
-   <LTABLE (PURE) "The Cyclops almost knocks the wind out of you with a quick punch.">>
+   <LTABLE (PURE) "O monstro afunda o punho enorme no seu peito e quebra várias
+costelas.">
+   <LTABLE (PURE) "Com um soco rápido, o ciclope quase deixa você sem ar.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops lands a punch that knocks the wind out of you.">
-   <LTABLE (PURE) "Heedless of your weapons, the Cyclops tosses you against the rock
-wall of the room.">>
+   <LTABLE (PURE) "O ciclope acerta um soco que deixa você sem ar.">
+   <LTABLE (PURE) "Sem dar a menor bola para as suas armas, o ciclope arremessa você
+contra a parede de pedra da sala.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops grabs your " F-WEP ", tastes it, and throws it to the
-ground in disgust.">
-   <LTABLE (PURE) "The monster grabs you on the wrist, squeezes, and you drop your
-" F-WEP " in pain.">>
+   <LTABLE (PURE) "O ciclope agarra " F-SEU-WEP ", experimenta o gosto e joga no
+chão, com nojo.">
+   <LTABLE (PURE) "O monstro agarra o seu pulso e aperta, e você larga " F-SEU-WEP
+" de dor.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops seems unable to decide whether to broil or stew his
-dinner.">>
+   <LTABLE (PURE) "O ciclope parece não conseguir decidir se vai assar ou ensopar o
+jantar.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The Cyclops, no sportsman, dispatches his unconscious victim.">>>>
+   <LTABLE (PURE) "O ciclope, que não tem nada de esportista, liquida a vítima
+inconsciente.">>>>
 
 \
 
@@ -3781,57 +3781,57 @@ proteção mágica, ele se pergunta?">>
 <GLOBAL THIEF-MELEE
 <TABLE (PURE)
  <LTABLE (PURE)
-  <LTABLE (PURE) "The thief stabs nonchalantly with his stiletto and misses.">
-  <LTABLE (PURE) "You dodge as the thief comes in low.">
-  <LTABLE (PURE) "You parry a lightning thrust, and the thief salutes you with
-a grim nod.">
-  <LTABLE (PURE) "The thief tries to sneak past your guard, but you twist away.">>
+  <LTABLE (PURE) "O ladrão golpeia com o estilete, displicente, e erra.">
+  <LTABLE (PURE) "Você se esquiva quando o ladrão ataca por baixo.">
+  <LTABLE (PURE) "Você apara uma estocada relâmpago, e o ladrão cumprimenta você
+com um aceno sombrio.">
+  <LTABLE (PURE) "O ladrão tenta furar a sua guarda, mas você escapa com um giro.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "Shifting in the midst of a thrust, the thief knocks you unconscious
-with the haft of his stiletto.">
-  <LTABLE (PURE) "The thief knocks you out.">>
+  <LTABLE (PURE) "Mudando de posição no meio de uma estocada, o ladrão deixa você
+inconsciente com o cabo do estilete.">
+  <LTABLE (PURE) "O ladrão nocauteia você.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "Finishing you off, the thief inserts his blade into your heart.">
-  <LTABLE (PURE) "The thief comes in from the side, feints, and inserts the blade
-into your ribs.">
-  <LTABLE (PURE) "The thief bows formally, raises his stiletto, and with a wry grin,
-ends the battle and your life.">>
+  <LTABLE (PURE) "Para acabar com você, o ladrão enfia a lâmina no seu coração.">
+  <LTABLE (PURE) "O ladrão vem pelo lado, finge um golpe e enfia a lâmina entre as
+suas costelas.">
+  <LTABLE (PURE) "O ladrão faz uma reverência formal, ergue o estilete e, com um
+sorriso irônico, põe fim à luta e à sua vida.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "A quick thrust pinks your left arm, and blood starts to
-trickle down.">
-  <LTABLE (PURE) "The thief draws blood, raking his stiletto across your arm.">
-  <LTABLE (PURE) "The stiletto flashes faster than you can follow, and blood wells
-from your leg.">
-  <LTABLE (PURE) "The thief slowly approaches, strikes like a snake, and leaves
-you wounded.">>
+  <LTABLE (PURE) "Uma estocada rápida arranha o seu braço esquerdo, e o sangue
+começa a escorrer.">
+  <LTABLE (PURE) "O ladrão tira sangue, riscando o seu braço com o estilete.">
+  <LTABLE (PURE) "O estilete reluz mais rápido do que os seus olhos conseguem
+acompanhar, e o sangue brota da sua perna.">
+  <LTABLE (PURE) "O ladrão se aproxima devagar, dá o bote como uma cobra e deixa
+você ferido.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The thief strikes like a snake! The resulting wound is serious.">
-  <LTABLE (PURE) "The thief stabs a deep cut in your upper arm.">
-  <LTABLE (PURE) "The stiletto touches your forehead, and the blood obscures your
-vision.">
-  <LTABLE (PURE) "The thief strikes at your wrist, and suddenly your grip is slippery
-with blood.">>
+  <LTABLE (PURE) "O ladrão dá o bote como uma cobra! O ferimento é grave.">
+  <LTABLE (PURE) "O ladrão abre um corte fundo no alto do seu braço.">
+  <LTABLE (PURE) "O estilete atinge a sua testa, e o sangue embaça a sua visão.">
+  <LTABLE (PURE) "O ladrão acerta o seu pulso, e de repente a sua mão fica
+escorregadia de sangue.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The butt of his stiletto cracks you on the skull, and you stagger
-back.">
-  <LTABLE (PURE) "The thief rams the haft of his blade into your stomach, leaving
-you out of breath.">
-  <LTABLE (PURE) "The thief attacks, and you fall back desperately.">>
+  <LTABLE (PURE) "O cabo do estilete acerta o seu crânio em cheio, e você cambaleia
+para trás.">
+  <LTABLE (PURE) "O ladrão crava o cabo da lâmina no seu estômago e deixa você sem
+fôlego.">
+  <LTABLE (PURE) "O ladrão ataca, e você recua desesperadamente.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "A long, theatrical slash. You catch it on your " F-WEP ", but the
-thief twists his knife, and the " F-WEP " goes flying.">
-  <LTABLE (PURE) "The thief neatly flips your " F-WEP " out of your hands, and it drops
-to the floor.">
-  <LTABLE (PURE) "You parry a low thrust, and your " F-WEP " slips out of your hand.">>
+  <LTABLE (PURE) "Um golpe longo e teatral. Você o apara com " F-SEU-WEP ", mas o
+ladrão torce a lâmina, e " F-O-WEP " sai voando.">
+  <LTABLE (PURE) "Com um golpe preciso, o ladrão faz " F-SEU-WEP " voar das suas
+mãos e cair no chão.">
+  <LTABLE (PURE) "Você apara uma estocada baixa, e " F-SEU-WEP " escapa da sua mão.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The thief, a man of superior breeding, pauses for a moment to consider the propriety of finishing you off.">
-  <LTABLE (PURE) "The thief amuses himself by searching your pockets.">
-  <LTABLE (PURE) "The thief entertains himself by rifling your pack.">>
+  <LTABLE (PURE) "O ladrão, homem de fina educação, faz uma pausa para pensar se
+seria de bom-tom acabar com você.">
+  <LTABLE (PURE) "O ladrão se diverte revistando os seus bolsos.">
+  <LTABLE (PURE) "O ladrão se distrai vasculhando a sua mochila.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The thief, forgetting his essentially genteel upbringing, cuts your
-throat.">
-  <LTABLE (PURE) "The thief, a pragmatist, dispatches you as a threat to his
-livelihood.">>>>
+  <LTABLE (PURE) "O ladrão, esquecendo a boa educação que recebeu, corta a sua
+garganta.">
+  <LTABLE (PURE) "O ladrão, pragmático, elimina você como uma ameaça ao ganha-pão
+dele.">>>>
 
 
 "each table entry is:"
@@ -3987,8 +3987,8 @@ livelihood.">>>>
 			<MOVE .X .RM>
 			<COND (<AND <NOT .FLG> <EQUAL? .RM ,HERE>>
 			       <TELL
-"The robber, rummaging through his bag, dropped a few items he found
-valueless." CR>
+"O ladrão, remexendo no saco, deixou cair algumas coisas que achou sem
+valor." CR>
 			       <SET FLG T>)>)>
 		 <SET X .N>>>
 
@@ -4013,8 +4013,9 @@ valueless." CR>
 			<FSET .X ,INVISIBLE>
 			<COND (<EQUAL? .X ,ROPE> <SETG DOME-FLAG <>>)>
 			<COND (<EQUAL? .RM ,HERE>
-			       <TELL "You suddenly notice that the "
-				     D .X " vanished." CR>
+			       <TELL "De repente, você percebe que " T-O .X " ">
+			       <PRINT-PLURAL .X "sumiu" "sumiram">
+			       <TELL "." CR>
 			       <RTRUE>)
 			      (ELSE <RFALSE>)>)>
 		 <SET X .N>>>
@@ -4181,7 +4182,7 @@ completo, mas não dá para ter tudo." CR CR>
 	 <RTRUE>>
 
 <ROUTINE BAG-OF-COINS-F ()
-	 <STUPID-CONTAINER ,BAG-OF-COINS "coins">>
+	 <STUPID-CONTAINER ,BAG-OF-COINS "moedas">>
 
 <ROUTINE TRUNK-F ()
 	 <STUPID-CONTAINER ,TRUNK "joias">>
@@ -4189,19 +4190,19 @@ completo, mas não dá para ter tudo." CR CR>
 <ROUTINE STUPID-CONTAINER (OBJ STR)
 	 <COND (<VERB? OPEN CLOSE>
 		<TELL
-"The " .STR " are safely inside; there's no need to do that." CR>)
+"As " .STR " estão guardadas aí dentro; não precisa fazer isso." CR>)
 	       (<VERB? LOOK-INSIDE EXAMINE>
 		<TELL
-"There are lots of " .STR " in there." CR>)
+"Há muitas " .STR " aí dentro." CR>)
 	       (<AND <VERB? PUT> <EQUAL? ,PRSI .OBJ>>
 		<TELL
-"Don't be silly. It wouldn't be a " D .OBJ " anymore." CR>)>>
+"Não seja bobo. Assim deixaria de ser " T-UM .OBJ "." CR>)>>
 
 <ROUTINE DUMB-CONTAINER ()
 	 <COND (<VERB? OPEN CLOSE LOOK-INSIDE>
-		<TELL "You can't do that." CR>)
+		<TELL "Você não pode fazer isso." CR>)
 	       (<VERB? EXAMINE>
-		<TELL "It looks pretty much like a " D ,PRSO "." CR>)>>
+		<TELL "Parece " T-UM ,PRSO " como outr" T-G ,PRSO " qualquer." CR>)>>
 
 <ROUTINE GARLIC-F ()
 	 <COND (<VERB? EAT>
