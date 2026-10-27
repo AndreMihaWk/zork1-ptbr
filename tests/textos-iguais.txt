@@ -19,3 +19,4 @@ troll
 altar
 pedestal
 Fweep!
+Altar

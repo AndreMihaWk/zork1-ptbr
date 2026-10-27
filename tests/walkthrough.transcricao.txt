@@ -1112,312 +1112,312 @@ Passagem Fria
 Este é um corredor frio e úmido, onde uma longa passagem leste-oeste vira um caminho que segue para o sul.
 
 >w
-Slide Room
-This is a small chamber, which appears to have been part of a coal mine. On the south wall of the chamber the letters "Granite Wall" are etched in the rock. To the east is a long passage, and there is a steep metal slide twisting downward. To the north is a small opening.
+Sala do Escorregador
+Esta é uma pequena câmara que parece ter feito parte de uma mina de carvão. Na parede sul da câmara, as palavras "Parede de Granito" estão gravadas na rocha. A leste há uma passagem comprida, e um escorregador de metal íngreme desce em curvas. Ao norte há uma pequena abertura.
 
->n
-Mine Entrance
-You are standing at the entrance of what might have been a coal mine. The shaft enters the west wall, and there is another exit on the south end of the room.
+>norte
+Entrada da Mina
+Você está na entrada do que talvez tenha sido uma mina de carvão. A galeria da mina entra pela parede oeste, e há outra saída na ponta sul da sala.
 
->w
-Squeaky Room
-You are in a small room. Strange squeaky sounds may be heard coming from the passage at the north end. You may also escape to the east.
+>oeste
+Sala Rangente
+Você está em uma sala pequena. Dá para ouvir estranhos guinchos e rangidos vindos da passagem na ponta norte. Também dá para fugir para leste.
 
->n
-Bat Room
-You are in a small room which has doors only to the east and south.
-In the corner of the room on the ceiling is a large vampire bat who is obviously deranged and holding his nose.
-There is an exquisite jade figurine here.
+>vá para o norte
+Sala do Morcego
+Você está em uma sala pequena, com portas só para leste e para sul.
+No teto, num canto da sala, há um grande morcego-vampiro, obviamente perturbado, tapando o nariz.
+Há uma primorosa estatueta de jade aqui.
 
->take figurine
-Você pegou o jade figurine.
+>pegue a estatueta
+Você pegou a estatueta de jade.
 
->e
-Shaft Room
-This is a large room, in the middle of which is a small shaft descending through the floor into darkness below. To the west and the north are exits from this room. Constructed over the top of the shaft is a metal framework to which a heavy iron chain is attached.
-At the end of the chain is a basket.
+>l
+Sala do Poço
+Esta é uma sala grande. No meio dela, um poço estreito atravessa o chão e desce para a escuridão. Há saídas a oeste e ao norte. Sobre a boca do poço foi montada uma armação de metal, onde está presa uma pesada corrente de ferro.
+Na ponta da corrente há um cesto.
 
->put screwdriver in basket
-Você colocou a chave de fenda no basket.
+>coloque a chave de fenda no cesto
+Você colocou a chave de fenda no cesto.
 
->drop matchbook, candles
+>largue a caixa de fósforos e as velas
 caixa de fósforos: Você largou a caixa de fósforos.
 par de velas: Você largou o par de velas.
 
 >n
-Smelly Room
-This is a small nondescript room. However, from the direction of a small descending staircase a foul odor can be detected. To the south is a narrow tunnel.
+Sala Fedorenta
+Esta é uma sala pequena e sem nada de especial. Mas, vindo de uma pequena escada que desce, dá para sentir um cheiro horrível. Ao sul há um túnel estreito.
 
->d
-Gas Room
-This is a small room which smells strongly of coal gas. There is a short climb up some stairs and a narrow tunnel leading east.
-Há um sapphire-encrusted bracelet aqui.
+>desça
+Sala do Gás
+Esta é uma sala pequena com um forte cheiro de gás de carvão. Alguns degraus sobem um pouco, e um túnel estreito segue para leste.
+Há uma pulseira cravejada de safiras aqui.
 
->get bracelet
-Você pegou o sapphire-encrusted bracelet.
+>pegue a pulseira
+Você pegou a pulseira cravejada de safiras.
 
->e
-Coal Mine
-This is a nondescript part of a coal mine.
+>leste
+Mina de Carvão
+Este é um trecho qualquer de uma mina de carvão.
 
->ne
-Coal Mine
-This is a nondescript part of a coal mine.
+>nordeste
+Mina de Carvão
+Este é um trecho qualquer de uma mina de carvão.
 Há um machado ensanguentado aqui.
 
->se
-Coal Mine
-This is a nondescript part of a coal mine.
+>sudeste
+Mina de Carvão
+Este é um trecho qualquer de uma mina de carvão.
 
->sw
-Coal Mine
-This is a nondescript part of a coal mine.
+>so
+Mina de Carvão
+Este é um trecho qualquer de uma mina de carvão.
 
->d
-Ladder Top
-This is a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.
+>b
+Topo da Escada
+Esta é uma sala bem pequena. No canto, uma escada de madeira bamba leva para baixo. Talvez seja seguro descer. Há também uma escadaria que sobe.
 
->d
-Ladder Bottom
-This is a rather wide room. On one side is the bottom of a narrow wooden ladder. To the west and the south are passages leaving the room.
+>desça
+Pé da Escada
+Esta é uma sala bem larga. De um lado fica o pé de uma escada de madeira estreita. Há passagens que saem da sala para oeste e para sul.
 
->w
-Timber Room
-This is a long and narrow passage, which is cluttered with broken timbers. A wide passage comes from the east and turns at the west end of the room into a very narrow passageway. From the west comes a strong draft.
-Há um broken timber aqui.
+>o
+Sala do Madeirame
+Este é um corredor longo e estreito, atulhado de madeira quebrada. Uma passagem larga vem do leste e, na ponta oeste da sala, vira uma passagem estreitíssima. Do oeste vem uma forte corrente de ar.
+Há uma madeira quebrada aqui.
 
 >largue tudo menos a lanterna
-sapphire-encrusted bracelet: Você largou o sapphire-encrusted bracelet.
-jade figurine: Você largou o jade figurine.
+pulseira cravejada de safiras: Você largou a pulseira cravejada de safiras.
+estatueta de jade: Você largou a estatueta de jade.
 chave inglesa: Você largou a chave inglesa.
 estilete: Você largou o estilete.
 dente de alho: Você largou o dente de alho.
 
->e
-Ladder Bottom
+>l
+Pé da Escada
 
->s
-Dead End
-You have come to a dead end in the mine.
-Há um small pile of coal aqui.
+>sul
+Beco sem Saída
+Você chegou a um beco sem saída na mina.
+Há um montinho de carvão aqui.
 
->take coal
-Você pegou o small pile of coal.
+>pegue o carvão
+Você pegou o montinho de carvão.
+
+>norte
+Pé da Escada
+
+>suba
+Topo da Escada
+
+>c
+Mina de Carvão
 
 >n
-Ladder Bottom
+Mina de Carvão
 
->u
-Ladder Top
-
->u
-Coal Mine
-
->n
-Coal Mine
-
->e
-Coal Mine
+>l
+Mina de Carvão
 Há um machado ensanguentado aqui.
 
 >s
-Coal Mine
+Mina de Carvão
 
->n
-Gas Room
+>norte
+Sala do Gás
 
->u
-Smelly Room
+>suba
+Sala Fedorenta
 
->s
-Shaft Room
+>sul
+Sala do Poço
 Há um par de velas aqui.
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
-At the end of the chain is a basket.
-Dentro do basket há:
+Na ponta da corrente há um cesto.
+Dentro do cesto há:
   Uma chave de fenda
 
->take candles, matchbook
+>pegue as velas e a caixa de fósforos
 par de velas: Você pegou o par de velas.
 caixa de fósforos: Você pegou a caixa de fósforos.
 
 >risque o fósforo
 Um dos fósforos começa a queimar.
 
->light candle with match
+>acenda a vela com o fósforo
 As velas se acendem.
 O fósforo se apagou.
 
->put candle, coal in basket
-par de velas: Você colocou o par de velas no basket.
-small pile of coal: Você colocou o small pile of coal no basket.
+>coloque a vela e o carvão no cesto
+par de velas: Você colocou o par de velas no cesto.
+montinho de carvão: Você colocou o montinho de carvão no cesto.
 
->lower basket
-The basket is lowered to the bottom of the shaft.
+>abaixe o cesto
+O cesto desce até o fundo do poço.
 
 >n
-Smelly Room
+Sala Fedorenta
 
->d
-Gas Room
+>b
+Sala do Gás
 
->e
-Coal Mine
+>l
+Mina de Carvão
 
 >ne
-Coal Mine
+Mina de Carvão
 Há um machado ensanguentado aqui.
 
->se
-Coal Mine
+>sudeste
+Mina de Carvão
 
->sw
-Coal Mine
+>sudoeste
+Mina de Carvão
 
->d
-Ladder Top
+>desça
+Topo da Escada
 
->w
+>oeste
 Você não pode ir por aí.
 
 >look
-Ladder Top
-This is a very small room. In the corner is a rickety wooden ladder, leading downward. It might be safe to descend. There is also a staircase leading upward.
+Topo da Escada
+Esta é uma sala bem pequena. No canto, uma escada de madeira bamba leva para baixo. Talvez seja seguro descer. Há também uma escadaria que sobe.
 
->d
-Ladder Bottom
+>b
+Pé da Escada
 
->w
-Timber Room
+>o
+Sala do Madeirame
 Há um dente de alho aqui.
 Há um estilete aqui.
 Há uma chave inglesa aqui.
-There is an exquisite jade figurine here.
-Há um sapphire-encrusted bracelet aqui.
-Há um broken timber aqui.
+Há uma primorosa estatueta de jade aqui.
+Há uma pulseira cravejada de safiras aqui.
+Há uma madeira quebrada aqui.
 
->drop all
+>largue tudo
 caixa de fósforos: Você largou a caixa de fósforos.
 lanterna de latão: Você largou a lanterna de latão.
 
->w
-Drafty Room
-This is a small drafty room in which is the bottom of a long shaft. To the south is a passageway and to the east a very narrow passage. In the shaft can be seen a heavy iron chain.
-At the end of the chain is a basket.
-Dentro do basket há:
-  Um small pile of coal
+>oeste
+Sala das Correntes de Ar
+Esta é uma sala pequena, cheia de correntes de ar, onde fica o fundo de um poço comprido. Ao sul há uma passagem e, a leste, uma passagem estreitíssima. Dentro do poço dá para ver uma pesada corrente de ferro.
+Na ponta da corrente há um cesto.
+Dentro do cesto há:
+  Um montinho de carvão
   Um par de velas (aceso)
   Uma chave de fenda
 
->take candles, coal, screwdriver
+>pegue as velas, o carvão e a chave de fenda
 par de velas: Você pegou o par de velas.
-small pile of coal: Você pegou o small pile of coal.
+montinho de carvão: Você pegou o montinho de carvão.
 chave de fenda: Você pegou a chave de fenda.
 
 >s
-Machine Room
-This is a large, cold room whose sole exit is to the north. In one corner there is a machine which is reminiscent of a clothes dryer. On its face is a switch which is labelled "START". The switch does not appear to be manipulable by any human hand (unless the fingers are about 1/16 by 1/4 inch). On the front of the machine is a large lid, which is closed.
+Sala da Máquina
+Esta é uma sala grande e fria, cuja única saída fica ao norte. Num canto há uma máquina que lembra uma secadora de roupas. No painel dela há um interruptor com a etiqueta "LIGAR". O interruptor não parece ser manipulável por nenhuma mão humana (a não ser que os dedos tenham uns 1,5 por 6 milímetros). Na frente da máquina há também uma tampa grande, que está fechada.
 
->open lid
-The lid opens.
+>abra a tampa
+A tampa se abre.
 
->put coal in machine
-Você colocou o small pile of coal no machine.
+>coloque o carvão na máquina
+Você colocou o montinho de carvão na máquina.
 
->close lid
-The lid closes.
+>feche a tampa
+A tampa se fecha.
 
->move switch with screwdriver
-The machine comes to life (figuratively) with a dazzling display of colored lights and bizarre noises. After a few moments, the excitement abates.
+>mova o interruptor com a chave de fenda
+A máquina ganha vida (no sentido figurado) num espetáculo deslumbrante de luzes coloridas e ruídos bizarros. Depois de alguns instantes, a agitação passa.
 
->open lid
-The lid opens, revealing um huge diamond.
+>abra a tampa
+A tampa se abre e revela um diamante enorme.
 
->take diamond
-Você pegou o huge diamond.
+>pegue o diamante
+Você pegou o diamante enorme.
 
->n
-Drafty Room
-At the end of the chain is a basket.
+>norte
+Sala das Correntes de Ar
+Na ponta da corrente há um cesto.
 
->put candle, diamond, screwdriver in basket
-par de velas: Você colocou o par de velas no basket.
-huge diamond: Você colocou o huge diamond no basket.
-chave de fenda: Você colocou a chave de fenda no basket.
+>coloque a vela, o diamante e a chave de fenda no cesto
+par de velas: Você colocou o par de velas no cesto.
+diamante enorme: Você colocou o diamante enorme no cesto.
+chave de fenda: Você colocou a chave de fenda no cesto.
 
->go east
-Timber Room
+>vá para leste
+Sala do Madeirame
 Há uma lanterna de latão (a pilha) aqui.
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
 Há um dente de alho aqui.
 Há um estilete aqui.
 Há uma chave inglesa aqui.
-There is an exquisite jade figurine here.
-Há um sapphire-encrusted bracelet aqui.
-Há um broken timber aqui.
+Há uma primorosa estatueta de jade aqui.
+Há uma pulseira cravejada de safiras aqui.
+Há uma madeira quebrada aqui.
 
->take all but timber
+>pegue tudo exceto a madeira
 lanterna de latão: Você pegou a lanterna de latão.
 caixa de fósforos: Você pegou a caixa de fósforos.
 dente de alho: Você pegou o dente de alho.
 estilete: Você pegou o estilete.
 chave inglesa: Você pegou a chave inglesa.
-jade figurine: Você pegou o jade figurine.
-sapphire-encrusted bracelet: Você pegou o sapphire-encrusted bracelet.
+estatueta de jade: Você pegou a estatueta de jade.
+pulseira cravejada de safiras: Você pegou a pulseira cravejada de safiras.
 
 >largue o estilete
 Você largou o estilete.
 
->e
-Ladder Bottom
+>l
+Pé da Escada
 
->u
-Ladder Top
+>suba
+Topo da Escada
 
->u
-Coal Mine
+>c
+Mina de Carvão
 
 >n
-Coal Mine
+Mina de Carvão
 
->e
-Coal Mine
+>leste
+Mina de Carvão
 Há um machado ensanguentado aqui.
 
+>sul
+Mina de Carvão
+
+>norte
+Sala do Gás
+
+>c
+Sala Fedorenta
+
 >s
-Coal Mine
+Sala do Poço
+Da corrente pende um cesto.
 
->n
-Gas Room
+>levante o cesto
+O cesto sobe até o alto do poço.
 
->u
-Smelly Room
-
->s
-Shaft Room
-From the chain is suspended a basket.
-
->raise basket
-The basket is raised to the top of the shaft.
-
->take candle, diamond
+>pegue a vela e o diamante
 par de velas: Você pegou o par de velas.
-huge diamond: Você pegou o huge diamond.
+diamante enorme: Você pegou o diamante enorme.
 
->w
-Bat Room
-In the corner of the room on the ceiling is a large vampire bat who is obviously deranged and holding his nose.
-
->s
-Squeaky Room
-
->e
-Mine Entrance
+>o
+Sala do Morcego
+No teto, num canto da sala, há um grande morcego-vampiro, obviamente perturbado, tapando o nariz.
 
 >s
-Slide Room
+Sala Rangente
 
->d
+>l
+Entrada da Mina
+
+>sul
+Sala do Escorregador
+
+>desça
 Porão
 
 >cima
@@ -1434,9 +1434,9 @@ Sua coleção de tesouros consiste em:
   Uma pintura
 
 >coloque todos os tesouros na vitrine
-huge diamond: Você colocou o huge diamond na vitrine de troféus.
-sapphire-encrusted bracelet: Você colocou o sapphire-encrusted bracelet na vitrine de troféus.
-jade figurine: Você colocou o jade figurine na vitrine de troféus.
+diamante enorme: Você colocou o diamante enorme na vitrine de troféus.
+pulseira cravejada de safiras: Você colocou a pulseira cravejada de safiras na vitrine de troféus.
+estatueta de jade: Você colocou a estatueta de jade na vitrine de troféus.
 
 >save
 Ok.
@@ -1549,9 +1549,9 @@ Porão
 >suba
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um jade figurine
-  Um sapphire-encrusted bracelet
-  Um huge diamond
+  Uma estatueta de jade
+  Uma pulseira cravejada de safiras
+  Um diamante enorme
   Um crystal trident
   Um baú de joias
   Um saco de couro com moedas
@@ -1686,9 +1686,9 @@ Em cima da mesa da cozinha há:
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Uma barra de platina
-  Um jade figurine
-  Um sapphire-encrusted bracelet
-  Um huge diamond
+  Uma estatueta de jade
+  Uma pulseira cravejada de safiras
+  Um diamante enorme
   Um crystal trident
   Um baú de joias
   Um saco de couro com moedas
@@ -1930,9 +1930,9 @@ Sua coleção de tesouros consiste em:
   Um pot of gold
   Um lindo escaravelho cravejado de joias
   Uma barra de platina
-  Um jade figurine
-  Um sapphire-encrusted bracelet
-  Um huge diamond
+  Uma estatueta de jade
+  Uma pulseira cravejada de safiras
+  Um diamante enorme
   Um crystal trident
   Um baú de joias
   Um saco de couro com moedas
@@ -2057,9 +2057,9 @@ Sua coleção de tesouros consiste em:
   Um pot of gold
   Um lindo escaravelho cravejado de joias
   Uma barra de platina
-  Um jade figurine
-  Um sapphire-encrusted bracelet
-  Um huge diamond
+  Uma estatueta de jade
+  Uma pulseira cravejada de safiras
+  Um diamante enorme
   Um crystal trident
   Um baú de joias
   Um saco de couro com moedas
