@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <title>Zork I em português</title>
+  <meta name="description" content="Tradução não oficial de Zork I para o português do Brasil, jogável no navegador e instalável no celular.">
+  <meta name="theme-color" content="#13261b">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icones/icone.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icones/icone-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Zork I">
+  <link rel="stylesheet" href="interpreter/parchment.css">
+  <link rel="stylesheet" href="estilo.css">
+  <script src="interpreter/jquery.min.js"></script>
+  <script src="interpreter/parchment.js"></script>
+  <script>
+    // Configuração do template do Parchment para Inform 7: o interpretador e a
+    // história (em base64, gerada por tools/build-site.mjs) vêm por JSONP de
+    // interpreter/.
+    window.parchment_options = {
+      dialog_localStorage_id: 'zork1-ptbr',
+      jsonp: 'ParchmentResource',
+      lib_path: 'interpreter/',
+      story: {
+        filename: 'zork1-ptbr.z5',
+        title: 'Zork I',
+        url: 'zork1-ptbr.z5.js',
+      },
+    }
+  </script>
+  <script src="atalhos.js" defer></script>
+</head>
+<body>
+  <div id="gameport">
+    <div id="windowport">
+      <noscript><p>Ative o JavaScript do navegador para jogar.</p></noscript>
+    </div>
+    <div id="loadingpane"><em>Carregando…</em></div>
+    <div id="errorpane" style="display:none;"><div id="errorcontent">…</div></div>
+  </div>
+
+  <nav id="atalhos" aria-label="Comandos rápidos">
+    <div class="linha">
+      <button type="button" data-comando="norte" aria-label="Norte">N</button>
+      <button type="button" data-comando="sul" aria-label="Sul">S</button>
+      <button type="button" data-comando="leste" aria-label="Leste">L</button>
+      <button type="button" data-comando="oeste" aria-label="Oeste">O</button>
+      <button type="button" data-comando="subir" aria-label="Subir">↑</button>
+      <button type="button" data-comando="descer" aria-label="Descer">↓</button>
+      <button type="button" data-comando="olhar">Olhar</button>
+    </div>
+    <div class="linha">
+      <button type="button" data-comando="inventario">Inventário</button>
+      <button type="button" data-comando="pegar" data-completar>Pegar…</button>
+      <button type="button" data-comando="abrir" data-completar>Abrir…</button>
+      <button type="button" data-comando="salvar">Salvar</button>
+      <button type="button" data-comando="carregar">Carregar</button>
+    </div>
+  </nav>
+</body>
+</html>
