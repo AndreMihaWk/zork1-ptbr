@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <title>Zork I em português</title>
+  <meta name="description" content="Tradução não oficial de Zork I para o português do Brasil, jogável no navegador e instalável no celular.">
+  <meta name="theme-color" content="#13261b">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icones/icone.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icones/icone-180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Zork I">
+  <link rel="stylesheet" href="interpreter/parchment.css">
+  <link rel="stylesheet" href="estilo.css">
+  <script src="interpreter/jquery.min.js"></script>
+  <script src="interpreter/parchment.js"></script>
+  <script>
+    // Configuração do template do Parchment para Inform 7: o interpretador e a
+    // história (em base64, gerada por tools/build-site.mjs) vêm por JSONP de
+    // interpreter/.
+    window.parchment_options = {
+      dialog_localStorage_id: 'zork1-ptbr',
+      jsonp: 'ParchmentResource',
+      lib_path: 'interpreter/',
+      story: {
+        filename: 'zork1-ptbr.z5',
+        title: 'Zork I',
+        url: 'zork1-ptbr.z5.js',
+      },
+    }
+  </script>
+  <script src="atalhos.js" defer></script>
+  <script src="dialogos.js" defer></script>
+</head>
+<body>
+  <div id="gameport">
+    <div id="windowport">
+      <noscript><p>Ative o JavaScript do navegador para jogar.</p></noscript>
+    </div>
+    <div id="loadingpane"><em>Carregando…</em></div>
+    <div id="errorpane" style="display:none;"><div id="errorcontent">…</div></div>
+  </div>
+
+  <nav id="atalhos" aria-label="Comandos rápidos">
+    <div class="linha direcoes">
+      <button type="button" data-comando="norte" aria-label="Norte">N</button>
+      <button type="button" data-comando="sul" aria-label="Sul">S</button>
+      <button type="button" data-comando="leste" aria-label="Leste">L</button>
+      <button type="button" data-comando="oeste" aria-label="Oeste">O</button>
+      <button type="button" data-comando="subir" aria-label="Subir">↑</button>
+      <button type="button" data-comando="descer" aria-label="Descer">↓</button>
+      <button type="button" data-comando="olhar">Olhar</button>
+      <button type="button" class="icone" data-acao="sobre" aria-label="Sobre o jogo" title="Sobre o jogo" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></svg>
+      </button>
+    </div>
+    <div class="linha comandos">
+      <button type="button" data-comando="inventario">Inventário</button>
+      <button type="button" data-comando="pegar" data-completar>Pegar…</button>
+      <button type="button" data-comando="abrir" data-completar>Abrir…</button>
+      <button type="button" data-comando="salvar">Salvar</button>
+      <button type="button" data-comando="carregar">Carregar</button>
+      <button type="button" class="icone" data-comando="desfazer" aria-label="Desfazer" title="Desfazer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H10"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <dialog id="sobre" aria-labelledby="sobre-titulo">
+    <div class="conteudo">
+      <h2 id="sobre-titulo" tabindex="-1" autofocus>Zork I em português</h2>
+      <p>
+        Tradução não oficial, feita por fãs, de <cite>Zork I: The Great
+        Underground Empire</cite>, criado por Tim Anderson, Marc Blank, Bruce
+        Daniels e Dave Lebling e publicado pela Infocom.
+      </p>
+      <p>
+        O código-fonte original foi liberado pela Microsoft sob a
+        <a href="https://github.com/historicalsource/zork1" target="_blank" rel="noopener">licença MIT</a>.
+        “Zork” é marca registrada de outra empresa. Este projeto não tem
+        afiliação com a Microsoft, a Activision ou a Infocom.
+      </p>
+      <p>
+        Código e tradução:
+        <a href="https://github.com/AndreMihaWk/zork1-ptbr" target="_blank" rel="noopener">github.com/AndreMihaWk/zork1-ptbr</a>.
+        O jogo roda no navegador com o
+        <a href="https://github.com/curiousdannii/parchment" target="_blank" rel="noopener">Parchment</a>.
+      </p>
+      <h3>Seus jogos salvos</h3>
+      <p>
+        O jogo não continua sozinho de onde parou: use <strong>Salvar</strong>
+        antes de sair. Os saves ficam neste navegador, que pode apagá-los (o
+        Safari do iPhone, por exemplo, apaga os dados de sites que você não abre
+        há uma semana).
+      </p>
+      <p>
+        Para guardar uma cópia fora do navegador, toque em <strong>Carregar</strong>,
+        escolha o save, toque em <strong>Baixar</strong> e depois em
+        <strong>Cancelar</strong> (o jogo avisa que não carregou nada; é normal).
+        Para usar a cópia, toque em <strong>Carregar</strong> e em
+        <strong>Importar</strong>.
+      </p>
+      <form method="dialog">
+        <button type="submit">Fechar</button>
+      </form>
+    </div>
+  </dialog>
+</body>
+</html>
