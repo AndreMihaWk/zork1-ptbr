@@ -777,3 +777,6 @@ só valem como comando de uma palavra (ver AJUSTA-LEXV)."
 <SYNONYM RAISE ICE ICAR ICA>
 <SYNONYM TURN ACIONE ACIONAR ACIONA>
 <SYNTAX ACTIVATE OBJECT WITH OBJECT = V-LAMP-ON>
+
+;"Região 7: jogue o pote do penhasco (throw off cliff)"
+<SYNTAX THROW OBJECT (HELD CARRIED HAVE) FROM OBJECT = V-THROW-OFF>

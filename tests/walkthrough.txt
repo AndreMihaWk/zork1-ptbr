@@ -73,10 +73,10 @@ l
 abra a vitrine de troféus
 coloque o tesouro na vitrine
 save
-d
-open door
-trap
-d
+desça
+abra a porta
+o alçapão
+b
 n
 leste
 norte
@@ -127,9 +127,9 @@ oeste
 norte
 suba
 pegue as moedas
-put painting in case
+coloque a pintura na vitrine
 pegue o saco de couro
-w
+o
 oeste
 save
 suba
@@ -156,7 +156,7 @@ z
 z
 diagnose
 coloque todos os tesouros na vitrine
-w
+oeste
 acenda a lanterna
 o
 suba
@@ -186,7 +186,7 @@ oeste
 o
 coloque todos os tesouros na vitrine
 save
-d
+desça
 ligue a lanterna
 n
 l
@@ -214,7 +214,7 @@ n
 largue tudo exceto a lanterna
 norte
 n
-take trident
+pegue o tridente
 s
 s
 pegue o baú
@@ -227,11 +227,11 @@ c
 ponha todos os tesouros na vitrine
 apague a lanterna
 save
-e
+leste
 abra o saco
 pegue o dente de alho
-w
-d
+o
+desça
 acenda a lanterna
 norte
 leste
@@ -244,10 +244,10 @@ suba
 n
 n
 look
-u
+suba
 n
 n
-w
+oeste
 norte
 oeste
 vá para o norte
@@ -328,7 +328,7 @@ desça
 cima
 coloque todos os tesouros na vitrine
 save
-d
+b
 n
 l
 leste
@@ -362,17 +362,17 @@ sul
 suba
 coloque todos os tesouros exceto o cetro e a tocha na vitrine
 save
-e
-e
-e
-e
-d
-d
+l
+leste
+l
+leste
+desça
+b
 n
-wave sceptre
-get pot
-e
-e
+agite o cetro
+pegue o pote de ouro
+leste
+l
 n
 n
 pegue a pá
@@ -385,18 +385,18 @@ pegue o escaravelho
 so
 sul
 s
-w
-w
-sw
-u
-u
-nw
-w
-w
-w
+oeste
+o
+sudoeste
+suba
+c
+noroeste
+o
+oeste
+o
 coloque todos os tesouros exceto a tocha na vitrine
 save
-d
+desça
 norte
 leste
 l
@@ -443,17 +443,17 @@ saia do barco
 esvazie o barco
 pegue o monte de plástico
 sul
-w
-w
-sw
-u
-u
-nw
-w
-w
-w
+o
+oeste
+so
+c
+suba
+no
+oeste
+o
+oeste
 coloque a esmeralda na vitrine
-d
+b
 n
 l
 leste
@@ -476,17 +476,17 @@ s
 o
 sul
 reze
-e
+leste
 s
 se
-w
-w
+o
+oeste
 guarde todos os tesouros na vitrine
-read parchment
-e
-e
-sw
-nw
-sw
-in
+leia o pergaminho
+l
+leste
+sudoeste
+noroeste
+so
+entre
 quit

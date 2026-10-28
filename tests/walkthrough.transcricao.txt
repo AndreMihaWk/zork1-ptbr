@@ -361,16 +361,16 @@ Você colocou o saco de couro com moedas na vitrine de troféus.
 >save
 Ok.
 
->d
+>desça
 O alçapão está fechado.
 
->open door
+>abra a porta
 Você quer dizer a porta de madeira ou o alçapão?
 
->trap
+>o alçapão
 O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
->d
+>b
 Porão
 
 >n
@@ -577,13 +577,13 @@ Sua coleção de tesouros consiste em:
 >pegue as moedas
 Sua carga está pesada demais.
 
->put painting in case
+>coloque a pintura na vitrine
 Você colocou a pintura na vitrine de troféus.
 
 >pegue o saco de couro
 Você pegou o saco de couro com moedas.
 
->w
+>o
 Passagem Estranha
 
 >oeste
@@ -722,7 +722,7 @@ Você aguenta um ferimento grave.
 >coloque todos os tesouros na vitrine
 caveira de cristal: Você colocou a caveira de cristal na vitrine de troféus.
 
->w
+>oeste
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
@@ -846,7 +846,7 @@ saco de couro com moedas: Você colocou o saco de couro com moedas na vitrine de
 >save
 Ok.
 
->d
+>desça
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
@@ -963,12 +963,12 @@ Uma escada coberta de limo sai da sala para o norte.
 Há uma bomba de ar manual aqui.
 
 >n
-Atlantis Room
-This is an ancient room, long under water. There is an exit to the south and a staircase leading up.
-On the shore lies Poseidon's own crystal trident.
+Sala de Atlântida
+Esta é uma sala antiga, que passou muito tempo debaixo d'água. Há uma saída ao sul e uma escada que sobe.
+Na margem jaz o tridente de cristal do próprio Poseidon.
 
->take trident
-Você pegou o crystal trident.
+>pegue o tridente
+Você pegou o tridente de cristal.
 
 >s
 Represa Norte
@@ -1014,7 +1014,7 @@ Sua coleção de tesouros consiste em:
 
 >ponha todos os tesouros na vitrine
 baú de joias: Você colocou o baú de joias na vitrine de troféus.
-crystal trident: Você colocou o crystal trident na vitrine de troféus.
+tridente de cristal: Você colocou o tridente de cristal na vitrine de troféus.
 
 >apague a lanterna
 A lanterna de latão agora está apagada.
@@ -1022,7 +1022,7 @@ A lanterna de latão agora está apagada.
 >save
 Ok.
 
->e
+>leste
 Cozinha
 Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 
@@ -1032,10 +1032,10 @@ Ao abrir o saco marrom, você encontra um lanche e um dente de alho.
 >pegue o dente de alho
 Você pegou o dente de alho.
 
->w
+>o
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um crystal trident
+  Um tridente de cristal
   Um baú de joias
   Um saco de couro com moedas
   Um ovo cravejado de joias
@@ -1045,7 +1045,7 @@ Sua coleção de tesouros consiste em:
   Uma caveira de cristal
   Uma pintura
 
->d
+>desça
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
@@ -1090,16 +1090,16 @@ Há uma bomba de ar manual aqui.
 Você não pode ir por aí.
 
 >n
-Atlantis Room
+Sala de Atlântida
 
 >n
 Você não pode ir por aí.
 
 >look
-Atlantis Room
-This is an ancient room, long under water. There is an exit to the south and a staircase leading up.
+Sala de Atlântida
+Esta é uma sala antiga, que passou muito tempo debaixo d'água. Há uma saída ao sul e uma escada que sobe.
 
->u
+>suba
 Caverna
 Esta é uma caverna minúscula, com entradas a oeste e ao norte, e uma escada que desce.
 
@@ -1111,7 +1111,7 @@ Você está em uma grande sala quadrada, de teto alto. Na parede sul há um espe
 Passagem Fria
 Este é um corredor frio e úmido, onde uma longa passagem leste-oeste vira um caminho que segue para o sul.
 
->w
+>oeste
 Sala do Escorregador
 Esta é uma pequena câmara que parece ter feito parte de uma mina de carvão. Na parede sul da câmara, as palavras "Parede de Granito" estão gravadas na rocha. A leste há uma passagem comprida, e um escorregador de metal íngreme desce em curvas. Ao norte há uma pequena abertura.
 
@@ -1423,7 +1423,7 @@ Porão
 >cima
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um crystal trident
+  Um tridente de cristal
   Um baú de joias
   Um saco de couro com moedas
   Um ovo cravejado de joias
@@ -1441,7 +1441,7 @@ estatueta de jade: Você colocou a estatueta de jade na vitrine de troféus.
 >save
 Ok.
 
->d
+>b
 Porão
 
 >n
@@ -1552,7 +1552,7 @@ Sua coleção de tesouros consiste em:
   Uma estatueta de jade
   Uma pulseira cravejada de safiras
   Um diamante enorme
-  Um crystal trident
+  Um tridente de cristal
   Um baú de joias
   Um saco de couro com moedas
   Um ovo cravejado de joias
@@ -1568,51 +1568,51 @@ barra de platina: Você colocou a barra de platina na vitrine de troféus.
 >save
 Ok.
 
->e
+>l
 Cozinha
 Em cima da mesa da cozinha há: 
   Um saco marrom
   Dentro do saco marrom há:
     Um lanche
 
->e
+>leste
 Atrás da Casa
 
->e
+>l
 Clareira
 Você está em uma pequena clareira numa trilha bem marcada da floresta, que se estende para leste e para oeste.
 
->e
-Canyon View
-You are at the top of the Great Canyon on its west wall. From here there is a marvelous view of the canyon and parts of the Frigid River upstream. Across the canyon, the walls of the White Cliffs join the mighty ramparts of the Flathead Mountains to the east. Following the Canyon upstream to the north, Aragain Falls may be seen, complete with rainbow. The mighty Frigid River flows out from a great dark cavern. To the west and south can be seen an immense forest, stretching for miles around. A path leads northwest. It is possible to climb down into the canyon from here.
+>leste
+Mirante do Cânion
+Você está no alto do Grande Cânion, na parede oeste. Daqui se tem uma vista maravilhosa do cânion e de trechos do Rio Frígido, rio acima. Do outro lado do cânion, as paredes dos Penhascos Brancos se juntam às imponentes muralhas das Montanhas Flathead, a leste. Seguindo o cânion rio acima, para o norte, dá para ver as Cataratas de Aragain, com direito a arco-íris. O poderoso Rio Frígido sai de uma grande caverna escura. A oeste e ao sul se vê uma floresta imensa, que se estende por quilômetros. Uma trilha leva para noroeste. Daqui é possível descer escalando até o fundo do cânion.
 
->d
-Rocky Ledge
-You are on a ledge about halfway up the wall of the river canyon. You can see from here that the main flow from Aragain Falls twists along a passage which it is impossible for you to enter. Below you is the canyon bottom. Above you is more cliff, which appears climbable.
+>desça
+Saliência Rochosa
+Você está numa saliência, mais ou menos na metade da parede do cânion do rio. Daqui dá para ver que a maior parte das águas das Cataratas de Aragain serpenteia por uma passagem onde você não tem como entrar. Abaixo de você fica o fundo do cânion. Acima, há mais penhasco, que parece dar para escalar.
 
->d
-Canyon Bottom
-You are beneath the walls of the river canyon which may be climbable here. The lesser part of the runoff of Aragain Falls flows by below. To the north is a narrow path.
+>b
+Fundo do Cânion
+Você está ao pé das paredes do cânion do rio, que aqui talvez dê para escalar. A parte menor das águas das Cataratas de Aragain corre lá embaixo. Ao norte há uma trilha estreita.
 
 >n
-End of Rainbow
-You are on a small, rocky beach on the continuation of the Frigid River past the Falls. The beach is narrow due to the presence of the White Cliffs. The river canyon opens here and sunlight shines in from above. A rainbow crosses over the falls to the east and a narrow path continues to the southwest.
+Fim do Arco-Íris
+Você está numa pequena praia rochosa, na continuação do Rio Frígido depois das Cataratas. A praia é estreita por causa dos Penhascos Brancos. Aqui o cânion do rio se abre, e a luz do sol entra lá de cima. Um arco-íris passa sobre as cataratas, a leste, e uma trilha estreita continua para sudoeste.
 
->wave sceptre
-Suddenly, the rainbow appears to become solid and, I venture, walkable (I think the giveaway was the stairs and bannister).
-A shimmering pot of gold appears at the end of the rainbow.
+>agite o cetro
+De repente, o arco-íris parece ficar sólido e, eu me arrisco a dizer, transitável (acho que a escada e o corrimão entregaram).
+Um pote de ouro reluzente aparece no fim do arco-íris.
 
->get pot
-Você pegou o pot of gold.
+>pegue o pote de ouro
+Você pegou o pote de ouro.
 
->e
-On the Rainbow
-You are on top of a rainbow (I bet you never thought you would walk on a rainbow), with a magnificent view of the Falls. The rainbow travels east-west here.
+>leste
+Sobre o Arco-Íris
+Você está em cima de um arco-íris (aposto que você nunca imaginou que andaria sobre um arco-íris), com uma vista magnífica das Cataratas. Aqui o arco-íris segue de leste a oeste.
 
->e
-Aragain Falls
-You are at the top of Aragain Falls, an enormous waterfall with a drop of about 450 feet. The only path here is on the north end.
-A solid rainbow spans the falls.
+>l
+Cataratas de Aragain
+Você está no alto das Cataratas de Aragain, uma enorme queda-d'água de uns 140 metros de altura. A única trilha daqui fica no lado norte.
+Um arco-íris sólido atravessa as cataratas.
 
 >n
 Margem
@@ -1652,44 +1652,44 @@ Praia de Areia
 Margem
 
 >s
-Aragain Falls
+Cataratas de Aragain
 
->w
-On the Rainbow
+>oeste
+Sobre o Arco-Íris
 
->w
-End of Rainbow
+>o
+Fim do Arco-Íris
 
->sw
-Canyon Bottom
+>sudoeste
+Fundo do Cânion
 
->u
-Rocky Ledge
+>suba
+Saliência Rochosa
 
->u
-Canyon View
+>c
+Mirante do Cânion
 
->nw
+>noroeste
 Clareira
 
->w
+>o
 Atrás da Casa
 
->w
+>oeste
 Cozinha
 Em cima da mesa da cozinha há: 
   Um saco marrom
   Dentro do saco marrom há:
     Um lanche
 
->w
+>o
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Uma barra de platina
   Uma estatueta de jade
   Uma pulseira cravejada de safiras
   Um diamante enorme
-  Um crystal trident
+  Um tridente de cristal
   Um baú de joias
   Um saco de couro com moedas
   Um ovo cravejado de joias
@@ -1701,13 +1701,13 @@ Sua coleção de tesouros consiste em:
 
 >coloque todos os tesouros exceto a tocha na vitrine
 lindo escaravelho cravejado de joias: Você colocou o lindo escaravelho cravejado de joias na vitrine de troféus.
-pot of gold: Você colocou o pot of gold na vitrine de troféus.
+pote de ouro: Você colocou o pote de ouro na vitrine de troféus.
 cetro: Você colocou o cetro na vitrine de troféus.
 
 >save
 Ok.
 
->d
+>desça
 Porão
 
 >norte
@@ -1893,47 +1893,47 @@ O barco se esvazia.
 Você pegou o monte de plástico.
 
 >sul
-Aragain Falls
+Cataratas de Aragain
 
->w
-On the Rainbow
+>o
+Sobre o Arco-Íris
 
->w
-End of Rainbow
+>oeste
+Fim do Arco-Íris
 
->sw
-Canyon Bottom
+>so
+Fundo do Cânion
 
->u
-Rocky Ledge
+>c
+Saliência Rochosa
 
->u
-Canyon View
+>suba
+Mirante do Cânion
 
->nw
+>no
 Clareira
 
->w
+>oeste
 Atrás da Casa
 
->w
+>o
 Cozinha
 Em cima da mesa da cozinha há: 
   Um saco marrom
   Dentro do saco marrom há:
     Um lanche
 
->w
+>oeste
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um cetro
-  Um pot of gold
+  Um pote de ouro
   Um lindo escaravelho cravejado de joias
   Uma barra de platina
   Uma estatueta de jade
   Uma pulseira cravejada de safiras
   Um diamante enorme
-  Um crystal trident
+  Um tridente de cristal
   Um baú de joias
   Um saco de couro com moedas
   Um ovo cravejado de joias
@@ -1946,7 +1946,7 @@ Sua coleção de tesouros consiste em:
 >coloque a esmeralda na vitrine
 Você colocou a esmeralda grande na vitrine de troféus.
 
->d
+>b
 Porão
 
 >n
@@ -2033,7 +2033,7 @@ Altar
 Floresta
 Esta é uma floresta, com árvores em todas as direções. A leste, parece haver luz do sol.
 
->e
+>leste
 Trilha da Floresta
 
 >s
@@ -2042,25 +2042,25 @@ Norte da Casa
 >se
 Atrás da Casa
 
->w
+>o
 Cozinha
 Em cima da mesa da cozinha há: 
   Um saco marrom
   Dentro do saco marrom há:
     Um lanche
 
->w
+>oeste
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Uma esmeralda grande
   Um cetro
-  Um pot of gold
+  Um pote de ouro
   Um lindo escaravelho cravejado de joias
   Uma barra de platina
   Uma estatueta de jade
   Uma pulseira cravejada de safiras
   Um diamante enorme
-  Um crystal trident
+  Um tridente de cristal
   Um baú de joias
   Um saco de couro com moedas
   Um ovo cravejado de joias
@@ -2075,38 +2075,38 @@ caixão de ouro: Você colocou o caixão de ouro na vitrine de troféus.
 tocha: Você colocou a tocha na vitrine de troféus.
 Uma voz quase inaudível sussurra em seu ouvido: "Procure em seus tesouros o segredo final."
 
->read parchment
-(pegando o ancient map antes)
-The map shows a forest with three clearings. The largest clearing contains a house. Three paths leave the large clearing. One of these paths, leading southwest, is marked "To Stone Barrow".
+>leia o pergaminho
+(pegando o mapa antigo antes)
+O mapa mostra uma floresta com três clareiras. Na maior delas há uma casa. Três trilhas saem da clareira grande. Uma delas, que segue para sudoeste, está marcada "Para o Túmulo de Pedra".
 
->e
+>l
 Cozinha
 Em cima da mesa da cozinha há: 
   Um saco marrom
   Dentro do saco marrom há:
     Um lanche
 
->e
+>leste
 Atrás da Casa
 
->sw
+>sudoeste
 Sul da Casa
 Você está diante do lado sul de uma casa branca. Não há porta aqui, e todas as janelas estão tapadas com tábuas.
 
->nw
+>noroeste
 Oeste da Casa
 Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas. Uma trilha secreta leva para sudoeste, floresta adentro.
 Há uma pequena caixa de correio aqui.
 
->sw
-Stone Barrow
-You are standing in front of a massive barrow of stone. In the east face is a huge stone door which is open. You cannot see into the dark of the tomb.
+>so
+Túmulo de Pedra
+Você está diante de um enorme túmulo de pedra. Na face leste há uma porta de pedra imensa, que está aberta. Não dá para ver nada na escuridão do túmulo.
 
->in
-Inside the Barrow
-As you enter the barrow, the door closes inexorably behind you. Around you it is dark, but ahead is an enormous cavern, brightly lit. Through its center runs a wide stream. Spanning the stream is a small wooden footbridge, and beyond a path leads into a dark tunnel. Above the bridge, floating in the air, is a large sign. It reads:  All ye who stand before this bridge have completed a great and perilous adventure which has tested your wit and courage. You have mastered the first part of the ZORK trilogy. Those who pass over this bridge must be prepared to undertake an even greater adventure that will severely test your skill and bravery!
+>entre
+Dentro do Túmulo
+Quando você entra no túmulo, a porta se fecha inexoravelmente às suas costas. À sua volta está escuro, mas à frente há uma caverna enorme e bem iluminada. Pelo meio dela corre um riacho largo. Sobre o riacho há uma pequena ponte de madeira e, depois dela, uma trilha que entra num túnel escuro. Acima da ponte, flutuando no ar, há uma grande placa. Nela se lê: Todos vós que estais diante desta ponte concluístes uma grande e perigosa aventura, que pôs à prova o vosso engenho e a vossa coragem. Dominastes a primeira parte da trilogia ZORK. Quem atravessar esta ponte deve estar pronto para uma aventura ainda maior, que porá duramente à prova a vossa habilidade e a vossa bravura!
 
-The ZORK trilogy continues with "ZORK II: The Wizard of Frobozz" and is completed in "ZORK III: The Dungeon Master."
+A trilogia ZORK continua em "ZORK II: The Wizard of Frobozz" e termina em "ZORK III: The Dungeon Master".
 Sua pontuação é 350 (de um total de 350 pontos), em 505 jogadas.
 Isso lhe dá o título de Mestre Aventureiro.
 

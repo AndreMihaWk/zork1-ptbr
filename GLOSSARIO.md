@@ -10,7 +10,9 @@ que o jogo escreve ("o lampião", "a lanterna"). Veja o
 ## Mantidos como no original
 
 grue, zorkmid, Frobozz, Flathead, Dungeon Master, Zork, xyzzy, plugh e os
-nomes próprios de lugares (Aragain, Hades, Atlântida com acento).
+nomes próprios de lugares (Aragain, Hades, Atlântida com acento). Os títulos
+"ZORK II: The Wizard of Frobozz" e "ZORK III: The Dungeon Master", citados no
+final do jogo, ficam em inglês: são os nomes dos jogos.
 
 ## Interface
 
@@ -175,3 +177,4 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | Ramses II | Ramsés II |
 | slide (chute) / wooden ladder / lid | escorregador (m) / escada de madeira (f) / tampa (f) |
 | small piece of vitreous slag / iron chain | pequeno pedaço de escória vítrea (m) / corrente de ferro (f) |
+| cliff (no cânion) / ancient map / parchment | penhasco (m) / mapa antigo (m) / pergaminho (m) |

@@ -414,30 +414,30 @@ janela, que está ">
 			 <AND <VERB? THROUGH>
 			      <EQUAL? ,PRSO ,BARROW>>>>
 		<TELL
-"Inside the Barrow|
-As you enter the barrow, the door closes inexorably behind you. Around
-you it is dark, but ahead is an enormous cavern, brightly lit. Through
-its center runs a wide stream. Spanning the stream is a small wooden
-footbridge, and beyond a path leads into a dark tunnel. Above the
-bridge, floating in the air, is a large sign. It reads:  All ye who
-stand before this bridge have completed a great and perilous adventure
-which has tested your wit and courage. You have mastered">
+"Dentro do Túmulo|
+Quando você entra no túmulo, a porta se fecha inexoravelmente às suas
+costas. À sua volta está escuro, mas à frente há uma caverna enorme e bem
+iluminada. Pelo meio dela corre um riacho largo. Sobre o riacho há uma
+pequena ponte de madeira e, depois dela, uma trilha que entra num túnel
+escuro. Acima da ponte, flutuando no ar, há uma grande placa. Nela se lê:
+Todos vós que estais diante desta ponte concluístes uma grande e perigosa
+aventura, que pôs à prova o vosso engenho e a vossa coragem. Dominastes">
 		<COND (<EQUAL? <BAND <GETB 0 1> 8> 0>
 		       <TELL "
-the first part of the ZORK trilogy. Those who pass over this bridge must be
-prepared to undertake an even greater adventure that will severely test your
-skill and bravery!|
+a primeira parte da trilogia ZORK. Quem atravessar esta ponte deve estar
+pronto para uma aventura ainda maior, que porá duramente à prova a vossa
+habilidade e a vossa bravura!|
 |
-The ZORK trilogy continues with \"ZORK II: The Wizard of Frobozz\" and
-is completed in \"ZORK III: The Dungeon Master.\"" CR>)
+A trilogia ZORK continua em \"ZORK II: The Wizard of Frobozz\" e termina em
+\"ZORK III: The Dungeon Master\"." CR>)
 		      (T
 		       <TELL "
-ZORK: The Great Underground Empire.|" CR>)>
+ZORK: O Grande Império Subterrâneo.|" CR>)>
 		<FINISH>)>>
 
 <ROUTINE BARROW-DOOR-FCN ()
 	 <COND (<VERB? OPEN CLOSE>
-		<TELL "The door is too heavy." CR>)>>
+		<TELL "A porta é pesada demais." CR>)>>
 
 <ROUTINE BARROW-FCN ()
 	 <COND (<VERB? THROUGH>
@@ -2608,45 +2608,45 @@ passa." CR>
 		       <COND (<NOT ,RAINBOW-FLAG>
 			      <FCLEAR ,POT-OF-GOLD ,INVISIBLE>
 			      <TELL
-"Suddenly, the rainbow appears to become solid and, I venture,
-walkable (I think the giveaway was the stairs and bannister)." CR>
+"De repente, o arco-íris parece ficar sólido e, eu me arrisco a dizer,
+transitável (acho que a escada e o corrimão entregaram)." CR>
 			      <COND (<AND <EQUAL? ,HERE ,END-OF-RAINBOW>
 					  <IN? ,POT-OF-GOLD ,END-OF-RAINBOW>>
 				     <TELL
-"A shimmering pot of gold appears at the end of the rainbow." CR>)>
+"Um pote de ouro reluzente aparece no fim do arco-íris." CR>)>
 			      <SETG RAINBOW-FLAG T>)
 			     (T
 			      <ROB ,ON-RAINBOW ,WALL>
 			      <TELL
-"The rainbow seems to have become somewhat run-of-the-mill." CR>
+"O arco-íris parece ter voltado a ser um arco-íris qualquer." CR>
 			      <SETG RAINBOW-FLAG <>>
 			      <RTRUE>)>)
 		      (<EQUAL? ,HERE ,ON-RAINBOW>
 		       <SETG RAINBOW-FLAG <>>
 		       <JIGS-UP
-"The structural integrity of the rainbow is severely compromised,
-leaving you hanging in midair, supported only by water vapor. Bye.">)
+"A integridade estrutural do arco-íris fica seriamente comprometida, e você
+fica suspenso no ar, apoiado só em vapor d'água. Tchau.">)
 		      (T
 		       <TELL
-"A dazzling display of color briefly emanates from the sceptre." CR>)>)>>
+"Por um instante, o cetro solta um deslumbrante espetáculo de cores." CR>)>)>>
 
 <ROUTINE FALLS-ROOM (RARG)
     <COND (<EQUAL? .RARG ,M-LOOK>
 	   <TELL
-"You are at the top of Aragain Falls, an enormous waterfall with a
-drop of about 450 feet. The only path here is on the north end." CR>
+"Você está no alto das Cataratas de Aragain, uma enorme queda-d'água de
+uns 140 metros de altura. A única trilha daqui fica no lado norte." CR>
 	   <COND (,RAINBOW-FLAG
 		  <TELL
-"A solid rainbow spans the falls.">)
+"Um arco-íris sólido atravessa as cataratas.">)
 		 (T
 		  <TELL
-"A beautiful rainbow can be seen over the falls and to the west.">)>
+"Dá para ver um lindo arco-íris sobre as cataratas, a oeste.">)>
 	   <CRLF>)>>
 
 <ROUTINE RAINBOW-FCN ()
 	 <COND (<VERB? CROSS THROUGH>
 		<COND (<EQUAL? ,HERE ,CANYON-VIEW>
-		       <TELL "From here?!?" CR>
+		       <TELL "Daqui?!?" CR>
 		       <RTRUE>)>
 		<COND (,RAINBOW-FLAG
 		       <COND (<EQUAL? ,HERE ,ARAGAIN-FALLS>
@@ -2654,12 +2654,12 @@ drop of about 450 feet. The only path here is on the north end." CR>
 			     (<EQUAL? ,HERE ,END-OF-RAINBOW>
 			      <GOTO ,ARAGAIN-FALLS>)
 			     (T
-			      <TELL "You'll have to say which way..." CR>)>)
+			      <TELL "Você vai ter que dizer para que lado..." CR>)>)
 		      (T
-		       <TELL "Can you walk on water vapor?"
+		       <TELL "Dá para andar sobre vapor d'água?"
 			     CR>)>)
 	       (<VERB? LOOK-UNDER>
-		<TELL "The Frigid River flows under the rainbow." CR>)>>
+		<TELL "O Rio Frígido corre por baixo do arco-íris." CR>)>>
 
 <ROUTINE DBOAT-FUNCTION ("AUX")
 	 <COND (<AND <VERB? PUT PUT-ON>
@@ -3040,11 +3040,13 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 	 <COND (<OR <VERB? LEAP>
 		    <AND <VERB? PUT> <EQUAL? ,PRSO ,ME>>>
 		<TELL
-		 "That would be very unwise. Perhaps even fatal." CR>)
+		 "Isso seria muito insensato. Talvez até fatal." CR>)
 	       (<EQUAL? ,PRSI ,CLIMBABLE-CLIFF>
 		<COND (<VERB? PUT THROW-OFF>
-		       <TELL
-"The " D ,PRSO " tumbles into the river and is seen no more." CR>
+		       <TELL T-CO ,PRSO " ">
+		       <PRINT-PLURAL ,PRSO "despenca no rio e desaparece"
+				     "despencam no rio e desaparecem">
+		       <TELL " para sempre." CR>
 		       <REMOVE-CAREFULLY ,PRSO>)>)>>
 
 \
