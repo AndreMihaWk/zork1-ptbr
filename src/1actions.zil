@@ -1157,32 +1157,31 @@ shaken at your clumsy attempt, resume their hideous jeering." CR>>>
 <ROUTINE DAM-ROOM-FCN (RARG)
    	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are standing on the top of the Flood Control Dam #3, which was
-quite a tourist attraction in times far distant. There are paths to
-the north, south, and west, and a scramble down." CR>
+"Você está no alto da Barragem de Controle de Enchentes #3, que foi uma
+grande atração turística em tempos muito distantes. Há trilhas para o
+norte, o sul e o oeste, e uma descida acidentada." CR>
 		<COND (<AND ,LOW-TIDE ,GATES-OPEN>
 		       <TELL
-"The water level behind the dam is low: The sluice gates have been
-opened. Water rushes through the dam and downstream." CR>)
+"O nível da água atrás da barragem está baixo: as comportas foram
+abertas. A água jorra pela barragem e segue rio abaixo." CR>)
 		      (,GATES-OPEN
 		       <TELL
-"The sluice gates are open, and water rushes through the dam. The
-water level behind the dam is still high." CR>)
+"As comportas estão abertas, e a água jorra pela barragem. O nível da
+água atrás da barragem ainda está alto." CR>)
 		      (,LOW-TIDE
 		       <TELL
-"The sluice gates are closed. The water level in the reservoir is
-quite low, but the level is rising quickly." CR>)
+"As comportas estão fechadas. O nível da água na represa está bem baixo,
+mas está subindo depressa." CR>)
 		      (T
 		       <TELL
-"The sluice gates on the dam are closed. Behind the dam, there can be
-seen a wide reservoir. Water is pouring over the top of the now
-abandoned dam." CR>)>
+"As comportas da barragem estão fechadas. Atrás da barragem, vê-se uma
+represa larga. A água transborda por cima da barragem, hoje abandonada." CR>)>
 		<TELL
-"There is a control panel here, on which a large metal bolt is mounted.
-Directly above the bolt is a small green plastic bubble">
+"Há aqui um painel de controle, no qual está montado um grande parafuso de
+metal. Logo acima do parafuso há uma pequena bolha verde de plástico">
 		<COND (,GATE-FLAG
-		       <TELL " which is
-glowing serenely">)>
+		       <TELL ", que
+brilha serenamente">)>
 		<TELL "." CR>)>>
 
 <ROUTINE BOLT-F ()
@@ -1194,35 +1193,35 @@ glowing serenely">)>
 				    <SETG GATES-OPEN <>>
 				    <FCLEAR ,LOUD-ROOM ,TOUCHBIT>
 				    <TELL
-"The sluice gates close and water starts to collect behind the dam." CR>
+"As comportas se fecham, e a água começa a se acumular atrás da barragem." CR>
 				    <ENABLE <QUEUE I-RFILL 8>>
 				    <QUEUE I-REMPTY 0>
 				    T)
 				   (T
 				    <SETG GATES-OPEN T>
 				    <TELL
-"The sluice gates open and water pours through the dam." CR>
+"As comportas se abrem, e a água jorra pela barragem." CR>
 				    <ENABLE <QUEUE I-REMPTY 8>>
 				    <QUEUE I-RFILL 0>
 				    T)>)
 			    (T <TELL
-"The bolt won't turn with your best effort." CR>)>)
+"Por mais que você se esforce, o parafuso não gira." CR>)>)
 		     (ELSE
 		      <TELL
-"The bolt won't turn using the " D ,PRSI "." CR>)>)
+"O parafuso não gira com " T-O ,PRSI "." CR>)>)
 	      (<VERB? TAKE>
 	       <INTEGRAL-PART>)
 	      (<VERB? OIL>
 	       <TELL
-"Hmm. It appears the tube contained glue, not oil. Turning the bolt
-won't get any easier...." CR>)>>
+"Hum. Parece que o tubo continha cola, não óleo. Girar o parafuso não vai
+ficar nem um pouco mais fácil...." CR>)>>
 
 <ROUTINE BUBBLE-F ()
 	 <COND (<VERB? TAKE>
 		<INTEGRAL-PART>)>>
 
 <ROUTINE INTEGRAL-PART ()
-	 <TELL "It is an integral part of the control panel." CR>>
+	 <TELL "Isso faz parte do painel de controle." CR>>
 
 <ROUTINE I-RFILL ()
 	 <FSET ,RESERVOIR ,NONLANDBIT>
@@ -1235,28 +1234,28 @@ won't get any easier...." CR>)>>
 	 <COND (<EQUAL? ,HERE ,RESERVOIR>
 		<COND (<FSET? <LOC ,WINNER> ,VEHBIT>
 		       <TELL
-"The boat lifts gently out of the mud and is now floating on
-the reservoir." CR>)
+"O barco se solta devagar da lama e agora está flutuando na
+represa." CR>)
 		      (T
 		       <JIGS-UP
-"You are lifted up by the rising river! You try to swim, but the
-currents are too strong. You come closer, closer to the awesome
-structure of Flood Control Dam #3. The dam beckons to you.
-The roar of the water nearly deafens you, but you remain conscious
-as you tumble over the dam toward your certain doom among the rocks
-at its base.">)>)
+"Você é erguido pelas águas que sobem! Você tenta nadar, mas as correntes
+são fortes demais. Você chega cada vez mais perto da imponente estrutura
+da Barragem de Controle de Enchentes #3. A barragem chama por você. O
+rugido da água quase o deixa surdo, mas você continua consciente enquanto
+despenca por cima da barragem rumo à morte certa entre as pedras lá
+embaixo.">)>)
 	       (<EQUAL? ,HERE ,DEEP-CANYON>
 		<TELL
-"A sound, like that of flowing water, starts to come from below." CR>)
+"Um som, como o de água corrente, começa a vir lá de baixo." CR>)
 	       (<EQUAL? ,HERE ,LOUD-ROOM>
 		<TELL
-"All of a sudden, an alarmingly loud roaring sound fills the room.
-Filled with fear, you scramble away." CR>
+"De repente, um rugido assustadoramente alto toma conta da sala. Morrendo
+de medo, você foge às pressas." CR>
 		<GOTO <PICK-ONE ,LOUD-RUNS>>)
 	       (<EQUAL? ,HERE ,RESERVOIR-NORTH ,RESERVOIR-SOUTH>
 		<TELL
-"You notice that the water level has risen to the point that it
-is impossible to cross." CR>)>
+"Você percebe que o nível da água subiu a ponto de ser impossível
+atravessar." CR>)>
 	 T>
 
 <GLOBAL LOUD-RUNS <LTABLE 0 DAMP-CAVE ROUND-ROOM DEEP-CANYON>>
@@ -1271,93 +1270,93 @@ is impossible to cross." CR>)>
 	 <COND (<AND <EQUAL? ,HERE ,RESERVOIR>
 		     <FSET? <LOC ,WINNER> ,VEHBIT>>
 		<TELL
-"The water level has dropped to the point at which the boat can no
-longer stay afloat. It sinks into the mud." CR>)
+"O nível da água baixou tanto que o barco não consegue mais flutuar. Ele
+afunda na lama." CR>)
 	       (<EQUAL? ,HERE ,DEEP-CANYON>
 		<TELL
-"The roar of rushing water is quieter now." CR>)
+"O rugido da água corrente está mais fraco agora." CR>)
 	       (<EQUAL? ,HERE ,RESERVOIR-NORTH ,RESERVOIR-SOUTH>
 		<TELL
-"The water level is now quite low here and you could easily cross over
-to the other side." CR>)>
+"Agora o nível da água aqui está bem baixo, e daria para atravessar
+facilmente para o outro lado." CR>)>
 	 T>
 
+;"PT: completa \"Agora a água aqui está \" (I-MAINT-ROOM)"
 <GLOBAL DROWNINGS
-      <TABLE (PURE) "up to your ankles."
-	"up to your shin."
-	"up to your knees."
-	"up to your hips."
-	"up to your waist."
-	"up to your chest."
-	"up to your neck."
-	"over your head."
-	"high in your lungs.">>
+      <TABLE (PURE) "pelos tornozelos."
+	"pelas canelas."
+	"pelos joelhos."
+	"pelos quadris."
+	"pela cintura."
+	"pelo peito."
+	"pelo pescoço."
+	"acima da sua cabeça."
+	"bem dentro dos seus pulmões.">>
 
 <GLOBAL WATER-LEVEL 0>
 <GDECL (WATER-LEVEL) FIX>
 
 <ROUTINE BUTTON-F ()
 	 <COND (<VERB? READ>
-		<TELL "They're greek to you." CR>)
+		<TELL "Para você, é tudo grego." CR>)
 	       (<VERB? PUSH>
 		<COND (<EQUAL? ,PRSO ,BLUE-BUTTON>
 		       <COND (<0? ,WATER-LEVEL>
 			      <FCLEAR ,LEAK ,INVISIBLE>
 			      <TELL
-"There is a rumbling sound and a stream of water appears to burst
-from the east wall of the room (apparently, a leak has occurred in a
-pipe)." CR>
+"Ouve-se um ronco, e um jato de água parece irromper da parede leste da
+sala (pelo visto, surgiu um vazamento num cano)." CR>
 			      <SETG WATER-LEVEL 1>
 			      <ENABLE <QUEUE I-MAINT-ROOM -1>>
 			      T)
 			     (T
 			      <TELL
-			        "The blue button appears to be jammed." CR>)>)
+			        "O botão azul parece estar emperrado." CR>)>)
 		      (<EQUAL? ,PRSO ,RED-BUTTON>
-		       <TELL "The lights within the room ">
+		       <TELL "As luzes da sala ">
 		       <COND (<FSET? ,HERE ,ONBIT>
 			      <FCLEAR ,HERE ,ONBIT>
-			      <TELL "shut off." CR>)
+			      <TELL "se apagam." CR>)
 			     (T
 			      <FSET ,HERE ,ONBIT>
-			      <TELL "come on." CR>)>)
+			      <TELL "se acendem." CR>)>)
 		      (<EQUAL? ,PRSO ,BROWN-BUTTON>
 		       <FCLEAR ,DAM-ROOM ,TOUCHBIT>
 		       <SETG GATE-FLAG <>>
-		       <TELL "Click." CR>)
+		       <TELL "Clique." CR>)
 		      (<EQUAL? ,PRSO ,YELLOW-BUTTON>
 		       <FCLEAR ,DAM-ROOM ,TOUCHBIT>
 		       <SETG GATE-FLAG T>
-		       <TELL "Click." CR>)>)>>
+		       <TELL "Clique." CR>)>)>>
 
 <ROUTINE TOOL-CHEST-FCN ()
 	 <COND (<VERB? EXAMINE>
-		<TELL "The chests are all empty." CR>)
+		<TELL "As caixas estão todas vazias." CR>)
 	       (<VERB? TAKE OPEN PUT>
 		<REMOVE-CAREFULLY ,TOOL-CHEST>
 <TELL
-"The chests are so rusty and corroded that they crumble when you
-touch them." CR>)
+"As caixas estão tão enferrujadas e corroídas que se desfazem quando
+você toca nelas." CR>)
 	       (<VERB? OPEN>
-		<TELL "The chests are already open." CR>)>>
+		<TELL "As caixas já estão abertas." CR>)>>
 
 <ROUTINE I-MAINT-ROOM ("AUX" HERE?)
 	 <SET HERE? <EQUAL? ,HERE ,MAINTENANCE-ROOM>>
-	 <COND (.HERE? <TELL "The water level here is now "> <TELL <GET
+	 <COND (.HERE? <TELL "Agora a água aqui está "> <TELL <GET
 		,DROWNINGS </ ,WATER-LEVEL 2>>> <CRLF>)>
 	 <SETG WATER-LEVEL <+ 1 ,WATER-LEVEL>>
 	 <COND (<NOT <L? ,WATER-LEVEL 14>>
 		<MUNG-ROOM ,MAINTENANCE-ROOM
-"The room is full of water and cannot be entered.">
+"A sala está cheia de água, e não dá para entrar.">
 		<QUEUE I-MAINT-ROOM 0>
 		<COND (.HERE?
 		     <JIGS-UP
-"I'm afraid you have done drowned yourself.">)>)
+"Lamento, mas parece que você conseguiu se afogar.">)>)
 	       (<AND <IN? ,WINNER ,INFLATED-BOAT>
 		     <EQUAL? ,HERE ,MAINTENANCE-ROOM ,DAM-ROOM ,DAM-LOBBY>>
 		<JIGS-UP
-"The rising water carries the boat over the dam, down the river, and over
-the falls. Tsk, tsk.">)>
+"A água que sobe leva o barco por cima da barragem, rio abaixo e cataratas
+abaixo. Tsc, tsc.">)>
 	 <RTRUE>>
 
 <ROUTINE LEAK-FUNCTION ()
@@ -1374,73 +1373,74 @@ the falls. Tsk, tsk.">)>
 	 <SETG WATER-LEVEL -1>
 	 <QUEUE I-MAINT-ROOM 0>
 	 <TELL
-"By some miracle of Zorkian technology, you have managed to stop the
-leak in the dam." CR>>
+"Por algum milagre da tecnologia zorkiana, você conseguiu estancar o
+vazamento da barragem." CR>>
 
 <ROUTINE PUTTY-FCN ()
 	 <COND (<OR <AND <VERB? OIL>
 			 <EQUAL? ,PRSI ,PUTTY>>
 		    <AND <VERB? PUT>
 			 <EQUAL? ,PRSO ,PUTTY>>>
-		<TELL "The all-purpose gunk isn't a lubricant." CR>)>>
+		<TELL "A gosma multiuso não é lubrificante." CR>)>>
 
 <ROUTINE TUBE-FUNCTION ()
 	 <COND (<AND <VERB? PUT>
 		     <EQUAL? ,PRSI ,TUBE>>
-		<TELL "The tube refuses to accept anything." CR>)
+		<TELL "O tubo se recusa a aceitar qualquer coisa." CR>)
 	       (<VERB? SQUEEZE>
 		<COND (<AND <FSET? ,PRSO ,OPENBIT>
 			    <IN? ,PUTTY ,PRSO>>
 		       <MOVE ,PUTTY ,WINNER>
-		       <TELL "The viscous material oozes into your hand." CR>)
+		       <TELL "O material viscoso escorre para a sua mão." CR>)
 		      (<FSET? ,PRSO ,OPENBIT>
-		       <TELL "The tube is apparently empty." CR>)
+		       <TELL "Pelo jeito, o tubo está vazio." CR>)
 		      (T
-		       <TELL "The tube is closed." CR>)>)>>
+		       <TELL "O tubo está fechado." CR>)>)>>
 
 <ROUTINE DAM-FUNCTION ()
 	 <COND (<VERB? OPEN CLOSE>
-		<TELL "Sounds reasonable, but this isn't how." CR>)
+		<TELL "Parece razoável, mas não é assim que se faz." CR>)
 	       (<VERB? PLUG>
 		<COND (<EQUAL? ,PRSI ,HANDS>
 		       <TELL
-"Are you the little Dutch boy, then? Sorry, this is a big dam." CR>)
+"Quem você pensa que é, o menino holandês que tapou o dique com o dedo?
+Sinto muito, mas esta barragem é grande." CR>)
 		      (T
 		       <TELL
-"With a " D ,PRSI "? Do you know how big this dam is? You could only
-stop a tiny leak with that." CR>)>)>>
+"Com " T-UM ,PRSI "? Você sabe o tamanho desta barragem? Com isso, você
+só conseguiria tapar um vazamentozinho de nada." CR>)>)>>
 
 <ROUTINE WITH-TELL (OBJ)
-	 <TELL "With a " D .OBJ "?" CR>>
+	 <TELL "Com " T-UM .OBJ "?" CR>>
 
 <ROUTINE RESERVOIR-SOUTH-FCN (RARG)
 	<COND (<EQUAL? .RARG ,M-LOOK>
 	       <COND (<AND ,LOW-TIDE ,GATES-OPEN>
 		      <TELL
-"You are in a long room, to the north of which was formerly a lake.
-However, with the water level lowered, there is merely a wide stream
-running through the center of the room.">)
+"Você está numa sala comprida. Ao norte havia um lago, mas, com o nível
+da água mais baixo, agora só resta um riacho largo correndo pelo meio da
+sala.">)
 		     (,GATES-OPEN
 		      <TELL
-"You are in a long room. To the north is a large lake, too deep
-to cross. You notice, however, that the water level appears to be
-dropping at a rapid rate. Before long, it might be possible to cross
-to the other side from here.">)
+"Você está numa sala comprida. Ao norte há um lago grande, fundo demais
+para atravessar. Mas você percebe que o nível da água parece estar
+baixando depressa. Logo, talvez dê para atravessar daqui para o outro
+lado.">)
 		     (,LOW-TIDE
 		      <TELL
-"You are in a long room, to the north of which is a wide area which
-was formerly a reservoir, but now is merely a stream. You notice,
-however, that the level of the stream is rising quickly and that
-before long it will be impossible to cross here.">)
+"Você está numa sala comprida. Ao norte há uma área larga que antes era
+uma represa, mas agora não passa de um riacho. Só que você percebe que o
+nível do riacho está subindo depressa e que logo vai ser impossível
+atravessar por aqui.">)
 		     (T
 		      <TELL
-"You are in a long room on the south shore of a large lake, far
-too deep and wide for crossing.">)>
+"Você está numa sala comprida, na margem sul de um lago grande, fundo e
+largo demais para atravessar.">)>
 	       <CRLF>
 	       <TELL
-"There is a path along the stream to the east or west, a steep pathway
-climbing southwest along the edge of a chasm, and a path leading into a
-canyon to the southeast." CR>)>>
+"Há uma trilha ao longo do riacho, para leste ou para oeste, um caminho
+íngreme que sobe para sudoeste pela beira de um abismo e uma trilha que
+leva a um cânion, a sudeste." CR>)>>
 
 <ROUTINE RESERVOIR-FCN (RARG)
    	<COND (<AND <EQUAL? .RARG ,M-END>
@@ -1448,42 +1448,43 @@ canyon to the southeast." CR>)>>
 		    <NOT ,GATES-OPEN>
 		    ,LOW-TIDE>
 	       <TELL
-"You notice that the water level here is rising rapidly. The currents
-are also becoming stronger. Staying here seems quite perilous!" CR>)
+"Você percebe que o nível da água aqui está subindo depressa. As
+correntes também estão ficando mais fortes. Ficar aqui parece bem
+perigoso!" CR>)
 	      (<EQUAL? .RARG ,M-LOOK>
 	       <COND (,LOW-TIDE
 		      <TELL
-"You are on what used to be a large lake, but which is now a large
-mud pile. There are \"shores\" to the north and south.">)
+"Você está no que antes era um lago grande, mas agora não passa de um
+enorme lamaçal. Há \"margens\" ao norte e ao sul.">)
 		     (T
 		      <TELL
-"You are on the lake. Beaches can be seen north and south.
-Upstream a small stream enters the lake through a narrow cleft
-in the rocks. The dam can be seen downstream.">)>
+"Você está no lago. Dá para ver praias ao norte e ao sul. Mais acima, um
+riachinho deságua no lago por uma fenda estreita entre as pedras. Mais
+abaixo, dá para ver a barragem.">)>
 	       <CRLF>)>>
 
 <ROUTINE RESERVOIR-NORTH-FCN (RARG)
 	<COND (<EQUAL? .RARG ,M-LOOK>
 	       <COND (<AND ,LOW-TIDE ,GATES-OPEN>
 		      <TELL
-"You are in a large cavernous room, the south of which was formerly
-a lake. However, with the water level lowered, there is merely
-a wide stream running through there.">)
+"Você está numa sala grande e cavernosa. Ao sul havia um lago, mas, com
+o nível da água mais baixo, agora só resta um riacho largo correndo por
+ali.">)
 		     (,GATES-OPEN
 		      <TELL
-"You are in a large cavernous area. To the south is a wide lake,
-whose water level appears to be falling rapidly.">)
+"Você está numa área grande e cavernosa. Ao sul há um lago largo, cujo
+nível parece estar baixando depressa.">)
 		     (,LOW-TIDE
 		      <TELL
-"You are in a cavernous area, to the south of which is a very wide
-stream. The level of the stream is rising rapidly, and it appears
-that before long it will be impossible to cross to the other side.">)
+"Você está numa área cavernosa. Ao sul há um riacho muito largo. O nível
+do riacho está subindo depressa, e parece que logo vai ser impossível
+atravessar para o outro lado.">)
 		     (T
 		      <TELL
-"You are in a large cavernous room, north of a large lake.">)>
+"Você está numa sala grande e cavernosa, ao norte de um lago grande.">)>
 	       <CRLF>
 	       <TELL
-"There is a slimy stairway leaving the room to the north." CR>)>>
+"Uma escada coberta de limo sai da sala para o norte." CR>)>>
 
 \
 
@@ -2273,45 +2274,46 @@ obras-primas do artista, você destruiu uma." CR>)>>
 		       <SETG MATCH-COUNT <- ,MATCH-COUNT 1>>)>
 		<COND (<NOT <G? ,MATCH-COUNT 0>>
 		       <TELL
-			"I'm afraid that you have run out of matches." CR>)
+			"Receio que os seus fósforos tenham acabado." CR>)
 		      (<EQUAL? ,HERE ,LOWER-SHAFT ,TIMBER-ROOM>
 		       <TELL
-"This room is drafty, and the match goes out instantly." CR>)
+"Esta sala tem correntes de ar, e o fósforo se apaga na hora." CR>)
 		      (T
 		       <FSET ,MATCH ,FLAMEBIT>
 		       <FSET ,MATCH ,ONBIT>
 		       <ENABLE <QUEUE I-MATCH 2>>
-		       <TELL "One of the matches starts to burn." CR>
+		       <TELL "Um dos fósforos começa a queimar." CR>
 		       <COND (<NOT ,LIT>
 			      <SETG LIT T>
 			      <V-LOOK>)>
 		       <RTRUE>)>)
 	       (<AND <VERB? LAMP-OFF> <FSET? ,MATCH ,FLAMEBIT>>
-		<TELL "The match is out." CR>
+		<TELL "O fósforo se apaga." CR>
 		<FCLEAR ,MATCH ,FLAMEBIT>
 		<FCLEAR ,MATCH ,ONBIT>
 		<SETG LIT <LIT? ,HERE>>
-		<COND (<NOT ,LIT> <TELL "It's pitch black in here!" CR>)>
+		<COND (<NOT ,LIT> <TELL "Está um breu total aqui dentro!" CR>)>
 		<QUEUE I-MATCH 0>
 		<RTRUE>)
 	       (<VERB? COUNT OPEN>
-		<TELL "You have ">
+		<TELL "Você ">
 	        <SET CNT <- ,MATCH-COUNT 1>>
-		<COND (<NOT <G? .CNT 0>> <TELL "no">)
-		      (T <TELL N .CNT>)>
-		<TELL " match">
-		<COND (<NOT <1? .CNT>> <TELL "es.">) (T <TELL ".">)>
+		<COND (<NOT <G? .CNT 0>> <TELL "não tem nenhum">)
+		      (T <TELL "tem " N .CNT>)>
+		<TELL " fósforo">
+		<COND (<G? .CNT 1> <TELL "s.">) (T <TELL ".">)>
 		<CRLF>)
 	       (<VERB? EXAMINE>
 		<COND (<FSET? ,MATCH ,ONBIT>
-		       <TELL "The match is burning.">)
+		       <TELL "O fósforo está queimando.">)
 		      (T
 		       <TELL
-"The matchbook isn't very interesting, except for what's written on it.">)>
+"A caixa de fósforos não tem nada de interessante, a não ser o que está
+escrito nela.">)>
 		<CRLF>)>>
 
 <ROUTINE I-MATCH ()
-	 <TELL "The match has gone out." CR>
+	 <TELL "O fósforo se apagou." CR>
 	 <FCLEAR ,MATCH ,FLAMEBIT>
 	 <FCLEAR ,MATCH ,ONBIT>
 	 <SETG LIT <LIT? ,HERE>>
@@ -2660,14 +2662,14 @@ drop of about 450 feet. The only path here is on the north end." CR>
 		<FIX-BOAT>)
 	       (<VERB? INFLATE FILL>
 		<TELL
-"No chance. Some moron punctured it." CR>)
+"Sem chance. Algum imbecil furou o barco." CR>)
 	       (<VERB? PLUG>
 		<COND (<EQUAL? ,PRSI ,PUTTY>
 		       <FIX-BOAT>)
 		      (T <WITH-TELL ,PRSI>)>)>>
 
 <ROUTINE FIX-BOAT ()
-	 <TELL "Well done. The boat is repaired." CR>
+	 <TELL "Muito bem. O barco está consertado." CR>
 	 <MOVE ,INFLATABLE-BOAT <LOC ,PUNCTURED-BOAT>>
 	 <REMOVE-CAREFULLY ,PUNCTURED-BOAT>>
 
@@ -2676,23 +2678,30 @@ drop of about 450 feet. The only path here is on the north end." CR>
 		<COND (<EQUAL? ,PRSI ,RIVER>
 		       <COND (<EQUAL? ,PRSO ,ME>
 			      <JIGS-UP
-"You splash around for a while, fighting the current, then you drown.">)
+"Você se debate na água por um tempo, lutando contra a correnteza, e
+então se afoga.">)
 			     (<EQUAL? ,PRSO ,INFLATED-BOAT>
 			      <TELL
-"You should get in the boat then launch it." CR>)
+"Você deveria entrar no barco e depois lançá-lo." CR>)
 			     (<FSET? ,PRSO ,BURNBIT>
 			      <REMOVE-CAREFULLY ,PRSO>
-			      <TELL
-"The " D ,PRSO " floats for a moment, then sinks." CR>)
+			      <TELL T-CO ,PRSO " ">
+			      <PRINT-PLURAL ,PRSO "flutua" "flutuam">
+			      <TELL " por um instante e depois ">
+			      <PRINT-PLURAL ,PRSO "afunda" "afundam">
+			      <TELL "." CR>)
 			     (T
 			      <REMOVE-CAREFULLY ,PRSO>
-			      <TELL
-"The " D ,PRSO " splashes into the water and is gone forever." CR>)>)>)
+			      <TELL T-CO ,PRSO " ">
+			      <PRINT-PLURAL ,PRSO "cai" "caem">
+			      <TELL " na água e ">
+			      <PRINT-PLURAL ,PRSO "some" "somem">
+			      <TELL " para sempre." CR>)>)>)
 	       (<VERB? LEAP THROUGH>
 		<TELL
-"A look before leaping reveals that the river is wide and dangerous,
-with swift currents and large, half-hidden rocks. You decide to forgo your
-swim." CR>)>>
+"Olhando antes de pular, você vê que o rio é largo e perigoso, com
+correntes rápidas e pedras grandes meio escondidas. Você decide deixar o
+mergulho para outro dia." CR>)>>
 
 <GLOBAL RIVER-SPEEDS
 	<LTABLE (PURE) RIVER-1 4 RIVER-2 4 RIVER-3 3 RIVER-4 2 RIVER-5 1>>
@@ -2715,14 +2724,13 @@ swim." CR>)>>
 		     <NOT <EQUAL? ,HERE ,RIVER-4 ,RIVER-5>>>
 		<DISABLE <INT I-RIVER>>)
 	       (<SET RM <LKP ,HERE ,RIVER-NEXT>>
-		<TELL "The flow of the river carries you downstream." CR CR>
+		<TELL "A correnteza leva você rio abaixo." CR CR>
 		<GOTO .RM>
 		<ENABLE <QUEUE I-RIVER <LKP ,HERE ,RIVER-SPEEDS>>>)
 	       (T
 		<JIGS-UP
-"Unfortunately, the magic boat doesn't provide protection from
-the rocks and boulders one meets at the bottom of waterfalls.
-Including this one.">)>>
+"Infelizmente, o barco mágico não protege contra as pedras e rochas que
+a gente encontra no pé das cachoeiras. Inclusive desta.">)>>
 
 <ROUTINE RBOAT-FUNCTION ("OPTIONAL" (RARG <>) "AUX" TMP)
     <COND (<EQUAL? .RARG ,M-ENTER ,M-END ,M-LOOK> <>)	
@@ -2738,24 +2746,24 @@ Including this one.">)>>
 			 <RFALSE>)
 			(T
 			 <TELL
-"Read the label for the boat's instructions." CR>
+"Leia a etiqueta para ver as instruções do barco." CR>
 			 <RTRUE>)>)
 		 (<VERB? LAUNCH>
 		  <COND (<OR <EQUAL? ,HERE ,RIVER-1 ,RIVER-2 ,RIVER-3>
 			     <EQUAL? ,HERE ,RIVER-4 ,RESERVOIR ,IN-STREAM>>
 			 <TELL
-"You are on the ">
+"Você já está ">
 			 <COND (<EQUAL? ,HERE ,RESERVOIR>
-				<TELL "reservoir">)
+				<TELL "na represa">)
 			       (<EQUAL? ,HERE ,IN-STREAM>
-				<TELL "stream">)
-			       (T <TELL "river">)>
-			 <TELL ", or have you forgotten?" CR>)
+				<TELL "no riacho">)
+			       (T <TELL "no rio">)>
+			 <TELL ", ou esqueceu?" CR>)
 			(<EQUAL? <SET TMP <GO-NEXT ,RIVER-LAUNCH>> 1>
 			 <ENABLE <QUEUE I-RIVER <LKP ,HERE ,RIVER-SPEEDS>>>
 			 <RTRUE>)
 			(<NOT <EQUAL? .TMP 2>>
-			 <TELL "You can't launch it here." CR>
+			 <TELL "Você não pode lançar o barco aqui." CR>
 			 <RTRUE>)
 			(T <RTRUE>)>)
 		 (<OR <AND <VERB? DROP>
@@ -2770,25 +2778,30 @@ Including this one.">)>>
 		  <ROB ,INFLATED-BOAT ,HERE>
 		  <MOVE ,WINNER ,HERE>
 		  <TELL
-"It seems that the ">
-		  <COND (<VERB? DROP PUT> <TELL D ,PRSO>)
-			(T <TELL D ,PRSI>)>
-		  <TELL " didn't agree with the boat, as evidenced
-by the loud hissing noise issuing therefrom. With a pathetic sputter, the
-boat deflates, leaving you without." CR>
+"Parece que ">
+		  <COND (<VERB? DROP PUT>
+			 <TELL T-O ,PRSO " não se ">
+			 <PRINT-PLURAL ,PRSO "deu" "deram">)
+			(T
+			 <TELL T-O ,PRSI " não se ">
+			 <PRINT-PLURAL ,PRSI "deu" "deram">)>
+		  <TELL " bem com o barco, a julgar pelo chiado alto
+que sai dele. Com um gorgolejo patético, o barco murcha e deixa você a ver
+navios." CR>
 		  <COND (<FSET? ,HERE ,NONLANDBIT>
 			 <CRLF>
 			 <COND (<==? ,HERE ,RESERVOIR ,IN-STREAM>
 				<JIGS-UP
-"Another pathetic sputter, this time from you, heralds your drowning.">)
+"Outro gorgolejo patético, desta vez seu, anuncia o seu afogamento.">)
 			       (T
 				<JIGS-UP
-"In other words, fighting the fierce currents of the Frigid River. You
-manage to hold your own for a bit, but then you are carried over a
-waterfall and into some nasty rocks. Ouch!">)>)>
+"Ou melhor, a ver navios enquanto luta contra as correntes ferozes do Rio
+Frígido. Você até consegue se aguentar por um tempo, mas depois é
+arrastado por uma cachoeira e cai em cima de umas pedras nada simpáticas.
+Ai!">)>)>
 		  <RTRUE>)
 		 (<VERB? LAUNCH>
-	  	   <TELL "You're not in the boat!" CR>)>)
+	  	   <TELL "Você não está no barco!" CR>)>)
 	  (<VERB? BOARD>
 	   <COND (<OR <IN? ,SCEPTRE ,WINNER>
 		      <IN? ,KNIFE ,WINNER>
@@ -2797,23 +2810,23 @@ waterfall and into some nasty rocks. Ouch!">)>)>
 		      <IN? ,AXE ,WINNER>
 		      <IN? ,STILETTO ,WINNER>>
 		  <TELL
-"Oops! Something sharp seems to have slipped and punctured the boat.
-The boat deflates to the sounds of hissing, sputtering, and cursing." CR>
+"Opa! Parece que alguma coisa afiada escorregou e furou o barco. O barco
+murcha entre chiados, gorgolejos e palavrões." CR>
 		  <REMOVE-CAREFULLY ,INFLATED-BOAT>
 		  <MOVE ,PUNCTURED-BOAT ,HERE>
 		  <THIS-IS-IT ,PUNCTURED-BOAT>
 		  T)>)
 	  (<VERB? INFLATE FILL>
-	   <TELL "Inflating it further would probably burst it." CR>)
+	   <TELL "Se você inflar mais, o barco provavelmente vai estourar." CR>)
 	  (<VERB? DEFLATE>
 	   <COND (<EQUAL? <LOC ,WINNER> ,INFLATED-BOAT>
 		  <TELL
-"You can't deflate the boat while you're in it." CR>)
+"Você não pode esvaziar o barco enquanto está dentro dele." CR>)
 		 (<NOT <IN? ,INFLATED-BOAT ,HERE>>
 		  <TELL
-"The boat must be on the ground to be deflated." CR>)
+"O barco precisa estar no chão para ser esvaziado." CR>)
 		 (T <TELL
-"The boat deflates." CR>
+"O barco se esvazia." CR>
 		  <SETG DEFLATE T>
 		  <REMOVE-CAREFULLY ,INFLATED-BOAT>
 		  <MOVE ,INFLATABLE-BOAT ,HERE>
@@ -2826,23 +2839,23 @@ The boat deflates to the sounds of hissing, sputtering, and cursing." CR>
 	 <COND (<VERB? INFLATE FILL>
 		<COND (<NOT <IN? ,INFLATABLE-BOAT ,HERE>>
 		       <TELL
-"The boat must be on the ground to be inflated." CR>)
+"O barco precisa estar no chão para ser inflado." CR>)
 		      (<EQUAL? ,PRSI ,PUMP>
 		       <TELL
-"The boat inflates and appears seaworthy." CR>
+"O barco se enche e parece pronto para navegar." CR>
 		       <COND (<NOT <FSET? ,BOAT-LABEL ,TOUCHBIT>>
 			      <TELL
-"A tan label is lying inside the boat." CR>)>
+"Há uma etiqueta bege dentro do barco." CR>)>
 		       <SETG DEFLATE <>>
 		       <REMOVE-CAREFULLY ,INFLATABLE-BOAT>
 		       <MOVE ,INFLATED-BOAT ,HERE>
 		       <THIS-IS-IT ,INFLATED-BOAT>)
 		      (<EQUAL? ,PRSI ,LUNGS>
 		       <TELL
-"You don't have enough lung power to inflate it." CR>)
+"Você não tem fôlego suficiente para inflar o barco." CR>)
 		      (T
 		       <TELL
-"With a " D ,PRSI "? Surely you jest!" CR>)>)>>
+"Com " T-UM ,PRSI "? Você só pode estar brincando!" CR>)>)>>
 
 <GLOBAL BUOY-FLAG T>
 
@@ -2850,7 +2863,7 @@ The boat deflates to the sounds of hissing, sputtering, and cursing." CR>
 	 <COND (<EQUAL? .RARG ,M-END>
 		<COND (<AND <IN? ,BUOY ,WINNER> ,BUOY-FLAG>
 	      	       <TELL
-"You notice something funny about the feel of the buoy." CR>
+"Você sente algo esquisito ao apalpar a boia." CR>
 		       <SETG BUOY-FLAG <>>)>)>>
 
 <GLOBAL BEACH-DIG -1>
@@ -2863,20 +2876,20 @@ The boat deflates to the sounds of hissing, sputtering, and cursing." CR>
 		<COND (<G? ,BEACH-DIG 3>
 		       <SETG BEACH-DIG -1>
 		       <AND <IN? ,SCARAB ,HERE> <FSET ,SCARAB ,INVISIBLE>>
-		       <JIGS-UP "The hole collapses, smothering you.">)
+		       <JIGS-UP "O buraco desmorona e soterra você.">)
 		      (<EQUAL? ,BEACH-DIG 3>
 		       <COND (<FSET? ,SCARAB ,INVISIBLE>
 			      <TELL
-"You can see a scarab here in the sand." CR>
+"Você vê um escaravelho aqui na areia." CR>
 			      <THIS-IS-IT ,SCARAB>
 			      <FCLEAR ,SCARAB ,INVISIBLE>)>)
 		      (T
 		       <TELL <GET ,BDIGS ,BEACH-DIG> CR>)>)>>
 
 <GLOBAL BDIGS
-	<TABLE (PURE) "You seem to be digging a hole here."
-	       "The hole is getting deeper, but that's about it."
-	       "You are surrounded by a wall of sand on all sides.">>
+	<TABLE (PURE) "Parece que você está cavando um buraco aqui."
+	       "O buraco está ficando mais fundo, mas é só isso."
+	       "Você está cercado por uma parede de areia por todos os lados.">>
 
 \
 
@@ -3016,7 +3029,7 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 
 <ROUTINE WCLIF-OBJECT ()
 	 <COND (<VERB? CLIMB-UP CLIMB-DOWN CLIMB-FOO>
-		<TELL "The cliff is too steep for climbing." CR>)>>
+		<TELL "Os penhascos são íngremes demais para escalar." CR>)>>
 
 <ROUTINE CLIFF-OBJECT ()
 	 <COND (<OR <VERB? LEAP>
@@ -3182,17 +3195,17 @@ songbird and the sounds of the forest." CR CR>
 
 <ROUTINE LAKE-PSEUDO ()
 	 <COND (,LOW-TIDE
-		<TELL "There's not much lake left...." CR>)
+		<TELL "Não sobrou muito lago...." CR>)
 	       (<VERB? CROSS>
-		<TELL "It's too wide to cross." CR>)
+		<TELL "É largo demais para atravessar." CR>)
 	       (<VERB? THROUGH>
-		<TELL "You can't swim in this lake." CR>)>>
+		<TELL "Não dá para nadar neste lago." CR>)>>
 
 <ROUTINE STREAM-PSEUDO ()
 	 <COND (<VERB? SWIM THROUGH>
-		<TELL "You can't swim in the stream." CR>)
+		<TELL "Não dá para nadar no riacho." CR>)
 	       (<VERB? CROSS>
-		<TELL "The other side is a sheer rock cliff." CR>)>>
+		<TELL "O outro lado é um paredão de pedra." CR>)>>
 
 <ROUTINE CHASM-PSEUDO ()
 	 <COND (<OR <VERB? LEAP>
@@ -4171,7 +4184,7 @@ completo, mas não dá para ter tudo." CR CR>
 	 <STUPID-CONTAINER ,BAG-OF-COINS "coins">>
 
 <ROUTINE TRUNK-F ()
-	 <STUPID-CONTAINER ,TRUNK "jewels">>
+	 <STUPID-CONTAINER ,TRUNK "joias">>
 
 <ROUTINE STUPID-CONTAINER (OBJ STR)
 	 <COND (<VERB? OPEN CLOSE>
