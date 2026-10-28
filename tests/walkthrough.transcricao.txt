@@ -580,7 +580,7 @@ Sua carga está pesada demais.
 >coloque a pintura na vitrine
 Você colocou a pintura na vitrine de troféus.
 
->pegue o saco de couro
+>pegue o saco de couro com moedas
 Você pegou o saco de couro com moedas.
 
 >o
@@ -1318,7 +1318,7 @@ chave de fenda: Você pegou a chave de fenda.
 Sala da Máquina
 Esta é uma sala grande e fria, cuja única saída fica ao norte. Num canto há uma máquina que lembra uma secadora de roupas. No painel dela há um interruptor com a etiqueta "LIGAR". O interruptor não parece ser manipulável por nenhuma mão humana (a não ser que os dedos tenham uns 1,5 por 6 milímetros). Na frente da máquina há também uma tampa grande, que está fechada.
 
->abra a tampa
+>abra a tampa da máquina
 A tampa se abre.
 
 >coloque o carvão na máquina
@@ -1327,7 +1327,7 @@ Você colocou o montinho de carvão na máquina.
 >feche a tampa
 A tampa se fecha.
 
->mova o interruptor com a chave de fenda
+>mova o interruptor da máquina com a chave de fenda
 A máquina ganha vida (no sentido figurado) num espetáculo deslumbrante de luzes coloridas e ruídos bizarros. Depois de alguns instantes, a agitação passa.
 
 >abra a tampa

@@ -52,7 +52,14 @@ objetos e personagens) estão no [GLOSSARIO.md](../GLOSSARIO.md).
   costuma ser alvo de "de".
 - Quando o complemento também serve sozinho (`pegue o alho`, `pegue as
   folhas`), ele entra **nas duas listas**: `(SYNONYM ALHO DENTE)
-  (ADJECTIVE ALHO)`. Assim `dente de alho` e `alho` funcionam.
+  (ADJECTIVE ALHO)`. Assim `dente de alho` e `alho` funcionam. Vale também
+  para "X da Y" quando Y é o próprio objeto: a máquina tem `TAMPA` e
+  `MAQUINA` como sinônimos e `MAQUINA` como adjetivo, para `abra a tampa da
+  máquina`.
+- **Nome com "com"** (saco de couro com moedas, parede com inscrições): o
+  "com" é a preposição `WITH`. Para não virar instrumento, `AJUSTA-LEXV`
+  apaga o "com" e o resto quando a palavra seguinte está na lista de
+  `PARTE-DO-NOME?`. Um nome novo com "com" entra nessa lista.
 - Construções do português que o inglês não tem (`entre pela janela`,
   `suba na árvore`) ganham `SYNTAX` própria no fim de `src/gsyntax.zil`.
   "Pela/pelo" valem como `WITH`.

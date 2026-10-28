@@ -137,6 +137,17 @@ Ver docs/TRADUCAO.md."
 		       (T <RETURN>)>>
 	 <AND <WT? .W ,PS?ADJECTIVE> <NOT <WT? .W ,PS?PREPOSITION>>>>
 
+;"Depois do com (pulando artigos) vem moedas ou inscrições? Então o com faz
+  parte do nome (saco de couro com moedas, parede com inscrições) e não é o
+  WITH; sai junto com o resto."
+<ROUTINE PARTE-DO-NOME? (I "AUX" W)
+	 <REPEAT ()
+		 <SET W <PALAVRA .I>>
+		 <COND (<NOT .W> <RFALSE>)
+		       (<ARTIGO? .W> <SET I <+ .I 1>>)
+		       (T <RETURN>)>>
+	 <EQUAL? .W ,W?MOEDAS ,W?MOEDA ,W?INSCRICOES ,W?INSCRICAO>>
+
 <ROUTINE PREENCHIMENTO? (W)
 	 <OR <WT? .W ,PS?PREPOSITION>
 	     <WT? .W ,PS?BUZZ-WORD>
@@ -216,6 +227,14 @@ Ver docs/TRADUCAO.md."
 		       (<AND <G? .I 1>
 			     <EQUAL? .W ,W?DE ,W?DO ,W?DA ,W?DOS ,W?DAS>
 			     <ADJETIVO-A-SEGUIR? <+ .I 1>>>
+			<APAGA-PALAVRA .I>)
+		       (<AND <G? .I 1>
+			     <EQUAL? .W ,W?COM>
+			     <PARTE-DO-NOME? <+ .I 1>>>
+			<APAGA-PALAVRA .I>
+			<REPEAT ()
+				<COND (<ARTIGO? <PALAVRA .I>> <APAGA-PALAVRA .I>)
+				      (T <RETURN>)>>
 			<APAGA-PALAVRA .I>)
 		       (T
 			<SET I <+ .I 1>>)>>
