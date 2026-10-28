@@ -315,7 +315,7 @@ T-CELE ,PRSO " já " T-ESTA ,PRSO " bem acordad" T-G ,PRSO ", ou você não repa
 		<DO-WALK .DIR>
 		<RTRUE>)
 	       (<AND .OBJ
-		     <ZMEMQ ,W?WALL
+		     <ZMEMQ ,W?PAREDE
 			    <SET X <GETPT ,PRSO ,P?SYNONYM>> <PTSIZE .X>>>
 		<TELL "Escalar as paredes não adianta nada." CR>)
 	       (%<COND (<==? ,ZORK-NUMBER 1>
@@ -469,7 +469,12 @@ T-CO ,PRSO " " T-ESTA ,PRSO " de volta ao chão." CR>)
 	 <TELL "Que coisa peculiar!" CR>>
 
 <ROUTINE PRE-DROP ()
-	 <COND (<EQUAL? ,PRSO <LOC ,WINNER>>
+	 <COND (<AND ,PRSI <VERBO-DIGITADO? ,ACT?POUR>
+		     <NOT <FSET? ,PRSI ,CONTBIT>>>
+		;"PT: despeje a água no sino é despejar sobre ele (no é IN e ON)"
+		<PERFORM ,V?POUR-ON ,PRSO ,PRSI>
+		<RTRUE>)
+	       (<EQUAL? ,PRSO <LOC ,WINNER>>
 		<PERFORM ,V?DISEMBARK ,PRSO>
 		<RTRUE>)>>
 
@@ -538,7 +543,7 @@ provavelmente)." CR>>
 				      <COND (<G? <SET CNT <+ .CNT 1>> .MAX>
 					     <RETURN>)
 					    (T
-					     <PRINTC <GETB ,P-INBUF .CNT>>)>>
+					     <PRINTC <GETB ,P-INBUF-DIGITADO .CNT>>)>> ;"PT"
 			           <TELL " ">)>>)
 			(T <TELL "eco eco ..." CR>)>)
 		(T
@@ -1070,6 +1075,12 @@ se matando, como " T-ELE ,PRSO " talvez tivesse feito!" CR>
 	 <TELL "Você não pode empurrar coisas até isso." CR>>
 
 <ROUTINE PRE-PUT ()
+	 ;"PT: no é IN e ON. Jogue a faca no troll é jogar nele, não colocar
+	   a faca dentro dele."
+	 <COND (<AND <VERB? PUT> <VERBO-DIGITADO? ,ACT?THROW>
+		     <FSET? ,PRSI ,ACTORBIT>>
+		<PERFORM ,V?THROW ,PRSO ,PRSI>
+		<RTRUE>)>
 	 <COND %<COND (<==? ,ZORK-NUMBER 3>
 		       '(<EQUAL? ,PRSO ,SHORT-POLE>
 		         <RFALSE>))
@@ -1389,8 +1400,10 @@ T-O ,PRSO " com uma arma." CR>)
 		       <SETG WINNER ,PRSO>
 		       <SETG HERE <LOC ,WINNER>>)
 		      (T
-		       <TELL T-CO ,PRSO
-" fica em silêncio por um instante, talvez achando que você devia
+		       <TELL T-CO ,PRSO " ">
+		       <PRINT-PLURAL ,PRSO "fica" "ficam">
+		       <TELL
+" em silêncio por um instante, talvez achando que você devia
 reler o manual." CR>)>)
 	       (T
 		<TELL "Você não pode falar com " T-O ,PRSO "!" CR>

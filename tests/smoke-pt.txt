@@ -3,7 +3,16 @@
 ## dele). Enquanto as mensagens não forem traduzidas, as respostas saem em
 ## inglês: o que importa aqui é o jogo entender o comando.
 ## Artigos, nome composto com "de" (de + adjetivo some) e acentos:
+## Inglês não vale mais; os avisos repetem o que foi digitado, com acento
+## e com o de:
+take leaflet
+examine a chaminé
+pegue a chave de fenda
 abra a caixa de correio
+pegue o folheto
+## desfazer volta a última jogada (o folheto volta para a caixa):
+desfazer
+olhe
 pegue o folheto
 ## Pronome com hífen (leia-o vira leia lo = isso):
 leia-o
@@ -53,6 +62,10 @@ dê a espada para mim
 ## sente = sit (climb on)
 sente sobre o tapete
 mova o tapete
+## Pergunta de qual objeto, respondida com o comando inteiro (adjetivo
+## depois do nome):
+abra a porta
+abra a porta de madeira
 abra o alçapão
 ## suba e desça sozinhos viram cima e baixo:
 desça

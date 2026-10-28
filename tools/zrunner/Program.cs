@@ -123,7 +123,7 @@ sealed class ScriptedIO(List<string> commands) : IZMachineIO
     public bool SoundSamplesAvailable => false;
     public bool GraphicsFontAvailable => false;
     public bool ColorsAvailable => false;
-    public bool UndoAvailable => false;
+    public bool UndoAvailable => true;
     public byte WidthChars => 80;
     public short WidthUnits => 80;
     public byte HeightChars => 255;

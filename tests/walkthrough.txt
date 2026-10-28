@@ -42,27 +42,27 @@ ulisses
 noroeste
 largue as moedas
 se
-save
+salve
 suba
-restore
+carregue
 c
-restore
+carregue
 cima
-restore
+carregue
 vá para cima
-restore
+carregue
 suba a escada
-restore
+carregue
 suba
-restore
+carregue
 c
-restore
+carregue
 cima
-restore
+carregue
 suba
 dê o ovo ao ladrão
 desça
-diagnose
+diagnóstico
 no
 sudeste
 noroeste
@@ -72,7 +72,7 @@ leste
 l
 abra a vitrine de troféus
 coloque o tesouro na vitrine
-save
+salve
 desça
 abra a porta
 o alçapão
@@ -104,7 +104,7 @@ acenda o fósforo
 acenda as velas com o fósforo
 agite as velas
 leia o livro
-save
+salve
 despeje a água sobre o sino
 pegue o sino
 apague as velas
@@ -131,30 +131,30 @@ coloque a pintura na vitrine
 pegue o saco de couro
 o
 oeste
-save
+salve
 suba
-restore
+carregue
 c
-restore
+carregue
 cima
 mate o ladrão com a faca
 dê as moedas ao ladrão
 mate o ladrão com a faca afiada
 g
 g
-save
+salve
 b
 leste
 l
 desligue a lanterna
-diagnose
+diagnóstico
 z. z. z. z. z
 z. z. z. z. z
 z. z. z. z. z
 z
 z
 z
-diagnose
+diagnóstico
 coloque todos os tesouros na vitrine
 oeste
 acenda a lanterna
@@ -169,7 +169,7 @@ pegue o estilete
 desça
 l
 leste
-save
+salve
 apague a lanterna
 pegue o canário
 leste
@@ -185,7 +185,7 @@ l
 oeste
 o
 coloque todos os tesouros na vitrine
-save
+salve
 desça
 ligue a lanterna
 n
@@ -204,10 +204,10 @@ sul
 gire o parafuso com a chave inglesa
 z
 z
-look
+olhe
 z
 z
-look
+olhe
 o
 acenda a lanterna
 n
@@ -226,7 +226,7 @@ sul
 c
 ponha todos os tesouros na vitrine
 apague a lanterna
-save
+salve
 leste
 abra o saco
 pegue o dente de alho
@@ -243,7 +243,7 @@ norte
 suba
 n
 n
-look
+olhe
 suba
 n
 n
@@ -291,7 +291,7 @@ sudeste
 sudoeste
 desça
 oeste
-look
+olhe
 b
 o
 largue tudo
@@ -327,7 +327,7 @@ sul
 desça
 cima
 coloque todos os tesouros na vitrine
-save
+salve
 b
 n
 l
@@ -361,7 +361,7 @@ o
 sul
 suba
 coloque todos os tesouros exceto o cetro e a tocha na vitrine
-save
+salve
 l
 leste
 l
@@ -395,7 +395,7 @@ o
 oeste
 o
 coloque todos os tesouros exceto a tocha na vitrine
-save
+salve
 desça
 norte
 leste
@@ -461,7 +461,7 @@ l
 leste
 l
 pegue tudo menos a etiqueta
-save
+salve
 o
 oeste
 o
@@ -489,4 +489,4 @@ sudoeste
 noroeste
 so
 entre
-quit
+desista

@@ -8,8 +8,30 @@ Oeste da Casa
 Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas.
 Há uma pequena caixa de correio aqui.
 
+>take leaflet
+Não conheço a palavra "take".
+
+>examine a chaminé
+Você não vê a chaminé aqui!
+
+>pegue a chave de fenda
+Você não vê a chave de fenda aqui!
+
 >abra a caixa de correio
 Ao abrir a pequena caixa de correio, você encontra um folheto.
+
+>pegue o folheto
+Você pegou o folheto.
+
+>desfazer
+Você desfez a última jogada.
+
+>olhe
+Oeste da Casa
+Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas.
+Há uma pequena caixa de correio aqui.
+Dentro da pequena caixa de correio há:
+  Um folheto
 
 >pegue o folheto
 Você pegou o folheto.
@@ -153,6 +175,12 @@ Ao se sentar, você nota uma irregularidade embaixo dele. Para não ficar descon
 >mova o tapete
 Com grande esforço, você arrasta o tapete para um canto da sala e revela a tampa empoeirada de um alçapão fechado.
 
+>abra a porta
+Você quer dizer a porta de madeira ou o alçapão?
+
+>abra a porta de madeira
+A porta não pode ser aberta.
+
 >abra o alçapão
 O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
@@ -161,26 +189,21 @@ O alçapão se fecha com estrondo, e você ouve alguém passar a tranca.
 
 Porão
 Você está num porão escuro e úmido, com uma passagem estreita que leva para o norte e, ao sul, um túnel baixo por onde só se passa rastejando. A oeste fica o pé de uma rampa de metal íngreme, impossível de escalar.
-Alguém carregando um saco grande está encostado, bem à vontade, numa das paredes daqui. Ele não diz nada, mas pela cara dele fica claro que o saco só sai dali por cima do cadáver dele.
-Sua espada começou a brilhar intensamente.
-O ladrão nocauteia você.
+Sua espada emite um fraco brilho azulado.
 
 >suba
 O alçapão está fechado.
-O cabo do estilete acerta o seu crânio em cheio, e você cambaleia para trás.
 
 >pontos
-Sua pontuação é 35 (de um total de 350 pontos), em 42 jogadas.
+Sua pontuação é 35 (de um total de 350 pontos), em 46 jogadas.
 Isso lhe dá o título de Aventureiro Amador.
 
 >diagnóstico
 Você está em perfeita saúde.
 Você pode morrer com um ferimento grave.
-O cabo do estilete acerta o seu crânio em cheio, e você cambaleia para trás.
 
 >de novo
 Você está em perfeita saúde.
 Você pode morrer com um ferimento grave.
-O ladrão acabou de sair, ainda carregando o saco grande. Talvez você não tenha notado que, antes disso, ele depenou você.
 
 >

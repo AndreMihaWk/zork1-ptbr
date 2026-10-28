@@ -1712,7 +1712,7 @@ tremendo, você consegue sair da sala aos tropeços." CR CR>
 				 oeste e suba já chegam aqui como uma palavra só
 				 (ver AJUSTA-LEXV), assim como carregar e desistir."
 			       <SET WRD <GET ,P-LEXV 1>>
-			       <COND (<EQUAL? .WRD ,W?GO ,W?WALK ,W?RUN>
+			       <COND (<EQUAL? .WRD ,W?WALK ,W?VA ,W?IR>
 				      <SET WRD <GET ,P-LEXV 3>>)
 				     (<EQUAL? .WRD ,W?SAY ,W?DIGA ,W?DIZER ,W?DIZ>
 				      <SET WRD <GET ,P-LEXV 5>>)>

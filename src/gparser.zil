@@ -47,6 +47,10 @@
 <GLOBAL OOPS-INBUF
 	<ITABLE 120 (BYTE LENGTH) 0>
 	;<ITABLE BYTE 60>>
+;"PT: o texto como foi digitado (com acento), nas mesmas posições de P-INBUF
+  e OOPS-INBUF (ver NORMALIZA-ENTRADA em pt-parser.zil)"
+<GLOBAL P-INBUF-DIGITADO <ITABLE 120 (BYTE LENGTH) 0>>
+<GLOBAL OOPS-DIGITADO <ITABLE 120 (BYTE LENGTH) 0>>
 <GLOBAL OOPS-TABLE <TABLE <> <> <> <>>>
 <CONSTANT O-PTR 0>	"word pointer to unknown token in P-LEXV"
 <CONSTANT O-START 1>	"word pointer to sentence start in P-LEXV"
@@ -151,7 +155,8 @@
 	       <SETG LIT <LIT? ,HERE>>
 	       <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 	       <TELL ">">
-	       <READ-INPUT>)>
+	       <READ-INPUT>
+	       <COND (<NOT <GUARDA-DESFAZER>> <RFALSE>)>)> ;"PT: desfazer"
 	<SETG P-LEN <GETB ,P-LEXV ,P-LEXWORDS>>
 	<COND (<ZERO? ,P-LEN> <TELL "Como é?" CR> <RFALSE>)>
 	<COND (<EQUAL? <SET WRD <GET ,P-LEXV .PTR>> ,W?OOPS>
@@ -441,6 +446,7 @@ criaturas." CR>
 	 <SET CNT <- <GETB .SRC 0> 1>>
 	 <REPEAT ()
 		 <PUTB .DEST .CNT <GETB .SRC .CNT>>
+		 <PUTB <DIGITADO .DEST> .CNT <GETB <DIGITADO .SRC> .CNT>> ;"PT"
 		 <COND (<DLESS? CNT 0> <RETURN>)>>>
 
 ;"Put the word in the positions specified from P-INBUF to the end of
@@ -455,6 +461,8 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	 <PUT ,OOPS-TABLE ,O-END <+ .DBEG .LEN>>
 	 <REPEAT ()
 	  <PUTB ,OOPS-INBUF <+ .DBEG .CTR> <GETB ,P-INBUF <+ .BEG .CTR>>>
+	  <PUTB ,OOPS-DIGITADO <+ .DBEG .CTR>
+		<GETB ,P-INBUF-DIGITADO <+ .BEG .CTR>>> ;"PT"
 	  <SET CTR <+ .CTR 1>>
 	  <COND (<EQUAL? .CTR .LEN> <RETURN>)>>
 	 <PUTB ,AGAIN-LEXV .SLOT .DBEG>
@@ -648,6 +656,15 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				<RETURN>)
 			       (<BTST <GETB .WRD ,P-PSOFF> ,PS?OBJECT>
 				<COND (<EQUAL? .WRD ,P-ANAM>
+				       ;"PT: o adjetivo vem depois do nome
+					 (a chave inglesa, a escada de madeira)"
+				       <COND (<AND <NOT .ADJ>
+						   <NOT <EQUAL? <REST .BEG ,P-WORDLEN>
+								.END>>
+						   <SET TEMP <GET <REST .BEG ,P-WORDLEN> 0>>
+						   <BTST <GETB .TEMP ,P-PSOFF>
+							 ,PS?ADJECTIVE>>
+					      <SET ADJ .TEMP>)>
 				       <ACLAUSE-WIN .ADJ>)
 				      (T
 				       <NCLAUSE-WIN>)>
@@ -700,7 +717,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	 <REPEAT ()
 		 <COND (<DLESS? CNT 0> <RETURN>)
 		       (ELSE
-			<PRINTC <GETB ,P-INBUF .BUF>>
+			<PRINTC <GETB ,P-INBUF-DIGITADO .BUF>> ;"PT: com acento"
 			<SET BUF <+ .BUF 1>>)>>>
 
 <ROUTINE UNKNOWN-WORD (PTR "AUX" BUF)
@@ -856,7 +873,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 	 <BUFFER-PRINT .BEG .END .THE?>>
 
 <ROUTINE BUFFER-PRINT (BEG END CP
-		       "AUX" (NOSP T) WRD (FIRST?? T) (PN <>) (Q? <>))
+		       "AUX" (NOSP T) WRD (FIRST?? T) (PN <>) (Q? <>) (FIM 0))
 	 <REPEAT ()
 		<COND (<EQUAL? .BEG .END> <RETURN>)
 		      (T
@@ -865,6 +882,10 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			     (<EQUAL? .WRD ,W?COMMA>
 			      <TELL ", ">)
 			     (.NOSP <SET NOSP <>>)
+			     ;"PT: o texto digitado entre as palavras, inclusive o
+			       de que AJUSTA-LEXV tirou (chave de fenda)"
+			     (<AND <NOT <ZERO? .FIM>> <NOT <OR ,P-OFLAG ,P-MERGED>>>
+			      <WORD-PRINT <- <GETB .BEG 3> .FIM> .FIM>)
 			     (ELSE <TELL " ">)>
 		       <COND (<EQUAL? .WRD ,W?PERIOD ,W?COMMA>
 			      <SET NOSP T>)
@@ -885,6 +906,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				     <WORD-PRINT <GETB .BEG 2>
 						 <GETB .BEG 3>>)>
 			      <SET FIRST?? <>>)>)>
+		<SET FIM <+ <GETB .BEG 3> <GETB .BEG 2>>>
 		<SET BEG <REST .BEG ,P-WORDLEN>>>>
 
 <ROUTINE PREP-PRINT (PREP "AUX" WRD)
