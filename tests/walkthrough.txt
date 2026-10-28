@@ -128,7 +128,7 @@ norte
 suba
 pegue as moedas
 coloque a pintura na vitrine
-pegue o saco de couro
+pegue o saco de couro com moedas
 o
 oeste
 salve
@@ -298,10 +298,10 @@ largue tudo
 oeste
 pegue as velas, o carvão e a chave de fenda
 s
-abra a tampa
+abra a tampa da máquina
 coloque o carvão na máquina
 feche a tampa
-mova o interruptor com a chave de fenda
+mova o interruptor da máquina com a chave de fenda
 abra a tampa
 pegue o diamante
 norte

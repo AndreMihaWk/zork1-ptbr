@@ -6,19 +6,21 @@ liberou sob licença MIT em novembro de 2025. Dá para jogar no navegador do
 celular ou do computador, e o jogo pode ser instalado como aplicativo (PWA)
 para funcionar offline.
 
-> **Status:** o jogo está todo em português, nos textos e nos comandos
-> (`pegue a lanterna`, `abra a caixa de correio`, `vá para o norte`). Os
-> comandos em inglês não valem mais; ficam só as abreviações de direção do
-> original (`e`, `w`, `u`, `d`, `nw`, `sw`) e as de jogo (`i`, `g`, `z`, `x`,
-> `q`). Veja o [glossário](GLOSSARIO.md) e o [guia de tradução](docs/TRADUCAO.md).
+> **Status:** versão 1.0 lançada. O jogo está todo em português, nos textos
+> e nos comandos (`pegue a lanterna`, `abra a caixa de correio`, `vá para o
+> norte`). Os comandos em inglês não valem mais; ficam só as abreviações de
+> direção do original (`e`, `w`, `u`, `d`, `nw`, `sw`) e as de jogo (`i`,
+> `g`, `z`, `x`, `q`). Veja o [glossário](GLOSSARIO.md) e o
+> [guia de tradução](docs/TRADUCAO.md).
 
 ## Como jogar
 
-- **No navegador:** abra o link do GitHub Pages deste repositório. No celular,
-  use "Adicionar à tela inicial" para instalar e jogar sem internet.
-- **Em um app de ficção interativa:** baixe o arquivo `.z5` da página de
-  [Releases](../../releases) e abra-o em um interpretador Z-machine, como
-  Fabularium ou Frotz no Android, ou Gargoyle no computador.
+- **No navegador:** abra <https://andremihawk.github.io/zork1-ptbr/>. No
+  celular, use "Adicionar à tela inicial" para instalar e jogar sem internet.
+- **Em um app de ficção interativa:** baixe o arquivo `.z5` da
+  [última versão](../../releases/latest) e abra-o em um interpretador
+  Z-machine, como Fabularium no Android, Frotz no iPhone ou Gargoyle no
+  computador.
 
 A barra de atalhos embaixo da tela tem as direções e os comandos mais usados.
 Os botões com "…" só começam o comando, para você completar (por exemplo,
@@ -88,7 +90,7 @@ Chromium: `NAVEGADOR_CANAL=msedge node tools/testar-site.mjs`.
 | `publicar.yml` | push na `main` | CI + publica o site na branch `gh-pages` (GitHub Pages) |
 | `release.yml` | tag `v*` | CI + cria uma Release com o `.z5` e a transcrição |
 
-Para lançar uma versão: `git tag v0.1.0 && git push --tags`.
+Para lançar uma versão: `git tag -a v1.0.1 -m "Zork I em português 1.0.1" && git push origin v1.0.1`.
 
 ## Estrutura
 

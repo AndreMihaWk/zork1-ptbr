@@ -591,6 +591,8 @@ viram. Nenhum computador deveria ficar sem ele!\"")
 <OBJECT MACHINE
 	(IN MACHINE-ROOM)
 	(SYNONYM PDP10 MAQUINA SECADORA TAMPA)
+	(ADJECTIVE MAQUINA)
+	;"PT: o adjetivo é para tampa da máquina"
 	(DESC "máquina")
 	(FLAGS CONTBIT NDESCBIT TRYTAKEBIT FEMBIT)
 	(ACTION MACHINE-F)
@@ -910,6 +912,7 @@ mortos. Tudo indica que as crenças dos antigos zorkianos eram obscuras." )>
 <OBJECT MACHINE-SWITCH
 	(IN MACHINE-ROOM)
 	(SYNONYM INTERRUPT BOTAO)
+	(ADJECTIVE MAQUINA)
 	(DESC "interruptor")
 	(FLAGS NDESCBIT TURNBIT)
 	(ACTION MSWITCH-FUNCTION)>
