@@ -130,233 +130,233 @@ Você está em perfeita saúde.
 Você pode morrer com um ferimento grave.
 
 >o
-Maze
-This is part of a maze of twisty little passages, all alike.
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 
->s
-Maze
-This is part of a maze of twisty little passages, all alike.
+>sul
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 
->e
-Maze
-This is part of a maze of twisty little passages, all alike.
+>leste
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 
->u
-Maze
-This is part of a maze of twisty little passages, all alike. A skeleton, probably the remains of a luckless adventurer, lies here.
-Beside the skeleton is a rusty knife.
-The deceased adventurer's useless lantern is here.
-Há um skeleton key aqui.
-An old leather bag, bulging with coins, is here.
+>suba
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais. Aqui jaz um esqueleto, provavelmente o que restou de um aventureiro sem sorte.
+Ao lado do esqueleto há uma faca enferrujada.
+A lanterna inútil do falecido aventureiro está aqui.
+Há uma chave mestra aqui.
+Há aqui um velho saco de couro, estufado de moedas.
 
->take coins
-Você pegou o leather bag of coins.
+>pegue o saco de moedas
+Você pegou o saco de couro com moedas.
 
->sw
-Maze
-This is part of a maze of twisty little passages, all alike.
+>sudoeste
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 
->e
-Maze
-This is part of a maze of twisty little passages, all alike.
+>l
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 
->s
-Maze
-This is part of a maze of twisty little passages, all alike.
+>vá para o sul
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 Sua espada emite um fraco brilho azulado.
 
->se
-Cyclops Room
-This room has an exit on the northwest, and a staircase leading up.
-A cyclops, who looks prepared to eat horses (much less mere adventurers), blocks the staircase. From his state of health, and the bloodstains on the walls, you gather that he is not very friendly, though he likes people.
+>sudeste
+Sala do Ciclope
+Esta sala tem uma saída a noroeste e uma escada que sobe.
+Um ciclope, com cara de quem come até cavalos (que dirá meros aventureiros), bloqueia a escada. Pelo estado de saúde dele e pelas manchas de sangue nas paredes, você conclui que ele não é muito simpático, embora goste muito de gente.
 Sua espada começou a brilhar intensamente.
 
->ulysses
+>ulisses
 O ciclope, ao ouvir o nome do inimigo mortal de seu pai, foge da sala derrubando a parede do lado leste.
 Sua espada parou de brilhar.
 
->nw
-Maze
-This is part of a maze of twisty little passages, all alike.
+>noroeste
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
 
->drop coins
-Você largou o leather bag of coins.
+>largue as moedas
+Você largou o saco de couro com moedas.
 
 >se
-Cyclops Room
+Sala do Ciclope
 
 >save
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>suba
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-A long, theatrical slash. You catch it on your faca afiada, but the thief twists his knife, and the faca afiada goes flying.
+Um golpe longo e teatral. Você o apara com sua faca afiada, mas o ladrão torce a lâmina, e a faca afiada sai voando.
 Por sorte, você ainda tem uma espada.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>c
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-A quick thrust pinks your left arm, and blood starts to trickle down.
+Uma estocada rápida arranha o seu braço esquerdo, e o sangue começa a escorrer.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>cima
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The thief strikes at your wrist, and suddenly your grip is slippery with blood.
+O ladrão acerta o seu pulso, e de repente a sua mão fica escorregadia de sangue.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>vá para cima
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-A quick thrust pinks your left arm, and blood starts to trickle down.
+Uma estocada rápida arranha o seu braço esquerdo, e o sangue começa a escorrer.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>suba a escada
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The thief draws blood, raking his stiletto across your arm.
+O ladrão tira sangue, riscando o seu braço com o estilete.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>suba
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The stiletto flashes faster than you can follow, and blood wells from your leg.
+O estilete reluz mais rápido do que os seus olhos conseguem acompanhar, e o sangue brota da sua perna.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>c
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The stiletto flashes faster than you can follow, and blood wells from your leg.
+O estilete reluz mais rápido do que os seus olhos conseguem acompanhar, e o sangue brota da sua perna.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>cima
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The thief draws blood, raking his stiletto across your arm.
+O ladrão tira sangue, riscando o seu braço com o estilete.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>suba
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Esta é uma sala grande, cuja parede leste é de granito maciço. Vários sacos abandonados, que se desfazem ao toque, estão espalhados pelo chão. Há uma saída por uma escada que desce.
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The butt of his stiletto cracks you on the skull, and you stagger back.
+O cabo do estilete acerta o seu crânio em cheio, e você cambaleia para trás.
 
->give egg to thief
-The thief is taken aback by your unexpected generosity, but accepts the ovo cravejado de joias and stops to admire its beauty.
+>dê o ovo ao ladrão
+O ladrão fica surpreso com a sua generosidade inesperada, mas aceita o ovo cravejado de joias e se detém para admirar a beleza dele.
 
->d
-Cyclops Room
+>desça
+Sala do Ciclope
 Sua espada parou de brilhar.
 
 >diagnose
 Você está em perfeita saúde.
 Você aguenta um ferimento grave.
 
->nw
-Maze
-This is part of a maze of twisty little passages, all alike.
-An old leather bag, bulging with coins, is here.
-Someone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken only over his dead body.
+>no
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
+Há aqui um velho saco de couro, estufado de moedas.
+Alguém carregando um saco grande está encostado, bem à vontade, numa das paredes daqui. Ele não diz nada, mas pela cara dele fica claro que o saco só sai dali por cima do cadáver dele.
 Sua espada começou a brilhar intensamente.
 
->se
-Cyclops Room
+>sudeste
+Sala do Ciclope
 Sua espada parou de brilhar.
 
->nw
-Maze
-This is part of a maze of twisty little passages, all alike.
-An old leather bag, bulging with coins, is here.
+>noroeste
+Labirinto
+Isto é parte de um labirinto de pequenas passagens tortuosas, todas iguais.
+Há aqui um velho saco de couro, estufado de moedas.
 
->take coins
-Você pegou o leather bag of coins.
+>pegue o saco
+Você pegou o saco de couro com moedas.
 
 >se
-Cyclops Room
+Sala do Ciclope
 
->e
-Strange Passage
-This is a long passage. To the west is one entrance. On the east there is an old wooden door, with a large opening in it (about cyclops sized).
+>leste
+Passagem Estranha
+Esta é uma passagem comprida. A oeste fica uma das entradas. A leste há uma velha porta de madeira, com uma grande abertura (mais ou menos do tamanho de um ciclope).
 
->e
+>l
 Sala de Estar
 
 >abra a vitrine de troféus
 A vitrine de troféus já está aberta.
 
 >coloque o tesouro na vitrine
-Você colocou o leather bag of coins na vitrine de troféus.
+Você colocou o saco de couro com moedas na vitrine de troféus.
 
 >save
 Ok.
@@ -572,96 +572,96 @@ Porão
 >suba
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um leather bag of coins
+  Um saco de couro com moedas
 
->take coins
+>pegue as moedas
 Sua carga está pesada demais.
 
 >put painting in case
 Você colocou a pintura na vitrine de troféus.
 
->take coins
-Você pegou o leather bag of coins.
+>pegue o saco de couro
+Você pegou o saco de couro com moedas.
 
 >w
-Strange Passage
+Passagem Estranha
 
->w
-Cyclops Room
+>oeste
+Sala do Ciclope
 
 >save
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>suba
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The stiletto flashes faster than you can follow, and blood wells from your leg.
+O estilete reluz mais rápido do que os seus olhos conseguem acompanhar, e o sangue brota da sua perna.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>c
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-The thief draws blood, raking his stiletto across your arm.
+O ladrão tira sangue, riscando o seu braço com o estilete.
 
 >restore
 Ok.
 
->u
-You hear a scream of anguish as you violate the robber's hideaway. Using passages unknown to you, he rushes to its defense.
-The thief gestures mysteriously, and the treasures in the room suddenly vanish.
+>cima
+Você ouve um grito de angústia ao invadir o esconderijo do ladrão. Usando passagens que você não conhece, ele corre para defendê-lo.
+O ladrão faz um gesto misterioso, e os tesouros da sala desaparecem de repente.
 
-Treasure Room
-There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
-There is a silver chalice, intricately engraved, here.
+Sala do Tesouro
+Há um indivíduo de aparência suspeita encostado numa parede, segurando um saco grande. Ele está armado com um estilete letal.
+Há um cálice de prata, ricamente gravado, aqui.
 Sua espada começou a brilhar intensamente.
-You parry a lightning thrust, and the thief salutes you with a grim nod.
+Você apara uma estocada relâmpago, e o ladrão cumprimenta você com um aceno sombrio.
 
->kill thief with knife
-Um golpe acerta o braço do thief; o sangue começa a escorrer.
-The thief strikes like a snake! The resulting wound is serious.
+>mate o ladrão com a faca
+Um golpe acerta o braço do ladrão; o sangue começa a escorrer.
+O ladrão dá o bote como uma cobra! O ferimento é grave.
 
->give coins to thief
-The thief is taken aback by your unexpected generosity, but accepts the leather bag of coins and stops to admire its beauty.
+>dê as moedas ao ladrão
+O ladrão fica surpreso com a sua generosidade inesperada, mas aceita o saco de couro com moedas e se detém para admirar a beleza dele.
 
->kill thief with knife
-Você avança, mas o thief salta agilmente para o lado.
-The thief stabs nonchalantly with his stiletto and misses.
-
->g
-Sua faca afiada desce com tudo e manda o thief para o mundo dos sonhos.
+>mate o ladrão com a faca afiada
+Você avança, mas o ladrão salta agilmente para o lado.
+O ladrão golpeia com o estilete, displicente, e erra.
 
 >g
-O thief inconsciente não consegue se defender: ele morre.
-Quase no mesmo instante em que o thief dá o último suspiro, uma nuvem de névoa negra e sinistra o envolve e, quando a névoa se dissipa, a carcaça já desapareceu.
-As the thief dies, the power of his magic decreases, and his treasures reappear:
-  A leather bag of coins
-  A stiletto
-  A ovo cravejado de joias, with um canário de corda dourado
-The chalice is now safe to take.
+Sua faca afiada desce com tudo e manda o ladrão para o mundo dos sonhos.
+
+>g
+O ladrão inconsciente não consegue se defender: ele morre.
+Quase no mesmo instante em que o ladrão dá o último suspiro, uma nuvem de névoa negra e sinistra o envolve e, quando a névoa se dissipa, a carcaça já desapareceu.
+Quando o ladrão morre, o poder da magia dele se enfraquece, e os tesouros dele reaparecem:
+  Um saco de couro com moedas
+  Um estilete
+  Um ovo cravejado de joias, com um canário de corda dourado
+Agora já dá para pegar o cálice sem perigo.
 Sua espada parou de brilhar.
 
 >save
 Ok.
 
->d
-Cyclops Room
+>b
+Sala do Ciclope
 
->e
-Strange Passage
+>leste
+Passagem Estranha
 
->e
+>l
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Uma pintura
@@ -729,56 +729,56 @@ Está um breu total. É provável que você seja devorado por um grue.
 >acenda a lanterna
 A lanterna de latão agora está acesa.
 
-Strange Passage
-This is a long passage. To the west is one entrance. On the east there is an old wooden door, with a large opening in it (about cyclops sized).
+Passagem Estranha
+Esta é uma passagem comprida. A oeste fica uma das entradas. A leste há uma velha porta de madeira, com uma grande abertura (mais ou menos do tamanho de um ciclope).
 
->w
-Cyclops Room
+>o
+Sala do Ciclope
 
->u
-Treasure Room
-An old leather bag, bulging with coins, is here.
-Há um stiletto aqui.
+>suba
+Sala do Tesouro
+Há aqui um velho saco de couro, estufado de moedas.
+Há um estilete aqui.
 Há um ovo cravejado de joias aqui.
 Há um canário de corda dourado aninhado no ovo. Ele tem olhos de rubi e bico de prata. Por uma janelinha de cristal sob a asa esquerda, dá para ver o mecanismo complexo que ele tem por dentro. Parece que a corda dele acabou.
-There is a silver chalice, intricately engraved, here.
+Há um cálice de prata, ricamente gravado, aqui.
 
->drop knife
+>largue a faca
 Você largou a faca afiada.
 
->take all treasures
-leather bag of coins: Você pegou o leather bag of coins.
+>pegue todos os tesouros
+saco de couro com moedas: Você pegou o saco de couro com moedas.
 ovo cravejado de joias: Você pegou o ovo cravejado de joias.
-chalice: Você pegou o chalice.
+cálice: Você pegou o cálice.
 
->take stiletto
+>pegue o estilete
 Sua carga está pesada demais.
 
 >i
 Você está carregando:
-  Um chalice
+  Um cálice
   Um ovo cravejado de joias
   Dentro do ovo cravejado de joias há:
     Um canário de corda dourado
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um pair of candles
   Uma caixa de fósforos
   Uma lanterna de latão (acesa)
   Uma espada
 
->drop sword
+>largue a espada
 Você largou a espada.
 
->take stiletto
-Você pegou o stiletto.
+>pegue o estilete
+Você pegou o estilete.
 
->d
-Cyclops Room
+>desça
+Sala do Ciclope
 
->e
-Strange Passage
+>l
+Passagem Estranha
 
->e
+>leste
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal skull
@@ -839,9 +839,9 @@ Sua coleção de tesouros consiste em:
 >coloque todos os tesouros na vitrine
 lindo berloque de latão: Você colocou o lindo berloque de latão na vitrine de troféus.
 canário de corda dourado: Você colocou o canário de corda dourado na vitrine de troféus.
-chalice: Você colocou o chalice na vitrine de troféus.
+cálice: Você colocou o cálice na vitrine de troféus.
 ovo cravejado de joias: Você colocou o ovo cravejado de joias na vitrine de troféus.
-leather bag of coins: Você colocou o leather bag of coins na vitrine de troféus.
+saco de couro com moedas: Você colocou o saco de couro com moedas na vitrine de troféus.
 
 >save
 Ok.
@@ -952,7 +952,7 @@ Meio enterrado na lama, há um baú velho abarrotado de joias.
 >largue tudo exceto a lanterna
 chave de fenda: Você largou a chave de fenda.
 chave inglesa: Você largou a chave inglesa.
-stiletto: Você largou o stiletto.
+estilete: Você largou o estilete.
 pair of candles: Você largou o pair of candles.
 caixa de fósforos: Você largou a caixa de fósforos.
 
@@ -979,7 +979,7 @@ Represa
 Meio enterrado na lama, há um baú velho abarrotado de joias.
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
 Há um pair of candles aqui.
-Há um stiletto aqui.
+Há um estilete aqui.
 Há uma chave inglesa aqui.
 Há uma chave de fenda aqui.
 
@@ -1004,9 +1004,9 @@ Porão
 >c
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
@@ -1037,9 +1037,9 @@ Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal trident
   Um baú de joias
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
@@ -1071,14 +1071,14 @@ Represa Sul
 Represa
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
 Há um pair of candles aqui.
-Há um stiletto aqui.
+Há um estilete aqui.
 Há uma chave inglesa aqui.
 Há uma chave de fenda aqui.
 
 >pegue tudo
 caixa de fósforos: Você pegou a caixa de fósforos.
 pair of candles: Você pegou o pair of candles.
-stiletto: Você pegou o stiletto.
+estilete: Você pegou o estilete.
 chave inglesa: Você pegou a chave inglesa.
 chave de fenda: Você pegou a chave de fenda.
 
@@ -1190,7 +1190,7 @@ Há um broken timber aqui.
 sapphire-encrusted bracelet: Você largou o sapphire-encrusted bracelet.
 jade figurine: Você largou o jade figurine.
 chave inglesa: Você largou a chave inglesa.
-stiletto: Você largou o stiletto.
+estilete: Você largou o estilete.
 dente de alho: Você largou o dente de alho.
 
 >e
@@ -1290,7 +1290,7 @@ Ladder Bottom
 >w
 Timber Room
 Há um dente de alho aqui.
-Há um stiletto aqui.
+Há um estilete aqui.
 Há uma chave inglesa aqui.
 There is an exquisite jade figurine here.
 Há um sapphire-encrusted bracelet aqui.
@@ -1350,7 +1350,7 @@ Timber Room
 Há uma lanterna de latão (a pilha) aqui.
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
 Há um dente de alho aqui.
-Há um stiletto aqui.
+Há um estilete aqui.
 Há uma chave inglesa aqui.
 There is an exquisite jade figurine here.
 Há um sapphire-encrusted bracelet aqui.
@@ -1360,13 +1360,13 @@ Há um broken timber aqui.
 lanterna de latão: Você pegou a lanterna de latão.
 caixa de fósforos: Você pegou a caixa de fósforos.
 dente de alho: Você pegou o dente de alho.
-stiletto: Você pegou o stiletto.
+estilete: Você pegou o estilete.
 chave inglesa: Você pegou a chave inglesa.
 jade figurine: Você pegou o jade figurine.
 sapphire-encrusted bracelet: Você pegou o sapphire-encrusted bracelet.
 
->drop stiletto
-Você largou o stiletto.
+>largue o estilete
+Você largou o estilete.
 
 >e
 Ladder Bottom
@@ -1425,9 +1425,9 @@ Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal trident
   Um baú de joias
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
@@ -1554,9 +1554,9 @@ Sua coleção de tesouros consiste em:
   Um huge diamond
   Um crystal trident
   Um baú de joias
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
@@ -1691,9 +1691,9 @@ Sua coleção de tesouros consiste em:
   Um huge diamond
   Um crystal trident
   Um baú de joias
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
@@ -1935,9 +1935,9 @@ Sua coleção de tesouros consiste em:
   Um huge diamond
   Um crystal trident
   Um baú de joias
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull
@@ -2062,9 +2062,9 @@ Sua coleção de tesouros consiste em:
   Um huge diamond
   Um crystal trident
   Um baú de joias
-  Um leather bag of coins
+  Um saco de couro com moedas
   Um ovo cravejado de joias
-  Um chalice
+  Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
   Um crystal skull

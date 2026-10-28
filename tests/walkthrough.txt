@@ -30,46 +30,46 @@ norte
 ataque o troll com a espada
 diagnóstico
 o
-s
-e
-u
-take coins
-sw
-e
-s
-se
-ulysses
-nw
-drop coins
+sul
+leste
+suba
+pegue o saco de moedas
+sudoeste
+l
+vá para o sul
+sudeste
+ulisses
+noroeste
+largue as moedas
 se
 save
-u
+suba
 restore
-u
+c
 restore
-u
+cima
 restore
-u
+vá para cima
 restore
-u
+suba a escada
 restore
-u
+suba
 restore
-u
+c
 restore
-u
+cima
 restore
-u
-give egg to thief
-d
+suba
+dê o ovo ao ladrão
+desça
 diagnose
-nw
+no
+sudeste
+noroeste
+pegue o saco
 se
-nw
-take coins
-se
-e
-e
+leste
+l
 abra a vitrine de troféus
 coloque o tesouro na vitrine
 save
@@ -126,26 +126,26 @@ pegue a pintura
 oeste
 norte
 suba
-take coins
+pegue as moedas
 put painting in case
-take coins
+pegue o saco de couro
 w
-w
+oeste
 save
-u
+suba
 restore
-u
+c
 restore
-u
-kill thief with knife
-give coins to thief
-kill thief with knife
+cima
+mate o ladrão com a faca
+dê as moedas ao ladrão
+mate o ladrão com a faca afiada
 g
 g
 save
-d
-e
-e
+b
+leste
+l
 desligue a lanterna
 diagnose
 z. z. z. z. z
@@ -158,17 +158,17 @@ diagnose
 coloque todos os tesouros na vitrine
 w
 acenda a lanterna
-w
-u
-drop knife
-take all treasures
-take stiletto
+o
+suba
+largue a faca
+pegue todos os tesouros
+pegue o estilete
 i
-drop sword
-take stiletto
-d
-e
-e
+largue a espada
+pegue o estilete
+desça
+l
+leste
 save
 apague a lanterna
 pegue o canário
@@ -308,7 +308,7 @@ n
 put candle, diamond, screwdriver in basket
 go east
 take all but timber
-drop stiletto
+largue o estilete
 e
 u
 u

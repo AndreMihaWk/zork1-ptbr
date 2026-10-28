@@ -169,3 +169,4 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | group of tool chests / leak / sluice gates | caixas de ferramentas (f, pl) / vazamento (m) / comportas (f, pl) |
 | sand / white cliffs / all-purpose gunk | areia (f; "um pouco de areia") / penhascos brancos (m, pl) / gosma multiuso (f) |
 | FCD#3 (sigla da barragem) | BCE#3 |
+| burned-out lantern / large bag (do ladrão) | lanterna queimada (f) / saco grande (m) |
