@@ -1,4 +1,5 @@
-// Barra de atalhos para o celular e ajustes no campo de entrada do Parchment.
+// Barra de atalhos para o celular, painel "Sobre" e ajustes no campo de
+// entrada do Parchment.
 
 // Comando que cada botão envia ao jogo.
 const COMANDOS = {
@@ -14,10 +15,12 @@ const COMANDOS = {
   abrir: 'abra ',
   salvar: 'salvar',
   carregar: 'carregar',
+  desfazer: 'desfazer',
 }
 
 const barra = document.getElementById('atalhos')
 const janela = document.getElementById('windowport')
+const sobre = document.getElementById('sobre')
 
 function campoDeEntrada() {
   return janela.querySelector('textarea.LineInput:not([disabled])')
@@ -47,6 +50,14 @@ barra.addEventListener('pointerdown', evento => {
 barra.addEventListener('click', evento => {
   const botao = evento.target.closest('button[data-comando]')
   if (botao) enviar(COMANDOS[botao.dataset.comando], botao.hasAttribute('data-completar'))
+  if (evento.target.closest('button[data-acao="sobre"]')) sobre.showModal()
+})
+
+// Painel "Sobre": fecha pelo botão (form method="dialog"), pelo Esc ou com um
+// toque fora dele. O conteúdo fica num div interno, então um clique cujo alvo
+// é o próprio <dialog> só pode ter sido no fundo escurecido.
+sobre.addEventListener('click', evento => {
+  if (evento.target === sobre) sobre.close()
 })
 
 // Teclado virtual: sem corretor, sem maiúscula automática e sem sugestões.
