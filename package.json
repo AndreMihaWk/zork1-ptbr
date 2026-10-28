@@ -10,6 +10,6 @@
     "testar-site": "node tools/testar-site.mjs"
   },
   "devDependencies": {
-    "playwright": "1.55.0"
+    "playwright": "1.64.1"
   }
 }
