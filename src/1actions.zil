@@ -379,7 +379,7 @@ riquíssimos." CR>)
 
 <ROUTINE CRACK-FCN ()
 	 <COND (<VERB? THROUGH>
-		<TELL "You can't fit through the crack." CR>)>>
+		<TELL "Você não cabe na fenda." CR>)>>
 
 <ROUTINE KITCHEN-FCN (RARG)
 	<COND (<EQUAL? .RARG ,M-LOOK>
@@ -529,16 +529,16 @@ a escuridão."
 <ROUTINE CELLAR-FCN (RARG)
   <COND (<EQUAL? .RARG ,M-LOOK>
 	 <TELL
-"You are in a dark and damp cellar with a narrow passageway leading
-north, and a crawlway to the south. On the west is the bottom of a
-steep metal ramp which is unclimbable." CR>)
+"Você está num porão escuro e úmido, com uma passagem estreita que leva
+para o norte e, ao sul, um túnel baixo por onde só se passa rastejando. A
+oeste fica o pé de uma rampa de metal íngreme, impossível de escalar." CR>)
 	(<EQUAL? .RARG ,M-ENTER>
 	 <COND (<AND <FSET? ,TRAP-DOOR ,OPENBIT>
 		     <NOT <FSET? ,TRAP-DOOR ,TOUCHBIT>>>
 		<FCLEAR ,TRAP-DOOR ,OPENBIT>
 		<FSET ,TRAP-DOOR ,TOUCHBIT>
 		<TELL
-"The trap door crashes shut, and you hear someone barring it." CR CR>)>)>>
+"O alçapão se fecha com estrondo, e você ouve alguém passar a tranca." CR CR>)>)>>
 
 <ROUTINE CHIMNEY-F ()
 	 <COND (<VERB? EXAMINE>
@@ -628,16 +628,18 @@ desconfortável, você se levanta de novo." CR>)
 	      (<VERB? TAKE>
 	       <COND (<IN? .W .V>
 		      <TELL
-"The " D .V " swings it out of your reach." CR>)
+T-CO .V " afasta " T-O .W " do seu alcance com um gesto rápido." CR>)
 		     (T
+		      <TELL T-CO .W " ">
+		      <PRINT-PLURAL .W "parece" "parecem">
 		      <TELL
-"The " D .W " seems white-hot. You can't hold on to it." CR>)>
+" estar em brasa. Você não consegue segurá-l" T-G .W "." CR>)>
 	       T)>>
 
 <ROUTINE TROLL-FCN ("OPTIONAL" (MODE <>))
 	 <COND (<VERB? TELL>
 		<SETG P-CONT <>>
-		<TELL "The troll isn't much of a conversationalist." CR>)
+		<TELL "O troll não é de muita conversa." CR>)
 	       (<EQUAL? .MODE ,F-BUSY?>
 		<COND (<IN? ,AXE ,TROLL> <>)
 		      (<AND <IN? ,AXE ,HERE> <PROB 75 90>>
@@ -645,19 +647,19 @@ desconfortável, você se levanta de novo." CR>)
 		       <FCLEAR ,AXE ,WEAPONBIT>
 		       <MOVE ,AXE ,TROLL>
 		       <PUTP ,TROLL ,P?LDESC
-"A nasty-looking troll, brandishing a bloody axe, blocks all passages out
-of the room.">
+"Um troll de aspecto ameaçador, brandindo um machado ensanguentado,
+bloqueia todas as saídas da sala.">
 		       <AND <IN? ,TROLL ,HERE>
 			    <TELL
-"The troll, angered and humiliated, recovers his weapon. He appears to have
-an axe to grind with you." CR>>
+"O troll, furioso e humilhado, recupera a arma. Pelo jeito, ele quer
+acertar as contas com você, a machadadas." CR>>
 		      T)
 		     (<IN? ,TROLL ,HERE>
 		      <PUTP ,TROLL ,P?LDESC
-"A pathetically babbling troll is here.">
+"Um troll está aqui, balbuciando de dar pena.">
 		      <TELL
-"The troll, disarmed, cowers in terror, pleading for his life in
-the guttural tongue of the trolls." CR>
+"O troll, desarmado, se encolhe de pavor e implora pela vida na língua
+gutural dos trolls." CR>
 		      T)>)
 	      (<EQUAL? .MODE ,F-DEAD>
 	       <COND (<IN? ,AXE ,TROLL>
@@ -672,28 +674,28 @@ the guttural tongue of the trolls." CR>
 		      <FCLEAR ,AXE ,NDESCBIT>
 		      <FSET ,AXE ,WEAPONBIT>)>
 	       <PUTP ,TROLL ,P?LDESC
-"An unconscious troll is sprawled on the floor. All passages
-out of the room are open.">
+"Um troll inconsciente está esparramado no chão. Todas as saídas da sala
+estão livres.">
 	       <SETG TROLL-FLAG T>)
 	      (<EQUAL? .MODE ,F-CONSCIOUS>
 	       <COND (<IN? ,TROLL ,HERE>
 		      <FSET ,TROLL ,FIGHTBIT>
 		      <TELL
-"The troll stirs, quickly resuming a fighting stance." CR>)>
+"O troll se mexe e logo volta à posição de combate." CR>)>
 	       <COND (<IN? ,AXE ,TROLL>
 		      <PUTP ,TROLL ,P?LDESC
-"A nasty-looking troll, brandishing a bloody axe, blocks
-all passages out of the room.">)
+"Um troll de aspecto ameaçador, brandindo um machado ensanguentado,
+bloqueia todas as saídas da sala.">)
 		     (<IN? ,AXE ,TROLL-ROOM>
 		      <FSET ,AXE ,NDESCBIT>
 		      <FCLEAR ,AXE ,WEAPONBIT>
 		      <MOVE ,AXE ,TROLL>
 		      <PUTP ,TROLL ,P?LDESC
-"A nasty-looking troll, brandishing a bloody axe, blocks
-all passages out of the room.">)
+"Um troll de aspecto ameaçador, brandindo um machado ensanguentado,
+bloqueia todas as saídas da sala.">)
 		     (T
 		      <PUTP ,TROLL ,P?LDESC
-"A troll is here.">)>
+"Há um troll aqui.">)>
 	       <SETG TROLL-FLAG <>>)
 	      (<EQUAL? .MODE ,F-FIRST?>
 	       <COND (<PROB 33>
@@ -712,53 +714,54 @@ all passages out of the room.">)
 			     <COND (<AND <EQUAL? ,PRSO ,AXE>
 					 <IN? ,AXE ,WINNER>>
 				    <TELL
-"The troll scratches his head in confusion, then takes the axe." CR>
+"O troll coça a cabeça, confuso, e depois pega o machado." CR>
 				    <FSET ,TROLL ,FIGHTBIT>
 				    <MOVE ,AXE ,TROLL>
 				    <RTRUE>)
 				   (<EQUAL? ,PRSO ,TROLL ,AXE>
 				    <TELL
-"You would have to get the " D ,PRSO " first, and that seems unlikely." CR>
+"Primeiro você teria que pegar " T-O ,PRSO ", e isso parece improvável." CR>
 				    <RTRUE>)>
 			     <COND (<VERB? THROW>
 				    <TELL
-"The troll, who is remarkably coordinated, catches the " D ,PRSO>)
+"O troll, que tem uma coordenação admirável, apanha " T-O ,PRSO " no ar">)
 				   (T
 				    <TELL
-"The troll, who is not overly proud, graciously accepts the gift">)>
+"O troll, que não é nada orgulhoso, aceita " T-O ,PRSO " de bom grado">)>
 			     <COND (<AND <PROB 20>
 					 <EQUAL? ,PRSO ,KNIFE ,SWORD ,AXE>>
 				    <REMOVE-CAREFULLY ,PRSO>
 				    <TELL
-" and eats it hungrily. Poor troll, he dies from an internal hemorrhage
-and his carcass disappears in a sinister black fog." CR>
+" e " T-G ,PRSO " devora, faminto. Pobre troll: ele morre de hemorragia
+interna, e a carcaça dele desaparece numa sinistra névoa negra." CR>
 				    <REMOVE-CAREFULLY ,TROLL>
 				    <APPLY <GETP ,TROLL ,P?ACTION> ,F-DEAD>
 				    <SETG TROLL-FLAG T>)
 				   (<EQUAL? ,PRSO ,KNIFE ,SWORD ,AXE>
 				    <MOVE ,PRSO ,HERE>
 				    <TELL
-" and, being for the moment sated, throws it back. Fortunately, the
-troll has poor control, and the " D ,PRSO " falls to the floor. He does
-not look pleased." CR>
+" e, saciado por enquanto, " T-G ,PRSO " atira de volta. Por sorte, o
+troll tem péssima pontaria, e " T-O ,PRSO " cai no chão. Ele não parece
+nada satisfeito." CR>
 				    <FSET ,TROLL ,FIGHTBIT>)
 				   (T
 				    <TELL
-" and not having the most discriminating tastes, gleefully eats it." CR>
+" e, como não tem um paladar muito exigente, " T-G ,PRSO " come todo
+contente." CR>
 				    <REMOVE-CAREFULLY ,PRSO>)>)
 			    (<VERB? TAKE MOVE>
 			     <TELL
-"The troll spits in your face, grunting \"Better luck next time\" in a
-rather barbarous accent." CR>)
+"O troll cospe na sua cara e grunhe \"Mais sorte da próxima vez\" com um
+sotaque um tanto bárbaro." CR>)
 			    (<VERB? MUNG>
 			     <TELL
-"The troll laughs at your puny gesture." CR>)>)
+"O troll ri do seu gestinho patético." CR>)>)
 		     (<VERB? LISTEN>
 		      <TELL
-"Every so often the troll says something, probably uncomplimentary, in
-his guttural tongue." CR>)
+"De vez em quando o troll diz alguma coisa, provavelmente nada elogiosa, na
+língua gutural dele." CR>)
 		     (<AND ,TROLL-FLAG <VERB? HELLO>>
-		      <TELL "Unfortunately, the troll can't hear you." CR>)>)>>
+		      <TELL "Infelizmente, o troll não pode ouvir você." CR>)>)>>
 
 \
 
@@ -1658,22 +1661,22 @@ condiments for his upcoming snack."
 <ROUTINE LOUD-ROOM-FCN (RARG "AUX" WRD)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"This is a large room with a ceiling which cannot be detected from
-the ground. There is a narrow passage from east to west and a stone
-stairway leading upward.">
+"Esta é uma sala grande, com um teto tão alto que não se consegue
+enxergá-lo do chão. Há uma passagem estreita de leste a oeste e uma escada
+de pedra que sobe.">
 		<COND (<OR ,LOUD-FLAG
 			   <AND <NOT ,GATES-OPEN> ,LOW-TIDE>>
-		       <TELL " The room is eerie in its quietness.">)
+		       <TELL " A sala é de um silêncio sinistro.">)
 		      (T
-		       <TELL " The room is deafeningly loud with an
-undetermined rushing sound. The sound seems to reverberate from all
-of the walls, making it difficult even to think.">)>
+		       <TELL " A sala é tomada por um barulho ensurdecedor,
+um som de correnteza que não se sabe de onde vem. O som parece reverberar
+em todas as paredes, e fica difícil até pensar.">)>
 		<CRLF>)
 	       (<AND <EQUAL? .RARG ,M-END> ,GATES-OPEN <NOT ,LOW-TIDE>>
 		<TELL
-"It is unbearably loud here, with an ear-splitting roar seeming to
-come from all around you. There is a pounding in your head which won't
-stop. With a tremendous effort, you scramble out of the room." CR CR>
+"O barulho aqui é insuportável, um rugido de estourar os tímpanos que
+parece vir de todos os lados. Sua cabeça lateja sem parar. Com um esforço
+tremendo, você consegue sair da sala aos tropeços." CR CR>
 		<GOTO <PICK-ONE ,LOUD-RUNS>>
 		<RFALSE>)		
 	       (<EQUAL? .RARG ,M-ENTER>
@@ -1686,39 +1689,44 @@ stop. With a tremendous effort, you scramble out of the room." CR CR>
 		       <V-FIRST-LOOK>
 		       <COND (,P-CONT
 			      <TELL
-"The rest of your commands have been lost in the noise." CR>
+"O resto dos seus comandos se perdeu no barulho." CR>
 			      <SETG P-CONT <>>)>
 		       <REPEAT ()
 			       <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 			       <TELL ">">
 			       <READ-INPUT>
 			       <COND (<0? <GETB ,P-LEXV ,P-LEXWORDS>>
-			              <TELL "I beg your pardon?" CR>
+			              <TELL "Como é?" CR>
 				      <AGAIN>)>
+			       ;"PT: as palavras em português ao lado das
+				 originais (eco, oeste, salve, diga...). Ir para o
+				 oeste e suba já chegam aqui como uma palavra só
+				 (ver AJUSTA-LEXV), assim como carregar e desistir."
 			       <SET WRD <GET ,P-LEXV 1>>
 			       <COND (<EQUAL? .WRD ,W?GO ,W?WALK ,W?RUN>
 				      <SET WRD <GET ,P-LEXV 3>>)
-				     (<EQUAL? .WRD ,W?SAY>
+				     (<EQUAL? .WRD ,W?SAY ,W?DIGA ,W?DIZER ,W?DIZ>
 				      <SET WRD <GET ,P-LEXV 5>>)>
-			       <COND (<EQUAL? .WRD ,W?SAVE>
+			       <COND (<EQUAL? .WRD ,W?SAVE ,W?SALVE ,W?SALVAR
+					      ,W?GRAVE ,W?GRAVAR>
 				      <V-SAVE>)
 				     (<EQUAL? .WRD ,W?RESTORE>
 				      <V-RESTORE>)
 				     (<EQUAL? .WRD ,W?Q ,W?QUIT>
 				      <V-QUIT>)
-				     (<EQUAL? .WRD ,W?W ,W?WEST>
+				     (<EQUAL? .WRD ,W?W ,W?WEST ,W?OESTE>
 				      <RETURN <GOTO ,ROUND-ROOM>>)
-				     (<EQUAL? .WRD ,W?E ,W?EAST>
+				     (<EQUAL? .WRD ,W?E ,W?EAST ,W?L ,W?LESTE>
 				      <RETURN <GOTO ,DAMP-CAVE>>)
-				     (<EQUAL? .WRD ,W?U ,W?UP>
+				     (<EQUAL? .WRD ,W?U ,W?UP ,W?CIMA ,W?C ,W?ACIMA>
 				      <RETURN <GOTO ,DEEP-CANYON>>)
 				     (<EQUAL? .WRD ,W?BUG>
-				      <TELL "That's only your opinion." CR>)
-				     (<EQUAL? .WRD ,W?ECHO>
+				      <TELL "Essa é só a sua opinião." CR>)
+				     (<EQUAL? .WRD ,W?ECHO ,W?ECO>
 				      <SETG LOUD-FLAG T>
 				      <FCLEAR ,BAR ,SACREDBIT>
 				      <TELL
-"The acoustics of the room change subtly." CR>
+"A acústica da sala muda sutilmente." CR>
 				      <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 				      <RETURN>)
 				     ;(,DEAD <CRLF>)
@@ -1728,18 +1736,17 @@ stop. With a tremendous effort, you scramble out of the room." CR CR>
 <ROUTINE DEEP-CANYON-F (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are on the south edge of a deep canyon. Passages lead off to the
-east, northwest and southwest. A stairway leads down.">
+"Você está na borda sul de um cânion profundo. Há passagens para leste,
+noroeste e sudoeste. Uma escada desce.">
 		<COND (<AND ,GATES-OPEN <NOT ,LOW-TIDE>>
 		       <TELL
-" You can hear a loud roaring sound, like that of rushing water, from
-below.">)
+" Lá de baixo vem um rugido alto, como o de água correndo com força.">)
 		      (<AND <NOT ,GATES-OPEN> ,LOW-TIDE>
 		       <CRLF>
 		       <RTRUE>)
 		      (T
 		       <TELL
-" You can hear the sound of flowing water from below.">)>
+" Lá de baixo vem o som de água corrente.">)>
 		<CRLF>)>>
 
 
@@ -2206,10 +2213,10 @@ turned into a pile of dust. How, I can't imagine.">)>>
 	 <COND (<VERB? MUNG>
 		<PUTP ,PRSO ,P?TVALUE 0>
 		<PUTP ,PRSO ,P?LDESC
-"There is a worthless piece of canvas here.">
+"Há um pedaço de tela sem valor nenhum aqui.">
 		<TELL
-"Congratulations! Unlike the other vandals, who merely stole the
-artist's masterpieces, you have destroyed one." CR>)>>
+"Parabéns! Ao contrário dos outros vândalos, que só roubaram as
+obras-primas do artista, você destruiu uma." CR>)>>
 
 \
 
@@ -3191,12 +3198,13 @@ songbird and the sounds of the forest." CR CR>
 	 <COND (<OR <VERB? LEAP>
 		    <AND <VERB? PUT> <EQUAL? ,PRSO ,ME>>>
 		<TELL
-"You look before leaping, and realize that you would never survive." CR>)
+"Você olha antes de pular e percebe que nunca sobreviveria." CR>)
 	       (<VERB? CROSS>
-		<TELL "It's too far to jump, and there's no bridge." CR>)
+		<TELL "É longe demais para pular, e não há nenhuma ponte." CR>)
 	       (<AND <VERB? PUT THROW-OFF> <EQUAL? ,PRSI ,PSEUDO-OBJECT>>
-		<TELL
-"The " D ,PRSO " drops out of sight into the chasm." CR>
+		<TELL T-CO ,PRSO " ">
+		<PRINT-PLURAL ,PRSO "cai no abismo e some" "caem no abismo e somem">
+		<TELL " de vista." CR>
 		<REMOVE-CAREFULLY ,PRSO>)>>
 
 <ROUTINE DOME-PSEUDO ()
@@ -3214,13 +3222,13 @@ teeth ache to touch it." CR>)>>
 
 <ROUTINE DOOR-PSEUDO () ;"in Studio"
 	 <COND (<VERB? OPEN CLOSE>
-		<TELL "The door won't budge." CR>)
+		<TELL "A porta não se mexe." CR>)
 	       (<VERB? THROUGH>
 		<DO-WALK ,P?SOUTH>)>>
 
 <ROUTINE PAINT-PSEUDO ()
 	 <COND (<VERB? MUNG>
-		<TELL "Some paint chips away, revealing more paint." CR>)>>
+		<TELL "Um pouco de tinta descasca e revela mais tinta." CR>)>>
 
 <ROUTINE GAS-PSEUDO ()
 	 <COND (<VERB? BREATHE>	;"REALLY BLOW"
@@ -3365,6 +3373,16 @@ teeth ache to touch it." CR>)>>
 		 <SET STR <GET .REMARK .CNT>>
 		 <COND (<EQUAL? .STR ,F-WEP> <PRINTD .W>)
 		       (<EQUAL? .STR ,F-DEF> <PRINTD .D>)
+		       (<EQUAL? .STR ,F-O-WEP> <TELL T-O .W>)
+		       (<EQUAL? .STR ,F-CO-WEP> <TELL T-CO .W>)
+		       (<EQUAL? .STR ,F-DO-WEP> <TELL T-DO .W>)
+		       (<EQUAL? .STR ,F-SEU-WEP> <TELL T-SEU .W>)
+		       (<EQUAL? .STR ,F-CSEU-WEP> <TELL T-CSEU .W>)
+		       (<EQUAL? .STR ,F-O-DEF> <TELL T-O .D>)
+		       (<EQUAL? .STR ,F-CO-DEF> <TELL T-CO .D>)
+		       (<EQUAL? .STR ,F-DO-DEF> <TELL T-DO .D>)
+		       (<EQUAL? .STR ,F-NO-DEF> <TELL T-NO .D>)
+		       (<EQUAL? .STR ,F-AO-DEF> <TELL T-AO .D>)
 		       (T <PRINT .STR>)>>
 	 <CRLF>>
 
@@ -3415,8 +3433,8 @@ property, which is normally 0"
 		       DWEAPON ATT DEF OA OD TBL RES NWEAPON)
 	 <FCLEAR ,WINNER ,STAGGERED>
 	 <COND (<FSET? .VILLAIN ,STAGGERED>
-		<TELL "The " D .VILLAIN
-		      " slowly regains his feet." CR>
+		<TELL T-CO .VILLAIN
+		      " se levanta devagar." CR>
 		<FCLEAR .VILLAIN ,STAGGERED>
 		<RTRUE>)>
 	 <SET OA <SET ATT <VILLAIN-STRENGTH .OO>>>
@@ -3469,7 +3487,7 @@ property, which is normally 0"
 		<MOVE .DWEAPON ,HERE>
 		<COND (<SET NWEAPON <FIND-WEAPON ,WINNER>>
 		       <TELL
-"Fortunately, you still have a " D .NWEAPON "." CR>)>)>
+"Por sorte, você ainda tem " T-UM .NWEAPON "." CR>)>)>
 	 <WINNER-RESULT .DEF .RES .OD>>
 
 <ROUTINE HERO-BLOW ("AUX" OO VILLAIN (OUT? <>) DWEAPON ATT DEF (CNT 0)
@@ -3483,8 +3501,8 @@ property, which is normally 0"
 	 <FSET ,PRSO ,FIGHTBIT>
 	 <COND (<FSET? ,WINNER ,STAGGERED>
 		<TELL
-"You are still recovering from that last blow, so your attack is
-ineffective." CR>
+"Você ainda está se recuperando do último golpe, então o seu ataque não
+surte efeito." CR>
 		<FCLEAR ,WINNER ,STAGGERED>
 		<RTRUE>)>
 	 <SET ATT <FIGHT-STRENGTH>>
@@ -3494,16 +3512,17 @@ ineffective." CR>
 	 <COND (<0? <SET OD <SET DEF <VILLAIN-STRENGTH .OO>>>>
 		<COND (<EQUAL? ,PRSO ,WINNER>
 		       <RETURN <JIGS-UP
-"Well, you really did it that time. Is suicide painless?">>)>
-		<TELL "Attacking the " D .VILLAIN " is pointless." CR>
+"Pois é, dessa vez você conseguiu. Será que o suicídio é indolor?">>)>
+		<TELL "Atacar " T-O .VILLAIN " não adianta nada." CR>
 		<RTRUE>)>
 	 <SET DWEAPON <FIND-WEAPON .VILLAIN>>
 	 <COND (<OR <NOT .DWEAPON> <L? .DEF 0>>
-		<TELL "The ">
-		<COND (<L? .DEF 0> <TELL "unconscious">)
-		      (T <TELL "unarmed">)>
-		<TELL " " D .VILLAIN
-		      " cannot defend himself: He dies." CR>
+		;"PT: o adjetivo vem depois do nome (o troll desarmado)"
+		<TELL T-CO .VILLAIN>
+		<COND (<L? .DEF 0> <TELL " inconsciente">)
+		      (T <TELL " desarmad" T-G .VILLAIN>)>
+		<TELL " não consegue se defender: " T-ELE .VILLAIN
+		      " morre." CR>
 		<SET RES ,KILLED>)
 	       (T
 		<COND (<1? .DEF>
@@ -3557,8 +3576,8 @@ ineffective." CR>
 	 <COND (<NOT <G? <FIGHT-STRENGTH> 0>>
 		<PUTP ,WINNER ,P?STRENGTH <+ 1 <- <FIGHT-STRENGTH <>>>>>
 		<JIGS-UP
-"It appears that that last blow was too much for you. I'm afraid you
-are dead.">
+"Parece que esse último golpe foi demais para você. Receio que você
+esteja morto.">
 		<>)
 	       (T .RES)>>
 
@@ -3567,9 +3586,9 @@ are dead.">
 	 <COND (<0? .DEF>
 		<FCLEAR .VILLAIN ,FIGHTBIT>
 		<TELL
-"Almost as soon as the " D .VILLAIN " breathes his last breath, a cloud
-of sinister black fog envelops him, and when the fog lifts, the
-carcass has disappeared." CR>
+"Quase no mesmo instante em que " T-O .VILLAIN " dá o último suspiro, uma
+nuvem de névoa negra e sinistra " T-G .VILLAIN " envolve e, quando a névoa
+se dissipa, a carcaça já desapareceu." CR>
 		<REMOVE-CAREFULLY .VILLAIN>
 		<APPLY <GETP .VILLAIN ,P?ACTION> ,F-DEAD>
 		.RES)
@@ -3607,44 +3626,58 @@ carcass has disappeared." CR>
 <CONSTANT F-WEP 0>	;"means print weapon name"
 <CONSTANT F-DEF 1>	;"means print defender name (villain, e.g.)"
 
+;"PT: a arma e o defensor com artigo, contração ou possessivo, para a
+  concordância (ver REMARK): F-SEU-WEP escreve sua espada ou seu estilete,
+  F-DO-DEF escreve do troll."
+<CONSTANT F-O-WEP 2>	;"a espada"
+<CONSTANT F-CO-WEP 3>	;"A espada"
+<CONSTANT F-DO-WEP 4>	;"da espada"
+<CONSTANT F-SEU-WEP 5>	;"sua espada"
+<CONSTANT F-CSEU-WEP 6>	;"Sua espada"
+<CONSTANT F-O-DEF 7>	;"o troll"
+<CONSTANT F-CO-DEF 8>	;"O troll"
+<CONSTANT F-DO-DEF 9>	;"do troll"
+<CONSTANT F-NO-DEF 10>	;"no troll"
+<CONSTANT F-AO-DEF 11>	;"ao troll"
+
 <GLOBAL HERO-MELEE
  <TABLE (PURE)
   <LTABLE (PURE)
-   <LTABLE (PURE) "Your " F-WEP " misses the " F-DEF " by an inch.">
-   <LTABLE (PURE) "A good slash, but it misses the " F-DEF " by a mile.">
-   <LTABLE (PURE) "You charge, but the " F-DEF " jumps nimbly aside.">
-   <LTABLE (PURE) "Clang! Crash! The " F-DEF " parries.">
-   <LTABLE (PURE) "A quick stroke, but the " F-DEF " is on guard.">
-   <LTABLE (PURE) "A good stroke, but it's too slow; the " F-DEF " dodges.">>
+   <LTABLE (PURE) F-CSEU-WEP " erra " F-O-DEF " por um triz.">
+   <LTABLE (PURE) "Um belo golpe, mas passa a um quilômetro " F-DO-DEF ".">
+   <LTABLE (PURE) "Você avança, mas " F-O-DEF " salta agilmente para o lado.">
+   <LTABLE (PURE) "Clang! Crás! " F-CO-DEF " apara o golpe.">
+   <LTABLE (PURE) "Um golpe rápido, mas " F-O-DEF " está em guarda.">
+   <LTABLE (PURE) "Um bom golpe, mas lento demais; " F-O-DEF " se esquiva.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "Your " F-WEP " crashes down, knocking the " F-DEF " into dreamland.">
-   <LTABLE (PURE) "The " F-DEF " is battered into unconsciousness.">
-   <LTABLE (PURE) "A furious exchange, and the " F-DEF " is knocked out!">
-   <LTABLE (PURE) "The haft of your " F-WEP " knocks out the " F-DEF ".">
-   <LTABLE (PURE) "The " F-DEF " is knocked out!">>
+   <LTABLE (PURE) F-CSEU-WEP " desce com tudo e manda " F-O-DEF " para o mundo dos sonhos.">
+   <LTABLE (PURE) F-CO-DEF " apanha até perder os sentidos.">
+   <LTABLE (PURE) "Uma troca furiosa de golpes, e " F-O-DEF " vai a nocaute!">
+   <LTABLE (PURE) "O cabo " F-DO-WEP " acerta " F-O-DEF " e o deixa desacordado.">
+   <LTABLE (PURE) F-CO-DEF " está fora de combate!">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "It's curtains for the " F-DEF " as your " F-WEP " removes his head.">
-   <LTABLE (PURE) "The fatal blow strikes the " F-DEF " square in the heart: He dies.">
-   <LTABLE (PURE) "The " F-DEF " takes a fatal blow and slumps to the floor dead.">>
+   <LTABLE (PURE) "É o fim da linha para " F-O-DEF ": " F-SEU-WEP " arranca a cabeça dele.">
+   <LTABLE (PURE) "O golpe fatal atinge " F-O-DEF " bem no coração: ele morre.">
+   <LTABLE (PURE) F-CO-DEF " leva um golpe fatal e desaba morto no chão.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The " F-DEF " is struck on the arm; blood begins to trickle down.">
-   <LTABLE (PURE) "Your " F-WEP " pinks the " F-DEF " on the wrist, but it's not serious.">
-   <LTABLE (PURE) "Your stroke lands, but it was only the flat of the blade.">
-   <LTABLE (PURE) "The blow lands, making a shallow gash in the " F-DEF "'s arm!">>
+   <LTABLE (PURE) "Um golpe acerta o braço " F-DO-DEF "; o sangue começa a escorrer.">
+   <LTABLE (PURE) F-CSEU-WEP " fere de leve o pulso " F-DO-DEF ", mas não é nada grave.">
+   <LTABLE (PURE) "Seu golpe acerta, mas só com o lado chato da lâmina.">
+   <LTABLE (PURE) "O golpe acerta e abre um corte raso no braço " F-DO-DEF "!">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The " F-DEF " receives a deep gash in his side.">
-   <LTABLE (PURE) "A savage blow on the thigh! The " F-DEF " is stunned but can still fight!">
-   <LTABLE (PURE) "Slash! Your blow lands! That one hit an artery, it could be serious!">
-   <LTABLE (PURE) "Slash! Your stroke connects! This could be serious!">>
+   <LTABLE (PURE) F-CO-DEF " leva um corte profundo no flanco.">
+   <LTABLE (PURE) "Um golpe selvagem na coxa! " F-CO-DEF " fica atordoado, mas ainda pode lutar!">
+   <LTABLE (PURE) "Zás! Seu golpe acerta! Esse pegou uma artéria, pode ser grave!">
+   <LTABLE (PURE) "Zás! Seu golpe atinge o alvo! Isso pode ser grave!">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The " F-DEF " is staggered, and drops to his knees.">
-   <LTABLE (PURE) "The " F-DEF " is momentarily disoriented and can't fight back.">
-   <LTABLE (PURE) "The force of your blow knocks the " F-DEF " back, stunned.">
-   <LTABLE (PURE) "The " F-DEF " is confused and can't fight back.">
-   <LTABLE (PURE) "The quickness of your thrust knocks the " F-DEF " back, stunned.">>
+   <LTABLE (PURE) F-CO-DEF " cambaleia e cai de joelhos.">
+   <LTABLE (PURE) F-CO-DEF " fica desorientado por um momento e não consegue revidar.">
+   <LTABLE (PURE) "A força do seu golpe joga " F-O-DEF " para trás, atordoado.">
+   <LTABLE (PURE) F-CO-DEF " fica confuso e não consegue revidar.">
+   <LTABLE (PURE) "A rapidez da sua estocada joga " F-O-DEF " para trás, atordoado.">>
   <LTABLE (PURE)
-   <LTABLE (PURE) "The " F-DEF "'s weapon is knocked to the floor, leaving him unarmed.">
-   <LTABLE (PURE) "The " F-DEF " is disarmed by a subtle feint past his guard.">>>>
+   <LTABLE (PURE) "A arma " F-DO-DEF " vai ao chão, e ele fica desarmado.">
+   <LTABLE (PURE) "Uma finta sutil passa pela guarda " F-DO-DEF " e o desarma.">>>>
 
 \
 
@@ -3688,44 +3721,45 @@ dinner.">>
 <GLOBAL TROLL-MELEE
 <TABLE (PURE)
  <LTABLE (PURE)
-  <LTABLE (PURE) "The troll swings his axe, but it misses.">
-  <LTABLE (PURE) "The troll's axe barely misses your ear.">
-  <LTABLE (PURE) "The axe sweeps past as you jump aside.">
-  <LTABLE (PURE) "The axe crashes against the rock, throwing sparks!">>
+  <LTABLE (PURE) "O troll brande o machado, mas erra.">
+  <LTABLE (PURE) "O machado do troll passa raspando pela sua orelha.">
+  <LTABLE (PURE) "O machado passa zunindo enquanto você salta para o lado.">
+  <LTABLE (PURE) "O machado se choca contra a rocha e solta faíscas!">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The flat of the troll's axe hits you delicately on the head, knocking
-you out.">>
+  <LTABLE (PURE) "O troll acerta você delicadamente na cabeça com o lado chato do
+machado, e você desmaia.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The troll neatly removes your head.">
-  <LTABLE (PURE) "The troll's axe stroke cleaves you from the nave to the chops.">
-  <LTABLE (PURE) "The troll's axe removes your head.">>
+  <LTABLE (PURE) "O troll arranca a sua cabeça com toda a precisão.">
+  <LTABLE (PURE) "A machadada do troll abre você do umbigo ao queixo.">
+  <LTABLE (PURE) "O machado do troll arranca a sua cabeça.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The axe gets you right in the side. Ouch!">
-  <LTABLE (PURE) "The flat of the troll's axe skins across your forearm.">
-  <LTABLE (PURE) "The troll's swing almost knocks you over as you barely parry
-in time.">
-  <LTABLE (PURE) "The troll swings his axe, and it nicks your arm as you dodge.">>
+  <LTABLE (PURE) "O machado pega você bem no flanco. Ai!">
+  <LTABLE (PURE) "O lado chato do machado do troll esfola o seu antebraço.">
+  <LTABLE (PURE) "O golpe do troll quase derruba você, que mal consegue aparar a
+tempo.">
+  <LTABLE (PURE) "O troll brande o machado, que arranha o seu braço enquanto você se
+esquiva.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The troll charges, and his axe slashes you on your " F-WEP " arm.">
-  <LTABLE (PURE) "An axe stroke makes a deep wound in your leg.">
-  <LTABLE (PURE) "The troll's axe swings down, gashing your shoulder.">>
+  <LTABLE (PURE) "O troll avança, e o machado dele corta o braço com que você segura " F-O-WEP ".">
+  <LTABLE (PURE) "Uma machadada abre um ferimento profundo na sua perna.">
+  <LTABLE (PURE) "O machado do troll desce e rasga o seu ombro.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The troll hits you with a glancing blow, and you are momentarily
-stunned.">
-  <LTABLE (PURE) "The troll swings; the blade turns on your armor but crashes
-broadside into your head.">
-  <LTABLE (PURE) "You stagger back under a hail of axe strokes.">
-  <LTABLE (PURE) "The troll's mighty blow drops you to your knees.">>
+  <LTABLE (PURE) "O troll acerta você de raspão, e você fica atordoado por um
+momento.">
+  <LTABLE (PURE) "O troll golpeia; a lâmina resvala na sua armadura, mas bate de
+chapa na sua cabeça.">
+  <LTABLE (PURE) "Você cambaleia para trás sob uma chuva de machadadas.">
+  <LTABLE (PURE) "O golpe poderoso do troll põe você de joelhos.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The axe hits your " F-WEP " and knocks it spinning.">
-  <LTABLE (PURE) "The troll swings, you parry, but the force of his blow knocks your " F-WEP " away.">
-  <LTABLE (PURE) "The axe knocks your " F-WEP " out of your hand. It falls to the floor.">>
+  <LTABLE (PURE) "O machado acerta " F-SEU-WEP ", que sai girando pelo ar.">
+  <LTABLE (PURE) "O troll golpeia, você apara, mas a força do golpe joga " F-SEU-WEP " longe.">
+  <LTABLE (PURE) "O machado faz " F-SEU-WEP " voar da mão e cair no chão.">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "The troll hesitates, fingering his axe.">
-  <LTABLE (PURE) "The troll scratches his head ruminatively:  Might you be magically
-protected, he wonders?">>
+  <LTABLE (PURE) "O troll hesita, alisando o machado.">
+  <LTABLE (PURE) "O troll coça a cabeça, pensativo: será que você tem alguma
+proteção mágica, ele se pergunta?">>
  <LTABLE (PURE)
-  <LTABLE (PURE) "Conquering his fears, the troll puts you to death.">>>>
+  <LTABLE (PURE) "Vencendo o medo, o troll acaba com você.">>>>
 
 \
 
@@ -3994,32 +4028,33 @@ valueless." CR>
 	 #DECL ((MS WD RS) FIX)
 	 <COND (<0? <GET <INT I-CURE> ,C-ENABLED?>> <SET WD 0>)
 	       (ELSE <SET WD <- .WD>>)>
-	 <COND (<0? .WD> <TELL "You are in perfect health.">)
+	 <COND (<0? .WD> <TELL "Você está em perfeita saúde.">)
 	       (T
-		<TELL "You have ">
-		<COND (<1? .WD> <TELL "a light wound,">)
-		      (<EQUAL? .WD 2> <TELL "a serious wound,">)
-		      (<EQUAL? .WD 3> <TELL "several wounds,">)
-		      (<G? .WD 3> <TELL "serious wounds,">)>)>
+		<TELL "Você tem ">
+		;"PT: o verbo (vai, vão) concorda com o ferimento"
+		<COND (<1? .WD> <TELL "um ferimento leve, que vai">)
+		      (<EQUAL? .WD 2> <TELL "um ferimento grave, que vai">)
+		      (<EQUAL? .WD 3> <TELL "vários ferimentos, que vão">)
+		      (<G? .WD 3> <TELL "ferimentos graves, que vão">)>)>
 	 <COND (<NOT <0? .WD>>
-		<TELL " which will be cured after ">
+		<TELL " sarar daqui a ">
 		<PRINTN
 		 <+ <* ,CURE-WAIT <- .WD 1>>
 		    <GET <INT I-CURE> ,C-TICK>>>
-		<TELL " moves.">)>
+		<TELL " jogadas.">)>
 	 <CRLF>
-	 <TELL "You can ">
-	 <COND (<0? .RS> <TELL "expect death soon">)
-	       (<1? .RS> <TELL "be killed by one more light wound">)
-	       (<EQUAL? .RS 2> <TELL "be killed by a serious wound">)
-	       (<EQUAL? .RS 3> <TELL "survive one serious wound">)
+	 <TELL "Você ">
+	 <COND (<0? .RS> <TELL "pode esperar a morte em breve">)
+	       (<1? .RS> <TELL "pode morrer com mais um ferimento leve">)
+	       (<EQUAL? .RS 2> <TELL "pode morrer com um ferimento grave">)
+	       (<EQUAL? .RS 3> <TELL "aguenta um ferimento grave">)
 	       (<G? .RS 3>
-		<TELL "survive several wounds">)>
+		<TELL "aguenta vários ferimentos">)>
 	 <TELL "." CR>
 	 <COND (<NOT <0? ,DEATHS>>
-		<TELL "You have been killed ">
-		<COND (<1? ,DEATHS> <TELL "once">)
-		      (T <TELL "twice">)>
+		<TELL "Você já morreu ">
+		<COND (<1? ,DEATHS> <TELL "uma vez">)
+		      (T <TELL "duas vezes">)>
 		<TELL "." CR>)>>
 
 <ROUTINE V-SCORE ("OPTIONAL" (ASK? T))

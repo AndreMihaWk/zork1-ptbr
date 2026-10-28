@@ -86,6 +86,7 @@ objetos e personagens) estão no [GLOSSARIO.md](../GLOSSARIO.md).
 | `T-PELO ,obj` | pelo lampião | pela lanterna | pelas velas |
 | `T-G ,obj` (terminação) | o | a | as |
 | `T-ELE ,obj` / `T-CELE ,obj` | ele | ela | elas |
+| `T-SEU ,obj` / `T-CSEU ,obj` | seu lampião / Seu lampião | sua lanterna | suas velas |
 | `T-ESTA ,obj` / `T-SER ,obj` | está / é | está / é | estão / são |
 
 Exemplo: `<TELL T-CO ,PRSO " já " T-ESTA ,PRSO " fechad" T-G ,PRSO "." CR>`
@@ -116,3 +117,21 @@ escreve "A caixa já está fechada." ou "Os sapatos já estão fechados.".
    diff das transcrições: ele mostra o texto novo como o jogador vai ver.
 4. Com o CI verde, o PR é mesclado. O preview do PR fica em
    `https://andremihawk.github.io/zork1-ptbr/pr-preview/pr-<número>/`.
+
+### Mensagens de combate
+
+As mensagens de luta (`HERO-MELEE`, `TROLL-MELEE`, `THIEF-MELEE`,
+`CYCLOPS-MELEE` em `src/1actions.zil`) são listas de pedaços que a rotina
+`REMARK` junta. `F-WEP` e `F-DEF` escrevem só o nome da arma e do defensor;
+para a concordância, use os marcadores com artigo:
+
+| Marcador | Escreve |
+|---|---|
+| `F-O-WEP` / `F-CO-WEP` / `F-DO-WEP` | a espada / A espada / da espada |
+| `F-SEU-WEP` / `F-CSEU-WEP` | sua espada / Sua espada (seu estilete) |
+| `F-O-DEF` / `F-CO-DEF` | o troll / O troll |
+| `F-DO-DEF` / `F-NO-DEF` / `F-AO-DEF` | do troll / no troll / ao troll |
+
+Exemplo: `<LTABLE (PURE) F-CSEU-WEP " erra " F-O-DEF " por um triz.">`.
+Cada grupo de mensagens mantém o mesmo número de mensagens do original (o
+sorteio escolhe uma delas).

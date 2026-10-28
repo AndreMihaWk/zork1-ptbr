@@ -164,3 +164,5 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | broken lantern / broken egg / broken canary | lanterna quebrada (f) / ovo quebrado (m) / canário de corda quebrado (m) |
 | pile of leaves / forest / tree / mountain range | monte de folhas (m) / floresta (f) / árvore (f) / cadeia de montanhas (f) |
 | surrounding wall / granite wall / set of teeth | paredes ao redor (f, pl) / parede de granito (f) / dentes (m, pl) |
+| crack / ramp / crawlway | fenda (f) / rampa (f) / túnel baixo (m) |
+| piece of paper / worthless piece of canvas / paint | pedaço de papel (m) / pedaço de tela sem valor (m) / tinta (f) |
