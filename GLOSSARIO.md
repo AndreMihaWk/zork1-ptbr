@@ -23,6 +23,7 @@ nomes próprios de lugares (Aragain, Hades, Atlântida com acento).
 | I beg your pardon? | Como é? |
 | You can't go that way. | Você não pode ir por aí. |
 | Time passes... | O tempo passa... |
+| Done. | Pronto. |
 | dungeon | masmorra |
 | The Great Underground Empire | O Grande Império Subterrâneo |
 | Release / Serial number | Versão / Número de série |
@@ -135,7 +136,7 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | nasty knife / rusty knife | faca afiada / faca enferrujada (f) |
 | stiletto | estilete (m) |
 | bloody axe | machado ensanguentado (m) |
-| glass bottle / quantity of water | garrafa de vidro (f) / um pouco de água (f) |
+| glass bottle / quantity of water | garrafa de vidro (f) / água (f; "um pouco de água" com artigo indefinido) |
 | brown sack / lunch / clove of garlic | saco marrom (m) / lanche (m) / dente de alho (m) |
 | matchbook | caixa de fósforos (f) |
 | pair of candles | par de velas (m) |
@@ -156,3 +157,10 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | bird's nest / skeleton / mirror | ninho de passarinho (m) / esqueleto (m) / espelho (m) |
 | altar / pedestal / wooden railing | altar (m) / pedestal (m) / corrimão de madeira (m) |
 | rainbow / river / dam | arco-íris (m) / rio (m) / barragem (f) |
+| white house / front door / boards | casa branca (f) / porta (f) / tábuas (f, pl) |
+| kitchen window / boarded window | janela da cozinha (f) / janela tapada (f) |
+| chimney / kitchen table / nails | chaminé (f) / mesa da cozinha (f) / pregos (m, pl) |
+| wooden door (gothic lettering) | porta de madeira (f), com letras góticas |
+| broken lantern / broken egg / broken canary | lanterna quebrada (f) / ovo quebrado (m) / canário de corda quebrado (m) |
+| pile of leaves / forest / tree / mountain range | monte de folhas (m) / floresta (f) / árvore (f) / cadeia de montanhas (f) |
+| surrounding wall / granite wall / set of teeth | paredes ao redor (f, pl) / parede de granito (f) / dentes (m, pl) |

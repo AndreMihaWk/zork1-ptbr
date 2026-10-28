@@ -2,30 +2,30 @@
 ## ZILF (test/FullTestProjects/zork1). Roda com aleatoriedade previsível:
 ## os save/restore repetidos fazem o ladrão aparecer na hora certa.
 ## Linhas que começam com ## são comentários.
-north
+norte
 n
-climb tree
-take egg
-d
+suba na árvore
+pegue o ovo
+desça
 s
-e
-open window
-west
-get bottle
-w
-open case
-take sword, lantern
-e
-u
-turn on lantern
-take rope, knife
-turn off lantern
-d
-w
-move rug
-open trap door
-d
-turn on lantern
+l
+abra a janela
+oeste
+pegue a garrafa
+o
+abra a vitrine
+pegue a espada e a lanterna
+leste
+suba
+acenda a lanterna
+pegue a corda, a faca
+apague a lanterna
+b
+o
+mova o tapete
+abra o alçapão
+desça
+ligue a lanterna
 n
 hit troll with sword
 diagnose
@@ -70,8 +70,8 @@ take coins
 se
 e
 e
-open case
-put treasure in case
+abra a vitrine de troféus
+coloque o tesouro na vitrine
 save
 d
 open door
@@ -146,7 +146,7 @@ save
 d
 e
 e
-turn off lantern
+desligue a lanterna
 diagnose
 z. z. z. z. z
 z. z. z. z. z
@@ -155,9 +155,9 @@ z
 z
 z
 diagnose
-put all treasures in case
+coloque todos os tesouros na vitrine
 w
-turn on lantern
+acenda a lanterna
 w
 u
 drop knife
@@ -170,24 +170,24 @@ d
 e
 e
 save
-turn off lantern
-take canary
-e
-e
+apague a lanterna
+pegue o canário
+leste
+l
+norte
 n
-n
-u
-wind canary
-d
-take bauble
-s
-e
-w
-w
-put all treasure in case
+c
+dê corda no canário
+baixo
+pegue o berloque
+sul
+l
+oeste
+o
+coloque todos os tesouros na vitrine
 save
 d
-turn on lantern
+ligue a lanterna
 n
 e
 n
@@ -196,7 +196,7 @@ e
 n
 n
 push red button
-turn off lantern
+apague a lanterna
 take wrench, screwdriver
 push yellow button
 s
@@ -209,9 +209,9 @@ z
 z
 look
 w
-turn on lantern
+acenda a lanterna
 n
-drop all but lantern
+largue tudo exceto a lanterna
 n
 n
 take trident
@@ -224,15 +224,15 @@ sw
 w
 s
 u
-put all treasure in case
-turn off lantern
+ponha todos os tesouros na vitrine
+apague a lanterna
 save
 e
-open sack
-get garlic
+abra o saco
+pegue o dente de alho
 w
 d
-turn on lantern
+acenda a lanterna
 n
 e
 n
@@ -265,7 +265,7 @@ sw
 d
 d
 w
-drop all but lantern
+largue tudo menos a lanterna
 e
 s
 take coal
@@ -326,14 +326,14 @@ e
 s
 d
 u
-put all treasure in case
+coloque todos os tesouros na vitrine
 save
 d
 n
 e
 e
 n
-turn off lantern
+apague a lanterna
 ne
 e
 turn bolt with wrench
@@ -481,7 +481,7 @@ s
 se
 w
 w
-put all treasure in case
+guarde todos os tesouros na vitrine
 read parchment
 e
 e

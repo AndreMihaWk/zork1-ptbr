@@ -4,112 +4,112 @@ Copyright (c) 1981, 1982, 1983, 1984, 1985, 1986 Infocom, Inc. Todos os direitos
 ZORK é uma marca registrada da Infocom, Inc.
 Versão 0 / Número de série 000000
 
-West of House
-You are standing in an open field west of a white house, with a boarded front door.
-Há uma small mailbox aqui.
+Oeste da Casa
+Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas.
+Há uma pequena caixa de correio aqui.
 
->north
-North of House
-You are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.
+>norte
+Norte da Casa
+Você está diante do lado norte de uma casa branca. Não há porta aqui, e todas as janelas estão tapadas com tábuas. Ao norte, uma trilha estreita serpenteia entre as árvores.
 
 >n
-Forest Path
-This is a path winding through a dimly lit forest. The path heads north-south here. One particularly large tree with some low branches stands at the edge of the path.
-You hear in the distance the chirping of a song bird.
+Trilha da Floresta
+Esta é uma trilha que serpenteia por uma floresta mal iluminada. Aqui a trilha segue de norte a sul. Uma árvore especialmente grande, com alguns galhos baixos, fica à beira da trilha.
+Você ouve ao longe o gorjeio de um pássaro canoro.
 
->climb tree
-Up a Tree
-You are about 10 feet above the ground nestled among some large branches. The nearest branch above you is above your reach.
-Beside you on the branch is a small bird's nest.
-In the bird's nest is a large egg encrusted with precious jewels, apparently scavenged by a childless songbird. The egg is covered with fine gold inlay, and ornamented in lapis lazuli and mother-of-pearl. Unlike most eggs, this one is hinged and closed with a delicate looking clasp. The egg appears extremely fragile.
-You hear in the distance the chirping of a song bird.
+>suba na árvore
+No Alto da Árvore
+Você está a uns três metros do chão, aninhado entre alguns galhos grandes. O galho mais próximo acima de você está fora do seu alcance.
+Ao seu lado, no galho, há um pequeno ninho de passarinho.
+No ninho de passarinho há um ovo grande cravejado de pedras preciosas, pelo jeito surrupiado por algum pássaro canoro sem filhotes. O ovo é coberto de finos embutidos de ouro e enfeitado com lápis-lazúli e madrepérola. Ao contrário da maioria dos ovos, este tem dobradiças e está fechado por um fecho de aparência delicada. O ovo parece extremamente frágil.
+Você ouve ao longe o gorjeio de um pássaro canoro.
 
->take egg
-Você pegou o jewel-encrusted egg.
+>pegue o ovo
+Você pegou o ovo cravejado de joias.
 
->d
-Forest Path
+>desça
+Trilha da Floresta
 
 >s
-North of House
+Norte da Casa
 
->e
-Behind House
-You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+>l
+Atrás da Casa
+Você está atrás da casa branca. Uma trilha leva para a floresta, a leste. Em um canto da casa há uma pequena janela, que está entreaberta.
 
->open window
-With great effort, you open the window far enough to allow entry.
+>abra a janela
+Com grande esforço, você abre a janela o suficiente para passar.
 
->west
-Kitchen
-You are in the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
-On the table is an elongated brown sack, smelling of hot peppers.
-A bottle is sitting on the table.
-Dentro da glass bottle há:
-  Uma quantity of water
+>oeste
+Cozinha
+Você está na cozinha da casa branca. Uma mesa parece ter sido usada há pouco tempo para preparar comida. Uma passagem leva para oeste, e uma escada escura sobe. Uma chaminé escura desce, e a leste há uma pequena janela, que está aberta.
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
+Há uma garrafa sobre a mesa.
+Dentro da garrafa de vidro há:
+  Um pouco de água
 
->get bottle
-Você pegou a glass bottle.
+>pegue a garrafa
+Você pegou a garrafa de vidro.
 
->w
-Living Room
-You are in the living room. There is a doorway to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, a trophy case, and a large oriental rug in the center of the room.
-Above the trophy case hangs an elvish sword of great antiquity.
-A battery-powered brass lantern is on the trophy case.
+>o
+Sala de Estar
+Você está na sala de estar. Há uma passagem para leste, uma porta de madeira a oeste com estranhas letras góticas, que parece estar pregada, uma vitrine de troféus e um grande tapete oriental no centro da sala.
+Acima da vitrine de troféus está pendurada uma espada élfica de grande antiguidade.
+Sobre a vitrine de troféus há uma lanterna de latão a pilha.
 
->open case
-Você abriu a trophy case.
+>abra a vitrine
+Você abriu a vitrine de troféus.
 
->take sword, lantern
-sword: Você pegou a sword.
-brass lantern: Você pegou a brass lantern.
+>pegue a espada e a lanterna
+espada: Você pegou a espada.
+lanterna de latão: Você pegou a lanterna de latão.
 
->e
-Kitchen
-On the table is an elongated brown sack, smelling of hot peppers.
+>leste
+Cozinha
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 
->u
+>suba
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
->turn on lantern
-A brass lantern agora está acesa.
+>acenda a lanterna
+A lanterna de latão agora está acesa.
 
-Attic
-This is the attic. The only exit is a stairway leading down.
-A large coil of rope is lying in the corner.
-On a table is a nasty-looking knife.
+Sótão
+Este é o sótão. A única saída é uma escada que desce.
+Um grande rolo de corda está largado no canto.
+Sobre uma mesa há uma faca de aspecto ameaçador.
 
->take rope, knife
-rope: Você pegou a rope.
-nasty knife: Você pegou a nasty knife.
+>pegue a corda, a faca
+corda: Você pegou a corda.
+faca afiada: Você pegou a faca afiada.
 
->turn off lantern
-A brass lantern agora está apagada.
+>apague a lanterna
+A lanterna de latão agora está apagada.
 Agora está um breu total.
 
->d
-Kitchen
-On the table is an elongated brown sack, smelling of hot peppers.
+>b
+Cozinha
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 
->w
-Living Room
+>o
+Sala de Estar
 
->move rug
-With a great effort, the rug is moved to one side of the room, revealing the dusty cover of a closed trap door.
+>mova o tapete
+Com grande esforço, você arrasta o tapete para um canto da sala e revela a tampa empoeirada de um alçapão fechado.
 
->open trap door
-The door reluctantly opens to reveal a rickety staircase descending into darkness.
+>abra o alçapão
+O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
->d
+>desça
 Você entrou num lugar escuro.
 The trap door crashes shut, and you hear someone barring it.
 
 Está um breu total. É provável que você seja devorado por um grue.
-Your sword is glowing with a faint blue glow.
+Sua espada emite um fraco brilho azulado.
 
->turn on lantern
-A brass lantern agora está acesa.
+>ligue a lanterna
+A lanterna de latão agora está acesa.
 
 Cellar
 You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
@@ -118,12 +118,12 @@ You are in a dark and damp cellar with a narrow passageway leading north, and a 
 The Troll Room
 This is a small room with passages to the east and south and a forbidding hole leading west. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.
 A nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 
 >hit troll with sword
-It's curtains for the troll as your sword removes his head.
+It's curtains for the troll as your espada removes his head.
 Almost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared.
-Your sword is no longer glowing.
+Sua espada parou de brilhar.
 
 >diagnose
 You are in perfect health.
@@ -163,17 +163,17 @@ This is part of a maze of twisty little passages, all alike.
 >s
 Maze
 This is part of a maze of twisty little passages, all alike.
-Your sword is glowing with a faint blue glow.
+Sua espada emite um fraco brilho azulado.
 
 >se
 Cyclops Room
 This room has an exit on the northwest, and a staircase leading up.
 A cyclops, who looks prepared to eat horses (much less mere adventurers), blocks the staircase. From his state of health, and the bloodstains on the walls, you gather that he is not very friendly, though he likes people.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 
 >ulysses
 O ciclope, ao ouvir o nome do inimigo mortal de seu pai, foge da sala derrubando a parede do lado leste.
-Your sword is no longer glowing.
+Sua espada parou de brilhar.
 
 >nw
 Maze
@@ -196,9 +196,9 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
-A long, theatrical slash. You catch it on your nasty knife, but the thief twists his knife, and the nasty knife goes flying.
-Fortunately, you still have a sword.
+Sua espada começou a brilhar intensamente.
+A long, theatrical slash. You catch it on your faca afiada, but the thief twists his knife, and the faca afiada goes flying.
+Fortunately, you still have a espada.
 
 >restore
 Ok.
@@ -211,7 +211,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 A quick thrust pinks your left arm, and blood starts to trickle down.
 
 >restore
@@ -225,7 +225,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The thief strikes at your wrist, and suddenly your grip is slippery with blood.
 
 >restore
@@ -239,7 +239,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 A quick thrust pinks your left arm, and blood starts to trickle down.
 
 >restore
@@ -253,7 +253,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The thief draws blood, raking his stiletto across your arm.
 
 >restore
@@ -267,7 +267,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The stiletto flashes faster than you can follow, and blood wells from your leg.
 
 >restore
@@ -281,7 +281,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The stiletto flashes faster than you can follow, and blood wells from your leg.
 
 >restore
@@ -295,7 +295,7 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The thief draws blood, raking his stiletto across your arm.
 
 >restore
@@ -309,15 +309,15 @@ Treasure Room
 This is a large room, whose east wall is solid granite. A number of discarded bags, which crumble at your touch, are scattered about on the floor. There is an exit down a staircase.
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The butt of his stiletto cracks you on the skull, and you stagger back.
 
 >give egg to thief
-The thief is taken aback by your unexpected generosity, but accepts the jewel-encrusted egg and stops to admire its beauty.
+The thief is taken aback by your unexpected generosity, but accepts the ovo cravejado de joias and stops to admire its beauty.
 
 >d
 Cyclops Room
-Your sword is no longer glowing.
+Sua espada parou de brilhar.
 
 >diagnose
 You are in perfect health.
@@ -328,11 +328,11 @@ Maze
 This is part of a maze of twisty little passages, all alike.
 An old leather bag, bulging with coins, is here.
 Someone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken only over his dead body.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 
 >se
 Cyclops Room
-Your sword is no longer glowing.
+Sua espada parou de brilhar.
 
 >nw
 Maze
@@ -350,25 +350,25 @@ Strange Passage
 This is a long passage. To the west is one entrance. On the east there is an old wooden door, with a large opening in it (about cyclops sized).
 
 >e
-Living Room
+Sala de Estar
 
->open case
-A trophy case já está aberta.
+>abra a vitrine de troféus
+A vitrine de troféus já está aberta.
 
->put treasure in case
-Você colocou o leather bag of coins na trophy case.
+>coloque o tesouro na vitrine
+Você colocou o leather bag of coins na vitrine de troféus.
 
 >save
 Ok.
 
 >d
-The trap door is closed.
+O alçapão está fechado.
 
 >open door
-Você quer dizer o wooden door ou o trap door?
+Você quer dizer a porta de madeira ou o alçapão?
 
 >trap
-The door reluctantly opens to reveal a rickety staircase descending into darkness.
+O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
 >d
 Cellar
@@ -461,7 +461,7 @@ black book: Você pegou o black book.
 Cave
 This is a tiny cave with entrances west and north, and a dark, forbidding staircase leading down.
 A gust of wind blows out your candles!
-Your sword is glowing with a faint blue glow.
+Sua espada emite um fraco brilho azulado.
 
 >d
 Entrance to Hades
@@ -471,7 +471,7 @@ You are outside a large gateway, on which is inscribed
 
 The gate is open; through it you can see a desolation, with a pile of mangled bodies in one corner. Thousands of voices, lamenting some hideous fate, can be heard.
 The way through the gate is barred by evil spirits, who jeer at your attempts to pass.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 
 >open matchbook
 You have 5 matches.
@@ -494,7 +494,7 @@ The flames flicker wildly and appear to dance. The earth beneath your feet tremb
 
 >read book
 Each word of the prayer reverberates through the hall in a deafening confusion. As the last word fades, a voice, loud and commanding, speaks: "Begone, fiends!" A heart-stopping scream fills the cavern, and the spirits, sensing a greater power, flee through the walls.
-Your sword is no longer glowing.
+Sua espada parou de brilhar.
 
 >save
 Ok.
@@ -510,7 +510,7 @@ Você pegou o brass bell.
 The flame is extinguished.
 
 >drop bottle
-Você largou a glass bottle.
+Você largou a garrafa de vidro.
 
 >s
 Land of the Dead
@@ -522,7 +522,7 @@ Você pegou o crystal skull.
 
 >n
 Entrance to Hades
-Há uma glass bottle aqui.
+Há uma garrafa de vidro aqui.
 
 >u
 Cave
@@ -570,7 +570,7 @@ East of Chasm
 Cellar
 
 >u
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um leather bag of coins
 
@@ -578,7 +578,7 @@ Sua coleção de tesouros consiste em:
 Sua carga está pesada demais.
 
 >put painting in case
-Você colocou o painting na trophy case.
+Você colocou o painting na vitrine de troféus.
 
 >take coins
 Você pegou o leather bag of coins.
@@ -599,7 +599,7 @@ The thief gestures mysteriously, and the treasures in the room suddenly vanish.
 Treasure Room
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The stiletto flashes faster than you can follow, and blood wells from your leg.
 
 >restore
@@ -612,7 +612,7 @@ The thief gestures mysteriously, and the treasures in the room suddenly vanish.
 Treasure Room
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 The thief draws blood, raking his stiletto across your arm.
 
 >restore
@@ -625,7 +625,7 @@ The thief gestures mysteriously, and the treasures in the room suddenly vanish.
 Treasure Room
 There is a suspicious-looking individual, holding a large bag, leaning against one wall. He is armed with a deadly stiletto.
 There is a silver chalice, intricately engraved, here.
-Your sword has begun to glow very brightly.
+Sua espada começou a brilhar intensamente.
 You parry a lightning thrust, and the thief salutes you with a grim nod.
 
 >kill thief with knife
@@ -640,7 +640,7 @@ You charge, but the thief jumps nimbly aside.
 The thief stabs nonchalantly with his stiletto and misses.
 
 >g
-Your nasty knife crashes down, knocking the thief into dreamland.
+Your faca afiada crashes down, knocking the thief into dreamland.
 
 >g
 The unconscious thief cannot defend himself: He dies.
@@ -648,9 +648,9 @@ Almost as soon as the thief breathes his last breath, a cloud of sinister black 
 As the thief dies, the power of his magic decreases, and his treasures reappear:
   A leather bag of coins
   A stiletto
-  A jewel-encrusted egg, with um golden clockwork canary
+  A ovo cravejado de joias, with um canário de corda dourado
 The chalice is now safe to take.
-Your sword is no longer glowing.
+Sua espada parou de brilhar.
 
 >save
 Ok.
@@ -662,12 +662,12 @@ Cyclops Room
 Strange Passage
 
 >e
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um painting
 
->turn off lantern
-A brass lantern agora está apagada.
+>desligue a lanterna
+A lanterna de latão agora está apagada.
 
 >diagnose
 You have a serious wound, which will be cured after 54 moves.
@@ -719,15 +719,15 @@ O tempo passa...
 You are in perfect health.
 You can survive one serious wound.
 
->put all treasures in case
-crystal skull: Você colocou o crystal skull na trophy case.
+>coloque todos os tesouros na vitrine
+crystal skull: Você colocou o crystal skull na vitrine de troféus.
 
 >w
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
->turn on lantern
-A brass lantern agora está acesa.
+>acenda a lanterna
+A lanterna de latão agora está acesa.
 
 Strange Passage
 This is a long passage. To the west is one entrance. On the east there is an old wooden door, with a large opening in it (about cyclops sized).
@@ -739,16 +739,16 @@ Cyclops Room
 Treasure Room
 An old leather bag, bulging with coins, is here.
 Há um stiletto aqui.
-Há um jewel-encrusted egg aqui.
-There is a golden clockwork canary nestled in the egg. It has ruby eyes and a silver beak. Through a crystal window below its left wing you can see intricate machinery inside. It appears to have wound down.
+Há um ovo cravejado de joias aqui.
+Há um canário de corda dourado aninhado no ovo. Ele tem olhos de rubi e bico de prata. Por uma janelinha de cristal sob a asa esquerda, dá para ver o mecanismo complexo que ele tem por dentro. Parece que a corda dele acabou.
 There is a silver chalice, intricately engraved, here.
 
 >drop knife
-Você largou a nasty knife.
+Você largou a faca afiada.
 
 >take all treasures
 leather bag of coins: Você pegou o leather bag of coins.
-jewel-encrusted egg: Você pegou o jewel-encrusted egg.
+ovo cravejado de joias: Você pegou o ovo cravejado de joias.
 chalice: Você pegou o chalice.
 
 >take stiletto
@@ -757,17 +757,17 @@ Sua carga está pesada demais.
 >i
 Você está carregando:
   Um chalice
-  Um jewel-encrusted egg
-  Dentro do jewel-encrusted egg há:
-    Um golden clockwork canary
+  Um ovo cravejado de joias
+  Dentro do ovo cravejado de joias há:
+    Um canário de corda dourado
   Um leather bag of coins
   Um pair of candles
   Um matchbook
-  Uma brass lantern (acesa)
-  Uma sword
+  Uma lanterna de latão (acesa)
+  Uma espada
 
 >drop sword
-Você largou a sword.
+Você largou a espada.
 
 >take stiletto
 Você pegou o stiletto.
@@ -779,7 +779,7 @@ Cyclops Room
 Strange Passage
 
 >e
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal skull
   Um painting
@@ -787,61 +787,61 @@ Sua coleção de tesouros consiste em:
 >save
 Ok.
 
->turn off lantern
-A brass lantern agora está apagada.
+>apague a lanterna
+A lanterna de latão agora está apagada.
 
->take canary
-Você pegou o golden clockwork canary.
+>pegue o canário
+Você pegou o canário de corda dourado.
 
->e
-Kitchen
-On the table is an elongated brown sack, smelling of hot peppers.
+>leste
+Cozinha
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 
->e
-Behind House
+>l
+Atrás da Casa
+
+>norte
+Norte da Casa
 
 >n
-North of House
+Trilha da Floresta
 
->n
-Forest Path
+>c
+No Alto da Árvore
+Ao seu lado, no galho, há um pequeno ninho de passarinho.
 
->u
-Up a Tree
-Beside you on the branch is a small bird's nest.
+>dê corda no canário
+O canário gorjeia, um pouco desafinado, uma ária de uma ópera esquecida. Do meio do verde sai voando um belo pássaro canoro. Ele pousa num galho bem acima da sua cabeça e abre o bico para cantar. Ao fazer isso, deixa cair do bico um lindo berloque de latão, que quica no alto da sua cabeça e vai parar, reluzente, na grama. Quando a corda do canário acaba, o pássaro canoro vai embora voando.
 
->wind canary
-The canary chirps, slightly off-key, an aria from a forgotten opera. From out of the greenery flies a lovely songbird. It perches on a limb just over your head and opens its beak to sing. As it does so a beautiful brass bauble drops from its mouth, bounces off the top of your head, and lands glimmering in the grass. As the canary winds down, the songbird flies away.
+>baixo
+Trilha da Floresta
+Há um lindo berloque de latão aqui.
 
->d
-Forest Path
-Há um beautiful brass bauble aqui.
+>pegue o berloque
+Você pegou o lindo berloque de latão.
 
->take bauble
-Você pegou o beautiful brass bauble.
+>sul
+Norte da Casa
 
->s
-North of House
+>l
+Atrás da Casa
 
->e
-Behind House
+>oeste
+Cozinha
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 
->w
-Kitchen
-On the table is an elongated brown sack, smelling of hot peppers.
-
->w
-Living Room
+>o
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal skull
   Um painting
 
->put all treasure in case
-beautiful brass bauble: Você colocou o beautiful brass bauble na trophy case.
-golden clockwork canary: Você colocou o golden clockwork canary na trophy case.
-chalice: Você colocou o chalice na trophy case.
-jewel-encrusted egg: Você colocou o jewel-encrusted egg na trophy case.
-leather bag of coins: Você colocou o leather bag of coins na trophy case.
+>coloque todos os tesouros na vitrine
+lindo berloque de latão: Você colocou o lindo berloque de latão na vitrine de troféus.
+canário de corda dourado: Você colocou o canário de corda dourado na vitrine de troféus.
+chalice: Você colocou o chalice na vitrine de troféus.
+ovo cravejado de joias: Você colocou o ovo cravejado de joias na vitrine de troféus.
+leather bag of coins: Você colocou o leather bag of coins na vitrine de troféus.
 
 >save
 Ok.
@@ -850,8 +850,8 @@ Ok.
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
->turn on lantern
-A brass lantern agora está acesa.
+>ligue a lanterna
+A lanterna de latão agora está acesa.
 
 Cellar
 You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
@@ -886,8 +886,8 @@ Há um screwdriver aqui.
 >push red button
 The lights within the room come on.
 
->turn off lantern
-A brass lantern agora está apagada.
+>apague a lanterna
+A lanterna de latão agora está apagada.
 
 >take wrench, screwdriver
 wrench: Você pegou o wrench.
@@ -937,8 +937,8 @@ There is a control panel here, on which a large metal bolt is mounted. Directly 
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
->turn on lantern
-A brass lantern agora está acesa.
+>acenda a lanterna
+A lanterna de latão agora está acesa.
 
 Reservoir South
 You are in a long room, to the north of which was formerly a lake. However, with the water level lowered, there is merely a wide stream running through the center of the room.
@@ -949,7 +949,7 @@ Reservoir
 You are on what used to be a large lake, but which is now a large mud pile. There are "shores" to the north and south.
 Lying half buried in the mud is an old trunk, bulging with jewels.
 
->drop all but lantern
+>largue tudo exceto a lanterna
 screwdriver: Você largou o screwdriver.
 wrench: Você largou o wrench.
 stiletto: Você largou o stiletto.
@@ -1002,46 +1002,46 @@ The Troll Room
 Cellar
 
 >u
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
->put all treasure in case
-trunk of jewels: Você colocou o trunk of jewels na trophy case.
-crystal trident: Você colocou o crystal trident na trophy case.
+>ponha todos os tesouros na vitrine
+trunk of jewels: Você colocou o trunk of jewels na vitrine de troféus.
+crystal trident: Você colocou o crystal trident na vitrine de troféus.
 
->turn off lantern
-A brass lantern agora está apagada.
+>apague a lanterna
+A lanterna de latão agora está apagada.
 
 >save
 Ok.
 
 >e
-Kitchen
-On the table is an elongated brown sack, smelling of hot peppers.
+Cozinha
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 
->open sack
-Ao abrir o brown sack, você encontra um lunch e um clove of garlic.
+>abra o saco
+Ao abrir o saco marrom, você encontra um lanche e um dente de alho.
 
->get garlic
-Você pegou o clove of garlic.
+>pegue o dente de alho
+Você pegou o dente de alho.
 
 >w
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal trident
   Um trunk of jewels
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
@@ -1049,8 +1049,8 @@ Sua coleção de tesouros consiste em:
 Você entrou num lugar escuro.
 Está um breu total. É provável que você seja devorado por um grue.
 
->turn on lantern
-A brass lantern agora está acesa.
+>acenda a lanterna
+A lanterna de latão agora está acesa.
 
 Cellar
 You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
@@ -1186,12 +1186,12 @@ Timber Room
 This is a long and narrow passage, which is cluttered with broken timbers. A wide passage comes from the east and turns at the west end of the room into a very narrow passageway. From the west comes a strong draft.
 Há um broken timber aqui.
 
->drop all but lantern
+>largue tudo menos a lanterna
 sapphire-encrusted bracelet: Você largou o sapphire-encrusted bracelet.
 jade figurine: Você largou o jade figurine.
 wrench: Você largou o wrench.
 stiletto: Você largou o stiletto.
-clove of garlic: Você largou o clove of garlic.
+dente de alho: Você largou o dente de alho.
 
 >e
 Ladder Bottom
@@ -1289,7 +1289,7 @@ Ladder Bottom
 
 >w
 Timber Room
-Há um clove of garlic aqui.
+Há um dente de alho aqui.
 Há um stiletto aqui.
 Há um wrench aqui.
 There is an exquisite jade figurine here.
@@ -1298,7 +1298,7 @@ Há um broken timber aqui.
 
 >drop all
 matchbook: Você largou o matchbook.
-brass lantern: Você largou a brass lantern.
+lanterna de latão: Você largou a lanterna de latão.
 
 >w
 Drafty Room
@@ -1347,9 +1347,9 @@ screwdriver: Você colocou o screwdriver no basket.
 
 >go east
 Timber Room
-There is a brass lantern (battery-powered) here.
+Há uma lanterna de latão (a pilha) aqui.
 There is a matchbook whose cover says "Visit Beautiful FCD#3" here.
-Há um clove of garlic aqui.
+Há um dente de alho aqui.
 Há um stiletto aqui.
 Há um wrench aqui.
 There is an exquisite jade figurine here.
@@ -1357,9 +1357,9 @@ Há um sapphire-encrusted bracelet aqui.
 Há um broken timber aqui.
 
 >take all but timber
-brass lantern: Você pegou a brass lantern.
+lanterna de latão: Você pegou a lanterna de latão.
 matchbook: Você pegou o matchbook.
-clove of garlic: Você pegou o clove of garlic.
+dente de alho: Você pegou o dente de alho.
 stiletto: Você pegou o stiletto.
 wrench: Você pegou o wrench.
 jade figurine: Você pegou o jade figurine.
@@ -1421,22 +1421,22 @@ Slide Room
 Cellar
 
 >u
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um crystal trident
   Um trunk of jewels
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
->put all treasure in case
-huge diamond: Você colocou o huge diamond na trophy case.
-sapphire-encrusted bracelet: Você colocou o sapphire-encrusted bracelet na trophy case.
-jade figurine: Você colocou o jade figurine na trophy case.
+>coloque todos os tesouros na vitrine
+huge diamond: Você colocou o huge diamond na vitrine de troféus.
+sapphire-encrusted bracelet: Você colocou o sapphire-encrusted bracelet na vitrine de troféus.
+jade figurine: Você colocou o jade figurine na vitrine de troféus.
 
 >save
 Ok.
@@ -1457,8 +1457,8 @@ Round Room
 North-South Passage
 This is a high north-south passage, which forks to the northeast.
 
->turn off lantern
-A brass lantern agora está apagada.
+>apague a lanterna
+A lanterna de latão agora está apagada.
 
 >ne
 Deep Canyon
@@ -1497,7 +1497,7 @@ Torch Room
 Sitting on the pedestal is a flaming torch, made of ivory.
 
 >drop lantern, candles
-brass lantern: Você largou a brass lantern.
+lanterna de latão: Você largou a lanterna de latão.
 pair of candles: Você largou o pair of candles.
 The candles won't last long now.
 
@@ -1547,7 +1547,7 @@ The Troll Room
 Cellar
 
 >u
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um jade figurine
   Um sapphire-encrusted bracelet
@@ -1555,32 +1555,32 @@ Sua coleção de tesouros consiste em:
   Um crystal trident
   Um trunk of jewels
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
 >put all treasure but sceptre, torch in case
-platinum bar: Você colocou o platinum bar na trophy case.
+platinum bar: Você colocou o platinum bar na vitrine de troféus.
 
 >save
 Ok.
 
 >e
-Kitchen
-Em cima do kitchen table há: 
-  Um brown sack
-  Dentro do brown sack há:
-    Um lunch
+Cozinha
+Em cima da mesa da cozinha há: 
+  Um saco marrom
+  Dentro do saco marrom há:
+    Um lanche
 
 >e
-Behind House
+Atrás da Casa
 
 >e
-Clearing
-You are in a small clearing in a well marked forest path that extends to the east and west.
+Clareira
+Você está em uma pequena clareira numa trilha bem marcada da floresta, que se estende para leste e para oeste.
 
 >e
 Canyon View
@@ -1670,20 +1670,20 @@ Rocky Ledge
 Canyon View
 
 >nw
-Clearing
+Clareira
 
 >w
-Behind House
+Atrás da Casa
 
 >w
-Kitchen
-Em cima do kitchen table há: 
-  Um brown sack
-  Dentro do brown sack há:
-    Um lunch
+Cozinha
+Em cima da mesa da cozinha há: 
+  Um saco marrom
+  Dentro do saco marrom há:
+    Um lanche
 
 >w
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um platinum bar
   Um jade figurine
@@ -1692,17 +1692,17 @@ Sua coleção de tesouros consiste em:
   Um crystal trident
   Um trunk of jewels
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
 >put all treasure but torch in case
-beautiful jeweled scarab: Você colocou o beautiful jeweled scarab na trophy case.
-pot of gold: Você colocou o pot of gold na trophy case.
-sceptre: Você colocou o sceptre na trophy case.
+beautiful jeweled scarab: Você colocou o beautiful jeweled scarab na vitrine de troféus.
+pot of gold: Você colocou o pot of gold na vitrine de troféus.
+sceptre: Você colocou o sceptre na vitrine de troféus.
 
 >save
 Ok.
@@ -1809,7 +1809,7 @@ You are on a narrow strip of beach which runs along the base of the White Cliffs
 pile of plastic: Você largou o pile of plastic.
 shovel: Você largou o shovel.
 wrench: Você largou o wrench.
-clove of garlic: Você largou o clove of garlic.
+dente de alho: Você largou o dente de alho.
 matchbook: Você largou o matchbook.
 
 >inflate plastic
@@ -1911,20 +1911,20 @@ Rocky Ledge
 Canyon View
 
 >nw
-Clearing
+Clareira
 
 >w
-Behind House
+Atrás da Casa
 
 >w
-Kitchen
-Em cima do kitchen table há: 
-  Um brown sack
-  Dentro do brown sack há:
-    Um lunch
+Cozinha
+Em cima da mesa da cozinha há: 
+  Um saco marrom
+  Dentro do saco marrom há:
+    Um lanche
 
 >w
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um sceptre
   Um pot of gold
@@ -1936,15 +1936,15 @@ Sua coleção de tesouros consiste em:
   Um crystal trident
   Um trunk of jewels
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
 >put emerald in case
-Você colocou o large emerald na trophy case.
+Você colocou o large emerald na vitrine de troféus.
 
 >d
 Cellar
@@ -1968,13 +1968,13 @@ Damp Cave
 White Cliffs Beach
 Há um tan label aqui.
 There is a matchbook whose cover says "Visit Beautiful FCD#3" here.
-Há um clove of garlic aqui.
+Há um dente de alho aqui.
 Há um wrench aqui.
 Há um shovel aqui.
 
 >take all but label
 matchbook: Você pegou o matchbook.
-clove of garlic: Você pegou o clove of garlic.
+dente de alho: Você pegou o dente de alho.
 wrench: Você pegou o wrench.
 shovel: Você pegou o shovel.
 
@@ -2000,7 +2000,7 @@ Dome Room
 >d
 Torch Room
 Há um pair of candles aqui.
-There is a brass lantern (battery-powered) here.
+Há uma lanterna de latão (a pilha) aqui.
 
 >s
 Temple
@@ -2012,7 +2012,7 @@ The solid-gold coffin used for the burial of Ramses II is here.
 >drop all but torch
 shovel: Você largou o shovel.
 wrench: Você largou o wrench.
-clove of garlic: Você largou o clove of garlic.
+dente de alho: Você largou o dente de alho.
 matchbook: Você largou o matchbook.
 pile of plastic: Você largou o pile of plastic.
 hand-held air pump: Você largou o hand-held air pump.
@@ -2030,27 +2030,27 @@ Temple
 Altar
 
 >pray
-Forest
-This is a forest, with trees in all directions. To the east, there appears to be sunlight.
+Floresta
+Esta é uma floresta, com árvores em todas as direções. A leste, parece haver luz do sol.
 
 >e
-Forest Path
+Trilha da Floresta
 
 >s
-North of House
+Norte da Casa
 
 >se
-Behind House
+Atrás da Casa
 
 >w
-Kitchen
-Em cima do kitchen table há: 
-  Um brown sack
-  Dentro do brown sack há:
-    Um lunch
+Cozinha
+Em cima da mesa da cozinha há: 
+  Um saco marrom
+  Dentro do saco marrom há:
+    Um lanche
 
 >w
-Living Room
+Sala de Estar
 Sua coleção de tesouros consiste em:
   Um large emerald
   Um sceptre
@@ -2063,16 +2063,16 @@ Sua coleção de tesouros consiste em:
   Um crystal trident
   Um trunk of jewels
   Um leather bag of coins
-  Um jewel-encrusted egg
+  Um ovo cravejado de joias
   Um chalice
-  Um golden clockwork canary
-  Um beautiful brass bauble
+  Um canário de corda dourado
+  Um lindo berloque de latão
   Um crystal skull
   Um painting
 
->put all treasure in case
-gold coffin: Você colocou o gold coffin na trophy case.
-torch: Você colocou o torch na trophy case.
+>guarde todos os tesouros na vitrine
+gold coffin: Você colocou o gold coffin na vitrine de troféus.
+torch: Você colocou o torch na vitrine de troféus.
 Uma voz quase inaudível sussurra em seu ouvido: "Procure em seus tesouros o segredo final."
 
 >read parchment
@@ -2080,23 +2080,23 @@ Uma voz quase inaudível sussurra em seu ouvido: "Procure em seus tesouros o seg
 The map shows a forest with three clearings. The largest clearing contains a house. Three paths leave the large clearing. One of these paths, leading southwest, is marked "To Stone Barrow".
 
 >e
-Kitchen
-Em cima do kitchen table há: 
-  Um brown sack
-  Dentro do brown sack há:
-    Um lunch
+Cozinha
+Em cima da mesa da cozinha há: 
+  Um saco marrom
+  Dentro do saco marrom há:
+    Um lanche
 
 >e
-Behind House
+Atrás da Casa
 
 >sw
-South of House
-You are facing the south side of a white house. There is no door here, and all the windows are boarded.
+Sul da Casa
+Você está diante do lado sul de uma casa branca. Não há porta aqui, e todas as janelas estão tapadas com tábuas.
 
 >nw
-West of House
-You are standing in an open field west of a white house, with a boarded front door. A secret path leads southwest into the forest.
-Há uma small mailbox aqui.
+Oeste da Casa
+Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas. Uma trilha secreta leva para sudoeste, floresta adentro.
+Há uma pequena caixa de correio aqui.
 
 >sw
 Stone Barrow

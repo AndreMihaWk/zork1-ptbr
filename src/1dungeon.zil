@@ -12,36 +12,38 @@
 
 <OBJECT BOARD
 	(IN LOCAL-GLOBALS)
-	(SYNONYM BOARDS BOARD)
-	(DESC "board")
-	(FLAGS NDESCBIT)
+	(SYNONYM BOARDS BOARD TABUA TABUAS)
+	(DESC "tábua")
+	(FLAGS NDESCBIT FEMBIT)
 	(ACTION BOARD-F)>
 
 <OBJECT TEETH
 	(IN GLOBAL-OBJECTS)
-	(SYNONYM OVERBOARD TEETH)
-	(DESC "set of teeth")
-	(FLAGS NDESCBIT)
+	(SYNONYM OVERBOARD TEETH DENTES)
+	(DESC "dentes")
+	(FLAGS NDESCBIT PLURALBIT)
 	(ACTION TEETH-F)>
 
 <OBJECT WALL
 	(IN GLOBAL-OBJECTS)
-	(SYNONYM WALL WALLS)
+	(SYNONYM WALL WALLS PAREDE PAREDES MURO)
 	(ADJECTIVE SURROUNDING)
-	(DESC "surrounding wall")>
+	(DESC "paredes ao redor")
+	(FLAGS FEMBIT PLURALBIT)>
 
 <OBJECT GRANITE-WALL
 	(IN GLOBAL-OBJECTS)
-	(SYNONYM WALL)
-	(ADJECTIVE GRANITE)
-	(DESC "granite wall")
+	(SYNONYM WALL PAREDE)
+	(ADJECTIVE GRANITE GRANITO)
+	(DESC "parede de granito")
+	(FLAGS FEMBIT)
 	(ACTION GRANITE-WALL-F)>
 
 <OBJECT SONGBIRD
 	(IN LOCAL-GLOBALS)
-	(SYNONYM BIRD SONGBIRD)
-	(ADJECTIVE SONG)
-	(DESC "songbird")
+	(SYNONYM BIRD SONGBIRD PASSARO PASSARINHO AVE)
+	(ADJECTIVE SONG CANORO)
+	(DESC "pássaro canoro")
 	(FLAGS NDESCBIT)
 	(ACTION SONGBIRD-F)>
 
@@ -49,44 +51,45 @@
 	(IN LOCAL-GLOBALS)
 	(SYNONYM HOUSE CASA)
 	(ADJECTIVE WHITE BEAUTIFUL COLONIAL BRANCA BONITA)
-	(DESC "white house")
+	(DESC "casa branca")
 	(FLAGS NDESCBIT FEMBIT)
 	(ACTION WHITE-HOUSE-F)>
 
 <OBJECT FOREST
 	(IN LOCAL-GLOBALS)
-	(SYNONYM FOREST TREES PINES HEMLOCKS)
-	(DESC "forest")
-	(FLAGS NDESCBIT)
+	(SYNONYM FOREST TREES PINES HEMLOCKS FLORESTA MATA ARVORES PINHEIROS
+		 ABETOS)
+	(DESC "floresta")
+	(FLAGS NDESCBIT FEMBIT)
 	(ACTION FOREST-F)>
 
 <OBJECT TREE
 	(IN LOCAL-GLOBALS)
-	(SYNONYM TREE BRANCH)
-	(ADJECTIVE LARGE STORM ;"-TOSSED")
-	(DESC "tree")
-	(FLAGS NDESCBIT CLIMBBIT)>
+	(SYNONYM TREE BRANCH ARVORE GALHO GALHOS)
+	(ADJECTIVE LARGE STORM ;"-TOSSED" GRANDE)
+	(DESC "árvore")
+	(FLAGS NDESCBIT CLIMBBIT FEMBIT)>
 
 <OBJECT MOUNTAIN-RANGE
 	(IN MOUNTAINS)
-	(DESC "mountain range")
-	(SYNONYM MOUNTAIN RANGE)
-	(ADJECTIVE IMPASSABLE FLATHEAD)
-	(FLAGS NDESCBIT CLIMBBIT)
+	(DESC "cadeia de montanhas")
+	(SYNONYM MOUNTAIN RANGE CADEIA MONTANHA MONTANHAS SERRA)
+	(ADJECTIVE IMPASSABLE FLATHEAD MONTANHAS)
+	(FLAGS NDESCBIT CLIMBBIT FEMBIT)
 	(ACTION MOUNTAIN-RANGE-F)>
 
 <OBJECT GLOBAL-WATER
 	(IN LOCAL-GLOBALS)
-	(SYNONYM WATER QUANTITY)
-	(DESC "water")
-	(FLAGS DRINKBIT)
+	(SYNONYM WATER QUANTITY AGUA)
+	(DESC "água")
+	(FLAGS DRINKBIT FEMBIT PARTITIVOBIT)
 	(ACTION WATER-F)>
 
 <OBJECT WATER
 	(IN BOTTLE)
 	(SYNONYM WATER QUANTITY LIQUID H2O AGUA LIQUIDO)
-	(DESC "quantity of water")
-	(FLAGS TRYTAKEBIT TAKEBIT DRINKBIT FEMBIT)
+	(DESC "água")
+	(FLAGS TRYTAKEBIT TAKEBIT DRINKBIT FEMBIT PARTITIVOBIT)
 	(ACTION WATER-F)
 	(SIZE 4)>
 
@@ -94,17 +97,17 @@
 	(IN LOCAL-GLOBALS)
 	(SYNONYM WINDOW JANELA)
 	(ADJECTIVE KITCHEN SMALL COZINHA PEQUENA)
-	(DESC "kitchen window")
+	(DESC "janela da cozinha")
 	(FLAGS DOORBIT NDESCBIT FEMBIT)
 	(ACTION KITCHEN-WINDOW-F)>
 
 <OBJECT CHIMNEY
 	(IN LOCAL-GLOBALS)
-	(SYNONYM CHIMNEY)
-	(ADJECTIVE DARK NARROW)
-	(DESC "chimney")
+	(SYNONYM CHIMNEY CHAMINE)
+	(ADJECTIVE DARK NARROW ESCURA ESTREITA)
+	(DESC "chaminé")
 	(ACTION CHIMNEY-F)
-	(FLAGS CLIMBBIT NDESCBIT)>
+	(FLAGS CLIMBBIT NDESCBIT FEMBIT)>
 
 <OBJECT GHOSTS
 	(IN ENTRANCE-TO-HADES)
@@ -116,7 +119,7 @@
 
 <OBJECT SKULL
 	(IN LAND-OF-LIVING-DEAD)
-	(SYNONYM SKULL HEAD TREASURE TREASURES)
+	(SYNONYM SKULL HEAD TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE CRYSTAL)
 	(DESC "crystal skull")
 	(FDESC
@@ -148,9 +151,9 @@ It appears to be grinning at you rather nastily.")
 	(IN SANDWICH-BAG)
 	(SYNONYM FOOD SANDWICH LUNCH DINNER COMIDA SANDUICHE LANCHE ALMOCO JANTAR)
 	(ADJECTIVE HOT PEPPER PIMENTA APIMENTAD QUENTE)
-	(DESC "lunch")
+	(DESC "lanche")
 	(FLAGS TAKEBIT FOODBIT)
-	(LDESC "A hot pepper sandwich is here.")>
+	(LDESC "Há um sanduíche apimentado aqui.")>
 
 <OBJECT BAT
 	(IN BAT-ROOM)
@@ -231,14 +234,14 @@ Unto the land of the dead shalt thou be sent at last.|
 Surely thou shalt repent of thy cunning." )>
 
 <OBJECT BROKEN-LAMP
-	(SYNONYM LAMP LANTERN)
-	(ADJECTIVE BROKEN)
-	(DESC "broken lantern")
-	(FLAGS TAKEBIT)>
+	(SYNONYM LAMP LANTERN LANTERNA LAMPADA LAMPIAO)
+	(ADJECTIVE BROKEN QUEBRADA)
+	(DESC "lanterna quebrada")
+	(FLAGS TAKEBIT FEMBIT)>
 
 <OBJECT SCEPTRE
 	(IN COFFIN)
-	(SYNONYM SCEPTRE SCEPTER TREASURE TREASURES)
+	(SYNONYM SCEPTRE SCEPTER TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE SHARP EGYPTIAN ANCIENT ENAMELED)
 	(DESC "sceptre")
 	(FLAGS TAKEBIT WEAPONBIT)
@@ -270,27 +273,27 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT KITCHEN-TABLE
 	(IN KITCHEN)
-	(SYNONYM TABLE)
-	(ADJECTIVE KITCHEN)
-	(DESC "kitchen table")
-	(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT)
+	(SYNONYM TABLE MESA)
+	(ADJECTIVE KITCHEN COZINHA)
+	(DESC "mesa da cozinha")
+	(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT FEMBIT)
 	(CAPACITY 50)>
 
 <OBJECT ATTIC-TABLE
 	(IN ATTIC)
-	(SYNONYM TABLE)
-	(DESC "table")
-	(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT)
+	(SYNONYM TABLE MESA)
+	(DESC "mesa")
+	(FLAGS NDESCBIT CONTBIT OPENBIT SURFACEBIT FEMBIT)
 	(CAPACITY 40)>
 
 <OBJECT SANDWICH-BAG
 	(IN KITCHEN-TABLE)
 	(SYNONYM BAG SACK SACO SACOLA)
 	(ADJECTIVE BROWN ELONGATED SMELLY MARROM COMPRIDO FEDORENTO)
-	(DESC "brown sack")
+	(DESC "saco marrom")
 	(FLAGS TAKEBIT CONTBIT BURNBIT)
 	(FDESC
-"On the table is an elongated brown sack, smelling of hot peppers.")
+"Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.")
 	(CAPACITY 9)
 	(SIZE 9)
 	(ACTION SANDWICH-BAG-FCN)>
@@ -339,7 +342,7 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(IN LIVING-ROOM)
 	(SYNONYM CASE VITRINE ESTANTE)
 	(ADJECTIVE TROPHY TROFEUS)
-	(DESC "trophy case")
+	(DESC "vitrine de troféus")
 	(FLAGS TRANSBIT CONTBIT NDESCBIT TRYTAKEBIT SEARCHBIT FEMBIT)
 	(ACTION TROPHY-CASE-FCN)
 	(CAPACITY 10000)>
@@ -347,14 +350,14 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 <OBJECT RUG
 	(IN LIVING-ROOM)
 	(SYNONYM RUG CARPET TAPETE)
-	(ADJECTIVE LARGE ORIENTAL GRANDE ORIENTAL)
-	(DESC "carpet")
+	(ADJECTIVE LARGE ORIENTAL GRANDE)
+	(DESC "tapete")
 	(FLAGS NDESCBIT TRYTAKEBIT)
 	(ACTION RUG-FCN)>
 
 <OBJECT CHALICE
 	(IN TREASURE-ROOM)
-	(SYNONYM CHALICE CUP SILVER TREASURE TREASURES)
+	(SYNONYM CHALICE CUP SILVER TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE SILVER ENGRAVINGS) ;"engravings exists..."
 	(DESC "chalice")
 	(FLAGS TAKEBIT TRYTAKEBIT CONTBIT)
@@ -368,14 +371,15 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 <OBJECT GARLIC
 	(IN SANDWICH-BAG)
 	(SYNONYM GARLIC CLOVE ALHO DENTE)
-	(DESC "clove of garlic")
+	(ADJECTIVE ALHO) ;"PT: dente de alho (ver docs/TRADUCAO.md)"
+	(DESC "dente de alho")
 	(FLAGS TAKEBIT FOODBIT)
 	(ACTION GARLIC-F)
 	(SIZE 4)>
 
 <OBJECT TRIDENT
 	(IN ATLANTIS-ROOM)
-	(SYNONYM TRIDENT FORK TREASURE TREASURES)
+	(SYNONYM TRIDENT FORK TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE POSEIDON OWN CRYSTAL)
 	(DESC "crystal trident")
 	(FLAGS TAKEBIT)
@@ -404,23 +408,23 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(IN LIVING-ROOM)
 	(SYNONYM DOOR TRAPDOOR TRAP-DOOR COVER ALCAPAO)
 	(ADJECTIVE TRAP DUSTY EMPOEIRAD)
-	(DESC "trap door")
+	(DESC "alçapão")
 	(FLAGS DOORBIT NDESCBIT INVISIBLE)
 	(ACTION TRAP-DOOR-FCN)>
 
 <OBJECT BOARDED-WINDOW
 	(IN LOCAL-GLOBALS)
-        (SYNONYM WINDOW)
-	(ADJECTIVE BOARDED)
-	(DESC "boarded window")
-	(FLAGS NDESCBIT)
+        (SYNONYM WINDOW JANELA JANELAS)
+	(ADJECTIVE BOARDED TAPADA TAPADAS)
+	(DESC "janela tapada")
+	(FLAGS NDESCBIT FEMBIT)
 	(ACTION BOARDED-WINDOW-FCN)>
 
 <OBJECT FRONT-DOOR
 	(IN WEST-OF-HOUSE)
 	(SYNONYM DOOR PORTA)
 	(ADJECTIVE FRONT BOARDED FRENTE TAPADA)
-	(DESC "door")
+	(DESC "porta")
 	(FLAGS DOORBIT NDESCBIT FEMBIT)
 	(ACTION FRONT-DOOR-FCN)>
 
@@ -444,10 +448,10 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(IN KITCHEN-TABLE)
 	(SYNONYM BOTTLE CONTAINER GARRAFA RECIPIENT)
 	(ADJECTIVE CLEAR GLASS VIDRO TRANSPARE)
-	(DESC "glass bottle")
+	(DESC "garrafa de vidro")
 	(FLAGS TAKEBIT TRANSBIT CONTBIT FEMBIT)
 	(ACTION BOTTLE-FUNCTION)
-	(FDESC "A bottle is sitting on the table.")
+	(FDESC "Há uma garrafa sobre a mesa.")
 	(CAPACITY 4)>
 
 <OBJECT CRACK
@@ -460,7 +464,7 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT COFFIN
 	(IN EGYPT-ROOM)
-	(SYNONYM COFFIN CASKET TREASURE TREASURES)
+	(SYNONYM COFFIN CASKET TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE SOLID GOLD)
 	(DESC "gold coffin")
 	(FLAGS TAKEBIT CONTBIT SACREDBIT SEARCHBIT)
@@ -473,9 +477,9 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT GRATE
 	(IN LOCAL-GLOBALS)
-	(SYNONYM GRATE GRATING)
-	(DESC "grating")
-	(FLAGS DOORBIT NDESCBIT INVISIBLE)
+	(SYNONYM GRATE GRATING GRADE GRELHA)
+	(DESC "grade")
+	(FLAGS DOORBIT NDESCBIT INVISIBLE FEMBIT)
 	(ACTION GRATE-FUNCTION)>
 
 <OBJECT PUMP
@@ -486,7 +490,7 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(FLAGS TAKEBIT TOOLBIT)>
 
 <OBJECT DIAMOND
-	(SYNONYM DIAMOND TREASURE TREASURES)
+	(SYNONYM DIAMOND TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE HUGE ENORMOUS)
 	(DESC "huge diamond")
 	(FLAGS TAKEBIT)
@@ -496,7 +500,7 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT JADE
 	(IN BAT-ROOM)
-	(SYNONYM FIGURINE TREASURE TREASURES)
+	(SYNONYM FIGURINE TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE EXQUISITE JADE)
 	(DESC "jade figurine")
 	(FLAGS TAKEBIT)
@@ -509,9 +513,9 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(IN ATTIC-TABLE)
 	(SYNONYM KNIVES KNIFE BLADE FACA FACAS)
 	(ADJECTIVE NASTY UNRUSTY AFIADA)
-	(DESC "nasty knife")
+	(DESC "faca afiada")
 	(FLAGS TAKEBIT WEAPONBIT TRYTAKEBIT FEMBIT)
-	(FDESC "On a table is a nasty-looking knife.")
+	(FDESC "Sobre uma mesa há uma faca de aspecto ameaçador.")
 	(ACTION KNIFE-F)>
 
 <OBJECT BONES
@@ -532,7 +536,7 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 
 <OBJECT BAG-OF-COINS
 	(IN MAZE-5)
-	(SYNONYM BAG COINS TREASURE TREASURES)
+	(SYNONYM BAG COINS TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE OLD LEATHER)
 	(DESC "leather bag of coins")
 	(FLAGS TAKEBIT)
@@ -546,16 +550,16 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(IN LIVING-ROOM)
 	(SYNONYM LAMP LANTERN LIGHT LANTERNA LAMPADA LAMPIAO LUZ)
 	(ADJECTIVE BRASS LATAO)
-	(DESC "brass lantern")
+	(DESC "lanterna de latão")
 	(FLAGS TAKEBIT LIGHTBIT FEMBIT)
 	(ACTION LANTERN)
-	(FDESC "A battery-powered brass lantern is on the trophy case.")
-	(LDESC "There is a brass lantern (battery-powered) here.")
+	(FDESC "Sobre a vitrine de troféus há uma lanterna de latão a pilha.")
+	(LDESC "Há uma lanterna de latão (a pilha) aqui.")
 	(SIZE 15)>
 
 <OBJECT EMERALD
 	(IN BUOY)
-	(SYNONYM EMERALD TREASURE TREASURES)
+	(SYNONYM EMERALD TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE LARGE)
 	(DESC "large emerald")
 	(FLAGS TAKEBIT)
@@ -566,15 +570,15 @@ sceptre is ornamented with colored enamel, and tapers to a sharp point.")
 	(IN MAILBOX)
 	(SYNONYM ADVERTISEMENT LEAFLET BOOKLET MAIL FOLHETO PANFLETO)
 	(ADJECTIVE SMALL PEQUENO)
-	(DESC "leaflet")
+	(DESC "folheto")
 	(FLAGS READBIT TAKEBIT BURNBIT)
-	(LDESC "A small leaflet is on the ground.")
+	(LDESC "Há um pequeno folheto no chão.")
 	(TEXT
-"\"WELCOME TO ZORK!|
+"\"BEM-VINDO AO ZORK!|
 |
-ZORK is a game of adventure, danger, and low cunning. In it you
-will explore some of the most amazing territory ever seen by mortals.
-No computer should be without one!\"")
+ZORK é um jogo de aventura, perigo e muita malandragem. Nele você
+vai explorar alguns dos territórios mais incríveis que olhos mortais já
+viram. Nenhum computador deveria ficar sem ele!\"")
 	(SIZE 2)>
 
 <OBJECT LEAK
@@ -606,7 +610,7 @@ No computer should be without one!\"")
 	(IN WEST-OF-HOUSE)
 	(SYNONYM MAILBOX BOX CAIXA)
 	(ADJECTIVE SMALL PEQUENA CORREIO)
-	(DESC "small mailbox")
+	(DESC "pequena caixa de correio")
 	(FLAGS CONTBIT TRYTAKEBIT FEMBIT)
 	(CAPACITY 10)
 	(ACTION MAILBOX-F)>
@@ -654,7 +658,7 @@ you earn your degree from GUE Tech, your future will be brighter." )>
 
 <OBJECT PAINTING
 	(IN GALLERY)
-	(SYNONYM PAINTING ART CANVAS TREASURE TREASURES)
+	(SYNONYM PAINTING ART CANVAS TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE BEAUTIFUL)
 	(DESC "painting")
 	(FLAGS TAKEBIT BURNBIT)
@@ -695,11 +699,12 @@ the far wall is a painting of unparalleled beauty.")
 
 <OBJECT LEAVES
 	(IN GRATING-CLEARING)
-	(SYNONYM LEAVES LEAF PILE)
-	(DESC "pile of leaves")
+	(SYNONYM LEAVES LEAF PILE FOLHAS FOLHA MONTE)
+	(ADJECTIVE FOLHAS)
+	(DESC "monte de folhas")
 	(FLAGS TAKEBIT BURNBIT TRYTAKEBIT)
 	(ACTION LEAF-PILE)
-	(LDESC "On the ground is a pile of leaves.")
+	(LDESC "Há um monte de folhas no chão.")
 	(SIZE 25)>
 
 <OBJECT PUNCTURED-BOAT
@@ -724,7 +729,7 @@ attached.")
 
 <OBJECT BAR
 	(IN LOUD-ROOM)
-	(SYNONYM BAR PLATINUM TREASURE TREASURES)
+	(SYNONYM BAR PLATINUM TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE PLATINUM LARGE)
 	(DESC "platinum bar")
 	(FLAGS TAKEBIT SACREDBIT)
@@ -735,7 +740,7 @@ attached.")
 
 <OBJECT POT-OF-GOLD
 	(IN END-OF-RAINBOW)
-	(SYNONYM POT GOLD TREASURE TREASURES)
+	(SYNONYM POT GOLD TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE GOLD)
 	(DESC "pot of gold")
 	(FLAGS TAKEBIT INVISIBLE)
@@ -797,11 +802,11 @@ Zorkers were obscure." )>
 <OBJECT ROPE
 	(IN ATTIC)
 	(SYNONYM ROPE HEMP COIL CORDA ROLO)
-	(ADJECTIVE LARGE GRANDE)
-	(DESC "rope")
+	(ADJECTIVE LARGE GRANDE CORDA)
+	(DESC "corda")
 	(FLAGS TAKEBIT SACREDBIT TRYTAKEBIT FEMBIT)
 	(ACTION ROPE-FUNCTION)
-	(FDESC "A large coil of rope is lying in the corner.")
+	(FDESC "Um grande rolo de corda está largado no canto.")
 	(SIZE 10)>
 
 <OBJECT RUSTY-KNIFE
@@ -823,7 +828,7 @@ Zorkers were obscure." )>
 
 <OBJECT BRACELET
 	(IN GAS-ROOM)
-	(SYNONYM BRACELET JEWEL SAPPHIRE TREASURE TREASURES)
+	(SYNONYM BRACELET JEWEL SAPPHIRE TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE SAPPHIRE)
 	(DESC "sapphire-encrusted bracelet")
 	(FLAGS TAKEBIT)
@@ -870,7 +875,7 @@ Zorkers were obscure." )>
 
 <OBJECT SCARAB
 	(IN SANDY-CAVE)
-	(SYNONYM SCARAB BUG BEETLE TREASURE TREASURES)
+	(SYNONYM SCARAB BUG BEETLE TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE BEAUTIFUL CARVED JEWELED)
 	(DESC "beautiful jeweled scarab")
 	(FLAGS TAKEBIT INVISIBLE)
@@ -904,23 +909,27 @@ Zorkers were obscure." )>
 
 <OBJECT WOODEN-DOOR
 	(IN LIVING-ROOM)
-	(SYNONYM DOOR LETTERING WRITING)
-	(ADJECTIVE WOODEN GOTHIC STRANGE WEST)
-	(DESC "wooden door")
-	(FLAGS READBIT DOORBIT NDESCBIT TRANSBIT)
+	(SYNONYM DOOR LETTERING WRITING PORTA LETRAS LETREIRO INSCRICAO
+		 INSCRICOES)
+	(ADJECTIVE WOODEN GOTHIC STRANGE WEST MADEIRA GOTICA GOTICAS ESTRANHA
+		   ESTRANHAS OESTE)
+	(DESC "porta de madeira")
+	(FLAGS READBIT DOORBIT NDESCBIT TRANSBIT FEMBIT)
 	(ACTION FRONT-DOOR-FCN)
 	(TEXT
-"The engravings translate to \"This space intentionally left blank.\"")>
+"Traduzidas, as inscrições dizem: \"Este espaço foi deixado em branco
+de propósito.\"")>
 
 <OBJECT SWORD
 	(IN LIVING-ROOM)
 	(SYNONYM SWORD ORCRIST GLAMDRING BLADE ESPADA LAMINA)
 	(ADJECTIVE ELVISH OLD ANTIQUE ELFICA ANTIGA VELHA)
-	(DESC "sword")
+	(DESC "espada")
 	(FLAGS TAKEBIT WEAPONBIT TRYTAKEBIT FEMBIT)
 	(ACTION SWORD-FCN)
 	(FDESC
-"Above the trophy case hangs an elvish sword of great antiquity.")
+"Acima da vitrine de troféus está pendurada uma espada élfica de grande
+antiguidade.")
 	(SIZE 30)
 	(TVALUE 0)>
 
@@ -988,7 +997,7 @@ against one wall. He is armed with a deadly stiletto.")
 
 <OBJECT TORCH
 	(IN PEDESTAL)
-	(SYNONYM TORCH IVORY TREASURE TREASURES)
+	(SYNONYM TORCH IVORY TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE FLAMING IVORY)
 	(DESC "torch")
 	(FLAGS TAKEBIT FLAMEBIT ONBIT LIGHTBIT)
@@ -1047,7 +1056,7 @@ out of the room.")
 
 <OBJECT TRUNK
 	(IN RESERVOIR)
-	(SYNONYM TRUNK CHEST JEWELS TREASURE TREASURES)
+	(SYNONYM TRUNK CHEST JEWELS TREASURE TREASURES TESOURO TESOUROS)
 	(ADJECTIVE OLD)
 	(DESC "trunk of jewels")
 	(FLAGS TAKEBIT INVISIBLE)
@@ -1145,76 +1154,77 @@ will provide many months of trouble-free operation.")>
 <OBJECT NEST
 	(IN UP-A-TREE)
 	(SYNONYM NEST NINHO)
-	(ADJECTIVE BIRDS PASSARO)
-	(DESC "bird's nest")
+	(ADJECTIVE BIRDS PASSARO PASSARINHO)
+	(DESC "ninho de passarinho")
 	(FLAGS TAKEBIT BURNBIT CONTBIT OPENBIT SEARCHBIT)
-	(FDESC "Beside you on the branch is a small bird's nest.")
+	(FDESC "Ao seu lado, no galho, há um pequeno ninho de passarinho.")
 	(CAPACITY 20)>
 
 <OBJECT EGG
 	(IN NEST)
 	(SYNONYM EGG TREASURE TREASURES OVO TESOURO TESOUROS)
 	(ADJECTIVE BIRDS ENCRUSTED JEWELED CRAVEJADO JOIAS PASSARO)
-	(DESC "jewel-encrusted egg")
+	(DESC "ovo cravejado de joias")
 	(FLAGS TAKEBIT CONTBIT SEARCHBIT)
 	(ACTION EGG-OBJECT)
 	(VALUE 5)
 	(TVALUE 5)
 	(CAPACITY 6)
 	(FDESC
-"In the bird's nest is a large egg encrusted with precious jewels,
-apparently scavenged by a childless songbird. The egg is covered with
-fine gold inlay, and ornamented in lapis lazuli and mother-of-pearl.
-Unlike most eggs, this one is hinged and closed with a delicate looking
-clasp. The egg appears extremely fragile.")>
+"No ninho de passarinho há um ovo grande cravejado de pedras preciosas,
+pelo jeito surrupiado por algum pássaro canoro sem filhotes. O ovo é
+coberto de finos embutidos de ouro e enfeitado com lápis-lazúli e
+madrepérola. Ao contrário da maioria dos ovos, este tem dobradiças e
+está fechado por um fecho de aparência delicada. O ovo parece
+extremamente frágil.")>
 
 <OBJECT BROKEN-EGG
-	(SYNONYM EGG TREASURE TREASURES)
-	(ADJECTIVE BROKEN BIRDS ENCRUSTED JEWEL)
-	(DESC "broken jewel-encrusted egg")
+	(SYNONYM EGG TREASURE TREASURES OVO TESOURO TESOUROS)
+	(ADJECTIVE BROKEN BIRDS ENCRUSTED JEWEL QUEBRADO CRAVEJADO JOIAS PASSARO)
+	(DESC "ovo quebrado cravejado de joias")
 	(FLAGS TAKEBIT CONTBIT OPENBIT)
 	(CAPACITY 6)
 	(TVALUE 2)
-	(LDESC "There is a somewhat ruined egg here.")>
+	(LDESC "Há um ovo meio arruinado aqui.")>
 
 <OBJECT BAUBLE
-	(SYNONYM BAUBLE TREASURE TREASURES)
-	(ADJECTIVE BRASS BEAUTIFUL)
-	(DESC "beautiful brass bauble")
+	(SYNONYM BAUBLE TREASURE TREASURES BERLOQUE TESOURO TESOUROS)
+	(ADJECTIVE BRASS BEAUTIFUL LATAO LINDO)
+	(DESC "lindo berloque de latão")
 	(FLAGS TAKEBIT)
 	(VALUE 1)
 	(TVALUE 1)>
 
 <OBJECT CANARY
 	(IN EGG)
-	(SYNONYM CANARY TREASURE TREASURES)
-	(ADJECTIVE CLOCKWORK GOLD GOLDEN)
-	(DESC "golden clockwork canary")
+	(SYNONYM CANARY TREASURE TREASURES CANARIO TESOURO TESOUROS)
+	(ADJECTIVE CLOCKWORK GOLD GOLDEN CORDA DOURADO OURO)
+	(DESC "canário de corda dourado")
 	(FLAGS TAKEBIT SEARCHBIT)
 	(ACTION CANARY-OBJECT)
 	(VALUE 6)
 	(TVALUE 4)
 	(FDESC
-"There is a golden clockwork canary nestled in the egg. It has ruby
-eyes and a silver beak. Through a crystal window below its left
-wing you can see intricate machinery inside. It appears to have
-wound down.")>
+"Há um canário de corda dourado aninhado no ovo. Ele tem olhos de rubi
+e bico de prata. Por uma janelinha de cristal sob a asa esquerda, dá
+para ver o mecanismo complexo que ele tem por dentro. Parece que a
+corda dele acabou.")>
 
 <OBJECT BROKEN-CANARY
 	(IN BROKEN-EGG)
-	(SYNONYM CANARY TREASURE TREASURES)
-	(ADJECTIVE BROKEN CLOCKWORK GOLD GOLDEN)
-	(DESC "broken clockwork canary")
+	(SYNONYM CANARY TREASURE TREASURES CANARIO TESOURO TESOUROS)
+	(ADJECTIVE BROKEN CLOCKWORK GOLD GOLDEN QUEBRADO CORDA DOURADO OURO)
+	(DESC "canário de corda quebrado")
 	(FLAGS TAKEBIT)
 	(ACTION CANARY-OBJECT)
 	(TVALUE 1)
 	(FDESC
-"There is a golden clockwork canary nestled in the egg. It seems to
-have recently had a bad experience. The mountings for its jewel-like
-eyes are empty, and its silver beak is crumpled. Through a cracked
-crystal window below its left wing you can see the remains of
-intricate machinery. It is not clear what result winding it would
-have, as the mainspring seems sprung.")>
+"Há um canário de corda dourado aninhado no ovo. Parece que ele passou
+por uma experiência ruim há pouco tempo. Os encaixes dos olhos de joia
+estão vazios, e o bico de prata está amassado. Por uma janelinha de
+cristal rachada sob a asa esquerda, dá para ver o que sobrou de um
+mecanismo complexo. Não se sabe o que aconteceria se alguém desse corda
+nele, porque a mola principal parece ter se soltado.")>
 
 \
 
@@ -1238,13 +1248,14 @@ have, as the mainspring seems sprung.")>
 
 <ROOM WEST-OF-HOUSE
       (IN ROOMS)
-      (DESC "West of House")
+      (DESC "Oeste da Casa")
       (NORTH TO NORTH-OF-HOUSE)
       (SOUTH TO SOUTH-OF-HOUSE)
       (NE TO NORTH-OF-HOUSE)
       (SE TO SOUTH-OF-HOUSE)
       (WEST TO FOREST-1)
-      (EAST "The door is boarded and you can't remove the boards.")
+      (EAST
+"A porta está tapada com tábuas, e você não consegue removê-las.")
       (SW TO STONE-BARROW IF WON-FLAG)
       (IN TO STONE-BARROW IF WON-FLAG)
       (ACTION WEST-HOUSE)
@@ -1264,37 +1275,37 @@ is a huge stone door which is open. You cannot see into the dark of the tomb.")
 <ROOM NORTH-OF-HOUSE
       (IN ROOMS)
       (LDESC
-"You are facing the north side of a white house. There is no door here,
-and all the windows are boarded up. To the north a narrow path winds through
-the trees.")
-      (DESC "North of House")
+"Você está diante do lado norte de uma casa branca. Não há porta aqui, e
+todas as janelas estão tapadas com tábuas. Ao norte, uma trilha estreita
+serpenteia entre as árvores.")
+      (DESC "Norte da Casa")
       (SW TO WEST-OF-HOUSE)
       (SE TO EAST-OF-HOUSE)
       (WEST TO WEST-OF-HOUSE)
       (EAST TO EAST-OF-HOUSE)
       (NORTH TO PATH)
-      (SOUTH "The windows are all boarded.")
+      (SOUTH "As janelas estão todas tapadas com tábuas.")
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (GLOBAL BOARDED-WINDOW BOARD WHITE-HOUSE FOREST)>
 
 <ROOM SOUTH-OF-HOUSE
       (IN ROOMS)
       (LDESC
-"You are facing the south side of a white house. There is no door here,
-and all the windows are boarded.")
-      (DESC "South of House")
+"Você está diante do lado sul de uma casa branca. Não há porta aqui, e
+todas as janelas estão tapadas com tábuas.")
+      (DESC "Sul da Casa")
       (WEST TO WEST-OF-HOUSE)
       (EAST TO EAST-OF-HOUSE)
       (NE TO EAST-OF-HOUSE)
       (NW TO WEST-OF-HOUSE)
       (SOUTH TO FOREST-3)
-      (NORTH "The windows are all boarded.")
+      (NORTH "As janelas estão todas tapadas com tábuas.")
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (GLOBAL BOARDED-WINDOW BOARD WHITE-HOUSE FOREST)>
 
 <ROOM EAST-OF-HOUSE
       (IN ROOMS)
-      (DESC "Behind House")
+      (DESC "Atrás da Casa")
       (NORTH TO NORTH-OF-HOUSE)
       (SOUTH TO SOUTH-OF-HOUSE)
       (SW TO SOUTH-OF-HOUSE)
@@ -1309,24 +1320,25 @@ and all the windows are boarded.")
 <ROOM FOREST-1
       (IN ROOMS)
       (LDESC
-"This is a forest, with trees in all directions. To the east,
-there appears to be sunlight.")
-      (DESC "Forest")
-      (UP "There is no tree here suitable for climbing.")
+"Esta é uma floresta, com árvores em todas as direções. A leste, parece
+haver luz do sol.")
+      (DESC "Floresta")
+      (UP "Não há nenhuma árvore aqui que dê para escalar.")
       (NORTH TO GRATING-CLEARING)
       (EAST TO PATH)
       (SOUTH TO FOREST-3)
-      (WEST "You would need a machete to go further west.")
+      (WEST "Você precisaria de um facão para seguir mais para oeste.")
       (ACTION FOREST-ROOM)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (GLOBAL TREE SONGBIRD WHITE-HOUSE FOREST)>
 
 <ROOM FOREST-2
       (IN ROOMS)
-      (LDESC "This is a dimly lit forest, with large trees all around.")
-      (DESC "Forest")
-      (UP "There is no tree here suitable for climbing.")
-      (NORTH "The forest becomes impenetrable to the north.")
+      (LDESC
+"Esta é uma floresta mal iluminada, com árvores grandes por toda parte.")
+      (DESC "Floresta")
+      (UP "Não há nenhuma árvore aqui que dê para escalar.")
+      (NORTH "Ao norte, a floresta fica impenetrável.")
       (EAST TO MOUNTAINS)
       (SOUTH TO CLEARING)
       (WEST TO PATH)
@@ -1336,11 +1348,11 @@ there appears to be sunlight.")
 
 <ROOM MOUNTAINS
       (IN ROOMS)
-      (LDESC "The forest thins out, revealing impassable mountains.")
-      (DESC "Forest")
-      (UP "The mountains are impassable.")
+      (LDESC "A floresta fica mais rala e revela montanhas intransponíveis.")
+      (DESC "Floresta")
+      (UP "As montanhas são intransponíveis.")
       (NORTH TO FOREST-2)
-      (EAST "The mountains are impassable.")
+      (EAST "As montanhas são intransponíveis.")
       (SOUTH TO FOREST-2)
       (WEST TO FOREST-2)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
@@ -1348,12 +1360,13 @@ there appears to be sunlight.")
 
 <ROOM FOREST-3
       (IN ROOMS)
-      (LDESC "This is a dimly lit forest, with large trees all around.")
-      (DESC "Forest")
-      (UP "There is no tree here suitable for climbing.")
+      (LDESC
+"Esta é uma floresta mal iluminada, com árvores grandes por toda parte.")
+      (DESC "Floresta")
+      (UP "Não há nenhuma árvore aqui que dê para escalar.")
       (NORTH TO CLEARING)
-      (EAST "The rank undergrowth prevents eastward movement.")
-      (SOUTH "Storm-tossed trees block your way.")
+      (EAST "O mato fechado impede a passagem para leste.")
+      (SOUTH "Árvores derrubadas pela tempestade bloqueiam o caminho.")
       (WEST TO FOREST-1)
       (NW TO SOUTH-OF-HOUSE)
       (ACTION FOREST-ROOM)
@@ -1363,10 +1376,10 @@ there appears to be sunlight.")
 <ROOM PATH
       (IN ROOMS)
       (LDESC
-"This is a path winding through a dimly lit forest. The path heads
-north-south here. One particularly large tree with some low branches
-stands at the edge of the path.")
-      (DESC "Forest Path")
+"Esta é uma trilha que serpenteia por uma floresta mal iluminada. Aqui a
+trilha segue de norte a sul. Uma árvore especialmente grande, com alguns
+galhos baixos, fica à beira da trilha.")
+      (DESC "Trilha da Floresta")
       (UP TO UP-A-TREE)
       (NORTH TO GRATING-CLEARING)
       (EAST TO FOREST-2)
@@ -1378,17 +1391,17 @@ stands at the edge of the path.")
 
 <ROOM UP-A-TREE
       (IN ROOMS)
-      (DESC "Up a Tree")
+      (DESC "No Alto da Árvore")
       (DOWN TO PATH)
-      (UP "You cannot climb any higher.")
+      (UP "Você não consegue subir mais.")
       (ACTION TREE-ROOM)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (GLOBAL TREE FOREST SONGBIRD WHITE-HOUSE)>
 
 <ROOM GRATING-CLEARING
       (IN ROOMS)
-      (DESC "Clearing")
-      (NORTH "The forest becomes impenetrable to the north.")
+      (DESC "Clareira")
+      (NORTH "Ao norte, a floresta fica impenetrável.")
       (EAST TO FOREST-2)
       (WEST TO FOREST-1)
       (SOUTH TO PATH)
@@ -1402,18 +1415,18 @@ stands at the edge of the path.")
 		<COND (<FSET? ,GRATE ,OPENBIT>
 		       ,GRATING-ROOM)
 		      (T
-		       <TELL "The grating is closed!" CR>
+		       <TELL "A grade está fechada!" CR>
 		       <THIS-IS-IT ,GRATE>
 		       <RFALSE>)>)
-	       (T <TELL "You can't go that way." CR> <RFALSE>)>>
+	       (T <TELL "Você não pode ir por aí." CR> <RFALSE>)>>
 
 <ROOM CLEARING
       (IN ROOMS)
       (LDESC
-"You are in a small clearing in a well marked forest path that
-extends to the east and west.")
-      (DESC "Clearing")
-      (UP "There is no tree here suitable for climbing.")
+"Você está em uma pequena clareira numa trilha bem marcada da floresta,
+que se estende para leste e para oeste.")
+      (DESC "Clareira")
+      (UP "Não há nenhuma árvore aqui que dê para escalar.")
       (EAST TO CANYON-VIEW)
       (NORTH TO FOREST-2)
       (SOUTH TO FOREST-3)
@@ -1428,13 +1441,13 @@ extends to the east and west.")
 
 <ROOM KITCHEN
       (IN ROOMS)
-      (DESC "Kitchen")
+      (DESC "Cozinha")
       (EAST TO EAST-OF-HOUSE IF KITCHEN-WINDOW IS OPEN)
       (WEST TO LIVING-ROOM)
       (OUT TO EAST-OF-HOUSE IF KITCHEN-WINDOW IS OPEN)
       (UP TO ATTIC)
       (DOWN TO STUDIO IF FALSE-FLAG ELSE
-	 "Only Santa Claus climbs down chimneys.")
+	 "Só o Papai Noel desce por chaminés.")
       (ACTION KITCHEN-FCN)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (VALUE 10)
@@ -1442,22 +1455,23 @@ extends to the east and west.")
 
 <ROOM ATTIC
       (IN ROOMS)
-      (LDESC "This is the attic. The only exit is a stairway leading down.")
-      (DESC "Attic")
+      (LDESC "Este é o sótão. A única saída é uma escada que desce.")
+      (DESC "Sótão")
       (DOWN TO KITCHEN)
       (FLAGS RLANDBIT SACREDBIT)
       (GLOBAL STAIRS)>
 
 <ROOM LIVING-ROOM
       (IN ROOMS)
-      (DESC "Living Room")
+      (DESC "Sala de Estar")
       (EAST TO KITCHEN)
-      (WEST TO STRANGE-PASSAGE IF MAGIC-FLAG ELSE "The door is nailed shut.")
+      (WEST TO STRANGE-PASSAGE IF MAGIC-FLAG ELSE "A porta está pregada.")
       (DOWN PER TRAP-DOOR-EXIT)
       (ACTION LIVING-ROOM-FCN)
       (FLAGS RLANDBIT ONBIT SACREDBIT)
       (GLOBAL STAIRS)
-      (PSEUDO "NAILS" NAILS-PSEUDO "NAIL" NAILS-PSEUDO)>
+      (PSEUDO "NAILS" NAILS-PSEUDO "NAIL" NAILS-PSEUDO
+	      "PREGOS" NAILS-PSEUDO "PREGO" NAILS-PSEUDO)>
 
 \
 

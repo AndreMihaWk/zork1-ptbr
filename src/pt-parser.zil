@@ -9,8 +9,9 @@ Entrada (chamadas por READ-INPUT, em gparser.zil):
   endereço (tudo, isso, depois...).
 
 Saída: marcadores do TELL que escrevem o nome do objeto com artigo e
-concordância. Objetos femininos levam FEMBIT, plurais PLURALBIT e nomes sem
-artigo SEMARTIGOBIT. Ver docs/TRADUCAO.md."
+concordância. Objetos femininos levam FEMBIT, plurais PLURALBIT, nomes sem
+artigo SEMARTIGOBIT e o que não se conta (um pouco de água) PARTITIVOBIT.
+Ver docs/TRADUCAO.md."
 
 ;"Letra sem acento para cada código ZSCII de 155 a 223 (tabela Unicode
   padrão da Z-machine); 0 mantém o caractere."
@@ -221,8 +222,12 @@ artigo SEMARTIGOBIT. Ver docs/TRADUCAO.md."
 		<PRINTC 32>)>
 	 <PRINTD .OBJ>>
 
+;"um, uma, uns, umas; um pouco de, para o que não se conta (água)"
 <ROUTINE PRINT-INDEFINIDO (OBJ MAIUSCULA)
-	 <COND (<NOT <FSET? .OBJ ,SEMARTIGOBIT>>
+	 <COND (<FSET? .OBJ ,PARTITIVOBIT>
+		<COND (.MAIUSCULA <PRINTC !\U>) (T <PRINTC !\u>)>
+		<TELL "m pouco de ">)
+	       (<NOT <FSET? .OBJ ,SEMARTIGOBIT>>
 		<COND (.MAIUSCULA <PRINTC !\U>) (T <PRINTC !\u>)>
 		<COND (<FSET? .OBJ ,PLURALBIT>
 		       <COND (<FSET? .OBJ ,FEMBIT> <TELL "mas">) (T <TELL "ns">)>)

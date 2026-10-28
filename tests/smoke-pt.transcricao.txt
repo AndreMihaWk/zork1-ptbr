@@ -4,153 +4,183 @@ Copyright (c) 1981, 1982, 1983, 1984, 1985, 1986 Infocom, Inc. Todos os direitos
 ZORK é uma marca registrada da Infocom, Inc.
 Versão 0 / Número de série 000000
 
-West of House
-You are standing in an open field west of a white house, with a boarded front door.
-Há uma small mailbox aqui.
+Oeste da Casa
+Você está em um campo aberto a oeste de uma casa branca, com a porta da frente tapada com tábuas.
+Há uma pequena caixa de correio aqui.
 
 >abra a caixa de correio
-Ao abrir a small mailbox, você encontra um leaflet.
+Ao abrir a pequena caixa de correio, você encontra um folheto.
 
 >pegue o folheto
-Você pegou o leaflet.
+Você pegou o folheto.
 
 >leia-o
-"WELCOME TO ZORK!
+"BEM-VINDO AO ZORK!
 
-ZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!"
+ZORK é um jogo de aventura, perigo e muita malandragem. Nele você vai explorar alguns dos territórios mais incríveis que olhos mortais já viram. Nenhum computador deveria ficar sem ele!"
 
 >LEIA O FOLHETO
-"WELCOME TO ZORK!
+"BEM-VINDO AO ZORK!
 
-ZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!"
+ZORK é um jogo de aventura, perigo e muita malandragem. Nele você vai explorar alguns dos territórios mais incríveis que olhos mortais já viram. Nenhum computador deveria ficar sem ele!"
 
 >largue-o
-Você largou o leaflet.
+Você largou o folheto.
 
 >pegue-o
-Você pegou o leaflet.
+Você pegou o folheto.
 
 >coloque o folheto na caixa
-Você colocou o leaflet na small mailbox.
+Você colocou o folheto na pequena caixa de correio.
 
 >tire o folheto da caixa
-Você pegou o leaflet.
+Você pegou o folheto.
 
 >examine a pequena caixa
-A small mailbox está vazia.
+A pequena caixa de correio está vazia.
 
 >x caixa pequena
-A small mailbox está vazia.
+A pequena caixa de correio está vazia.
 
 >feche a caixa de correio
-Você fechou a small mailbox.
+Você fechou a pequena caixa de correio.
 
 >inventário
 Você está carregando:
-  Um leaflet
+  Um folheto
 
 >vá para o norte
-North of House
-You are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.
+Norte da Casa
+Você está diante do lado norte de uma casa branca. Não há porta aqui, e todas as janelas estão tapadas com tábuas. Ao norte, uma trilha estreita serpenteia entre as árvores.
 
 >l
-Behind House
-You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+Atrás da Casa
+Você está atrás da casa branca. Uma trilha leva para a floresta, a leste. Em um canto da casa há uma pequena janela, que está entreaberta.
 
 >olhe para cima
-Behind House
-You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+Atrás da Casa
+Você está atrás da casa branca. Uma trilha leva para a floresta, a leste. Em um canto da casa há uma pequena janela, que está entreaberta.
 
 >olhe em volta
-Behind House
-You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.
+Atrás da Casa
+Você está atrás da casa branca. Uma trilha leva para a floresta, a leste. Em um canto da casa há uma pequena janela, que está entreaberta.
 
 >abra a janela
-With great effort, you open the window far enough to allow entry.
+Com grande esforço, você abre a janela o suficiente para passar.
 
 >entre
-Kitchen
-You are in the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.
-On the table is an elongated brown sack, smelling of hot peppers.
-A bottle is sitting on the table.
-Dentro da glass bottle há:
-  Uma quantity of water
+Cozinha
+Você está na cozinha da casa branca. Uma mesa parece ter sido usada há pouco tempo para preparar comida. Uma passagem leva para oeste, e uma escada escura sobe. Uma chaminé escura desce, e a leste há uma pequena janela, que está aberta.
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
+Há uma garrafa sobre a mesa.
+Dentro da garrafa de vidro há:
+  Um pouco de água
+
+>olhe pela janela
+Você vê uma área aberta que leva a uma floresta.
+
+>saia pela janela
+Atrás da Casa
+
+>entre pela janela
+Cozinha
+Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
+Há uma garrafa sobre a mesa.
+Dentro da garrafa de vidro há:
+  Um pouco de água
 
 >abra o saco
-Ao abrir o brown sack, você encontra um lunch e um clove of garlic.
+Ao abrir o saco marrom, você encontra um lanche e um dente de alho.
 
 >pegue o alho do saco
-Você pegou o clove of garlic.
+Você pegou o dente de alho.
+
+>examine o dente de alho
+Você não vê nada de especial no dente de alho.
 
 >coma o alho
-What the heck! You won't make friends this way, but nobody around here is too friendly anyhow. Gulp!
+Ah, que se dane! Assim você não vai fazer amigos, mas ninguém por aqui é muito simpático mesmo. Glup!
 
 >pegue a garrafa de vidro
-Você pegou a glass bottle.
+Você pegou a garrafa de vidro.
 
 >beba a água
-Primeiro você vai ter que abrir a glass bottle.
+Primeiro você vai ter que abrir a garrafa de vidro.
 
 >o
-Living Room
-You are in the living room. There is a doorway to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, a trophy case, and a large oriental rug in the center of the room.
-Above the trophy case hangs an elvish sword of great antiquity.
-A battery-powered brass lantern is on the trophy case.
+Sala de Estar
+Você está na sala de estar. Há uma passagem para leste, uma porta de madeira a oeste com estranhas letras góticas, que parece estar pregada, uma vitrine de troféus e um grande tapete oriental no centro da sala.
+Acima da vitrine de troféus está pendurada uma espada élfica de grande antiguidade.
+Sobre a vitrine de troféus há uma lanterna de latão a pilha.
 
 >pegue a lanterna e a espada
-brass lantern: Você pegou a brass lantern.
-sword: Você pegou a sword.
+lanterna de latão: Você pegou a lanterna de latão.
+espada: Você pegou a espada.
 
 >ligue a lanterna
-A brass lantern agora está acesa.
+A lanterna de latão agora está acesa.
 
 >apague-a
-A brass lantern agora está apagada.
+A lanterna de latão agora está apagada.
 
 >acenda a lanterna
-A brass lantern agora está acesa.
+A lanterna de latão agora está acesa.
+
+>desligue-a
+A lanterna de latão agora está apagada.
+
+>acenda-a
+A lanterna de latão agora está acesa.
 
 >largue tudo exceto a lanterna
-sword: Você largou a sword.
-glass bottle: Você largou a glass bottle.
-leaflet: Você largou o leaflet.
+espada: Você largou a espada.
+garrafa de vidro: Você largou a garrafa de vidro.
+folheto: Você largou o folheto.
 
 >pegue tudo
-leaflet: Você pegou o leaflet.
-glass bottle: Você pegou a glass bottle.
-sword: Você pegou a sword.
-trophy case: The trophy case is securely fastened to the wall.
-carpet: The rug is extremely heavy and cannot be carried.
+folheto: Você pegou o folheto.
+garrafa de vidro: Você pegou a garrafa de vidro.
+espada: Você pegou a espada.
+vitrine de troféus: A vitrine de troféus está bem presa à parede.
+tapete: O tapete é pesadíssimo e não dá para carregá-lo.
 
 >dê a espada para mim
 Você já está com isso!
 
+>sente sobre o tapete
+Ao se sentar, você nota uma irregularidade embaixo dele. Para não ficar desconfortável, você se levanta de novo.
+
 >mova o tapete
-With a great effort, the rug is moved to one side of the room, revealing the dusty cover of a closed trap door.
+Com grande esforço, você arrasta o tapete para um canto da sala e revela a tampa empoeirada de um alçapão fechado.
 
 >abra o alçapão
-The door reluctantly opens to reveal a rickety staircase descending into darkness.
+O alçapão se abre a contragosto e revela uma escada bamba que desce para a escuridão.
 
 >desça
 The trap door crashes shut, and you hear someone barring it.
 
 Cellar
 You are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.
-Your sword is glowing with a faint blue glow.
+Someone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken only over his dead body.
+Sua espada começou a brilhar intensamente.
+The thief knocks you out.
 
 >suba
-O trap door está fechado.
+O alçapão está fechado.
+The butt of his stiletto cracks you on the skull, and you stagger back.
 
 >pontos
-Sua pontuação é 35 (de um total de 350 pontos), em 35 jogadas.
+Sua pontuação é 35 (de um total de 350 pontos), em 42 jogadas.
 Isso lhe dá o título de Aventureiro Amador.
 
 >diagnóstico
 You are in perfect health.
 You can be killed by a serious wound.
+The butt of his stiletto cracks you on the skull, and you stagger back.
 
 >de novo
 You are in perfect health.
 You can be killed by a serious wound.
+The thief just left, still carrying his large bag. You may not have noticed that he robbed you blind first.
 
 >
