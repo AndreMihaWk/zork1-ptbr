@@ -173,3 +173,5 @@ Aventureiro Júnior, Aventureiro, Mestre, Mago, Mestre Aventureiro.
 | red hot brass bell / pile of bodies / wraiths | sino de latão em brasa (m) / monte de corpos (m) / assombrações (f, pl) |
 | gate (Hades) / dome / wall with engravings | portão (m) / cúpula (f) / parede com inscrições (f) |
 | Ramses II | Ramsés II |
+| slide (chute) / wooden ladder / lid | escorregador (m) / escada de madeira (f) / tampa (f) |
+| small piece of vitreous slag / iron chain | pequeno pedaço de escória vítrea (m) / corrente de ferro (f) |

@@ -769,3 +769,11 @@ só valem como comando de uma palavra (ver AJUSTA-LEXV)."
 ;"amarre o troll com a corda = tie up troll with rope"
 <SYNTAX TIE OBJECT (FIND ACTORBIT) (ON-GROUND IN-ROOM) WITH OBJECT
 	(FIND TOOLBIT) (ON-GROUND IN-ROOM HELD CARRIED HAVE) = V-TIE-UP>
+
+;"Região 6: mina de carvão. baixe e ice o cesto; acione o interruptor com a
+  chave de fenda; ligue a máquina com a chave de fenda (vira o interruptor,
+  como turn on machine with screwdriver)"
+<SYNONYM LOWER BAIXE BAIXAR>
+<SYNONYM RAISE ICE ICAR ICA>
+<SYNONYM TURN ACIONE ACIONAR ACIONA>
+<SYNTAX ACTIVATE OBJECT WITH OBJECT = V-LAMP-ON>

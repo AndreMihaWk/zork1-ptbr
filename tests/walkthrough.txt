@@ -248,83 +248,83 @@ u
 n
 n
 w
+norte
+oeste
+vá para o norte
+pegue a estatueta
+l
+coloque a chave de fenda no cesto
+largue a caixa de fósforos e as velas
 n
-w
-n
-take figurine
-e
-put screwdriver in basket
-drop matchbook, candles
-n
-d
-get bracelet
-e
-ne
-se
-sw
-d
-d
-w
+desça
+pegue a pulseira
+leste
+nordeste
+sudeste
+so
+b
+desça
+o
 largue tudo menos a lanterna
-e
-s
-take coal
+l
+sul
+pegue o carvão
+norte
+suba
+c
 n
-u
-u
-n
-e
+l
 s
-n
-u
-s
-take candles, matchbook
+norte
+suba
+sul
+pegue as velas e a caixa de fósforos
 risque o fósforo
-light candle with match
-put candle, coal in basket
-lower basket
+acenda a vela com o fósforo
+coloque a vela e o carvão no cesto
+abaixe o cesto
 n
-d
-e
+b
+l
 ne
-se
-sw
-d
-w
+sudeste
+sudoeste
+desça
+oeste
 look
-d
-w
-drop all
-w
-take candles, coal, screwdriver
+b
+o
+largue tudo
+oeste
+pegue as velas, o carvão e a chave de fenda
 s
-open lid
-put coal in machine
-close lid
-move switch with screwdriver
-open lid
-take diamond
-n
-put candle, diamond, screwdriver in basket
-go east
-take all but timber
+abra a tampa
+coloque o carvão na máquina
+feche a tampa
+mova o interruptor com a chave de fenda
+abra a tampa
+pegue o diamante
+norte
+coloque a vela, o diamante e a chave de fenda no cesto
+vá para leste
+pegue tudo exceto a madeira
 largue o estilete
-e
-u
-u
+l
+suba
+c
 n
-e
+leste
+sul
+norte
+c
 s
-n
-u
+levante o cesto
+pegue a vela e o diamante
+o
 s
-raise basket
-take candle, diamond
-w
-s
-e
-s
-d
+l
+sul
+desça
 cima
 coloque todos os tesouros na vitrine
 save

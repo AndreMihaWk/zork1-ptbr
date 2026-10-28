@@ -283,7 +283,7 @@ riquíssimos." CR>)
 		       <SETG CAGE-TOP T>
 		       <THIS-IS-IT ,RAISED-BASKET>
 		       <TELL
-"The basket is raised to the top of the shaft." CR>)>)
+"O cesto sobe até o alto do poço." CR>)>)
 	       (<VERB? LOWER>
 		<COND (<NOT ,CAGE-TOP>
 		       <TELL <PICK-ONE ,DUMMY> CR>)
@@ -292,17 +292,17 @@ riquíssimos." CR>)
 		       <MOVE ,LOWERED-BASKET ,SHAFT-ROOM>
 		       <THIS-IS-IT ,LOWERED-BASKET>
 		       <TELL
-"The basket is lowered to the bottom of the shaft." CR>
+"O cesto desce até o fundo do poço." CR>
 		       <SETG CAGE-TOP <>>
 		       <COND (<AND ,LIT <NOT <SETG LIT <LIT? ,HERE>>>>
-			      <TELL "It is now pitch black." CR>)>
+			      <TELL "Agora está um breu total." CR>)>
 		       T)>)
 	       (<OR <EQUAL? ,PRSO ,LOWERED-BASKET>
 		    <EQUAL? ,PRSI ,LOWERED-BASKET>>
-		<TELL "The basket is at the other end of the chain." CR>)
+		<TELL "O cesto está na outra ponta da corrente." CR>)
 	       (<AND <VERB? TAKE>
 		     <EQUAL? ,PRSO ,RAISED-BASKET ,LOWERED-BASKET>>
-		<TELL "The cage is securely fastened to the iron chain." CR>)>>
+		<TELL "O cesto está bem preso à corrente de ferro." CR>)>>
 
 <ROUTINE BAT-F ()
 	 <COND (<VERB? TELL>
@@ -310,13 +310,13 @@ riquíssimos." CR>)
 		<SETG P-CONT <>>)
 	       (<VERB? TAKE ATTACK MUNG>
 		<COND (<EQUAL? <LOC ,GARLIC> ,WINNER ,HERE>
-		       <TELL "You can't reach him; he's on the ceiling." CR>)
+		       <TELL "Você não consegue alcançá-lo: ele está no teto." CR>)
 		      (T <FLY-ME>)>)>>
 
 <ROUTINE FLY-ME ()
 	 <FWEEP 4>
 	 <TELL
-"The bat grabs you by the scruff of your neck and lifts you away...." CR CR>
+"O morcego agarra você pelo cangote e leva você pelos ares...." CR CR>
 	 <GOTO <PICK-ONE ,BAT-DROPS> <>>
 	 <COND (<NOT <EQUAL? ,HERE ,ENTRANCE-TO-HADES>>
 		<V-FIRST-LOOK>)>
@@ -2468,28 +2468,29 @@ acender." CR>)
 				<FSET? ,MATCH ,ONBIT>>>
 		       <COND (.DUMMY?
 			      <TELL
-"How sad for an aspiring adventurer to light a " D ,PRSO " in a room which
-reeks of gas. Fortunately, there is justice in the world." CR>)
+"Que triste ver um aspirante a aventureiro acender " T-UM ,PRSO " numa sala
+que fede a gás. Felizmente, existe justiça neste mundo." CR>)
 			     (T
 			      <TELL
-"Oh dear. It appears that the smell coming from this room was coal gas.
-I would have thought twice about carrying flaming objects in here." CR>)>
+"Ai, ai. Parece que o cheiro que vinha desta sala era de gás de carvão.
+Eu teria pensado duas vezes antes de entrar aqui com objetos em chamas." CR>)>
 		       <JIGS-UP "|
-      ** BOOOOOOOOOOOM **">)>)>> 
+      ** CABUUUUUUUUUUM **">)>)>>
 
 <ROUTINE BAT-D ("OPTIONAL" FOO)
 	 <COND (<EQUAL? <LOC ,GARLIC> ,WINNER ,HERE>
 		<TELL
-"In the corner of the room on the ceiling is a large vampire bat who
-is obviously deranged and holding his nose." CR>)
+"No teto, num canto da sala, há um grande morcego-vampiro, obviamente
+perturbado, tapando o nariz." CR>)
 	       (T
 		<TELL
-"A large vampire bat, hanging from the ceiling, swoops down at you!" CR>)>>
+"Um grande morcego-vampiro, pendurado no teto, dá um rasante em cima de
+você!" CR>)>>
 
 <ROUTINE BATS-ROOM (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are in a small room which has doors only to the east and south." CR>)
+"Você está em uma sala pequena, com portas só para leste e para sul." CR>)
 	       (<AND <EQUAL? .RARG ,M-ENTER> <NOT ,DEAD>>
 		<COND (<NOT <EQUAL? <LOC ,GARLIC> ,WINNER ,HERE>>
 		       <V-LOOK>
@@ -2499,34 +2500,34 @@ is obviously deranged and holding his nose." CR>)
 <ROUTINE MACHINE-ROOM-FCN (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"This is a large, cold room whose sole exit is to the north. In one
-corner there is a machine which is reminiscent of a clothes
-dryer. On its face is a switch which is labelled \"START\".
-The switch does not appear to be manipulable by any human hand (unless the
-fingers are about 1/16 by 1/4 inch). On the front of the machine is a large
-lid, which is ">
+"Esta é uma sala grande e fria, cuja única saída fica ao norte. Num canto
+há uma máquina que lembra uma secadora de roupas. No painel dela há um
+interruptor com a etiqueta \"LIGAR\". O interruptor não parece ser
+manipulável por nenhuma mão humana (a não ser que os dedos tenham uns 1,5
+por 6 milímetros). Na frente da máquina há também uma tampa grande, que
+está ">
 		<COND (<FSET? ,MACHINE ,OPENBIT>
-		       <TELL "open.">)
-		      (T <TELL "closed.">)>
+		       <TELL "aberta.">)
+		      (T <TELL "fechada.">)>
 		<CRLF>)>>
 
 <ROUTINE MACHINE-F ()
 	 <COND (<AND <VERB? TAKE> <EQUAL? ,PRSO ,MACHINE>>
-		<TELL "It is far too large to carry." CR>)
+		<TELL "Ela é grande demais para carregar." CR>)
 	       (<VERB? OPEN>
 	        <COND (<FSET? ,MACHINE ,OPENBIT>
 		       <TELL <PICK-ONE ,DUMMY> CR>)
 		      (<FIRST? ,MACHINE>
-		       <TELL "The lid opens, revealing ">
+		       <TELL "A tampa se abre e revela ">
 		       <PRINT-CONTENTS ,MACHINE>
 		       <TELL "." CR>
 		       <FSET ,MACHINE ,OPENBIT>)
 		      (T
-		       <TELL "The lid opens." CR>
+		       <TELL "A tampa se abre." CR>
 		       <FSET ,MACHINE ,OPENBIT>)>)
 	       (<VERB? CLOSE>
 	        <COND (<FSET? ,MACHINE ,OPENBIT>
-		       <TELL "The lid closes." CR>
+		       <TELL "A tampa se fecha." CR>
 		       <FCLEAR ,MACHINE ,OPENBIT>
 		       T)
 		      (T
@@ -2534,7 +2535,7 @@ lid, which is ">
 	       (<VERB? LAMP-ON>
 		<COND (<NOT ,PRSI>
 		       <TELL
-"It's not clear how to turn it on with your bare hands." CR>)
+"Não está muito claro como ligá-la só com as mãos." CR>)
 		      (T
 		       <PERFORM ,V?TURN ,MACHINE-SWITCH ,PRSI>
 		       <RTRUE>)>)>>
@@ -2544,11 +2545,11 @@ lid, which is ">
 		<COND (<EQUAL? ,PRSI ,SCREWDRIVER>
 		       <COND (<FSET? ,MACHINE ,OPENBIT>
 			      <TELL
-"The machine doesn't seem to want to do anything." CR>)
+"A máquina não parece estar a fim de fazer nada." CR>)
 			     (T <TELL
-"The machine comes to life (figuratively) with a dazzling display of
-colored lights and bizarre noises. After a few moments, the
-excitement abates." CR>
+"A máquina ganha vida (no sentido figurado) num espetáculo deslumbrante de
+luzes coloridas e ruídos bizarros. Depois de alguns instantes, a agitação
+passa." CR>
 			      <COND (<IN? ,COAL ,MACHINE>
 				     <REMOVE-CAREFULLY ,COAL>
 				     <MOVE ,DIAMOND ,MACHINE>)
@@ -2559,12 +2560,12 @@ excitement abates." CR>
 						   (T <RETURN>)>>
 				     <MOVE ,GUNK ,MACHINE>)>)>)
 		      (T
-		       <TELL "It seems that a " D ,PRSI " won't do." CR>)>)>>
+		       <TELL "Parece que com " T-UM ,PRSI " não vai dar." CR>)>)>>
 
 <ROUTINE GUNK-FUNCTION ()
 	 <REMOVE-CAREFULLY ,GUNK>
 	 <TELL
-"The slag was rather insubstantial, and crumbles into dust at your touch." CR>>
+"A escória era bem frágil e se desfaz em pó ao seu toque." CR>>
 
 <ROUTINE NO-OBJS (RARG "AUX" F)
 	 <COND (<EQUAL? .RARG ,M-BEG>
@@ -3115,14 +3116,18 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 		       <DO-WALK ,P?WEST>
 		       <RTRUE>)
 		      (T
-		       <TELL "You tumble down the slide...." CR>
+		       <TELL "Você despenca escorregador abaixo...." CR>
 		       <GOTO ,CELLAR>)>)
 	       (<VERB? PUT>
 		<SLIDER ,PRSO>)>>
 
 <ROUTINE SLIDER (OBJ)
 	 <COND (<FSET? .OBJ ,TAKEBIT>
-		<TELL "The " D .OBJ " falls into the slide and is gone." CR>
+		<TELL T-CO .OBJ " ">
+		<PRINT-PLURAL .OBJ "cai" "caem">
+		<TELL " no escorregador e ">
+		<PRINT-PLURAL .OBJ "some" "somem">
+		<TELL "." CR>
 		<COND (<EQUAL? .OBJ ,WATER> <REMOVE-CAREFULLY .OBJ>)
 		      (T
 		       <MOVE .OBJ ,CELLAR>)>)
@@ -3250,9 +3255,9 @@ dentes doem." CR>)>>
 
 <ROUTINE GAS-PSEUDO ()
 	 <COND (<VERB? BREATHE>	;"REALLY BLOW"
-		<TELL "There is too much gas to blow away." CR>)
+		<TELL "Tem gás demais para você dissipar com um sopro." CR>)
 	       (<VERB? SMELL>
-		<TELL "It smells like coal gas in here." CR>)>>
+		<TELL "Aqui tem cheiro de gás de carvão." CR>)>>
 
 "SUBTITLE MELEE"
 
@@ -4219,11 +4224,11 @@ completo, mas não dá para ter tudo." CR CR>
 
 <ROUTINE CHAIN-PSEUDO ()
 	 <COND (<VERB? TAKE MOVE>
-		<TELL "The chain is secure." CR>)
+		<TELL "A corrente está bem presa." CR>)
 	       (<VERB? RAISE LOWER>
-		<TELL "Perhaps you should do that to the basket." CR>)
+		<TELL "Talvez seja melhor fazer isso com o cesto." CR>)
 	       (<VERB? EXAMINE>
-		<TELL "The chain secures a basket within the shaft." CR>)>> 
+		<TELL "A corrente segura um cesto dentro do poço." CR>)>>
 
 <ROUTINE TROLL-ROOM-F (RARG)
 	 <COND (<AND <EQUAL? .RARG ,M-ENTER>
