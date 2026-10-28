@@ -89,39 +89,39 @@ s
 desça
 oeste
 sudeste
-e
-tie rope to railing
-d
+l
+amarre a corda no corrimão
+desça
+sul
+pegue o sino
 s
-take bell
-s
-take candles and book
-d
-d
+pegue as velas e o livro
+b
+desça
 abra a caixa de fósforos
-ring bell
+toque o sino
 acenda o fósforo
-light candles with match
-wave candles
-read book
+acenda as velas com o fósforo
+agite as velas
+leia o livro
 save
-pour water on bell
-take bell
-put candles out
-drop bottle
-s
-take skull
+despeje a água sobre o sino
+pegue o sino
+apague as velas
+largue a garrafa
+sul
+pegue a caveira
+norte
+suba
 n
-u
-n
-n
+norte
 n
 o
 oeste
 sul
 s
 l
-drop bell, book
+largue o sino, o livro
 pegue a pintura
 oeste
 norte
@@ -342,25 +342,25 @@ b
 pegue a barra de platina
 o
 se
-e
-down
-drop lantern, candles
-take torch
+leste
+desça
+largue a lanterna, as velas
+pegue a tocha
 s
-e
-open coffin
-take sceptre
-w
-s
-d
+l
+abra o caixão
+pegue o cetro
+oeste
+sul
+b
+norte
 n
-n
-n
+norte
 oeste
 o
 sul
 suba
-put all treasure but sceptre, torch in case
+coloque todos os tesouros exceto o cetro e a tocha na vitrine
 save
 e
 e
@@ -394,7 +394,7 @@ nw
 w
 w
 w
-put all treasure but torch in case
+coloque todos os tesouros exceto a tocha na vitrine
 save
 d
 norte
@@ -424,7 +424,7 @@ s
 desça
 l
 leste
-largue tudo menos a bomba e torch
+largue tudo menos a bomba e a tocha
 infle o plástico
 a bomba
 infle o plástico com a bomba
@@ -466,16 +466,16 @@ o
 oeste
 o
 sudeste
-e
-d
+l
+desça
+sul
+leste
+largue tudo exceto a tocha
+pegue o caixão
 s
-e
-drop all but torch
-take coffin
-s
-w
-s
-pray
+o
+sul
+reze
 e
 s
 se

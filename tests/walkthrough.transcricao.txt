@@ -422,118 +422,118 @@ Sala Redonda
 Esta é uma sala circular de pedra, com passagens em todas as direções. Infelizmente, várias delas foram bloqueadas por desmoronamentos.
 
 >sudeste
-Engravings Cave
-You have entered a low cave with passages leading northwest and east.
-There are old engravings on the walls here.
+Caverna das Inscrições
+Você entrou em uma caverna baixa, com passagens para noroeste e para leste.
+Há inscrições antigas nas paredes aqui.
 
->e
-Dome Room
-You are at the periphery of a large dome, which forms the ceiling of another room below. Protecting you from a precipitous drop is a wooden railing which circles the dome.
+>l
+Sala da Cúpula
+Você está na borda de uma grande cúpula, que forma o teto de outra sala, lá embaixo. Um corrimão de madeira, que circunda a cúpula, protege você de uma queda vertiginosa.
 
->tie rope to railing
-The rope drops over the side and comes within ten feet of the floor.
+>amarre a corda no corrimão
+A corda cai pela borda e chega a uns três metros do chão.
 
->d
-Torch Room
-This is a large room with a prominent doorway leading to a down staircase. Above you is a large dome. Up around the edge of the dome (20 feet up) is a wooden railing. In the center of the room sits a white marble pedestal.
-A piece of rope descends from the railing above, ending some five feet above your head.
-Sitting on the pedestal is a flaming torch, made of ivory.
+>desça
+Sala da Tocha
+Esta é uma sala grande, com uma passagem imponente que dá para uma escada que desce. Acima de você há uma grande cúpula. Lá no alto, em volta da borda da cúpula (a uns seis metros do chão), há um corrimão de madeira. No centro da sala fica um pedestal de mármore branco.
+Um pedaço de corda desce do corrimão lá em cima e termina mais ou menos um metro e meio acima da sua cabeça.
+Sobre o pedestal há uma tocha flamejante, feita de marfim.
 
->s
-Temple
-This is the north end of a large temple. On the east wall is an ancient inscription, probably a prayer in a long-forgotten language. Below the prayer is a staircase leading down. The west wall is solid granite. The exit to the north end of the room is through huge marble pillars.
-Há um brass bell aqui.
+>sul
+Templo
+Esta é a extremidade norte de um grande templo. Na parede leste há uma inscrição antiga, provavelmente uma oração numa língua há muito esquecida. Abaixo da oração há uma escada que desce. A parede oeste é de granito maciço. A saída, no lado norte da sala, passa entre enormes pilares de mármore.
+Há um sino de latão aqui.
 
->take bell
-Você pegou o brass bell.
+>pegue o sino
+Você pegou o sino de latão.
 
 >s
 Altar
-This is the south end of a large temple. In front of you is what appears to be an altar. In one corner is a small hole in the floor which leads into darkness. You probably could not get back up it.
-On the two ends of the altar are burning candles.
-On the altar is a large black book, open to page 569.
+Esta é a extremidade sul de um grande templo. À sua frente está o que parece ser um altar. Num canto há um pequeno buraco no chão, que leva à escuridão. Você provavelmente não conseguiria subir de volta por ele.
+Nas duas pontas do altar há velas acesas.
+Sobre o altar há um grande livro negro, aberto na página 569.
 
->take candles and book
-pair of candles: Você pegou o pair of candles.
-black book: Você pegou o black book.
+>pegue as velas e o livro
+par de velas: Você pegou o par de velas.
+livro negro: Você pegou o livro negro.
 
->d
-Cave
-This is a tiny cave with entrances west and north, and a dark, forbidding staircase leading down.
-A gust of wind blows out your candles!
+>b
+Caverna
+Esta é uma caverna minúscula, com entradas a oeste e ao norte, e uma escada escura e ameaçadora que desce.
+Uma rajada de vento apaga as suas velas!
 Sua espada emite um fraco brilho azulado.
 
->d
-Entrance to Hades
-You are outside a large gateway, on which is inscribed
+>desça
+Entrada do Hades
+Você está diante de um grande portal, no qual está escrito
 
-  Abandon every hope all ye who enter here!
+  Deixai toda esperança, ó vós que entrais!
 
-The gate is open; through it you can see a desolation, with a pile of mangled bodies in one corner. Thousands of voices, lamenting some hideous fate, can be heard.
-The way through the gate is barred by evil spirits, who jeer at your attempts to pass.
+O portão está aberto; através dele você vê uma desolação, com um monte de corpos mutilados num canto. Dá para ouvir milhares de vozes, que lamentam algum destino medonho.
+A passagem pelo portão está bloqueada por espíritos malignos, que zombam das suas tentativas de passar.
 Sua espada começou a brilhar intensamente.
 
 >abra a caixa de fósforos
 Você tem 5 fósforos.
 
->ring bell
-The bell suddenly becomes red hot and falls to the ground. The wraiths, as if paralyzed, stop their jeering and slowly turn to face you. On their ashen faces, the expression of a long-forgotten terror takes shape.
-In your confusion, the candles drop to the ground (and they are out).
+>toque o sino
+De repente, o sino fica em brasa e cai no chão. As assombrações, como que paralisadas, param de zombar e se viram lentamente para você. Em seus rostos cinzentos, ganha forma a expressão de um terror há muito esquecido.
+Na confusão, as velas caem no chão (e se apagam).
 
 >acenda o fósforo
 Um dos fósforos começa a queimar.
 
->light candles with match
-The candles are lit.
+>acenda as velas com o fósforo
+As velas se acendem.
 O fósforo se apagou.
 
->wave candles
-(pegando o pair of candles antes)
-Acenar com o pair of candles não ajuda muito.
-The flames flicker wildly and appear to dance. The earth beneath your feet trembles, and your legs nearly buckle beneath you. The spirits cower at your unearthly power.
+>agite as velas
+(pegando o par de velas antes)
+Acenar com o par de velas não ajuda muito.
+As chamas tremulam loucamente e parecem dançar. A terra treme sob os seus pés, e suas pernas quase cedem. Os espíritos se encolhem diante do seu poder sobrenatural.
 
->read book
-Each word of the prayer reverberates through the hall in a deafening confusion. As the last word fades, a voice, loud and commanding, speaks: "Begone, fiends!" A heart-stopping scream fills the cavern, and the spirits, sensing a greater power, flee through the walls.
+>leia o livro
+Cada palavra da oração ecoa pelo salão numa confusão ensurdecedora. Quando a última palavra se extingue, uma voz alta e imperiosa ordena: "Fora daqui, demônios!" Um grito de gelar o sangue enche a caverna, e os espíritos, sentindo um poder maior, fogem através das paredes.
 Sua espada parou de brilhar.
 
 >save
 Ok.
 
->pour water on bell
-The water cools the bell and is evaporated.
-The bell appears to have cooled down.
+>despeje a água sobre o sino
+A água esfria o sino e evapora.
+O sino parece ter esfriado.
 
->take bell
-Você pegou o brass bell.
+>pegue o sino
+Você pegou o sino de latão.
 
->put candles out
-The flame is extinguished.
+>apague as velas
+A chama se apaga.
 
->drop bottle
+>largue a garrafa
 Você largou a garrafa de vidro.
 
->s
-Land of the Dead
-You have entered the Land of the Living Dead. Thousands of lost souls can be heard weeping and moaning. In the corner are stacked the remains of dozens of previous adventurers less fortunate than yourself. A passage exits to the north.
-Lying in one corner of the room is a beautifully carved crystal skull. It appears to be grinning at you rather nastily.
+>sul
+Terra dos Mortos
+Você entrou na Terra dos Mortos-Vivos. Dá para ouvir milhares de almas perdidas chorando e gemendo. Num canto estão empilhados os restos de dezenas de aventureiros que passaram por aqui antes, com menos sorte que você. Uma passagem sai para o norte.
+Num canto da sala há uma caveira de cristal lindamente esculpida. Ela parece sorrir para você com um ar bem maldoso.
 
->take skull
-Você pegou o crystal skull.
+>pegue a caveira
+Você pegou a caveira de cristal.
 
->n
-Entrance to Hades
+>norte
+Entrada do Hades
 Há uma garrafa de vidro aqui.
 
->u
-Cave
+>suba
+Caverna
 
 >n
-Mirror Room
-You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+Sala do Espelho
+Você está em uma grande sala quadrada, de teto alto. Na parede sul há um espelho enorme, que ocupa a parede inteira. Há saídas nos outros três lados da sala.
 
->n
-Narrow Passage
-This is a long and narrow corridor where a long north-south passageway briefly narrows even further.
+>norte
+Passagem Estreita
+Este é um corredor longo e estreito, onde uma longa passagem norte-sul fica, por um trecho, mais estreita ainda.
 
 >n
 Sala Redonda
@@ -556,9 +556,9 @@ Galeria
 Esta é uma galeria de arte. A maioria dos quadros foi roubada por vândalos de gosto excepcional. Os vândalos saíram pela saída norte ou pela saída oeste.
 Por sorte, ainda resta uma chance de você bancar o vândalo: na parede do fundo há uma pintura de beleza sem igual.
 
->drop bell, book
-brass bell: Você largou o brass bell.
-black book: Você largou o black book.
+>largue o sino, o livro
+sino de latão: Você largou o sino de latão.
+livro negro: Você largou o livro negro.
 
 >pegue a pintura
 Você pegou a pintura.
@@ -720,7 +720,7 @@ Você está em perfeita saúde.
 Você aguenta um ferimento grave.
 
 >coloque todos os tesouros na vitrine
-crystal skull: Você colocou o crystal skull na vitrine de troféus.
+caveira de cristal: Você colocou a caveira de cristal na vitrine de troféus.
 
 >w
 Você entrou num lugar escuro.
@@ -761,7 +761,7 @@ Você está carregando:
   Dentro do ovo cravejado de joias há:
     Um canário de corda dourado
   Um saco de couro com moedas
-  Um pair of candles
+  Um par de velas
   Uma caixa de fósforos
   Uma lanterna de latão (acesa)
   Uma espada
@@ -781,7 +781,7 @@ Passagem Estranha
 >leste
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >save
@@ -833,7 +833,7 @@ Sobre a mesa há um saco marrom comprido, com cheiro de pimenta.
 >o
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >coloque todos os tesouros na vitrine
@@ -953,7 +953,7 @@ Meio enterrado na lama, há um baú velho abarrotado de joias.
 chave de fenda: Você largou a chave de fenda.
 chave inglesa: Você largou a chave inglesa.
 estilete: Você largou o estilete.
-pair of candles: Você largou o pair of candles.
+par de velas: Você largou o par de velas.
 caixa de fósforos: Você largou a caixa de fósforos.
 
 >norte
@@ -978,7 +978,7 @@ Há uma bomba de ar manual aqui.
 Represa
 Meio enterrado na lama, há um baú velho abarrotado de joias.
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
-Há um pair of candles aqui.
+Há um par de velas aqui.
 Há um estilete aqui.
 Há uma chave inglesa aqui.
 Há uma chave de fenda aqui.
@@ -1009,7 +1009,7 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >ponha todos os tesouros na vitrine
@@ -1042,7 +1042,7 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >d
@@ -1070,14 +1070,14 @@ Represa Sul
 >n
 Represa
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
-Há um pair of candles aqui.
+Há um par de velas aqui.
 Há um estilete aqui.
 Há uma chave inglesa aqui.
 Há uma chave de fenda aqui.
 
 >pegue tudo
 caixa de fósforos: Você pegou a caixa de fósforos.
-pair of candles: Você pegou o pair of candles.
+par de velas: Você pegou o par de velas.
 estilete: Você pegou o estilete.
 chave inglesa: Você pegou a chave inglesa.
 chave de fenda: Você pegou a chave de fenda.
@@ -1100,16 +1100,16 @@ Atlantis Room
 This is an ancient room, long under water. There is an exit to the south and a staircase leading up.
 
 >u
-Cave
-This is a tiny cave with entrances west and north, and a staircase leading down.
+Caverna
+Esta é uma caverna minúscula, com entradas a oeste e ao norte, e uma escada que desce.
 
 >n
-Mirror Room
-You are in a large square room with tall ceilings. On the south wall is an enormous mirror which fills the entire wall. There are exits on the other three sides of the room.
+Sala do Espelho
+Você está em uma grande sala quadrada, de teto alto. Na parede sul há um espelho enorme, que ocupa a parede inteira. Há saídas nos outros três lados da sala.
 
 >n
-Cold Passage
-This is a cold and damp corridor where a long east-west passageway turns into a southward path.
+Passagem Fria
+Este é um corredor frio e úmido, onde uma longa passagem leste-oeste vira um caminho que segue para o sul.
 
 >w
 Slide Room
@@ -1142,7 +1142,7 @@ Você colocou a chave de fenda no basket.
 
 >drop matchbook, candles
 caixa de fósforos: Você largou a caixa de fósforos.
-pair of candles: Você largou o pair of candles.
+par de velas: Você largou o par de velas.
 
 >n
 Smelly Room
@@ -1231,25 +1231,25 @@ Smelly Room
 
 >s
 Shaft Room
-Há um pair of candles aqui.
+Há um par de velas aqui.
 Há aqui uma caixa de fósforos com os dizeres "Visite a Bela BCE#3" na capa.
 At the end of the chain is a basket.
 Dentro do basket há:
   Uma chave de fenda
 
 >take candles, matchbook
-pair of candles: Você pegou o pair of candles.
+par de velas: Você pegou o par de velas.
 caixa de fósforos: Você pegou a caixa de fósforos.
 
 >risque o fósforo
 Um dos fósforos começa a queimar.
 
 >light candle with match
-The candles are lit.
+As velas se acendem.
 O fósforo se apagou.
 
 >put candle, coal in basket
-pair of candles: Você colocou o pair of candles no basket.
+par de velas: Você colocou o par de velas no basket.
 small pile of coal: Você colocou o small pile of coal no basket.
 
 >lower basket
@@ -1306,11 +1306,11 @@ This is a small drafty room in which is the bottom of a long shaft. To the south
 At the end of the chain is a basket.
 Dentro do basket há:
   Um small pile of coal
-  Um pair of candles (aceso)
+  Um par de velas (aceso)
   Uma chave de fenda
 
 >take candles, coal, screwdriver
-pair of candles: Você pegou o pair of candles.
+par de velas: Você pegou o par de velas.
 small pile of coal: Você pegou o small pile of coal.
 chave de fenda: Você pegou a chave de fenda.
 
@@ -1341,7 +1341,7 @@ Drafty Room
 At the end of the chain is a basket.
 
 >put candle, diamond, screwdriver in basket
-pair of candles: Você colocou o pair of candles no basket.
+par de velas: Você colocou o par de velas no basket.
 huge diamond: Você colocou o huge diamond no basket.
 chave de fenda: Você colocou a chave de fenda no basket.
 
@@ -1401,7 +1401,7 @@ From the chain is suspended a basket.
 The basket is raised to the top of the shaft.
 
 >take candle, diamond
-pair of candles: Você pegou o pair of candles.
+par de velas: Você pegou o par de velas.
 huge diamond: Você pegou o huge diamond.
 
 >w
@@ -1430,7 +1430,7 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >coloque todos os tesouros na vitrine
@@ -1463,7 +1463,7 @@ A lanterna de latão agora está apagada.
 >ne
 Cânion Profundo
 Você está na borda sul de um cânion profundo. Há passagens para leste, noroeste e sudoeste. Uma escada desce. Lá de baixo vem o som de água corrente.
-The candles are becoming quite short.
+As velas já estão bem curtas.
 
 >l
 Barragem
@@ -1486,55 +1486,55 @@ Você pegou a barra de platina.
 Sala Redonda
 
 >se
-Engravings Cave
-There are old engravings on the walls here.
+Caverna das Inscrições
+Há inscrições antigas nas paredes aqui.
 
->e
-Dome Room
+>leste
+Sala da Cúpula
 
->down
-Torch Room
-Sitting on the pedestal is a flaming torch, made of ivory.
+>desça
+Sala da Tocha
+Sobre o pedestal há uma tocha flamejante, feita de marfim.
 
->drop lantern, candles
+>largue a lanterna, as velas
 lanterna de latão: Você largou a lanterna de latão.
-pair of candles: Você largou o pair of candles.
-The candles won't last long now.
+par de velas: Você largou o par de velas.
+As velas não vão durar muito mais.
 
->take torch
-Você pegou o torch.
-
->s
-Temple
-
->e
-Egyptian Room
-This is a room which looks like an Egyptian tomb. There is an ascending staircase to the west.
-The solid-gold coffin used for the burial of Ramses II is here.
-
->open coffin
-Você abriu o gold coffin.
-A sceptre, possibly that of ancient Egypt itself, is in the coffin. The sceptre is ornamented with colored enamel, and tapers to a sharp point.
-
->take sceptre
-Você pegou o sceptre.
-
->w
-Temple
+>pegue a tocha
+Você pegou a tocha.
 
 >s
+Templo
+
+>l
+Sala Egípcia
+Esta sala parece um túmulo egípcio. A oeste, há uma escada que sobe.
+Aqui está o caixão de ouro maciço usado no enterro de Ramsés II.
+
+>abra o caixão
+Você abriu o caixão de ouro.
+Dentro do caixão há um cetro, talvez o do próprio Egito antigo. O cetro é ornamentado com esmalte colorido e se afina até terminar numa ponta afiada.
+
+>pegue o cetro
+Você pegou o cetro.
+
+>oeste
+Templo
+
+>sul
 Altar
 
->d
-Cave
+>b
+Caverna
+
+>norte
+Sala do Espelho
 
 >n
-Mirror Room
+Passagem Estreita
 
->n
-Narrow Passage
-
->n
+>norte
 Sala Redonda
 
 >oeste
@@ -1559,10 +1559,10 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
->put all treasure but sceptre, torch in case
+>coloque todos os tesouros exceto o cetro e a tocha na vitrine
 barra de platina: Você colocou a barra de platina na vitrine de troféus.
 
 >save
@@ -1696,13 +1696,13 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
->put all treasure but torch in case
+>coloque todos os tesouros exceto a tocha na vitrine
 lindo escaravelho cravejado de joias: Você colocou o lindo escaravelho cravejado de joias na vitrine de troféus.
 pot of gold: Você colocou o pot of gold na vitrine de troféus.
-sceptre: Você colocou o sceptre na vitrine de troféus.
+cetro: Você colocou o cetro na vitrine de troféus.
 
 >save
 Ok.
@@ -1805,7 +1805,7 @@ Esta caverna tem saídas a oeste e a leste e, para o sul, se estreita até virar
 Praia dos Penhascos Brancos
 Você está numa faixa estreita de praia que corre ao pé dos Penhascos Brancos. Uma trilha estreita segue para o sul ao longo dos Penhascos, e uma passagem apertada leva para oeste, para dentro dos próprios penhascos.
 
->largue tudo menos a bomba e torch
+>largue tudo menos a bomba e a tocha
 monte de plástico: Você largou o monte de plástico.
 pá: Você largou a pá.
 chave inglesa: Você largou a chave inglesa.
@@ -1926,7 +1926,7 @@ Em cima da mesa da cozinha há:
 >w
 Sala de Estar
 Sua coleção de tesouros consiste em:
-  Um sceptre
+  Um cetro
   Um pot of gold
   Um lindo escaravelho cravejado de joias
   Uma barra de platina
@@ -1940,7 +1940,7 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >coloque a esmeralda na vitrine
@@ -1991,25 +1991,25 @@ Sala Barulhenta
 Sala Redonda
 
 >sudeste
-Engravings Cave
-There are old engravings on the walls here.
+Caverna das Inscrições
+Há inscrições antigas nas paredes aqui.
 
->e
-Dome Room
+>l
+Sala da Cúpula
 
->d
-Torch Room
-Há um pair of candles aqui.
+>desça
+Sala da Tocha
+Há um par de velas aqui.
 Há uma lanterna de latão (a pilha) aqui.
 
->s
-Temple
+>sul
+Templo
 
->e
-Egyptian Room
-The solid-gold coffin used for the burial of Ramses II is here.
+>leste
+Sala Egípcia
+Aqui está o caixão de ouro maciço usado no enterro de Ramsés II.
 
->drop all but torch
+>largue tudo exceto a tocha
 pá: Você largou a pá.
 chave inglesa: Você largou a chave inglesa.
 dente de alho: Você largou o dente de alho.
@@ -2017,19 +2017,19 @@ caixa de fósforos: Você largou a caixa de fósforos.
 monte de plástico: Você largou o monte de plástico.
 bomba de ar manual: Você largou a bomba de ar manual.
 
->take coffin
-Você pegou o gold coffin.
+>pegue o caixão
+Você pegou o caixão de ouro.
 
 >s
 Você não pode ir por aí.
 
->w
-Temple
+>o
+Templo
 
->s
+>sul
 Altar
 
->pray
+>reze
 Floresta
 Esta é uma floresta, com árvores em todas as direções. A leste, parece haver luz do sol.
 
@@ -2053,7 +2053,7 @@ Em cima da mesa da cozinha há:
 Sala de Estar
 Sua coleção de tesouros consiste em:
   Uma esmeralda grande
-  Um sceptre
+  Um cetro
   Um pot of gold
   Um lindo escaravelho cravejado de joias
   Uma barra de platina
@@ -2067,12 +2067,12 @@ Sua coleção de tesouros consiste em:
   Um cálice
   Um canário de corda dourado
   Um lindo berloque de latão
-  Um crystal skull
+  Uma caveira de cristal
   Uma pintura
 
 >guarde todos os tesouros na vitrine
-gold coffin: Você colocou o gold coffin na vitrine de troféus.
-torch: Você colocou o torch na vitrine de troféus.
+caixão de ouro: Você colocou o caixão de ouro na vitrine de troféus.
+tocha: Você colocou a tocha na vitrine de troféus.
 Uma voz quase inaudível sussurra em seu ouvido: "Procure em seus tesouros o segredo final."
 
 >read parchment

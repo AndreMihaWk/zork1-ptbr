@@ -262,14 +262,14 @@ riquíssimos." CR>)
 
 <ROUTINE GHOSTS-F ()
 	 <COND (<VERB? TELL>
-		<TELL "The spirits jeer loudly and ignore you." CR>
+		<TELL "Os espíritos zombam ruidosamente e ignoram você." CR>
 		<SETG P-CONT <>>)
 	       (<VERB? EXORCISE>
-		<TELL "Only the ceremony itself has any effect." CR>)
+		<TELL "Só a própria cerimônia tem algum efeito." CR>)
 	       (<AND <VERB? ATTACK MUNG> <EQUAL? ,PRSO ,GHOSTS>>
-		<TELL "How can you attack a spirit with material objects?" CR>)
+		<TELL "Como você pretende atacar um espírito com objetos materiais?" CR>)
 	       (T
-		<TELL "You seem unable to interact with these spirits." CR>)>>
+		<TELL "Você parece incapaz de interagir com esses espíritos." CR>)>>
 
 <GLOBAL CAGE-TOP T>
 
@@ -340,31 +340,39 @@ riquíssimos." CR>)
 	      MINE-ENTRANCE>>
 
 <ROUTINE BELL-F ()
-	 <COND (<VERB? RING>
+	 <COND (<AND <VERB? RUB>
+		     <EQUAL? <GET ,P-VTBL 0> ,W?TOQUE ,W?TOCAR ,W?TOCA>>
+		;"PT: TOQUE é sinônimo de RUB, mas tocar o sino é RING"
+		<PERFORM ,V?RING ,PRSO ,PRSI>
+		<RTRUE>)
+	       (<VERB? RING>
 		<COND (<AND <EQUAL? ,HERE ,LLD-ROOM>
 			    <NOT ,LLD-FLAG>>
 		       <RFALSE>)
 		      (T
-		       <TELL "Ding, dong." CR>)>)>>
+		       <TELL "Blém, blém." CR>)>)>>
 
 <ROUTINE HOT-BELL-F ()
 	 <COND (<VERB? TAKE>
-		<TELL "The bell is very hot and cannot be taken." CR>)
+		<TELL "O sino está quente demais para ser pego." CR>)
 	       (<OR <VERB? RUB> <AND <VERB? RING> ,PRSI>>
 		<COND (<FSET? ,PRSI ,BURNBIT>
-		       <TELL "The " D ,PRSI " burns and is consumed." CR>
+		       <TELL T-CO ,PRSI " ">
+		       <PRINT-PLURAL ,PRSI "pega fogo e se consome"
+				     "pegam fogo e se consomem">
+		       <TELL "." CR>
 		       <REMOVE-CAREFULLY ,PRSI>)
 		      (<EQUAL? ,PRSI ,HANDS>
-		       <TELL "The bell is too hot to touch." CR>)
+		       <TELL "O sino está quente demais para ser tocado." CR>)
 		      (T
-		       <TELL "The heat from the bell is too intense." CR>)>)
+		       <TELL "O calor do sino é intenso demais." CR>)>)
 	       (<VERB? POUR-ON>
 		<REMOVE-CAREFULLY ,PRSO>
-		<TELL "The water cools the bell and is evaporated." CR>
+		<TELL "A água esfria o sino e evapora." CR>
 		<QUEUE I-XBH 0>
 		<I-XBH>)
 	       (<VERB? RING>
-		<TELL "The bell is too hot to reach." CR>)>>
+		<TELL "O sino está quente demais; não dá nem para chegar perto." CR>)>>
 
 <ROUTINE BOARDED-WINDOW-FCN ()
 	 <COND (<VERB? OPEN>
@@ -945,13 +953,13 @@ resmungando obscenidades." CR>
 
 <ROUTINE TORCH-OBJECT ()
     <COND (<VERB? EXAMINE>
-	   <TELL "The torch is burning." CR>)
+	   <TELL "A tocha está em chamas." CR>)
 	  (<AND <VERB? POUR-ON>
 		<EQUAL? ,PRSI ,TORCH>>
-	   <TELL "The water evaporates before it gets close." CR>)
+	   <TELL "A água evapora antes de chegar perto." CR>)
 	  (<AND <VERB? LAMP-OFF> <FSET? ,PRSO ,ONBIT>>
 	   <TELL
-"You nearly burn your hand trying to extinguish the flame." CR>)>>
+"Você quase queima a mão tentando apagar a chama." CR>)>>
 
 \
 
@@ -960,12 +968,12 @@ resmungando obscenidades." CR>
 <ROUTINE MIRROR-ROOM (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 	        <TELL
-"You are in a large square room with tall ceilings. On the south wall
-is an enormous mirror which fills the entire wall. There are exits
-on the other three sides of the room." CR>
+"Você está em uma grande sala quadrada, de teto alto. Na parede sul há um
+espelho enorme, que ocupa a parede inteira. Há saídas nos outros três lados
+da sala." CR>
 		<COND (,MIRROR-MUNG
 		       <TELL
-"Unfortunately, the mirror has been destroyed by your recklessness." CR>)>)>>
+"Infelizmente, o espelho foi destruído pela sua imprudência." CR>)>)>>
 
 <GLOBAL MIRROR-MUNG <>>
 <GLOBAL LUCKY T>
@@ -974,7 +982,7 @@ on the other three sides of the room." CR>
 	<COND (<AND <NOT ,MIRROR-MUNG> <VERB? RUB>>
 	       <COND (<AND ,PRSI <NOT <EQUAL? ,PRSI ,HANDS>>>
 		      <TELL
-"You feel a faint tingling transmitted through the " D ,PRSI "." CR>
+"Você sente um leve formigamento transmitido " T-PELO ,PRSI "." CR>
 		      <RTRUE>)>
 	       <COND (<EQUAL? ,HERE .RM2>
 		      <SET RM2 ,MIRROR-ROOM-1>)>
@@ -992,26 +1000,26 @@ on the other three sides of the room." CR>
 		       <SET L2 .N>>
 	       <GOTO .RM2 <>>
 	       <TELL
-"There is a rumble from deep within the earth and the room shakes." CR>)
+"Um ronco vem das profundezas da terra, e a sala treme." CR>)
 	      (<VERB? LOOK-INSIDE EXAMINE>
 	       <COND (,MIRROR-MUNG
-		      <TELL "The mirror is broken into many pieces.">)
+		      <TELL "O espelho está quebrado em mil pedaços.">)
 		     (T
-		      <TELL "There is an ugly person staring back at you.">)>
+		      <TELL "Uma pessoa feia olha de volta para você.">)>
 	       <CRLF>)
 	      (<VERB? TAKE>
 	       <TELL
-"The mirror is many times your size. Give up." CR>)
+"O espelho é muitas vezes maior que você. Desista." CR>)
 	      (<VERB? MUNG THROW ATTACK>
 	       <COND (,MIRROR-MUNG
 		      <TELL
-"Haven't you done enough damage already?" CR>)
+"Você já não fez estrago suficiente?" CR>)
 		     (T
 		      <SETG MIRROR-MUNG T>
 		      <SETG LUCKY <>>
 		      <TELL
-"You have broken the mirror. I hope you have a seven years' supply of
-good luck handy." CR>)>)>>
+"Você quebrou o espelho. Espero que tenha à mão um estoque de sorte para
+sete anos." CR>)>)>>
 
 \
 
@@ -1020,36 +1028,36 @@ good luck handy." CR>)>)>>
 <ROUTINE TORCH-ROOM-FCN (RARG)
  	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"This is a large room with a prominent doorway leading to a down
-staircase. Above you is a large dome. Up around the edge of the
-dome (20 feet up) is a wooden railing. In the center of the room
-sits a white marble pedestal." CR>
+"Esta é uma sala grande, com uma passagem imponente que dá para uma escada
+que desce. Acima de você há uma grande cúpula. Lá no alto, em volta da borda
+da cúpula (a uns seis metros do chão), há um corrimão de madeira. No centro
+da sala fica um pedestal de mármore branco." CR>
 		<COND (,DOME-FLAG
 		       <TELL
-"A piece of rope descends from the railing above, ending some
-five feet above your head." CR>)>)>>
+"Um pedaço de corda desce do corrimão lá em cima e termina mais ou menos um
+metro e meio acima da sua cabeça." CR>)>)>>
 
 <ROUTINE DOME-ROOM-FCN (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are at the periphery of a large dome, which forms the ceiling
-of another room below. Protecting you from a precipitous drop is a
-wooden railing which circles the dome." CR>
+"Você está na borda de uma grande cúpula, que forma o teto de outra sala,
+lá embaixo. Um corrimão de madeira, que circunda a cúpula, protege você de
+uma queda vertiginosa." CR>
 		<COND (,DOME-FLAG
 		       <TELL
-"Hanging down from the railing is a rope which ends about ten feet
-from the floor below." CR>)>)
+"Do corrimão pende uma corda, que termina a uns três metros do chão lá
+embaixo." CR>)>)
 	       (<EQUAL? .RARG ,M-ENTER>
 		<COND (,DEAD
 		       <TELL
-"As you enter the dome you feel a strong pull as if from a wind
-drawing you over the railing and down." CR>
+"Ao entrar na cúpula, você sente um forte puxão, como se um vento o
+arrastasse por cima do corrimão e para baixo." CR>
 		       <MOVE ,WINNER ,TORCH-ROOM>
 		       <SETG HERE ,TORCH-ROOM>
 		       <RTRUE>)
 		      (<VERB? LEAP>
 		       <JIGS-UP
-"I'm afraid that the leap you attempted has done you in.">)>)>>
+"Receio que esse salto tenha acabado com você.">)>)>>
 
 ;<GLOBAL EGYPT-FLAG <>>	;"no longer used?"
 
@@ -1060,16 +1068,16 @@ drawing you over the railing and down." CR>
 <ROUTINE LLD-ROOM (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
-"You are outside a large gateway, on which is inscribed||
-  Abandon every hope
-all ye who enter here!||
-The gate is open; through it you can see a desolation, with a pile of
-mangled bodies in one corner. Thousands of voices, lamenting some
-hideous fate, can be heard." CR>
+"Você está diante de um grande portal, no qual está escrito||
+  Deixai toda esperança,
+ó vós que entrais!||
+O portão está aberto; através dele você vê uma desolação, com um monte de
+corpos mutilados num canto. Dá para ouvir milhares de vozes, que lamentam
+algum destino medonho." CR>
 		<COND (<AND <NOT ,LLD-FLAG> <NOT ,DEAD>>
 		       <TELL
-"The way through the gate is barred by evil spirits, who jeer at your
-attempts to pass." CR>)>)
+"A passagem pelo portão está bloqueada por espíritos malignos, que zombam
+das suas tentativas de passar." CR>)>)
 	       (<EQUAL? .RARG ,M-BEG>
 		<COND (<VERB? EXORCISE>
 		       <COND (<NOT ,LLD-FLAG>
@@ -1077,10 +1085,10 @@ attempts to pass." CR>)>)
 					  <IN? ,BOOK ,WINNER>
 					  <IN? ,CANDLES ,WINNER>>
 				     <TELL
-"You must perform the ceremony." CR>)
+"Você precisa realizar a cerimônia." CR>)
 				    (T
 				     <TELL
-"You aren't equipped for an exorcism." CR>)>)>)
+"Você não está equipado para um exorcismo." CR>)>)>)
 		      (<AND <NOT ,LLD-FLAG>
 			    <VERB? RING>
 			    <EQUAL? ,PRSO ,BELL>>
@@ -1089,13 +1097,12 @@ attempts to pass." CR>)>)
 		       <THIS-IS-IT ,HOT-BELL>
 		       <MOVE ,HOT-BELL ,HERE>
 		       <TELL
-"The bell suddenly becomes red hot and falls to the ground. The
-wraiths, as if paralyzed, stop their jeering and slowly turn to face
-you. On their ashen faces, the expression of a long-forgotten terror
-takes shape." CR>
+"De repente, o sino fica em brasa e cai no chão. As assombrações, como que
+paralisadas, param de zombar e se viram lentamente para você. Em seus rostos
+cinzentos, ganha forma a expressão de um terror há muito esquecido." CR>
 		       <COND (<IN? ,CANDLES ,WINNER>
 			      <TELL
-"In your confusion, the candles drop to the ground (and they are out)." CR>
+"Na confusão, as velas caem no chão (e se apagam)." CR>
 			      <MOVE ,CANDLES ,HERE>
 			      <FCLEAR ,CANDLES ,ONBIT>
 			      <DISABLE <INT I-CANDLES>>)>
@@ -1106,10 +1113,10 @@ takes shape." CR>
 			    <EQUAL? ,PRSO ,BOOK>
 			    <NOT ,LLD-FLAG>>
 		       <TELL
-"Each word of the prayer reverberates through the hall in a deafening
-confusion. As the last word fades, a voice, loud and commanding,
-speaks: \"Begone, fiends!\" A heart-stopping scream fills the cavern,
-and the spirits, sensing a greater power, flee through the walls." CR>
+"Cada palavra da oração ecoa pelo salão numa confusão ensurdecedora. Quando
+a última palavra se extingue, uma voz alta e imperiosa ordena: \"Fora daqui,
+demônios!\" Um grito de gelar o sangue enche a caverna, e os espíritos,
+sentindo um poder maior, fogem através das paredes." CR>
 		       <REMOVE-CAREFULLY ,GHOSTS>
 		       <SETG LLD-FLAG T>
 		       <DISABLE <INT I-XC>>)>)
@@ -1120,9 +1127,9 @@ and the spirits, sensing a greater power, flee through the walls." CR>
 			    <NOT ,XC>>
 		       <SETG XC T>
 		       <TELL
-"The flames flicker wildly and appear to dance. The earth beneath
-your feet trembles, and your legs nearly buckle beneath you.
-The spirits cower at your unearthly power." CR>
+"As chamas tremulam loucamente e parecem dançar. A terra treme sob os seus
+pés, e suas pernas quase cedem.
+Os espíritos se encolhem diante do seu poder sobrenatural." CR>
 		       <DISABLE <INT I-XB>>
 		       <ENABLE <QUEUE I-XC 3>>)>)>>
 
@@ -1134,8 +1141,8 @@ The spirits cower at your unearthly power." CR>
 	 <OR ,XC
 	     <AND <EQUAL? ,HERE ,ENTRANCE-TO-HADES>
 		  <TELL
-"The tension of this ceremony is broken, and the wraiths, amused but
-shaken at your clumsy attempt, resume their hideous jeering." CR>>>
+"A tensão da cerimônia se desfaz, e as assombrações, achando graça mas ainda
+abaladas com a sua tentativa desastrada, voltam às suas zombarias medonhas." CR>>>
 	 <SETG XB <>>>
 
 <ROUTINE I-XC ()
@@ -1146,7 +1153,7 @@ shaken at your clumsy attempt, resume their hideous jeering." CR>>>
 	 <REMOVE-CAREFULLY ,HOT-BELL>
 	 <MOVE ,BELL ,ENTRANCE-TO-HADES>
 	 <COND (<EQUAL? ,HERE ,ENTRANCE-TO-HADES>
-		<TELL "The bell appears to have cooled down." CR>)>>
+		<TELL "O sino parece ter esfriado." CR>)>>
 
 \
 
@@ -2182,32 +2189,30 @@ repente." CR CR>)>
 
 <ROUTINE BODY-FUNCTION ()
 	 <COND (<VERB? TAKE>
-		<TELL "A force keeps you from taking the bodies." CR>)
+		<TELL "Uma força impede você de pegar os corpos." CR>)
 	       (<VERB? MUNG BURN>
 		<JIGS-UP
-"The voice of the guardian of the dungeon booms out from the darkness,
-\"Your disrespect costs you your life!\" and places your head on a sharp
-pole.">)>>
+"A voz do guardião da masmorra ressoa na escuridão: \"Seu desrespeito vai
+lhe custar a vida!\" E põe a sua cabeça na ponta de uma estaca.">)>>
 
 <ROUTINE BLACK-BOOK ()
 	 <COND (<VERB? OPEN>
-		<TELL "The book is already open to page 569." CR>)
+		<TELL "O livro já está aberto na página 569." CR>)
 	       (<VERB? CLOSE>
-		<TELL "As hard as you try, the book cannot be closed." CR>)
+		<TELL "Por mais que você tente, o livro não se fecha." CR>)
 	       (<OR <VERB? TURN>
 		    <AND <VERB? READ-PAGE>
 			 <EQUAL? ,PRSI ,INTNUM>
 			 <NOT <EQUAL? ,P-NUMBER 569>>>>
 		<TELL
-"Beside page 569, there is only one other page with any legible printing on
-it. Most of it is unreadable, but the subject seems to be the banishment of
-evil. Apparently, certain noises, lights, and prayers are efficacious in this
-regard." CR>)
+"Além da página 569, só há uma outra página com algum texto legível. Quase
+tudo está ilegível, mas o assunto parece ser a expulsão do mal. Pelo visto,
+certos ruídos, luzes e orações são eficazes nesse sentido." CR>)
 	       (<VERB? BURN>
 		<REMOVE-CAREFULLY ,PRSO>
 		<JIGS-UP
-"A booming voice says \"Wrong, cretin!\" and you notice that you have
-turned into a pile of dust. How, I can't imagine.">)>>
+"Uma voz trovejante diz \"Errado, cretino!\", e você percebe que virou um
+montinho de pó. Como, eu não faço ideia.">)>>
 
 <ROUTINE PAINTING-FCN ()
 	 <COND (<VERB? MUNG>
@@ -2354,69 +2359,69 @@ escrito nela.">)>
 		<COND (<VERB? LAMP-ON BURN>
 		       <COND (<FSET? ,CANDLES ,RMUNGBIT>
 			      <TELL
-"Alas, there's not much left of the candles. Certainly not enough to
-burn." CR>)
+"Infelizmente, não sobrou muito das velas. Com certeza não o bastante para
+acender." CR>)
 			     (<NOT ,PRSI>
 			      <COND (<FSET? ,MATCH ,FLAMEBIT>
-				     <TELL "(with the match)" CR>
+				     <TELL "(com o fósforo)" CR>
 				     <PERFORM ,V?LAMP-ON ,CANDLES ,MATCH>
 				     <RTRUE>)
 				    (T
 				     <TELL
-"You should say what to light them with." CR>
+"Você precisa dizer com o que quer acendê-las." CR>
 				     <RFATAL>)>)
 			     (<AND <EQUAL? ,PRSI ,MATCH>
 				   <FSET? ,MATCH ,ONBIT>>
-			      <TELL "The candles are ">
+			      <TELL "As velas ">
 			      <COND (<FSET? ,CANDLES ,ONBIT>
-				     <TELL "already lit." CR>)
+				     <TELL "já estão acesas." CR>)
 				    (T
 				     <FSET ,CANDLES ,ONBIT>
-				     <TELL "lit." CR>
+				     <TELL "se acendem." CR>
 				     <ENABLE <INT I-CANDLES>>)>)
 			     (<EQUAL? ,PRSI ,TORCH>
 			      <COND (<FSET? ,CANDLES ,ONBIT>
 				     <TELL
-"You realize, just in time, that the candles are already lighted." CR>)
+"Você percebe, bem a tempo, que as velas já estão acesas." CR>)
 				    (T
 				     <TELL
-"The heat from the torch is so intense that the candles are vaporized." CR>
+"O calor da tocha é tão intenso que as velas se vaporizam." CR>
 				     <REMOVE-CAREFULLY ,CANDLES>)>)
 			     (T
 			      <TELL
-"You have to light them with something that's burning, you know." CR>)>)
+"Você tem que acendê-las com alguma coisa que esteja queimando, sabia?" CR>)>)
 		      (<VERB? COUNT>
 		       <TELL
-"Let's see, how many objects in a pair? Don't tell me, I'll get it." CR>)
+"Vejamos, quantas coisas há num par? Não me diga, eu chego lá." CR>)
 		      (<VERB? LAMP-OFF>
 		       <DISABLE <INT I-CANDLES>>
 		       <COND (<FSET? ,CANDLES ,ONBIT>
-			      <TELL "The flame is extinguished.">
+			      <TELL "A chama se apaga.">
 			      <FCLEAR ,CANDLES ,ONBIT>
 			      <FSET ,CANDLES ,TOUCHBIT>
 			      <SETG LIT <LIT? ,HERE>>
 			      <COND (<NOT ,LIT>
-				     <TELL " It's really dark in here....">)>
+				     <TELL " Está muito escuro aqui....">)>
 			      <CRLF>
 			      <RTRUE>)
-			     (T <TELL "The candles are not lighted." CR>)>)
+			     (T <TELL "As velas não estão acesas." CR>)>)
 		      (<AND <VERB? PUT> <FSET? ,PRSI ,BURNBIT>>
-		       <TELL "That wouldn't be smart." CR>)
+		       <TELL "Isso não seria muito esperto." CR>)
 		      (<VERB? EXAMINE>
-		       <TELL "The candles are ">
+		       <TELL "As velas estão ">
 		       <COND (<FSET? ,CANDLES ,ONBIT>
-			      <TELL "burning.">)
-			     (T <TELL "out.">)>
+			      <TELL "acesas.">)
+			     (T <TELL "apagadas.">)>
 		       <CRLF>)>)>>
 
 <GLOBAL CANDLE-TABLE
 	<TABLE (PURE)
 	       20
-	       "The candles grow shorter."
+	       "As velas estão ficando mais curtas."
 	       10
-	       "The candles are becoming quite short."
+	       "As velas já estão bem curtas."
 	       5
-	       "The candles won't last long now."
+	       "As velas não vão durar muito mais."
 	       0>>
 
 <ROUTINE CAVE2-ROOM (RARG)
@@ -2427,9 +2432,9 @@ burn." CR>)
 		<DISABLE <INT I-CANDLES>>
 		<FCLEAR ,CANDLES ,ONBIT>
 		<TELL
-"A gust of wind blows out your candles!" CR>
+"Uma rajada de vento apaga as suas velas!" CR>
 		<COND (<NOT <SETG LIT <LIT? ,HERE>>>
-		       <TELL "It is now completely dark." CR>)>)>)>>
+		       <TELL "Agora está completamente escuro." CR>)>)>)>>
 
 \
 
@@ -3049,15 +3054,15 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 	 <COND (<NOT <EQUAL? ,HERE ,DOME-ROOM>>
 		<SETG DOME-FLAG <>>
 		<COND (<VERB? TIE>
-		       <TELL "You can't tie the rope to that." CR>)>)
+		       <TELL "Você não pode amarrar a corda nisso." CR>)>)
 	       (<VERB? TIE>
 		<COND (<EQUAL? ,PRSI ,RAILING>
 		       <COND (,DOME-FLAG
 			      <TELL
-			       "The rope is already tied to it." CR>)
+			       "A corda já está amarrada nele." CR>)
 			     (T
 			      <TELL
-"The rope drops over the side and comes within ten feet of the floor." CR>
+"A corda cai pela borda e chega a uns três metros do chão." CR>
 			      <SETG DOME-FLAG T>
 			      <FSET ,ROPE ,NDESCBIT>
 			      <SET RLOC <LOC ,ROPE>>
@@ -3071,35 +3076,37 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 		     <EQUAL? ,ROPE ,PRSI>>
 		<COND (<FSET? ,PRSO ,ACTORBIT>
 		       <COND (<L? <GETP ,PRSO ,P?STRENGTH> 0>
-			      <TELL
-"Your attempt to tie up the " D ,PRSO " awakens him.">
+			      <TELL "Sua tentativa de amarrar " T-O ,PRSO
+				    " acaba por despertá-l" T-G ,PRSO "." CR>
 			      <AWAKEN ,PRSO>)
 			     (T
+			      <TELL T-CO ,PRSO " ">
+			      <PRINT-PLURAL ,PRSO "se debate" "se debatem">
 			      <TELL
-"The " D ,PRSO " struggles and you cannot tie him up." CR>)>)
+", e você não consegue amarrá-l" T-G ,PRSO "." CR>)>)
 		      (T
-		       <TELL "Why would you tie up a " D ,PRSO "?" CR>)>)
+		       <TELL "Por que você amarraria " T-UM ,PRSO "?" CR>)>)
 	       (<VERB? UNTIE>
 		<COND (,DOME-FLAG
 		       <SETG DOME-FLAG <>>
 		       <FCLEAR ,ROPE ,NDESCBIT>
-		       <TELL "The rope is now untied." CR>)
+		       <TELL "Agora a corda está desamarrada." CR>)
 		      (T
-		       <TELL "It is not tied to anything." CR>)>)
+		       <TELL "Ela não está amarrada a nada." CR>)>)
 	       (<AND <VERB? DROP>
 		     <EQUAL? ,HERE ,DOME-ROOM>
 		     <NOT ,DOME-FLAG>>
 		<MOVE ,ROPE ,TORCH-ROOM>
-		<TELL "The rope drops gently to the floor below." CR>)
+		<TELL "A corda cai suavemente no chão lá embaixo." CR>)
 	       (<VERB? TAKE>
 		<COND (,DOME-FLAG
-		       <TELL "The rope is tied to the railing." CR>)>)>>
+		       <TELL "A corda está amarrada no corrimão." CR>)>)>>
 
 <ROUTINE UNTIE-FROM ()
     <COND (<AND <EQUAL? ,PRSO ,ROPE>
 		<AND ,DOME-FLAG <EQUAL? ,PRSI ,RAILING>>>
 	   <PERFORM ,V?UNTIE ,PRSO>)
-	  (T <TELL "It's not attached to that!" CR>)>>
+	  (T <TELL "Isso não está preso aí!" CR>)>>
 
 <ROUTINE SLIDE-FUNCTION ()
 	 <COND (<OR <VERB? THROUGH CLIMB-UP CLIMB-DOWN CLIMB-FOO>
@@ -3132,39 +3139,39 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 	 <COND (<VERB? WALK>
 		<COND (<AND <EQUAL? ,HERE ,TIMBER-ROOM>
 			    <EQUAL? ,PRSO ,P?WEST>>
-		       <TELL "You cannot enter in your condition." CR>)>)
+		       <TELL "Você não pode entrar nesse estado." CR>)>)
 	       (<VERB? BRIEF VERBOSE SUPER-BRIEF
 		       VERSION ;AGAIN SAVE RESTORE QUIT RESTART>
 		<>)
 	       (<VERB? ATTACK MUNG ALARM SWING>
-		<TELL "All such attacks are vain in your condition." CR>)
+		<TELL "No seu estado, qualquer ataque é inútil." CR>)
 	       (<VERB? OPEN CLOSE EAT DRINK
 		       INFLATE DEFLATE TURN BURN
 		       TIE UNTIE RUB>
 		<TELL
-"Even such an action is beyond your capabilities." CR>)
+"Até uma ação dessas está além da sua capacidade." CR>)
 	       (<VERB? WAIT>
-		<TELL "Might as well. You've got an eternity." CR>)
+		<TELL "Pode esperar. Você tem a eternidade inteira." CR>)
 	       (<VERB? LAMP-ON>
-		<TELL "You need no light to guide you." CR>)
+		<TELL "Você não precisa de luz para guiá-lo." CR>)
 	       (<VERB? SCORE>
-		<TELL "You're dead! How can you think of your score?" CR>)
+		<TELL "Você está morto! Como pode pensar na sua pontuação?" CR>)
 	       (<VERB? TAKE RUB>
-		<TELL "Your hand passes through its object." CR>)
+		<TELL "Sua mão atravessa o objeto." CR>)
 	       (<VERB? DROP THROW INVENTORY>
-		<TELL "You have no possessions." CR>)
+		<TELL "Você não possui nada." CR>)
 	       (<VERB? DIAGNOSE>
-		<TELL "You are dead." CR>)
+		<TELL "Você está morto." CR>)
 	       (<VERB? LOOK>
-		<TELL "The room looks strange and unearthly">
+		<TELL "O lugar parece estranho e sobrenatural">
 		<COND (<NOT <FIRST? ,HERE>>
 		       <TELL ".">)
 		      (T
-		       <TELL " and objects appear indistinct.">)>
+		       <TELL ", e os objetos parecem indistintos.">)>
 		<CRLF>
 		<COND (<NOT <FSET? ,HERE ,ONBIT>>
 		       <TELL
-"Although there is no light, the room seems dimly illuminated." CR>)>
+"Embora não haja luz, o lugar parece levemente iluminado." CR>)>
 		<CRLF>
 		<>)
 	       (<VERB? PRAY>
@@ -3177,16 +3184,15 @@ canário acaba, o pássaro canoro vai embora voando." CR>
 		       <COND (<IN? ,TROLL ,TROLL-ROOM>
 			      <SETG TROLL-FLAG <>>)>
 		       <TELL
-"From the distance the sound of a lone trumpet is heard. The room
-becomes very bright and you feel disembodied. In a moment, the
-brightness fades and you find yourself rising as if from a long
-sleep, deep in the woods. In the distance you can faintly hear a
-songbird and the sounds of the forest." CR CR>
+"Ao longe, ouve-se o som de uma trombeta solitária. O lugar fica muito
+claro, e você se sente fora do próprio corpo. Num instante, o brilho se
+apaga e você se vê despertando como de um longo sono, no meio da mata. Ao
+longe, você ouve baixinho um pássaro canoro e os sons da floresta." CR CR>
 		       <GOTO ,FOREST-1>)
 		      (T
-		       <TELL "Your prayers are not heard." CR>)>)
+		       <TELL "Suas preces não são ouvidas." CR>)>)
 	       (T
-		<TELL "You can't even do that." CR>
+		<TELL "Nem isso você consegue fazer." CR>
 		<SETG P-CONT <>>
 		<RFATAL>)>>
 
@@ -3221,7 +3227,7 @@ songbird and the sounds of the forest." CR CR>
 
 <ROUTINE DOME-PSEUDO ()
 	 <COND (<VERB? KISS>
-		<TELL "No." CR>)>>
+		<TELL "Não." CR>)>>
 
 <ROUTINE GATE-PSEUDO ()
 	 <COND (<VERB? THROUGH>
@@ -3229,8 +3235,8 @@ songbird and the sounds of the forest." CR CR>
 		<RTRUE>)
 	       (T
 		<TELL
-"The gate is protected by an invisible force. It makes your
-teeth ache to touch it." CR>)>>
+"O portão está protegido por uma força invisível. Só de tocá-lo, os seus
+dentes doem." CR>)>>
 
 <ROUTINE DOOR-PSEUDO () ;"in Studio"
 	 <COND (<VERB? OPEN CLOSE>
