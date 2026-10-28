@@ -10,6 +10,7 @@ const ARQUIVOS = [
   'index.html',
   'estilo.css',
   'atalhos.js',
+  'dialogos.js',
   'manifest.webmanifest',
   'interpreter/zork1-ptbr.z5.js',
   'interpreter/parchment.css',

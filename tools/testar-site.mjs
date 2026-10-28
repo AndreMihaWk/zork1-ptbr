@@ -4,7 +4,7 @@
 //
 // Uso: node tools/testar-site.mjs
 //   NAVEGADOR_CANAL=msedge  usa o Edge instalado (local, sem baixar o Chromium)
-import { mkdirSync, readFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, readdirSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { extname, join, normalize } from 'node:path'
@@ -60,10 +60,16 @@ async function passo(nome, teste) {
   }
 }
 
+// O Bocfel pode abrir uma segunda janela de texto para avisos; a do jogo é a primeira.
 const campo = pagina.locator('textarea.LineInput')
-const textoDoJogo = () => pagina.locator('.BufferWindow').innerText()
+const campoLivre = pagina.locator('textarea.LineInput:not([disabled])')
+const textoDoJogo = () => pagina.locator('.BufferWindow').first().innerText()
+const linhaDeStatus = async () => (await pagina.locator('.GridWindow').innerText()).trim()
 const esperarTexto = (trecho, timeout = 10000) => pagina.waitForFunction(
   t => document.querySelector('.BufferWindow')?.innerText.includes(t), trecho, { timeout })
+const esperarResposta = antes => pagina.waitForFunction(
+  n => document.querySelector('.BufferWindow').innerText.length > n + 10, antes)
+const dialogoDeArquivos = pagina.locator('dialog.asyncglk_file_dialog[open]')
 
 await pagina.goto(url)
 
@@ -73,7 +79,7 @@ await passo('o jogo carrega e espera um comando', async () => {
 })
 
 await passo('a linha de status mostra o local', async () => {
-  const status = (await pagina.locator('.GridWindow').innerText()).trim()
+  const status = await linhaDeStatus()
   if (status.length < 4) throw new Error(`status vazio: ${JSON.stringify(status)}`)
 })
 
@@ -109,6 +115,67 @@ await passo('um botão com "…" só começa o comando', async () => {
   await campo.fill('')
 })
 
+await passo('o botão Desfazer desfaz a última jogada', async () => {
+  await pagina.locator('#atalhos button[data-comando="desfazer"]').tap()
+  await esperarTexto(`>${comandos.desfazer}`)
+  await esperarTexto('Você desfez a última jogada.')
+})
+
+// No teclado ABNT2, "^" e "~" são teclas mortas: a tecla morta abre uma
+// composição e a vogal seguinte a fecha com a letra acentuada. Aqui isso é
+// simulado pelo protocolo do Chromium, como faz o sistema operacional.
+await passo('acentos com tecla morta (ABNT2) e histórico com as setas', async () => {
+  const cdp = await contexto.newCDPSession(pagina)
+  const morta = { key: 'Dead', code: 'Quote', windowsVirtualKeyCode: 222, modifiers: 8 }
+  await campo.fill('')
+  await campo.focus()
+  await pagina.keyboard.type('l')
+  await cdp.send('Input.dispatchKeyEvent', { type: 'rawKeyDown', ...morta })
+  await cdp.send('Input.imeSetComposition', { text: '^', selectionStart: 1, selectionEnd: 1 })
+  await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', ...morta })
+  await cdp.send('Input.insertText', { text: 'â' })
+  await pagina.keyboard.type('mpada')
+  await cdp.detach()
+  const digitado = await campo.inputValue()
+  if (digitado !== 'lâmpada') throw new Error(`campo com ${JSON.stringify(digitado)}`)
+  await campo.press('Enter')
+  await esperarTexto('>lâmpada')
+  await campo.press('ArrowUp')
+  const anterior = await campo.inputValue()
+  if (anterior !== 'lâmpada') throw new Error(`a seta para cima trouxe ${JSON.stringify(anterior)}`)
+  await campo.press('ArrowDown')
+  const depois = await campo.inputValue()
+  if (depois !== '') throw new Error(`a seta para baixo deixou ${JSON.stringify(depois)}`)
+})
+
+await passo('o painel Sobre abre com os créditos e fecha', async () => {
+  const sobre = pagina.locator('#sobre')
+  await pagina.locator('#atalhos button[data-acao="sobre"]').tap()
+  await sobre.waitFor()
+  const texto = await sobre.innerText()
+  for (const trecho of ['Tim Anderson', 'Marc Blank', 'Bruce Daniels', 'Dave Lebling', 'Microsoft', 'MIT', 'não oficial', 'marca registrada']) {
+    if (!texto.includes(trecho)) throw new Error(`falta "${trecho}"`)
+  }
+  if (!await sobre.locator('a[href="https://github.com/AndreMihaWk/zork1-ptbr"]').count()) throw new Error('falta o link do repositório')
+  await sobre.locator('form button').tap()
+  await sobre.waitFor({ state: 'hidden' })
+  // Também fecha com um toque fora do painel.
+  await pagina.locator('#atalhos button[data-acao="sobre"]').tap()
+  await sobre.waitFor()
+  await pagina.touchscreen.tap(5, 5)
+  await sobre.waitFor({ state: 'hidden' })
+})
+
+await passo('nenhum botão da barra corta o rótulo, de 320 a 430 px', async () => {
+  for (const largura of [320, 360, 390, 430]) {
+    await pagina.setViewportSize({ width: largura, height: 844 })
+    const cortados = await pagina.evaluate(() => [...document.querySelectorAll('#atalhos button')]
+      .filter(b => b.scrollWidth > b.clientWidth).map(b => b.textContent.trim()))
+    if (cortados.length) throw new Error(`${largura} px: ${cortados.join(', ')}`)
+  }
+  await pagina.setViewportSize({ width: 390, height: 844 })
+})
+
 await passo('o service worker guarda o jogo para uso offline', async () => {
   const arquivos = await pagina.evaluate(async () => {
     const registro = await navigator.serviceWorker.ready
@@ -119,6 +186,19 @@ await passo('o service worker guarda o jogo para uso offline', async () => {
   if (arquivos < 10) throw new Error(`só ${arquivos} arquivos no cache`)
 })
 
+await passo('todo script, estilo e página do site está no cache do service worker', async () => {
+  const esperados = [
+    ...readdirSync('_site').filter(nome => /\.(js|css|html)$/.test(nome) && nome !== 'sw.js'),
+    ...readdirSync('_site/interpreter').map(nome => `interpreter/${nome}`),
+  ]
+  const guardados = await pagina.evaluate(async () => {
+    const cache = await caches.open((await caches.keys())[0])
+    return (await cache.keys()).map(pedido => new URL(pedido.url).pathname)
+  })
+  const faltando = esperados.filter(arquivo => !guardados.includes(`${BASE}${arquivo}`))
+  if (faltando.length) throw new Error(`fora da lista de web/sw.js: ${faltando.join(', ')}`)
+})
+
 mkdirSync('build', { recursive: true })
 await pagina.screenshot({ path: 'build/site-celular.png' })
 
@@ -127,6 +207,66 @@ await passo('o jogo abre sem internet', async () => {
   await pagina.reload()
   await campo.waitFor({ timeout: 30000 })
   await contexto.setOffline(false)
+})
+
+// Salvar e Carregar abrem o diálogo de arquivos do Parchment, traduzido por
+// web/dialogos.js. "Baixar" exporta o save e "Importar" o traz de volta.
+const SAVE_BAIXADO = 'build/save-teste.glksave'
+
+async function enviarPelaBarra(comando) {
+  const antes = (await textoDoJogo()).length
+  await pagina.locator(`#atalhos button[data-comando="${comando}"]`).tap()
+  await esperarTexto(`>${comandos[comando]}`)
+  await esperarResposta(antes)
+  await campoLivre.waitFor()
+}
+
+let statusSalvo = ''
+await passo('salvar pelo diálogo, em português', async () => {
+  await enviarPelaBarra('norte')
+  statusSalvo = await linhaDeStatus()
+  await pagina.locator('#atalhos button[data-comando="salvar"]').tap()
+  await dialogoDeArquivos.waitFor()
+  const botao = (await dialogoDeArquivos.locator('button.submit').innerText()).trim()
+  if (botao !== 'Salvar') throw new Error(`o diálogo não foi traduzido (botão "${botao}")`)
+  await pagina.locator('#filename_input').fill('teste')
+  await dialogoDeArquivos.locator('button.submit').click()
+  await dialogoDeArquivos.waitFor({ state: 'hidden' })
+  await campoLivre.waitFor()
+  await enviarPelaBarra('norte')
+  if (await linhaDeStatus() === statusSalvo) throw new Error('o jogador não saiu do lugar depois de salvar')
+})
+
+await passo('exportar o save com o botão Baixar', async () => {
+  await pagina.locator('#atalhos button[data-comando="carregar"]').tap()
+  await dialogoDeArquivos.waitFor()
+  await dialogoDeArquivos.locator('#filelist button[data-fullpath$="teste.glksave"]').click()
+  const [baixado] = await Promise.all([
+    pagina.waitForEvent('download', { timeout: 10000 }),
+    dialogoDeArquivos.getByRole('button', { name: 'Baixar' }).click(),
+  ])
+  await baixado.saveAs(SAVE_BAIXADO)
+  if (readFileSync(SAVE_BAIXADO).length < 100) throw new Error('arquivo baixado vazio')
+  await dialogoDeArquivos.locator('.foot button.close').click()
+  await dialogoDeArquivos.waitFor({ state: 'hidden' })
+})
+
+await passo('importar o save depois de apagar o armazenamento e carregar', async () => {
+  await pagina.evaluate(() => localStorage.clear())
+  await pagina.reload()
+  await campo.waitFor({ timeout: 30000 })
+  await pagina.locator('#atalhos button[data-comando="carregar"]').tap()
+  await dialogoDeArquivos.waitFor()
+  if (await dialogoDeArquivos.locator('#filelist button[data-fullpath]').count()) {
+    throw new Error('o armazenamento não foi apagado')
+  }
+  await dialogoDeArquivos.locator('#add_file').setInputFiles(SAVE_BAIXADO)
+  const arquivo = dialogoDeArquivos.locator('#filelist button[data-fullpath$="save-teste.glksave"]')
+  await arquivo.waitFor()
+  await arquivo.click()
+  await dialogoDeArquivos.locator('button.submit').click()
+  await dialogoDeArquivos.waitFor({ state: 'hidden' })
+  await pagina.waitForFunction(s => document.querySelector('.GridWindow')?.innerText.trim() === s, statusSalvo)
 })
 
 await passo('a página não teve erros de JavaScript', async () => {
