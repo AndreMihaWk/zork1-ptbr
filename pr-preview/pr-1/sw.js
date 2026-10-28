@@ -1,15 +1,16 @@
 // Service worker: guarda o jogo no aparelho para jogar sem internet.
-// 0799805 é trocado pelo commit no build (tools/build-site.mjs), então cada
+// c329667 é trocado pelo commit no build (tools/build-site.mjs), então cada
 // publicação cria um cache novo e apaga os antigos. Os caches são do domínio
 // inteiro (inclusive dos previews de PR), por isso o nome leva o escopo.
 const PREFIXO = `zork1-ptbr ${self.registration.scope} `
-const CACHE = `${PREFIXO}0799805`
+const CACHE = `${PREFIXO}c329667`
 
 const ARQUIVOS = [
   './',
   'index.html',
   'estilo.css',
   'atalhos.js',
+  'dialogos.js',
   'manifest.webmanifest',
   'interpreter/zork1-ptbr.z5.js',
   'interpreter/parchment.css',

@@ -24,10 +24,16 @@ body {
   margin: 0 auto;
 }
 
-/* No iPhone, campos com fonte menor que 16px dão zoom ao receber foco. */
+/* No iPhone, campos com fonte menor que 16px dão zoom ao receber foco
+   (inclusive o nome do arquivo no diálogo de salvar). */
 @media (max-width: 700px) {
   :root {
     --glkote-buffer-size: 16px;
+  }
+
+  .asyncglk_ui textarea,
+  .asyncglk_ui select {
+    font-size: 16px;
   }
 }
 
@@ -45,16 +51,27 @@ body {
   gap: 6px;
 }
 
+/* Direções: as seis com a mesma largura, "Olhar" com a do rótulo e o "Sobre"
+   (pouco usado) numa coluna estreita, para sobrar espaço para as direções. */
+#atalhos .direcoes {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) auto 30px;
+}
+
+#atalhos .direcoes [data-comando="olhar"] {
+  padding: 0 8px;
+}
+
 #atalhos button {
   flex: 1 1 0;
   min-width: 0;
   min-height: 42px;
-  padding: 0 4px;
+  padding: 0 3px;
   border: 1px solid var(--botao-borda);
   border-radius: 8px;
   background: var(--botao-fundo);
   color: var(--barra-texto);
-  font: 600 clamp(12px, 3.6vw, 15px)/1 system-ui, sans-serif;
+  font: 600 clamp(11px, 3.6vw, 15px)/1 system-ui, sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -62,6 +79,46 @@ body {
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Comandos: cada botão tem a largura do rótulo mais uma parte igual da sobra,
+   para que "Inventário" e "Carregar" caibam ao lado dos curtos. Se a fonte do
+   aparelho for larga demais para uma linha só, a linha quebra em vez de
+   cortar os rótulos. */
+#atalhos .comandos {
+  flex-wrap: wrap;
+}
+
+#atalhos .comandos button {
+  flex: 1 1 auto;
+}
+
+#atalhos .comandos .icone {
+  flex-basis: 0;
+  min-width: 40px;
+}
+
+/* Telas bem estreitas (iPhone SE de 1ª geração, 320px). */
+@media (max-width: 340px) {
+  #atalhos .linha {
+    gap: 4px;
+  }
+
+  #atalhos .comandos .icone {
+    min-width: 32px;
+  }
+}
+
+#atalhos svg {
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  margin: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 #atalhos button:active {
@@ -79,4 +136,62 @@ body {
     min-height: 34px;
     font-size: 14px;
   }
+}
+
+/* Painel "Sobre": usa as cores dos diálogos do Parchment, que mudam com o tema. */
+#sobre {
+  box-sizing: border-box;
+  width: min(32rem, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  padding: 0;
+  border: 1px solid var(--asyncglk-ui-border, #666);
+  border-radius: 12px;
+  background: var(--asyncglk-ui-bg, #fff);
+  color: var(--asyncglk-ui-fg, #222);
+  font: 15px/1.45 system-ui, sans-serif;
+}
+
+#sobre::backdrop {
+  background: rgb(0 0 0 / 50%);
+}
+
+#sobre .conteudo {
+  padding: 4px 20px 16px;
+}
+
+/* O título recebe o foco ao abrir, para o painel começar do topo. */
+#sobre h2 {
+  margin: 16px 0 8px;
+  font-size: 19px;
+  outline: none;
+}
+
+#sobre h3 {
+  margin: 18px 0 4px;
+  font-size: 16px;
+}
+
+#sobre p {
+  margin: 8px 0;
+}
+
+#sobre a {
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+#sobre form {
+  margin-top: 16px;
+  text-align: right;
+}
+
+#sobre form button {
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--botao-borda);
+  border-radius: 8px;
+  background: var(--barra-fundo);
+  color: var(--barra-texto);
+  font: 600 15px/1 system-ui, sans-serif;
 }
